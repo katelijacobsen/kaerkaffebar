@@ -1,5 +1,6 @@
 ---
 import PrimaryButton from "../components/PrimaryButton.astro";
+import SecondaryButton from "../components/SecondaryButton.astro";
 import "../styles/global.css";
 import { gsap } from "gsap";
 ---
@@ -20,6 +21,7 @@ import { gsap } from "gsap";
 		<title>Astro Basics</title>
 	</head>
 	<body class="bg-primary">
+		<SecondaryButton>Arrangement</SecondaryButton>
 		<PrimaryButton>Book Bord</PrimaryButton>
 		<slot />
 	</body>
