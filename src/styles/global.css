@@ -1,5 +1,49 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: oklch(0.72 0.11 178);
+    /*Colorpalette*/
+    --color-primary: #FCF7F4;
+    --color-secondary: #C32628;
+    --color-accent: #5F773F;
+    --color-highlight: #FEFBF8;
+    --color-bright-bg: #300D0C;
+
+    /*Font*/
+    --font-family-body-text: 'Mr Eaves Mod OT', sans-serif;
+    --font-family-button-text: 'Mr Eaves Mod OT', sans-serif;
+    --font-family-header: 'Babe Sans', sans-serif;
+    --font-family-label: 'Mr Eaves Mod OT', sans-serif;
+
+    /* Font Sizes */
+    --text-size-header-1: clamp(2.5rem, 1.75rem + 3.5vw, 4.25rem);
+    --text-size-header-2: clamp(2.25rem, 1.5rem + 2.5vw, 3rem);
+    --text-size-header-3: clamp(1.25rem, 0.875rem + 1.25vw, 2.125rem);
+    --text-size-paragraph: clamp(1.125rem, 1.0625rem + 0.25vw, 1.25rem);
+    --text-size-button: clamp(1.125rem, 1rem + 0.3vw, 1.125rem);
+    --text-size-label: clamp(1.125rem, 1.0625rem + 0.25vw, 1.25rem);
+    
+    /* Line Heights */
+    --leading-height-header-1: 3.375rem;
+    --leading-height-header-3: 1.25rem; 
+    --leading-height-tag: 1.25rem; 
+    --leading-height-paragraph: 1.5rem;
+    
+    /*General*/
+    --spacing-default: 16px;
+    --spacing-small: 4px;
+    --spacing-medium: 8px;
+    --spacing-large: 32px;
+    --spacing-negative: 64px;
+    --spacing-margin: view(clamp(16px, 16px + 6.75vw, 124px));
+    --spacing-card-top: view(clamp(150px, 148px + 0.1vw, 148px));
+    --spacing-section: view(clamp(64px, 64px + 10vw, 224px));
+
+    /*Border Radius*/
+    --radius-default: var(--spacing-default);
+    --radius-small: var(--spacing-small);
+    --radius-default: var(--spacing-default);
+    --radius-medium: clamp(4px, 4px + 0.5vw, 8px);
+    --radius-large: clamp(8px, 8px + 0.5vw, 16px);
+    --radius-xl: clamp(16px, 16px + 1vw, 32px);
+
   }

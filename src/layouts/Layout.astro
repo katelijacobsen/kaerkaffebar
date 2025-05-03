@@ -1,5 +1,7 @@
 ---
+import PrimaryButton from "../components/PrimaryButton.astro";
 import "../styles/global.css";
+import { gsap } from "gsap";
 ---
 <script>
 	import { gsap } from "gsap";
@@ -18,6 +20,7 @@ import "../styles/global.css";
 		<title>Astro Basics</title>
 	</head>
 	<body class="bg-primary">
+		<PrimaryButton>Click</PrimaryButton>
 		<slot />
 	</body>
 </html>
