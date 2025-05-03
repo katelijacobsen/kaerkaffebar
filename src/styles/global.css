@@ -6,7 +6,7 @@
     font-style: normal;
     font-weight: 200 700;
     src: url("/fonts/BabeSansRegular.woff2") format("woff2");
-  }
+}
 
 @theme {
     /*Colorpalette*/

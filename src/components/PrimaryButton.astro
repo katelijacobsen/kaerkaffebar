@@ -1,15 +1,18 @@
 ---
 import Icon from '../assets/arrow.svg';
+const { showArrow = true } = Astro.props;
 ---
 
 <button
-  class="group bg-accent text-button text-primary p-button rounded-xl font-button-text flex items-center gap-medium hover:bg-accent-hover transition-colors duration-400 ease-in-out"
+  class="group flex-wrap bg-accent text-button text-primary p-button rounded-xl font-button-text flex items-center gap-medium hover:bg-accent-hover transition-colors duration-400 ease-in-out"
   type="button"
   aria-label="Primary Button"
   role="button"
 >
   <slot></slot>
-  <span class="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] group-hover:-translate-y-1 group-hover:translate-x-1">
-    <Icon width="20" height="20" />
-  </span>
+  {showArrow && (
+    <span class="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] group-hover:-translate-y-1 group-hover:translate-x-1">
+      <Icon width="20" height="20" />
+    </span>
+  )}
 </button>
