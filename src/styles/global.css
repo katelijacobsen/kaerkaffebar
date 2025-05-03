@@ -57,8 +57,3 @@
     --radius-xl: clamp(16px, 16px + 1vw, 32px);
 
   }
-
-  .trimText {
-    leading-trim: both;
-    text-edge: cap;
-  }
