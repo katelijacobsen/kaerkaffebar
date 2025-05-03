@@ -1,3 +1,4 @@
+@import url('https://use.typekit.net/auz0iym.css');
 @import "tailwindcss";
 
 @theme {
@@ -19,7 +20,7 @@
     --text-size-header-2: clamp(2.25rem, 1.5rem + 2.5vw, 3rem);
     --text-size-header-3: clamp(1.25rem, 0.875rem + 1.25vw, 2.125rem);
     --text-size-paragraph: clamp(1.125rem, 1.0625rem + 0.25vw, 1.25rem);
-    --text-size-button: clamp(1.125rem, 1rem + 0.3vw, 1.125rem);
+    --text-button: clamp(1.125rem, 1rem + 0.3vw, 1.125rem);
     --text-size-label: clamp(1.125rem, 1.0625rem + 0.25vw, 1.25rem);
     
     /* Line Heights */
@@ -29,6 +30,7 @@
     --leading-height-paragraph: 1.5rem;
     
     /*General*/
+    --spacing-button: var(--spacing-medium, 0.5rem) var(--spacing-default, 1rem);
     --spacing-default: 16px;
     --spacing-small: 4px;
     --spacing-medium: 8px;
