@@ -7,16 +7,18 @@ import SecondaryButton from "./SecondaryButton.astro";
 <header
   class="bg-primary text-bright-bg p-default sticky top-0 z-50 shadow-pink m-default rounded-large"
 >
-  <div class="container mx-auto">
-    <div class="flex justify-between items-center">
+  <div class="w-full">
+    <div class="flex flex-wrap justify-between items-center">
       <!-- Logo -->
       <img src={Logo.src} class="h-6 w-auto md:h-10" alt="Kær Kaffebar logo" />
 
       <!-- Desktop Navigation -->
-      <nav class="hidden md:block">
+      <nav class="hidden lg:block">
         <ul class="flex items-center gap-6 font-bold">
           <li><SecondaryButton>Menu</SecondaryButton></li>
-          <li><SecondaryButton>Arrangement og events</SecondaryButton></li>
+          <li>
+            <SecondaryButton>Hold dit arrangement og events</SecondaryButton>
+          </li>
           <li><SecondaryButton>Kær Løbeklub</SecondaryButton></li>
           <li class="ml-large"><PrimaryButton>Book Bord</PrimaryButton></li>
           <li class="text-sm">DK / EN</li>
@@ -24,7 +26,7 @@ import SecondaryButton from "./SecondaryButton.astro";
       </nav>
 
       <!-- Mobile Navigation Controls -->
-      <div class="flex items-center gap-2 md:hidden">
+      <div class="flex items-center gap-2 lg:hidden">
         <PrimaryButton>Book Bord</PrimaryButton>
         <button
           id="mobile-menu-button"
@@ -54,13 +56,23 @@ import SecondaryButton from "./SecondaryButton.astro";
       class="absolute right-0 top-[6em] bg-primary p-burger-menu border-faded-highlight border-2 rounded-large m-default"
     >
       <ul class="flex flex-col items-center gap-default font-bold">
-        <li class="menu-item opacity-0 invisible pb-default pt-default" style="display: none;">
+        <li
+          class="menu-item opacity-0 invisible pb-default pt-default"
+          style="display: none;"
+        >
           <SecondaryButton>Menu</SecondaryButton>
         </li>
-        <li class="menu-item opacity-0 invisible pb-default" style="display: none;">
-          <SecondaryButton>Hold dit arrangement og event</SecondaryButton>
+        <li
+          class="menu-item opacity-0 invisible pb-default"
+          style="display: none;"
+        >
+          <SecondaryButton>Hold dit <br /> arrangement og event</SecondaryButton
+          >
         </li>
-        <li class="menu-item opacity-0 invisible pb-default" style="display: none;">
+        <li
+          class="menu-item opacity-0 invisible pb-default"
+          style="display: none;"
+        >
           <SecondaryButton>Kær Løbeklub</SecondaryButton>
         </li>
       </ul>
