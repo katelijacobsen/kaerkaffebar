@@ -16,6 +16,7 @@
     --color-accent-hover:#4B602E;
     --color-highlight: #FEFBF8;
     --color-bright-bg: #300D0C;
+    --color-faded-highlight: #300D0C4D;
 
     /*Font*/
     --font-body-text: 'Mr Eaves Mod OT', sans-serif;
@@ -56,4 +57,15 @@
     --radius-large: clamp(8px, 8px + 0.5vw, 16px);
     --radius-xl: clamp(16px, 16px + 1vw, 32px);
 
+    /*Cards*/
+    --spacing-card: var(--spacing-default) var(--spacing-default) var(--spacing-large) var(--spacing-default);
   }
+
+h1, h2, h3 {
+    font-family: var(--font-header), sans-serif;
+}
+
+p, label {
+    font-family: var(--font-body-text), sans-serif;
+    line-height: var(--leading-height-paragraph);
+}
