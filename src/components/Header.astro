@@ -1,0 +1,166 @@
+---
+import Logo from "../assets/img/kaer-logo.png";
+import PrimaryButton from "./PrimaryButton.astro";
+import SecondaryButton from "./SecondaryButton.astro";
+---
+
+<header
+  class="bg-primary text-bright-bg p-default sticky top-0 z-50 shadow-pink m-default rounded-large"
+>
+  <div class="container mx-auto">
+    <div class="flex justify-between items-center">
+      <!-- Logo -->
+      <img src={Logo.src} class="h-6 w-auto md:h-10" alt="Kær Kaffebar logo" />
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:block">
+        <ul class="flex items-center gap-6 font-bold">
+          <li><SecondaryButton>Menu</SecondaryButton></li>
+          <li><SecondaryButton>Arrangement og events</SecondaryButton></li>
+          <li><SecondaryButton>Kær Løbeklub</SecondaryButton></li>
+          <li class="ml-large"><PrimaryButton>Book Bord</PrimaryButton></li>
+          <li class="text-sm">DK / EN</li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Navigation Controls -->
+      <div class="flex items-center gap-2 md:hidden">
+        <PrimaryButton>Book Bord</PrimaryButton>
+        <button
+          id="mobile-menu-button"
+          class="p-2 focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <nav
+      id="mobile-menu"
+      style="display: none; overflow: hidden; height: 0; width: 0;"
+      class="absolute right-0 top-[6em] bg-primary p-burger-menu border-faded-highlight border-2 rounded-large m-default"
+    >
+      <ul class="flex flex-col items-center gap-default font-bold pt-large">
+        <li class="menu-item opacity-0 invisible pb-default" style="display: none;">
+          <SecondaryButton>Menu</SecondaryButton>
+        </li>
+        <li class="menu-item opacity-0 invisible pb-default" style="display: none;">
+          <SecondaryButton>Hold dit arrangement og event</SecondaryButton>
+        </li>
+        <li class="menu-item opacity-0 invisible pb-default" style="display: none;">
+          <SecondaryButton>Kær Løbeklub</SecondaryButton>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script is:inline type="module">
+  import gsap from "https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js";
+
+  // Sætter vores constants op
+  const menuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  // Variabel Boolean
+  let isOpen = false;
+
+  // Funktion til at åbne menuen
+  const openMenu = () => {
+    mobileMenu.style.display = "block";
+
+    // Animation
+    gsap.fromTo(
+      mobileMenu,
+      { scale: 0.95, opacity: 0 },
+      {
+        scale: 1,
+        width: "360px",
+        height: "300px",
+        opacity: 1,
+        duration: 0.4,
+        ease: "power2.out",
+        onComplete: () => {
+          // For each
+          const menuItems = mobileMenu.querySelectorAll(".menu-item");
+          menuItems.forEach((item) => {
+            item.style.display = "block";
+          });
+          // autoAlpha er en blanding af opacity og visibility, så vi kan animere dem ind
+          gsap.set(
+            ".menu-item",
+            { y: 20, autoAlpha: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.2,
+              stagger: 0.2,
+              delay: 0.1,
+              ease: "power2.out",
+            }
+          );
+          gsap.to(".menu-item", {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.3,
+            stagger: 0.2,
+            delay: 0.1,
+            ease: "power2.out",
+          });
+        },
+      }
+    );
+    isOpen = true;
+  };
+  // Funktion til at lukke menuen
+  const closeMenu = () => {
+    const menuItems = mobileMenu.querySelectorAll(".menu-item");
+    gsap.to(menuItems, {
+      autoAlpha: 0,
+      duration: 0.2,
+      onComplete: () => {
+        gsap.set(menuItems, { y: 20 }); // reset position
+      },
+    });
+
+    gsap.to(mobileMenu, {
+      width: 0,
+      height: 0,
+      scale: 0.95,
+      opacity: 0,
+      duration: 0.2,
+      onComplete: () => {
+        mobileMenu.style.display = "none";
+      },
+    });
+    isOpen = false;
+  };
+
+  // Event listener til at åbne og lukke menuen
+  menuButton.addEventListener("click", () => {
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  document.addEventListener("click", (event) => {
+    if (
+      isOpen &&
+      !menuButton.contains(event.target) &&
+      !mobileMenu.contains(event.target)
+    ) {
+      closeMenu();
+    }
+  });
+</script>

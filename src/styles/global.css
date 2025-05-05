@@ -1,6 +1,7 @@
 @import url('https://use.typekit.net/auz0iym.css');
 @import "tailwindcss";
 
+
 @font-face {
     font-family: Babe Sans;
     font-style: normal;
@@ -29,7 +30,7 @@
     --text-header-2: clamp(2.25rem, 1.5rem + 2.5vw, 3rem);
     --text-header-3: clamp(1.25rem, 0.875rem + 1.25vw, 2.125rem);
     --text-paragraph: clamp(1.125rem, 1.0625rem + 0.25vw, 1.25rem);
-    --text-button: clamp(1.125rem, 1rem + 0.3vw, 1.125rem);
+    --text-button: clamp(1.125rem, 1.25rem + 0.3vw, 1.375rem);
     --text-label: clamp(1.125rem, 1.0625rem + 0.25vw, 1.25rem);
     
     /* Line Heights */
@@ -40,14 +41,16 @@
     
     /*General*/
     --spacing-button: var(--spacing-medium, 0.5rem) var(--spacing-default, 1rem);
-    --spacing-default: 16px;
+    --spacing-default: 1rem;
     --spacing-small: 4px;
     --spacing-medium: 8px;
     --spacing-large: 32px;
+    --spacing-extra-large: 40px;
     --spacing-negative: 64px;
     --spacing-margin: view(clamp(16px, 16px + 6.75vw, 124px));
     --spacing-card-top: view(clamp(150px, 148px + 0.1vw, 148px));
     --spacing-section: view(clamp(64px, 64px + 10vw, 224px));
+    --spacing-burger-menu: var(--spacing-default) var(--spacing-large);
 
     /*Border Radius*/
     --radius-default: var(--spacing-default);
@@ -59,13 +62,20 @@
 
     /*Cards*/
     --spacing-card: var(--spacing-default) var(--spacing-default) var(--spacing-large) var(--spacing-default);
+
+    /*Shadows*/
+    --shadow-pink: 0px 52px 15px 0px rgba(201, 151, 152, 0.00), 0px 33px 13px 0px rgba(201, 151, 152, 0.01), 0px 19px 11px 0px rgba(201, 151, 152, 0.05), 0px 8px 8px 0px rgba(201, 151, 152, 0.09), 0px 2px 5px 0px rgba(201, 151, 152, 0.10);
   }
 
 h1, h2, h3 {
     font-family: var(--font-header), sans-serif;
 }
 
-p, label {
+p, label, li {
     font-family: var(--font-body-text), sans-serif;
     line-height: var(--leading-height-paragraph);
+}
+
+.pin-skadow {
+    box-shadow: 0px 52px 15px 0px rgba(201, 151, 152, 0.00), 0px 33px 13px 0px rgba(201, 151, 152, 0.01), 0px 19px 11px 0px rgba(201, 151, 152, 0.05), 0px 8px 8px 0px rgba(201, 151, 152, 0.09), 0px 2px 5px 0px rgba(201, 151, 152, 0.10);
 }

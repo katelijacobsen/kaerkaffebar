@@ -1,6 +1,7 @@
 ---
 import PrimaryButton from "../components/PrimaryButton.astro";
 import SecondaryButton from "../components/SecondaryButton.astro";
+import Header from "../components/Header.astro";
 import "../styles/global.css";
 import { gsap } from "gsap";
 ---
@@ -19,7 +20,7 @@ import { gsap } from "gsap";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
-		
+
 		<!-- Structured data -->
 		<script type="application/ld+json">
 			{
@@ -54,12 +55,10 @@ import { gsap } from "gsap";
 				],
 				"sameAs": ["https://www.facebook.com/kaerkaffebar", "https://www.instagram.com/kaerkaffebar/"]
 			}
-			</script>
+		</script>
 	</head>
-	<body class="bg-primary text-primary">
-		<SecondaryButton>Arrangement</SecondaryButton>
-		<PrimaryButton showArrow={false} >Book Bord</PrimaryButton>
-		<PrimaryButton showArrow={true} >Book Bord</PrimaryButton>
+	<body class="bg-primary">
+		<Header/>
 		<slot />
 	</body>
 </html>
