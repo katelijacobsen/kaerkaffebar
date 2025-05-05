@@ -53,8 +53,8 @@ import SecondaryButton from "./SecondaryButton.astro";
       style="display: none; overflow: hidden; height: 0; width: 0;"
       class="absolute right-0 top-[6em] bg-primary p-burger-menu border-faded-highlight border-2 rounded-large m-default"
     >
-      <ul class="flex flex-col items-center gap-default font-bold pt-large">
-        <li class="menu-item opacity-0 invisible pb-default" style="display: none;">
+      <ul class="flex flex-col items-center gap-default font-bold">
+        <li class="menu-item opacity-0 invisible pb-default pt-default" style="display: none;">
           <SecondaryButton>Menu</SecondaryButton>
         </li>
         <li class="menu-item opacity-0 invisible pb-default" style="display: none;">
@@ -88,11 +88,11 @@ import SecondaryButton from "./SecondaryButton.astro";
       { scale: 0.95, opacity: 0 },
       {
         scale: 1,
-        width: "360px",
-        height: "300px",
+        width: "90%",
+        height: "243px",
         opacity: 1,
-        duration: 0.4,
-        ease: "power2.out",
+        duration: 0.8,
+        ease: "power4.inOut",
         onComplete: () => {
           // For each
           const menuItems = mobileMenu.querySelectorAll(".menu-item");
@@ -109,7 +109,7 @@ import SecondaryButton from "./SecondaryButton.astro";
               duration: 0.2,
               stagger: 0.2,
               delay: 0.1,
-              ease: "power2.out",
+              ease: "power2.in",
             }
           );
           gsap.to(".menu-item", {
