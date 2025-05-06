@@ -1,0 +1,37 @@
+---
+import Icon from "../assets/icons/arrow.svg";
+
+const {
+  showArrow = true,
+  variant = "primary",
+  ariaLabel = "Knap", // fallback hvis man glemmer at sætte det
+  url = "",
+} = Astro.props;
+
+// Variant-baserede klasser
+function getVariantClasses(variant: "primary" | "secondary" | "tertiary" | "disabled"): string {
+  const base = "group flex-wrap p-button rounded-full flex items-center gap-medium transition-colors duration-400 ease-in-out";
+
+  const variants = {
+    primary: "bg-accent text-button text-primary p-button font-button-text hover:bg-accent-hover",
+    secondary: "bg-transparent text-accent text-button p-button border border-accent hover:border-accent-hover hover:text-accent-hover",
+    tertiary: "bg-accent text-button text-primary p-button font-button-text hover:bg-accent-hover",
+    disabled: "bg-disabled text-button text-primary p-button font-button-text",
+  };
+
+  return `${base} ${variants[variant] || variants.primary}`;
+}
+---
+
+<a href={url}>
+  <button class={getVariantClasses(variant)} type="button" aria-label={ariaLabel} role="button">
+    <slot />
+    {
+      variant === "primary" && showArrow && (
+        <span class="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] group-hover:-translate-y-1 group-hover:translate-x-1">
+          <Icon width="20" height="20" />
+        </span>
+      )
+    }
+  </button>
+</a>

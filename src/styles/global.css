@@ -1,81 +1,86 @@
-@import url('https://use.typekit.net/auz0iym.css');
+@import url("https://use.typekit.net/auz0iym.css");
 @import "tailwindcss";
 
-
 @font-face {
-    font-family: Babe Sans;
-    font-style: normal;
-    font-weight: 200 700;
-    src: url("/fonts/BabeSansRegular.woff2") format("woff2");
+  font-family: Babe Sans;
+  font-style: normal;
+  font-weight: 200 700;
+  src: url("/fonts/BabeSansRegular.woff2") format("woff2");
 }
 
 @theme {
-    /*Colorpalette*/
-    --color-primary: #FCF7F4;
-    --color-secondary: #C32628;
-    --color-accent: #5F773F;
-    --color-accent-hover:#4B602E;
-    --color-highlight: #FEFBF8;
-    --color-bright-bg: #300D0C;
-    --color-faded-highlight: #300D0C4D;
+  /*Colorpalette*/
+  --color-primary: #fcf7f4;
+  --color-secondary: #c32628;
+  --color-accent: #5f773f;
+  --color-disabled: #6a6a6a;
+  --color-accent-hover: #4b602e;
+  --color-highlight: #fefbf8;
+  --color-bright-bg: #300d0c;
+  --color-faded-highlight: #300d0c4d;
+  --color-text: #300d0c;
 
-    /*Font*/
-    --font-body-text: 'Mr Eaves Mod OT', sans-serif;
-    --font-button-text: 'Mr Eaves Mod OT', sans-serif;
-    --font-header: 'Babe Sans', sans-serif;
-    --font-label: 'Mr Eaves Mod OT', sans-serif;
+  /*Font*/
+  --font-body-text: "Mr Eaves Mod OT", sans-serif;
+  --font-button-text: "Mr Eaves Mod OT", sans-serif;
+  --font-header: "Babe Sans", sans-serif;
+  --font-label: "Mr Eaves Mod OT", sans-serif;
 
-    /* Font Sizes */
-    --text-header-1: clamp(2.5rem, 1.75rem + 3.5vw, 4.25rem);
-    --text-header-2: clamp(2.25rem, 1.5rem + 2.5vw, 3rem);
-    --text-header-3: clamp(1.25rem, 0.875rem + 1.25vw, 2.125rem);
-    --text-paragraph: clamp(1.125rem, 1.0625rem + 0.25vw, 1.25rem);
-    --text-button: clamp(1.125rem, 1.25rem + 0.3vw, 1.375rem);
-    --text-label: clamp(1.125rem, 1.0625rem + 0.25vw, 1.25rem);
-    
-    /* Line Heights */
-    --leading-height-header-1: 3.375rem;
-    --leading-height-header-3: 1.25rem; 
-    --leading-height-tag: 1.25rem; 
-    --leading-height-paragraph: 1.5rem;
-    
-    /*General*/
-    --spacing-button: var(--spacing-medium, 0.5rem) var(--spacing-default, 1rem);
-    --spacing-default: 1rem;
-    --spacing-small: 4px;
-    --spacing-medium: 8px;
-    --spacing-large: 32px;
-    --spacing-extra-large: 40px;
-    --spacing-negative: 64px;
-    --spacing-margin: view(clamp(16px, 16px + 6.75vw, 124px));
-    --spacing-card-top: view(clamp(150px, 148px + 0.1vw, 148px));
-    --spacing-section: view(clamp(64px, 64px + 10vw, 224px));
-    --spacing-burger-menu: var(--spacing-default) var(--spacing-large);
+  /* Font Sizes */
+  --text-header-1: clamp(2.5rem, 1.75rem + 3.5vw, 4.25rem);
+  --text-header-2: clamp(2.25rem, 1.5rem + 2.5vw, 3rem);
+  --text-header-3: clamp(1.25rem, 0.875rem + 1.25vw, 2.125rem);
+  --text-paragraph: clamp(1.125rem, 1.0625rem + 0.25vw, 1.25rem);
+  --text-button: clamp(1.125rem, 1.25rem + 0.3vw, 1.375rem);
+  --text-label: clamp(1.125rem, 1.0625rem + 0.25vw, 1.25rem);
 
-    /*Border Radius*/
-    --radius-default: var(--spacing-default);
-    --radius-small: var(--spacing-small);
-    --radius-default: var(--spacing-default);
-    --radius-medium: clamp(4px, 4px + 0.5vw, 8px);
-    --radius-large: clamp(8px, 8px + 0.5vw, 16px);
-    --radius-xl: clamp(16px, 16px + 1vw, 32px);
+  /* Line Heights */
+  --leading-height-header-1: 3.375rem;
+  --leading-height-header-3: 1.25rem;
+  --leading-height-tag: 1.25rem;
+  --leading-height-paragraph: 1.5rem;
 
-    /*Cards*/
-    --spacing-card: var(--spacing-default) var(--spacing-default) var(--spacing-large) var(--spacing-default);
+  /*General*/
+  --spacing-button: var(--spacing-medium, 0.5rem) var(--spacing-default, 1rem);
+  --spacing-default: 1rem;
+  --spacing-small: 4px;
+  --spacing-medium: 8px;
+  --spacing-large: 32px;
+  --spacing-extra-large: 40px;
+  --spacing-negative: 64px;
+  --spacing-margin: view(clamp(16px, 16px + 6.75vw, 124px));
+  --spacing-card-top: view(clamp(150px, 148px + 0.1vw, 148px));
+  --spacing-section: view(clamp(64px, 64px + 10vw, 224px));
+  --spacing-burger-menu: var(--spacing-default) var(--spacing-large);
 
-    /*Shadows*/
-    --shadow-pink: 0px 52px 15px 0px rgba(201, 151, 152, 0.00), 0px 33px 13px 0px rgba(201, 151, 152, 0.01), 0px 19px 11px 0px rgba(201, 151, 152, 0.05), 0px 8px 8px 0px rgba(201, 151, 152, 0.09), 0px 2px 5px 0px rgba(201, 151, 152, 0.10);
-  }
+  /*Border Radius*/
+  --radius-default: var(--spacing-default);
+  --radius-small: var(--spacing-small);
+  --radius-default: var(--spacing-default);
+  --radius-medium: clamp(4px, 4px + 0.5vw, 8px);
+  --radius-large: clamp(8px, 8px + 0.5vw, 16px);
+  --radius-xl: clamp(16px, 16px + 1vw, 32px);
 
-h1, h2, h3 {
-    font-family: var(--font-header), sans-serif;
+  /*Cards*/
+  --spacing-card: var(--spacing-default) var(--spacing-default) var(--spacing-large) var(--spacing-default);
+
+  /*Shadows*/
+  --shadow-pink: 0px 52px 15px 0px rgba(201, 151, 152, 0), 0px 33px 13px 0px rgba(201, 151, 152, 0.01), 0px 19px 11px 0px rgba(201, 151, 152, 0.05), 0px 8px 8px 0px rgba(201, 151, 152, 0.09), 0px 2px 5px 0px rgba(201, 151, 152, 0.1);
 }
 
-p, label, li {
-    font-family: var(--font-body-text), sans-serif;
-    line-height: var(--leading-height-paragraph);
+h1,
+h2,
+h3 {
+  font-family: var(--font-header), sans-serif;
+}
+
+p,
+label,
+li {
+  font-family: var(--font-body-text), sans-serif;
+  line-height: var(--leading-height-paragraph);
 }
 
 .pin-skadow {
-    box-shadow: 0px 52px 15px 0px rgba(201, 151, 152, 0.00), 0px 33px 13px 0px rgba(201, 151, 152, 0.01), 0px 19px 11px 0px rgba(201, 151, 152, 0.05), 0px 8px 8px 0px rgba(201, 151, 152, 0.09), 0px 2px 5px 0px rgba(201, 151, 152, 0.10);
+  box-shadow: 0px 52px 15px 0px rgba(201, 151, 152, 0), 0px 33px 13px 0px rgba(201, 151, 152, 0.01), 0px 19px 11px 0px rgba(201, 151, 152, 0.05), 0px 8px 8px 0px rgba(201, 151, 152, 0.09), 0px 2px 5px 0px rgba(201, 151, 152, 0.1);
 }

@@ -1,12 +1,10 @@
 ---
 import Logo from "../assets/img/kaer-logo.png";
 import PrimaryButton from "./PrimaryButton.astro";
-import SecondaryButton from "./SecondaryButton.astro";
+import AnchorLink from "./AnchorLink.astro";
 ---
 
-<header
-  class="bg-primary text-bright-bg p-default sticky top-0 z-50 shadow-pink m-default rounded-large"
->
+<header class="bg-primary text-bright-bg p-default sticky top-0 z-50 shadow-pink m-default rounded-large">
   <div class="w-full">
     <div class="flex flex-wrap justify-between items-center">
       <!-- Logo -->
@@ -15,11 +13,11 @@ import SecondaryButton from "./SecondaryButton.astro";
       <!-- Desktop Navigation -->
       <nav class="hidden lg:block">
         <ul class="flex items-center gap-large font-bold">
-          <li><SecondaryButton>Menu</SecondaryButton></li>
+          <li><AnchorLink>Menu</AnchorLink></li>
           <li>
-            <SecondaryButton>Hold dit arrangement og events</SecondaryButton>
+            <AnchorLink>Hold dit arrangement og events</AnchorLink>
           </li>
-          <li><SecondaryButton>Kær Løbeklub</SecondaryButton></li>
+          <li><AnchorLink>Kær Løbeklub</AnchorLink></li>
           <li class="ml-large"><PrimaryButton>Book Bord</PrimaryButton></li>
           <li class="text-sm">DK / EN</li>
         </ul>
@@ -28,52 +26,25 @@ import SecondaryButton from "./SecondaryButton.astro";
       <!-- Mobile Navigation Controls -->
       <div class="flex items-center gap-2 lg:hidden">
         <PrimaryButton>Book Bord</PrimaryButton>
-        <button
-          id="mobile-menu-button"
-          class="p-2 focus:outline-none"
-          aria-label="Toggle menu"
-        >
-          <svg
-            class="w-10 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"></path>
+        <button id="mobile-menu-button" class="p-2 focus:outline-none" aria-label="Toggle menu">
+          <svg class="w-10 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
       </div>
     </div>
 
     <!-- Mobile Menu Dropdown -->
-    <nav
-      id="mobile-menu"
-      style="display: none; overflow: hidden; height: 0; width: 0;"
-      class="absolute right-0 top-[6em] bg-primary p-burger-menu border-faded-highlight border-2 rounded-large m-default"
-    >
+    <nav id="mobile-menu" style="display: none; overflow: hidden; height: 0; width: 0;" class="absolute right-0 top-[6em] bg-primary p-burger-menu border-faded-highlight border-2 rounded-large m-default">
       <ul class="flex flex-col items-center gap-default font-bold">
-        <li
-          class="menu-item opacity-0 invisible pb-default pt-default"
-          style="display: none;"
-        >
-          <SecondaryButton>Menu</SecondaryButton>
+        <li class="menu-item opacity-0 invisible pb-default pt-default" style="display: none;">
+          <AnchorLink>Menu</AnchorLink>
         </li>
-        <li
-          class="menu-item opacity-0 invisible pb-default"
-          style="display: none;"
-        >
-          <SecondaryButton>Hold dit <br /> arrangement og event</SecondaryButton
-          >
+        <li class="menu-item opacity-0 invisible pb-default" style="display: none;">
+          <AnchorLink>Hold dit <br /> arrangement og event</AnchorLink>
         </li>
-        <li
-          class="menu-item opacity-0 invisible pb-default"
-          style="display: none;"
-        >
-          <SecondaryButton>Kær Løbeklub</SecondaryButton>
+        <li class="menu-item opacity-0 invisible pb-default" style="display: none;">
+          <AnchorLink>Kær Løbeklub</AnchorLink>
         </li>
       </ul>
     </nav>
@@ -167,11 +138,7 @@ import SecondaryButton from "./SecondaryButton.astro";
   });
 
   document.addEventListener("click", (event) => {
-    if (
-      isOpen &&
-      !menuButton.contains(event.target) &&
-      !mobileMenu.contains(event.target)
-    ) {
+    if (isOpen && !menuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
       closeMenu();
     }
   });
