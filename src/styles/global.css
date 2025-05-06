@@ -36,6 +36,7 @@
 
   /* Line Heights */
   --leading-height-header-1: 3.375rem;
+  --leading-height-header-2: 2.688rem;
   --leading-height-header-3: 1.25rem;
   --leading-height-tag: 1.25rem;
   --leading-height-paragraph: 1.5rem;
@@ -72,8 +73,18 @@ h1 {
   font-family: var(--font-header), sans-serif;
 }
 
-h2,
-h3,
+h2 {
+  font-size: var(--text-header-2);
+  font-family: var(--font-body-text), sans-serif;
+  line-height: var(--leading-height-header-2);
+}
+
+h3 {
+  font-size: var(--text-header-3);
+  font-family: var(--font-body-text), sans-serif;
+  line-height: var(--leading-height-header-3);
+}
+
 p,
 label,
 li {

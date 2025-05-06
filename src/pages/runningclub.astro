@@ -1,6 +1,10 @@
 ---
 import "../styles/global.css";
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
 import Accordion from "../components/Accordion.astro";
+import RunningClubCard from "../components/RunningClubCard.astro";
+import RunningImage from "../assets/img/running-img.webp";
 
 const faqItems = [
   { question: "Hvor mødes vi?", answer: "Vi mødes ved Kær Kaffebar, Valby Lannggade 86C, 2500 Valby." },
@@ -9,7 +13,31 @@ const faqItems = [
 ];
 ---
 
-<div class="grid justify-items-center" style="padding: var(--spacing-default);">
-  <h1 class="font-header text-header-1">FAQ</h1>
-  <Accordion items={faqItems} />
-</div>
+<Layout title="Kær løbeklub">
+  <main class="grid gap-negative mb-negative">
+    <section class="pl-default pr-default">
+      <div>
+        <h1 class="text-header-1 font-header text-text">Kær løbeklub</h1>
+        <h3 class="text-text text-header-3">Kær Klubben’s løbeklub i Valby har <strong>fokus på det sociale og på at samle lokalsamfundet</strong>, samtidig med at vi bevæger os. <strong>Ruten i søndermarken er 2,5 km, så alle kan være med.</strong>  Er man hurtig, kan man nå den 2 gange!</h3>
+      </div>
+    </section>
+    <section class="pl-default pr-default">
+      <div class="grid gap-default">
+        <h2 class="text-text text-header-2">Kommende ture</h2>
+        <RunningClubCard />
+        <RunningClubCard />
+        <p class="text-text"><strong>OBS: ved afmeldning skriv til nummeret: 81610900 mindst 24 timer inden.</strong></p>
+      </div>
+      <div class="grid justify-items-center" style="padding: var(--spacing-default);">
+        <h1 class="font-header text-header-1">FAQ</h1>
+        <Accordion items={faqItems} />
+      </div>
+    </section>
+    <section class="grid gap-large pl-default pr-default">
+      <div class="h-[140px] overflow-hidden rounded-full">
+        <Image src={RunningImage} alt="løbe billede" class="object-cover w-full h-full object-bottom" />
+      </div>
+      <h2 class="text-accent text-header-2 leading-header-2">Hos Kær Kaffebar handler det ikke kun om tempo, men om fællesskab og lokale bånd.</h2>
+    </section>
+  </main>
+</Layout>
