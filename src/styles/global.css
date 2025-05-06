@@ -49,8 +49,8 @@
   --spacing-large: 32px;
   --spacing-extra-large: 40px;
   --spacing-negative: 64px;
-  --spacing-margin: view(clamp(16px, 16px + 6.75vw, 124px));
-  --spacing-card-top: view(clamp(150px, 148px + 0.1vw, 148px));
+  --spacing-margin: 0 clamp(1rem, -3.75rem + 15vw, 12.75rem);
+  --spacing-card: view(clamp(150px, 148px + 0.1vw, 148px));
   --spacing-section: view(clamp(64px, 64px + 10vw, 224px));
   --spacing-burger-menu: var(--spacing-default) var(--spacing-large);
 
@@ -91,6 +91,14 @@ li {
   font-family: var(--font-body-text), sans-serif;
   line-height: var(--leading-height-paragraph);
 }
+
+fieldset {
+
+  font-family: var(--font-body-text), sans-serif;
+  font-size: var(--text-header-3);
+
+}
+
 
 .pin-skadow {
   box-shadow: 0px 52px 15px 0px rgba(201, 151, 152, 0), 0px 33px 13px 0px rgba(201, 151, 152, 0.01), 0px 19px 11px 0px rgba(201, 151, 152, 0.05), 0px 8px 8px 0px rgba(201, 151, 152, 0.09), 0px 2px 5px 0px rgba(201, 151, 152, 0.1);

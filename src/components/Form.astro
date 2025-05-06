@@ -1,2 +1,102 @@
 ---
+import Milk from "../assets/icons/milk.svg";
+import Button from "./Button.astro";
+import Checkbox from "./Checkbox.astro";
+import RadioButton from "./RadioButton.astro";
 ---
+<section>
+<h3>Udfyld formular og send forespørgelse</h3>
+    <form method="POST">
+        <label class="flex flex-col mb-smal font-bold">
+            Fulde Navn
+            <input
+            required
+            type="text"
+            name="name"
+            required
+            class="border border-bright-bg rounded-sm p-2 bg-white"
+            placeholder="Fulde Navn"
+            />
+        </label>
+        <label class="flex flex-col mb-smal font-bold">
+            Email
+            <input
+            required
+            type="email"
+            name="email"
+            required
+            class="border border-bright-bg rounded-sm p-2 bg-white"
+            placeholder="Fulde Navn"
+            />
+        </label>
+        <label class="flex flex-col mb-smal font-bold">
+            Phone Number
+            <input
+            required
+            type="tel"
+            name="phone-number"
+            required
+            class="border border-bright-bg rounded-sm p-2 bg-white"
+            placeholder="Fulde Navn"
+            />
+        </label>
+        <fieldset>
+            <legend>Anledning</legend>
+            <RadioButton Occasion="Arrangement" />
+            <RadioButton Occasion="Catering" />
+            <RadioButton Occasion="Event" />
+            <RadioButton Occasion="Kage og bestilling" />
+        </fieldset>
+        <div class="flex flex-col">
+            <label class="inline-flex flex-col mb-smal font-bold">
+                Tid
+                <input
+                type="time"
+                id="time"
+                name="time"
+                min="10:00"
+                max="16:00"
+                class="border border-bright-bg rounded-sm p-2 bg-white"
+                required
+                />
+            </label>
+            <label class="inline-flex flex-col mb-smal font-bold">
+                Dato
+                <input
+                type="date"
+                id="date"
+                name="date"
+                min="10:00"
+                max="16:00"
+                class="border border-bright-bg rounded-sm p-2 bg-white"
+                required
+                />
+            </label>
+        </div>
+        <fieldset
+        class="flex flex-wrap items-end gap-default self-stretch content-end"
+        >
+        <legend class="mb-smal">Allergier og ønsker til menuen</legend>
+        <Checkbox Diet="Laktose" Icon={Milk} />
+        <Checkbox Diet="Gluten" Icon={Milk} />
+        <Checkbox Diet="Nødder" Icon={Milk} />
+        <Checkbox Diet="Fisk" Icon={Milk} />
+        <Checkbox Diet="Vegetarisk" Icon={Milk} />
+        <Checkbox Diet="Vegansk" Icon={Milk} />
+    </fieldset>
+    <fieldset class="flex flex-col mb-smal font-bold">
+        <legend>Kommentar</legend>
+        <textarea
+        name="comment"
+        rows="4"
+        cols="40"
+        class="border border-bright-bg rounded-sm p-2 bg-white"
+        placeholder="Skriv dine kommentarer her..."></textarea>
+        <p>
+            Obs: Hvis du har nogen spørgsmål eller bekymringer <br /> så kontakt os på
+            81 61 09 00
+        </p>
+    </fieldset>
+    <Button showArrow={false}>Send</Button>
+</form>
+</section>

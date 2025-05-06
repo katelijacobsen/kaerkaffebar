@@ -22,16 +22,18 @@ function getVariantClasses(variant: "primary" | "secondary" | "tertiary" | "disa
   return `${base} ${variants[variant] || variants.primary}`;
 }
 ---
+<div>
 
-<a href={url}>
-  <button class={getVariantClasses(variant)} type="button" aria-label={ariaLabel} role="button">
-    <slot />
-    {
-      variant === "primary" && showArrow && (
-        <span class="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] group-hover:-translate-y-1 group-hover:translate-x-1">
+  <a href={url}>
+    <button class={getVariantClasses(variant)} type="button" aria-label={ariaLabel} role="button">
+      <slot />
+      {
+        variant === "primary" && showArrow && (
+          <span class="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] group-hover:-translate-y-1 group-hover:translate-x-1">
           <Icon width="20" height="20" />
         </span>
       )
     }
   </button>
 </a>
+</div>

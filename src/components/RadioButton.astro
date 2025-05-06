@@ -1,3 +1,14 @@
 ---
+const { Occasion } = Astro.props;
+const id = `radio-${Occasion}`;
 ---
 
+<div>
+    <input type="radio" id={Occasion} name="choice" value={Occasion} class="w-[1rem] h-[1rem] accent-bright-bg text-highlight bg-white border-4 border-highlight focus:ring-highlight cursor-pointer"/>
+    <label
+        for={Occasion}
+        class=""
+    >
+        {Occasion}
+    </label>
+</div>
