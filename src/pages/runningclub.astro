@@ -1,0 +1,15 @@
+---
+import "../styles/global.css";
+import Accordion from "../components/Accordion.astro";
+
+const faqItems = [
+  { question: "Hvor mødes vi?", answer: "Vi mødes ved Kær Kaffebar, Valby Lannggade 86C, 2500 Valby." },
+  { question: "Hvad gør jeg, hvis jeg ikke kan komme alligevel?", answer: "Hvis du efter tilmelding finder ud af, at du ikke kan komme alligevel, så skriv til nummeret: 81610900 mindst 24 timer inden, så vi ved, hvor mange vi skal regne med." },
+  { question: "Får man gratis kaffe?", answer: "Nej vi giver desværre ikke gratis kaffe, men vi giver et ingefærshot og super hyggelig stemning. Kaffebaren er selvfølgelig åben, så man er mere end velkommen til at nyde mad eller drikkevarer udenfor ved vores café borde eller inden i vores hyggelig lokale." },
+];
+---
+
+<div>
+  <h1 class="font-header text-header-1">FAQ</h1>
+  <Accordion items={faqItems} />
+</div>
