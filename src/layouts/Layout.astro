@@ -5,7 +5,9 @@ import Header from "../components/Header.astro";
 import "../styles/global.css";
 import { gsap } from "gsap";
 import Footer from "../components/Footer.astro";
+import Checkbox from "../components/Checkbox.astro";
 const { title } = Astro.props;
+import Milk from "../assets/icons/milk.svg";
 ---
 
 <script>
@@ -59,6 +61,7 @@ const { title } = Astro.props;
   </head>
   <body class="bg-primary">
     <Header />
+    <Checkbox Diet="Laktose" Icon={Milk} />
     <slot />
     <Footer />
   </body>

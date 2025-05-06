@@ -1,0 +1,12 @@
+---
+const { Diet, Icon } = Astro.props;
+---
+
+<input type="checkbox" id="diet" class="hidden peer" />
+<label
+  for="diet"
+  class="inline-flex items-center gap-2 px-4 py-1 border border-accent bg-primary rounded-full cursor-pointer text-accent peer-checked:text-primary peer-checked:bg-accent"
+>
+  {Icon && <Icon width={12} height={12} fill="currentColor" />}
+  <span>{Diet}</span>
+</label>
