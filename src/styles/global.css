@@ -19,7 +19,8 @@
   --color-highlight: #fefbf8;
   --color-bright-bg: #300d0c;
   --color-faded-highlight: #300d0c4d;
-  --color-text: #300d0c;
+  --color-neutral-1: #300d0c;
+  --color-neutral-blue: #BBD5EF ;
 
   /*Font*/
   --font-body-text: "Mr Eaves Mod OT", sans-serif;

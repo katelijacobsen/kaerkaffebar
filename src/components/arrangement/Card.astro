@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import PrimaryButton from "../PrimaryButton.astro";
+
+const {
+  title,
+  subtitle,
+  description,
+  image,
+  bgColor,
+  border,
+  borderColor,
+  fontColor,
+  imagePosition,
+  imageOpacity,
+  imageSize,
+} = Astro.props;
+---
+
+<article
+  class={`relative ${bgColor} ${border} ${borderColor} ${fontColor} p-card rounded-md gap-large inline-flex flex-col overflow-hidden`}
+>
+  <div
+    class={`absolute z-0 opacity-[40%] ${imagePosition} ${imageOpacity} ${imageSize}`}
+  >
+    <Image
+      src={image}
+      alt="white colored illustration with outlined flowing teapot with three teacups"
+      class="w-[50%] h-[50%] object-fit"
+      width={512}
+      height={200}
+      loading="lazy"
+    />
+  </div>
+
+  <div class="relative z-10 text-left flex flex-col gap-default">
+    <h2>{title}</h2>
+    <h3>{subtitle}</h3>
+    <p>{description}</p>
+  </div>
+  <div class="relative z-10 flex justify-center">
+    <PrimaryButton type="button">Læs mere</PrimaryButton>
+  </div>
+</article>

@@ -7,8 +7,8 @@ const { headline, price, showLeaf = true, variant = "primary" } = Astro.props;
 // Variant-baserede klasser
 function getVariants(variant: "primary" | "secondary"): string {
   const variants = {
-    primary: "text-text text-header-3 font-body-text",
-    secondary: "text-text text-header-3 font-body-text",
+    primary: "text-neutral-1 text-header-3 font-body-text",
+    secondary: "text-neutral-1 text-header-3 font-body-text",
   };
 
   return variants[variant] || variants.primary;

@@ -9,13 +9,13 @@ import MinusIcon from "../assets/icons/minus-icon.svg";
     items.map((item, index) => (
       <li class="w-full my-3" data-index={index}>
         <button type="button" class="accordion-toggle flex items-center text-left justify-between w-full border-b-1 border-text py-2">
-          <h3 class="text-text text-header-3">{item.question}</h3>
+          <h3 class="text-neutral-1 text-header-3">{item.question}</h3>
           <span class="icon text-white text-2xl pr-2">
             <PlusIcon />
           </span>
         </button>
         <div class="accordion-content max-h-0 overflow-hidden pt-1 transition-all duration-300 ease-in-out">
-          <p class="text-base md:text-lg text-text">{item.answer}</p>
+          <p class="text-base md:text-lg text-neutral-1">{item.answer}</p>
         </div>
       </li>
     ))

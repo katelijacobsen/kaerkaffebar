@@ -31,6 +31,6 @@ export const POST: APIRoute = async ({ request, redirect }) => {
   }
   // Retur hvis forespørgsel er sendt korrekt
   //return new Response(JSON.stringify({ message: "success" }), { status: 200 });
-  // Bruger query string til at sende success tilbage til arrangement siden
+  // Bruger query string til at sende success tilbage til arrangement siden. Hvis brugeren trykker på send uden errors ville url'en vise true
   return redirect("/arrangement?requestSend=true");
 };
