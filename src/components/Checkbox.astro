@@ -4,10 +4,10 @@ const id = `checkbox-${Diet}`;
 ---
 
 <div>
-  <input type="checkbox" id={id} class="hidden peer" />
+  <input name="diet" type="checkbox" id={id} class="hidden peer" value={Diet} />
   <label
     for={id}
-    class="inline-flex items-center gap-2 px-4 py-1 border border-accent bg-white rounded-full cursor-pointer text-accent peer-checked:text-primary peer-checked:bg-accent"
+    class="inline-flex items-center gap-2 p-button border-2 border-accent bg-white rounded-full cursor-pointer text-accent peer-checked:text-primary peer-checked:bg-accent"
   >
     {Icon && <Icon width={12} height={12} fill="currentColor" />}
     <span>{Diet}</span>
