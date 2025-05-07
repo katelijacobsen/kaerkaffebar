@@ -10,7 +10,7 @@ const {
 
 // Variant-baserede klasser
 function getVariantClasses(variant: "primary" | "secondary" | "tertiary" | "disabled"): string {
-  const base = "group flex-wrap p-button rounded-full flex items-center gap-medium transition-colors duration-400 ease-in-out";
+  const base = "group flex-wrap p-button w-full sm:w-fit justify-center rounded-full flex items-center gap-medium transition-colors duration-400 ease-in-out";
 
   const variants = {
     primary: "bg-accent text-button text-primary p-button font-button-text hover:bg-accent-hover",
@@ -22,18 +22,18 @@ function getVariantClasses(variant: "primary" | "secondary" | "tertiary" | "disa
   return `${base} ${variants[variant] || variants.primary}`;
 }
 ---
-<div>
 
+<div>
   <a href={url}>
     <button class={getVariantClasses(variant)} type="button" aria-label={ariaLabel} role="button">
       <slot />
       {
         variant === "primary" && showArrow && (
           <span class="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] group-hover:-translate-y-1 group-hover:translate-x-1">
-          <Icon width="20" height="20" />
-        </span>
-      )
-    }
-  </button>
-</a>
+            <Icon width="20" height="20" />
+          </span>
+        )
+      }
+    </button>
+  </a>
 </div>
