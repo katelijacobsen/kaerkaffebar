@@ -1,14 +1,14 @@
 ---
 
 
-import Milk from "../assets/icons/milk.svg";
-import Gluten from "../assets/icons/gluten-icon.svg";
-import Nuts from "../assets/icons/nuts-icon.svg";
-import Fish from "../assets/icons/fish-icon.svg";
-import Vegetarian from "../assets/icons/vegetarian-icon.svg";
-import Vegan from "../assets/icons/vegan-icon.svg";
+import Milk from "../../assets/icons/milk.svg";
+import Gluten from "../../assets/icons/gluten-icon.svg";
+import Nuts from "../../assets/icons/nuts-icon.svg";
+import Fish from "../../assets/icons/fish-icon.svg";
+import Vegetarian from "../../assets/icons/vegetarian-icon.svg";
+import Vegan from "../../assets/icons/vegan-icon.svg";
 import Checkbox from "./Checkbox.astro";
-import PrimaryButton from "./PrimaryButton.astro";
+import PrimaryButton from "../PrimaryButton.astro";
 import RadioButton from "./RadioButton.astro";
 
 
@@ -118,5 +118,6 @@ const requestSuccess = Astro.url.searchParams.get('requestSend') || false;
       </p>
     </fieldset>
     <PrimaryButton type="submit" showArrow={false}> Send </PrimaryButton>
+    
   </form>
 </section>
