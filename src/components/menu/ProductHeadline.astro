@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import SeasonLeaf from "../../assets/icons/season-leaf.svg";
+
+const { headline, price, showLeaf = true, variant = "primary" } = Astro.props;
+
+// Variant-baserede klasser
+function getVariants(variant: "primary" | "secondary"): string {
+  const variants = {
+    primary: "text-text text-header-3 font-body-text",
+    secondary: "text-text text-header-3 font-body-text",
+  };
+
+  return variants[variant] || variants.primary;
+}
+---
+
+<p class=`${getVariants(variant)} flex items-center`>
+  <strong>{headline}</strong>
+  <strong class="ml-2">{price}</strong>
+  {
+    variant === "secondary" && showLeaf && (
+      <span class="inline-block ml-2 align-middle">
+        <SeasonLeaf width="20" height="20" />
+      </span>
+    )
+  }
+</p>

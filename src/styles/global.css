@@ -12,6 +12,7 @@
   /*Colorpalette*/
   --color-primary: #fcf7f4;
   --color-secondary: #c32628;
+  --color-tertiary: #f2d5d6;
   --color-accent: #5f773f;
   --color-disabled: #6a6a6a;
   --color-accent-hover: #4b602e;
@@ -69,6 +70,10 @@
   --shadow-pink: 0px 52px 15px 0px rgba(201, 151, 152, 0), 0px 33px 13px 0px rgba(201, 151, 152, 0.01), 0px 19px 11px 0px rgba(201, 151, 152, 0.05), 0px 8px 8px 0px rgba(201, 151, 152, 0.09), 0px 2px 5px 0px rgba(201, 151, 152, 0.1);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1 {
   font-family: var(--font-header), sans-serif;
 }
@@ -93,12 +98,9 @@ li {
 }
 
 fieldset {
-
   font-family: var(--font-body-text), sans-serif;
   font-size: var(--text-header-3);
-
 }
-
 
 .pin-skadow {
   box-shadow: 0px 52px 15px 0px rgba(201, 151, 152, 0), 0px 33px 13px 0px rgba(201, 151, 152, 0.01), 0px 19px 11px 0px rgba(201, 151, 152, 0.05), 0px 8px 8px 0px rgba(201, 151, 152, 0.09), 0px 2px 5px 0px rgba(201, 151, 152, 0.1);

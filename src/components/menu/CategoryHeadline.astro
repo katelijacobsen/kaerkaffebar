@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+
+const { headline, illustration: Illustration, showIllustration = true, alt } = Astro.props;
+---
+
+<h2 class="text-text text-header-2 font-body-text grid justify-center">
+  {
+    showIllustration && Illustration && (
+      <span class="grid justify-center">
+        <Image src={Illustration} width={70} height={70} alt={alt} />
+      </span>
+    )
+  }
+  {headline}
+</h2>
