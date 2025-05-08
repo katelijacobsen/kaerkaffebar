@@ -18,7 +18,7 @@ const {
 ---
 
 <article
-  class={`relative ${bgColor} ${border} ${borderColor} ${fontColor} p-card rounded-md gap-large inline-flex flex-col overflow-hidden`}
+  class={`relative ${bgColor} ${border} ${borderColor} ${fontColor} p-card rounded-md gap-large inline-flex flex-col overflow-hidden `}
 >
   <div
     class={`absolute z-0 opacity-[40%] ${imagePosition} ${imageOpacity} ${imageSize}`}
@@ -33,8 +33,8 @@ const {
     />
   </div>
 
-  <div class="relative z-10 text-left flex flex-col gap-default">
-    <h2>{title}</h2>
+  <div class="relative z-10 text-left flex flex-col gap-default me-16 ">
+    <h2 class="font-header">{title}</h2>
     <h3>{subtitle}</h3>
     <p>{description}</p>
   </div>

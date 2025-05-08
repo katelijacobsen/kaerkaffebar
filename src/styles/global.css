@@ -81,13 +81,11 @@ h1 {
 
 h2 {
   font-size: var(--text-header-2);
-  font-family: var(--font-body-text), sans-serif;
-  line-height: var(--leading-height-header-2);
+  line-height: var(--leading-height-header-1);
 }
 
 h3 {
   font-size: var(--text-header-3);
-  font-family: var(--font-body-text), sans-serif;
   line-height: var(--leading-height-header-3);
 }
 
