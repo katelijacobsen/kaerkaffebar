@@ -9,7 +9,7 @@ const {
 } = Astro.props;
 
 // Variant-baserede klasser
-function getVariantClasses(variant: "primary" | "secondary" | "neutral-2" | "disabled"): string {
+function getVariantClasses(variant: "primary" | "secondary" | "neutral" | "disabled"): string {
   const base = "group flex-wrap p-button w-full sm:w-fit justify-center rounded-full flex items-center gap-medium transition-colors duration-400 ease-in-out";
 
   const variants = {
