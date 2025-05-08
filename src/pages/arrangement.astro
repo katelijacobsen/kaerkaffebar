@@ -4,22 +4,20 @@ export const prerender = false;
 import Layout from "../layouts/Layout.astro";
 import Form from "../components/arrangement/Form.astro";
 import Card from "../components/arrangement/Card.astro";
+import Picture from "astro/components/Picture.astro";
 
 //Billeder
 import Teapot from "../assets/illustrations/white/teapot-with-three-cups.webp";
 import Cutlery from "../assets/illustrations/white/bestik.avif";
 import Citroner from "../assets/illustrations/brown/citroner.avif";
 import Croissant from "../assets/illustrations/brown/croissant.avif";
-import Picture from "astro/components/Picture.astro";
-import Image from "astro/components/Image.astro";
-
 import PearAndBlueberries from "../assets/illustrations/blue/pear-and-blueberyy.avif";
 import smallCakes from "../assets/img/smallCakes.avif";
 ---
 
 <Layout>
   <main class="m-margin">
-    <article class="mb-section inline-flex flex-col lg:flex-row">
+    <article class="mb-section inline-flex flex-col lg:flex-row gap-large">
       <div>
         <h1 class="text-header-1">Arrangementer & events hos Kær Kaffebar</h1>
         <p>
