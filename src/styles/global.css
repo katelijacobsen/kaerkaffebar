@@ -11,6 +11,8 @@
 @theme {
   /*Colorpalette*/
   --color-primary: #fcf7f4;
+  --color-primary-2: #FEFBF8;
+  --color-primary-3: #ffffff;
   --color-secondary: #c32628;
   --color-accent: #5f773f;
   --color-accent-hover: #4b602e;
@@ -81,12 +83,10 @@ h1 {
 
 h2 {
   font-size: var(--text-header-2);
-  line-height: var(--leading-height-header-1);
 }
 
 h3 {
   font-size: var(--text-header-3);
-  line-height: var(--leading-height-header-3);
 }
 
 p,
@@ -98,7 +98,6 @@ li {
 
 fieldset {
   font-family: var(--font-body-text), sans-serif;
-  font-size: var(--text-header-3);
 }
 
 .pin-skadow {

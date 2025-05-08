@@ -16,7 +16,7 @@ import smallCakes from "../assets/img/smallCakes.avif";
 ---
 
 <Layout>
-  <main class="m-margin">
+  <main class="m-margin mb-section">
     <article class="mb-section inline-flex flex-col lg:flex-row gap-large">
       <div>
         <h1 class="text-header-1">Arrangementer & events hos Kær Kaffebar</h1>
@@ -35,7 +35,7 @@ import smallCakes from "../assets/img/smallCakes.avif";
         </bold>
       </div>
       <div class="flex flex-col gap-large">
-        <video muted loop autoplay class="rounded-full w-[100%] h-auto">
+        <video muted loop autoplay class="rounded-full w-[100%] lg:w-[80%] h-[50%]">
           <source
             src="../../public/video/arrangement-og-event-video.mp4"
             type="video/mp4"
@@ -46,14 +46,14 @@ import smallCakes from "../assets/img/smallCakes.avif";
           <Picture
             src={PearAndBlueberries}
             formats={["avif", "webp"]}
-            alt="A description of my image."
+            alt="Illustration of a pear and blueberries"
             width={200}
             height={200}
           />
           <Picture
             src={smallCakes}
             formats={["avif", "webp"]}
-            alt="A description of my image."
+            alt="Picture of small cakes"
             width={300}
             height={300}
           />
@@ -61,9 +61,9 @@ import smallCakes from "../assets/img/smallCakes.avif";
       </div>
     </article>
     <div
-      class="inline-flex flex-col lg:flex-row lg:items-start lg:gap-extra-large lg:justify-center"
+      class="flex flex-col lg:flex-row lg:items-start lg:gap-extra-large"
     >
-      <section class="inline-flex flex-wrap flex-col gap-extra-large">
+      <section class="lg:flex-1 flex flex-wrap flex-col gap-extra-large mb-section">
         <Card
           image={Teapot}
           imageSize="w-full h-auto"
@@ -109,7 +109,7 @@ import smallCakes from "../assets/img/smallCakes.avif";
           description="Bryllup, fødselsdage eller bare fordi - vi bager med smag og stil"
         />
       </section>
-      <section class="flex flex-grow flex-shrink-0 basis-0">
+      <section class="flex-1">
         <Form />
       </section>
     </div>
