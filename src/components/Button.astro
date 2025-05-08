@@ -9,13 +9,13 @@ const {
 } = Astro.props;
 
 // Variant-baserede klasser
-function getVariantClasses(variant: "primary" | "secondary" | "tertiary" | "disabled"): string {
+function getVariantClasses(variant: "primary" | "secondary" | "neutral-2" | "disabled"): string {
   const base = "group flex-wrap p-button w-full sm:w-fit justify-center rounded-full flex items-center gap-medium transition-colors duration-400 ease-in-out";
 
   const variants = {
     primary: "bg-accent text-button text-primary p-button font-button-text hover:bg-accent-hover",
     secondary: "bg-transparent text-accent text-button p-button border border-accent hover:border-accent-hover hover:text-accent-hover",
-    tertiary: "bg-accent text-button text-primary p-button font-button-text hover:bg-accent-hover",
+    neutral: "bg-accent text-button text-primary p-button font-button-text hover:bg-accent-hover",
     disabled: "bg-disabled text-button text-primary p-button font-button-text",
   };
 

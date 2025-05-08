@@ -12,15 +12,14 @@
   /*Colorpalette*/
   --color-primary: #fcf7f4;
   --color-secondary: #c32628;
-  --color-tertiary: #f2d5d6;
   --color-accent: #5f773f;
-  --color-disabled: #6a6a6a;
   --color-accent-hover: #4b602e;
-  --color-highlight: #fefbf8;
-  --color-bright-bg: #300d0c;
-  --color-faded-highlight: #300d0c4d;
   --color-neutral-1: #300d0c;
-  --color-neutral-blue: #BBD5EF ;
+  --color-neutral-2: #f2d5d6;
+  --color-neutral-3: #BBD5EF ;
+  --color-disabled: #6a6a6a;
+  --color-highlight: #fefbf8;
+  --color-faded-highlight: #300d0c4d;
 
   /*Font*/
   --font-body-text: "Mr Eaves Mod OT", sans-serif;
@@ -44,13 +43,13 @@
   --leading-height-paragraph: clamp(1.25rem, 1.25rem + 0.2679vw, 1.5rem);
 
   /*General*/
-  --spacing-button: var(--spacing-medium, 0.5rem) var(--spacing-default, 1rem);
+  --spacing-button: var(--spacing-medium) var(--spacing-default);
   --spacing-default: 1rem;
   --spacing-small: 4px;
-  --spacing-medium: 8px;
-  --spacing-large: 32px;
-  --spacing-extra-large: 40px;
-  --spacing-negative: 64px;
+  --spacing-medium: .5rem;
+  --spacing-large: 2rem;
+  --spacing-extra-large: 2.5rem;
+  --spacing-negative: 4rem;
   --spacing-margin: 0 clamp(1rem, -3.75rem + 15vw, 12.75rem);
   --spacing-card: view(clamp(150px, 148px + 0.1vw, 148px));
   --spacing-section: view(clamp(64px, 64px + 10vw, 224px));
