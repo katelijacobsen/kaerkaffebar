@@ -1,9 +1,9 @@
 ---
+// src/components/Header.astro
 import Logo from "../assets/img/kaer-logo.png";
 import PrimaryButton from "./PrimaryButton.astro";
 import AnchorLink from "./AnchorLink.astro";
 ---
-
 <header class="bg-primary text-bright-bg p-default sticky top-0 z-50 shadow-pink m-default rounded-large">
   <div class="w-full">
     <div class="flex flex-wrap justify-between items-center">
@@ -14,10 +14,8 @@ import AnchorLink from "./AnchorLink.astro";
       <nav class="hidden lg:block">
         <ul class="flex items-center gap-large font-bold">
           <li><AnchorLink url="/menu">Menu</AnchorLink></li>
-          <li>
-            <AnchorLink url="/arrangement">Hold dit arrangement og events</AnchorLink>
-          </li>
-          <li><AnchorLink url="runningclub">Kær Løbeklub</AnchorLink></li>
+          <li><AnchorLink url="/arrangement">Hold dit arrangement og events</AnchorLink></li>
+          <li><AnchorLink url="/runningclub">Kær Løbeklub</AnchorLink></li>
           <li class="ml-large"><PrimaryButton>Book Bord</PrimaryButton></li>
           <li class="text-sm">DK / EN</li>
         </ul>
@@ -28,23 +26,27 @@ import AnchorLink from "./AnchorLink.astro";
         <PrimaryButton>Book Bord</PrimaryButton>
         <button id="mobile-menu-button" class="p-2 focus:outline-none" aria-label="Toggle menu">
           <svg class="w-10 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
     </div>
 
     <!-- Mobile Menu Dropdown -->
-    <nav id="mobile-menu" style="display: none; overflow: hidden; height: 0; width: 0;" class="absolute right-0 top-[6em] bg-primary p-burger-menu border-faded-highlight border-2 rounded-large m-default">
+    <nav
+      id="mobile-menu"
+      class="hidden absolute right-0 top-[6em] z-40 bg-primary p-burger-menu border-faded-highlight border-2 rounded-large m-default"
+    >
       <ul class="flex flex-col items-center gap-default font-bold">
-        <li class="menu-item opacity-0 invisible pb-default pt-default" style="display: none;">
-          <AnchorLink>Menu</AnchorLink>
+        <li class="menu-item pb-default pt-default">
+          <AnchorLink url="/menu">Menu</AnchorLink>
         </li>
-        <li class="menu-item opacity-0 invisible pb-default" style="display: none;">
-          <AnchorLink>Hold dit <br /> arrangement og event</AnchorLink>
+        <li class="menu-item pb-default">
+          <AnchorLink url="/arrangement">Arrangement & event</AnchorLink>
         </li>
-        <li class="menu-item opacity-0 invisible pb-default" style="display: none;">
-          <AnchorLink>Kær Løbeklub</AnchorLink>
+        <li class="menu-item pb-default">
+          <AnchorLink url="/runningclub">Kær Løbeklub</AnchorLink>
         </li>
       </ul>
     </nav>
@@ -54,91 +56,70 @@ import AnchorLink from "./AnchorLink.astro";
 <script is:inline type="module">
   import gsap from "https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js";
 
-  // Sætter vores constants op
   const menuButton = document.getElementById("mobile-menu-button");
   const mobileMenu = document.getElementById("mobile-menu");
-
-  // Variabel Boolean
   let isOpen = false;
 
-  // Funktion til at åbne menuen
-  const openMenu = () => {
-    mobileMenu.style.display = "block";
+  function openMenu() {
+    // show the menu container
+    mobileMenu.classList.remove("hidden");
 
-    // Animation
+    // animate the container
     gsap.fromTo(
       mobileMenu,
       { scale: 0.95, opacity: 0 },
       {
         scale: 1,
         width: "90%",
-        height: "243px",
+        height: "auto",
         opacity: 1,
         duration: 0.4,
         ease: "expo.out",
-        onComplete: () => {
-          // For each
-          const menuItems = mobileMenu.querySelectorAll(".menu-item");
-          menuItems.forEach((item) => {
-            item.style.display = "block";
-          });
-          // autoAlpha er en blanding af opacity og visibility, så vi kan animere dem ind
-          gsap.set(
-            ".menu-item",
-            { y: 20, autoAlpha: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 0.2,
-              stagger: 0.2,
-              delay: 0.1,
-              ease: "power2.in",
-            }
-          );
-          gsap.to(".menu-item", {
-            y: 0,
-            autoAlpha: 1,
-            duration: 0.3,
-            stagger: 0.2,
-            delay: 0.1,
-            ease: "power2.out",
-          });
-        },
+        onComplete: animateItems,
       }
     );
-    isOpen = true;
-  };
-  // Funktion til at lukke menuen
-  const closeMenu = () => {
-    const menuItems = mobileMenu.querySelectorAll(".menu-item");
-    gsap.to(menuItems, {
-      autoAlpha: 0,
-      duration: 0.2,
-      onComplete: () => {
-        gsap.set(menuItems, { y: 20 }); // reset position
-      },
-    });
 
+    function animateItems() {
+      const items = mobileMenu.querySelectorAll(".menu-item");
+      gsap.fromTo(
+        items,
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.3, stagger: 0.1, ease: "power2.out" }
+      );
+    }
+
+    isOpen = true;
+  }
+
+  function closeMenu() {
+    const items = mobileMenu.querySelectorAll(".menu-item");
+    // hide items first
+    gsap.to(items, { opacity: 0, duration: 0.2 });
+    // then hide container
     gsap.to(mobileMenu, {
       width: 0,
       height: 0,
       scale: 0.95,
       opacity: 0,
-      duration: 0.2,
+      duration: 0.3,
       onComplete: () => {
-        mobileMenu.style.display = "none";
+        mobileMenu.classList.add("hidden");
+        // reset inline styles GSAP put on container
+        gsap.set(mobileMenu, { clearProps: "all" });
       },
     });
     isOpen = false;
-  };
+  }
 
-  // Event listener til at åbne og lukke menuen
-  menuButton.addEventListener("click", () => {
-    isOpen ? closeMenu() : openMenu();
-  });
+  menuButton.addEventListener("click", () => (isOpen ? closeMenu() : openMenu()));
 
-  document.addEventListener("click", (event) => {
-    if (isOpen && !menuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+  // click outside to close
+  document.addEventListener("click", (e) => {
+    if (
+      isOpen &&
+      !menuButton.contains(e.target) &&
+      !mobileMenu.contains(e.target)
+    ) {
       closeMenu();
     }
   });
