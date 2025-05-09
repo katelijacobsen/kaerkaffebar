@@ -17,8 +17,11 @@ import IceCoffeeWaffle from "../assets/img/ice-coffee-waffle.webp";
 import OrganicLogo from "../assets/icons/organic-logo.svg";
 import LatteartCloseup from "../assets/img/latte-art-closeup.webp";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+//heavy text section illustrations
+import Blueberry from "../assets/illustrations/blue/blueberry.avif";
+import CoffeeMug from "../assets/illustrations/blue/mug.avif";
+import Lemon from "../assets/illustrations/blue/whole-lemon.avif";
+import Croissant from "../assets/illustrations/blue/croissant.avif";
 ---
 
 <Layout title="Forside">
@@ -56,8 +59,12 @@ import LatteartCloseup from "../assets/img/latte-art-closeup.webp";
         <h2 class="text-neutral-1 max-w-[74vw]">“Kær Kaffebar er skabt ud fra en drøm om nærvær, god kaffe – og lysten til at gøre en forskel i lokalsamfundet.”</h2>
       </div>
     </section>
-    <section>
+    <section class="relative pt-[150px] pb-[150px]">
+      <Image class="blueberry absolute top-0 left-[-50px]" src={Blueberry} alt="blåbær" />
+      <Image class="coffeemug absolute top-4 right-0" src={CoffeeMug} alt="kaffekop" />
       <h2 class="text-center text-accent">Fra friskbagte boller til brunchtallerkener – vi gør os umage hver dag for at servere mad, der smager af [kær]lighed.</h2>
+      <Image class="lemon absolute bottom-4 right-0" src={Lemon} alt="citron" />
+      <Image class="croissant absolute bottom-0 left-0" src={Croissant} width={90} height={90} alt="croissant" />
     </section>
   </main>
 </Layout>
@@ -133,3 +140,64 @@ import LatteartCloseup from "../assets/img/latte-art-closeup.webp";
     }
   }
 </style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to(".blueberry", {
+    scrollTrigger: {
+      trigger: ".blueberry",
+      toggleActions: "play pause reverse",
+      start: "0px 80%",
+      end: "+=500",
+      markers: true,
+    },
+    x: 80,
+    y: 50,
+    rotation: 90,
+    duration: 2,
+  });
+
+  gsap.to(".coffeemug", {
+    scrollTrigger: {
+      trigger: ".coffeemug",
+      toggleActions: "play pause reverse",
+      start: "0px 80%",
+      end: "+=500",
+    },
+    x: -10,
+    y: 50,
+    rotation: 30,
+    duration: 2,
+  });
+
+  gsap.to(".croissant", {
+    scrollTrigger: {
+      trigger: ".croissant",
+      toggleActions: "play pause reverse",
+      start: "-150px 80%",
+      end: "+=500",
+      markers: true,
+    },
+    x: 50,
+    y: -70,
+    rotation: 90,
+    duration: 2,
+  });
+
+  gsap.to(".lemon", {
+    scrollTrigger: {
+      trigger: ".lemon",
+      toggleActions: "play pause reverse",
+      start: "-150px 80%",
+      end: "+=500",
+      markers: true,
+    },
+    x: -5,
+    y: -30,
+    rotation: 20,
+    duration: 2,
+  });
+</script>
