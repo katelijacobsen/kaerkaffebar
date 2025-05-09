@@ -1,16 +1,16 @@
 ---
 import { Image } from "astro:assets";
 
-const { headline, illustration: Illustration, showIllustration = true, alt } = Astro.props;
+const { headline, illustration: Illustration, showIllustration = true, alt, width, height } = Astro.props;
 ---
 
-<h2 class="text-neutral-1 text-header-2 font-body-text grid justify-center">
-  {
+<div class="grid justify-items-center md:grid-cols-[1fr_auto] md:justify-start w-fit md:gap-large md:items-center h-fit">
+  <!-- {
     showIllustration && Illustration && (
-      <span class="grid justify-center">
-        <Image src={Illustration} width={70} height={70} alt={alt} />
+      <span class="grid justify-center md:order-1 w-fit">
+        <Image src={Illustration} width={width} height={height} alt={alt} />
       </span>
     )
-  }
-  {headline}
-</h2>
+  } -->
+  <h2 class="text-neutral-1 text-header-2 font-body-text">{headline}</h2>
+</div>
