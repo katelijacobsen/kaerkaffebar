@@ -16,28 +16,28 @@ const faqItems = [
 ---
 
 <Layout title="Kær løbeklub">
-  <main class="grid gap-negative mb-negative">
-    <section class="pl-default pr-default relative">
-      <Image src={CoffeeCupIllustration} alt="kaffekop illustration" class="absolute w-[130px] right-1 top-1 z-[-10]" />
+  <main class="grid gap-negative mb-negative pl-default pr-default md:pr-large md:pl-large max-w-[1192px] mx-auto">
+    <section class="relative md:grid md:grid-cols-[1fr_0.7fr]">
+      <Image src={CoffeeCupIllustration} alt="kaffekop illustration" class="absolute w-[130px] right-1 top-1 z-[-10] md:w-[300px] lg:w-[400px]" />
       <div>
         <h1 class="text-header-1 font-header text-neutral-1">Kær løbeklub</h1>
-        <h3 class="text-neutral-1 text-header-3">Kær Klubben’s løbeklub i Valby har <strong>fokus på det sociale og på at samle lokalsamfundet</strong>, samtidig med at vi bevæger os. <strong>Ruten i søndermarken er 2,5 km, så alle kan være med.</strong>  Er man hurtig, kan man nå den 2 gange!</h3>
+        <h3 class="text-neutral-1 text-header-3">Kær løbeklub i Valby har <strong>fokus på det sociale og på at samle lokalsamfundet</strong>, samtidig med at vi bevæger os. <strong>Ruten i søndermarken er 2,5 km, så alle kan være med.</strong>  Er man hurtig, kan man nå den 2 gange!</h3>
       </div>
     </section>
-    <section class="pl-default pr-default">
+    <section class="grid gap-large md:grid-cols-2 md:gap-negative">
       <div class="grid gap-default">
-        <h2 class="text-neutral-1 text-header-2">Kommende ture</h2>
+        <h2 class="text-neutral-1 text-header-2 text-left">Kommende ture</h2>
         <RunningClubCard />
         <RunningClubCard />
-        <p class="text-neutral-1"><strong>OBS: ved afmeldning skriv til nummeret: 81610900 mindst 24 timer inden.</strong></p>
+        <p class="text-neutral-1 text-center"><strong>OBS: ved afmeldning skriv til nummeret: 81610900 mindst 24 timer inden.</strong></p>
       </div>
-      <div class="grid justify-items-center" style="padding: var(--spacing-default);">
+      <div class="grid justify-items-center grid-rows-[0.1fr_auto]">
         <h1 class="font-header text-header-1">FAQ</h1>
         <Accordion items={faqItems} />
       </div>
     </section>
-    <section class="grid gap-large pl-default pr-default">
-      <div class="h-[140px] overflow-hidden rounded-full">
+    <section class="grid gap-large md:grid-cols-2 md:gap-negative">
+      <div class="h-[140px] overflow-hidden rounded-full md:h-[200px]">
         <Image src={RunningImage} alt="løbe billede" class="object-cover w-full h-full object-bottom" />
       </div>
       <div class="relative h-[250px]">

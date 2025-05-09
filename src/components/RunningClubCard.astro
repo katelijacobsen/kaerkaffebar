@@ -5,24 +5,26 @@ import PeopleIcon from "../assets/icons/people-icon.svg";
 import Button from "../components/Button.astro";
 ---
 
-<article class="flex bg-highlight border border-accent rounded-medium p-default gap-medium justify-between">
-  <p class="text-secondary text-label"><strong>Dato</strong></p>
-  <div>
-    <p class="text-neutral-1 text-label"><strong>Løbeklub</strong></p>
-    <div class="flex items-center gap-small">
-      <LocationIcon />
-      <p class="text-neutral-1">Valby Langgade 86C</p>
-    </div>
-    <div class="flex items-center gap-small">
-      <ClockIcon />
-      <p class="text-neutral-1">09:00 - 10:00</p>
-    </div>
-    <div class="flex items-center gap-small">
-      <PeopleIcon />
-      <p class="text-neutral-1">7 deltagere</p>
+<article class="flex bg-highlight border border-accent rounded-medium p-default justify-between">
+  <div class="flex gap-medium sm:gap-large">
+    <p class="text-secondary text-label"><strong>Dato</strong></p>
+    <div>
+      <p class="text-neutral-1 text-label"><strong>Løbeklub</strong></p>
+      <div class="flex items-center gap-small">
+        <LocationIcon />
+        <p class="text-neutral-1">Valby Langgade 86C</p>
+      </div>
+      <div class="flex items-center gap-small">
+        <ClockIcon />
+        <p class="text-neutral-1">09:00 - 10:00</p>
+      </div>
+      <div class="flex items-center gap-small">
+        <PeopleIcon />
+        <p class="text-neutral-1">7 deltagere</p>
+      </div>
     </div>
   </div>
-  <div class="self-end">
+  <div class="self-end sm:self-end">
     <Button variant="secondary" ariaLabel="Tilmeld dig løbeklub">Tilmeld</Button>
   </div>
 </article>
