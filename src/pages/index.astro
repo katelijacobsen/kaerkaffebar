@@ -3,6 +3,14 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import Button from "../components/Button.astro";
 
+//images for herosection
+import HerosectionBrunchplate from "../assets/img/herosection-brunch-plate.webp";
+import MiniTarts from "../assets/img/mini-tarts-closeup.webp";
+import CinnamonRolls from "../assets/img/cinnamon-rolls-closeup.webp";
+import SourdoughBuns from "../assets/img/sourdough-buns-closeup.webp";
+import Logo from "../assets/icons/logo.svg";
+
+//images for menusection
 import CroissantIllustration from "../assets/illustrations/blue/croissant.avif";
 import BrunchplateHerosection from "../assets/img/herosection-brunch-plate.webp";
 import IceCoffeeWaffle from "../assets/img/ice-coffee-waffle.webp";
@@ -15,6 +23,20 @@ import LatteartCloseup from "../assets/img/latte-art-closeup.webp";
 
 <Layout title="Forside">
   <main class="grid gap-negative">
+    <section class="relative h-screen w-screen overflow-hidden">
+      <Image src={HerosectionBrunchplate} alt="brunch" class="absolute inset-0 w-full h-full object-cover fade-image fade-1" />
+      <Image src={SourdoughBuns} alt="tærter" class="absolute inset-0 w-full h-full object-cover fade-image fade-2" />
+      <Image src={MiniTarts} alt="smørrebrød" class="absolute inset-0 w-full h-full object-cover fade-image fade-3" />
+      <Image src={CinnamonRolls} alt="boller" class="absolute inset-0 w-full h-full object-cover fade-image fade-4" />
+
+      <div class="absolute inset-0 bg-black/40 z-10"></div>
+
+      <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-primary text-center pl-default pr-default">
+        <Image src={Logo} alt="kær logo" class="w-[300px] md:w-[500px] mb-6" />
+        <h1 class="text-4xl md:text-6xl font-bold text-primary">... den hyggeligste kaffebar i Valby</h1>
+      </div>
+    </section>
+
     <section class="grid gap-large pl-default pr-default">
       <h1 class="text-neutral-1 text-header-1 text-center">Menu</h1>
       <div class="grid grid-cols-2 grid-rows-[auto, 1fr, 1fr, auto] gap-default justify-center">
@@ -29,13 +51,85 @@ import LatteartCloseup from "../assets/img/latte-art-closeup.webp";
       <Button url="/menu" variant="primary" ariaLabel="Se menu">Se menu</Button>
     </section>
     <section>
-      <div class="bg-neutral-2 max-w-[98vw] p-large rounded-r-full">
+      <div class="bg-neutral-2 max-w-[98vw] pl-default pt-large pb-large rounded-r-full">
         <p class="text-neutral-1 text-label"><strong>Indehaver af Kær Kaffebar</strong></p>
         <h2 class="text-neutral-1 max-w-[74vw]">“Kær Kaffebar er skabt ud fra en drøm om nærvær, god kaffe – og lysten til at gøre en forskel i lokalsamfundet.”</h2>
       </div>
     </section>
     <section>
-      <h2 class="text-center text-neutral-1">Fra friskbagte boller til brunchtallerkener – vi gør os umage hver dag for at servere mad, der smager af [kær]lighed.</h2>
+      <h2 class="text-center text-accent">Fra friskbagte boller til brunchtallerkener – vi gør os umage hver dag for at servere mad, der smager af [kær]lighed.</h2>
     </section>
   </main>
 </Layout>
+
+<style>
+  .fade-image {
+    opacity: 0;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    transition: opacity 5s ease-in-out;
+    z-index: 0;
+  }
+
+  .fade-1 {
+    animation-name: fade1;
+  }
+  .fade-2 {
+    animation-name: fade2;
+  }
+  .fade-3 {
+    animation-name: fade3;
+  }
+  .fade-4 {
+    animation-name: fade4;
+  }
+
+  @keyframes fade1 {
+    0%,
+    20% {
+      opacity: 1;
+    }
+    25%,
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes fade2 {
+    20%,
+    40% {
+      opacity: 1;
+    }
+    0%,
+    19%,
+    45%,
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes fade3 {
+    40%,
+    60% {
+      opacity: 1;
+    }
+    0%,
+    39%,
+    65%,
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes fade4 {
+    60%,
+    80% {
+      opacity: 1;
+    }
+    0%,
+    59%,
+    85%,
+    100% {
+      opacity: 0;
+    }
+  }
+</style>
