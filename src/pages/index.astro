@@ -22,11 +22,14 @@ import Blueberry from "../assets/illustrations/blue/blueberry.avif";
 import CoffeeMug from "../assets/illustrations/blue/mug.avif";
 import Lemon from "../assets/illustrations/blue/whole-lemon.avif";
 import Croissant from "../assets/illustrations/blue/croissant.avif";
+
+//arrangement section illustration
+import ArrangementIllustration from "../assets/illustrations/blue/arrangement.avif";
 ---
 
 <Layout title="Forside">
   <main class="grid gap-negative">
-    <section class="relative h-screen w-screen overflow-hidden">
+    <section class="relative h-screen w-screen overflow-hidden rounded-b-xl">
       <Image src={HerosectionBrunchplate} alt="brunch" class="absolute inset-0 w-full h-full object-cover fade-image fade-1" />
       <Image src={SourdoughBuns} alt="tærter" class="absolute inset-0 w-full h-full object-cover fade-image fade-2" />
       <Image src={MiniTarts} alt="smørrebrød" class="absolute inset-0 w-full h-full object-cover fade-image fade-3" />
@@ -60,11 +63,24 @@ import Croissant from "../assets/illustrations/blue/croissant.avif";
       </div>
     </section>
     <section class="relative pt-[150px] pb-[150px]">
-      <Image class="blueberry absolute top-0 left-[-50px]" src={Blueberry} alt="blåbær" />
-      <Image class="coffeemug absolute top-4 right-0" src={CoffeeMug} alt="kaffekop" />
+      <Image class="blueberry absolute top-0 left-[-50px]" src={Blueberry} alt="blåbær" width={70} height={70} />
+      <Image class="coffeemug absolute top-4 right-0" src={CoffeeMug} alt="kaffekop" width={90} height={90} />
       <h2 class="text-center text-accent">Fra friskbagte boller til brunchtallerkener – vi gør os umage hver dag for at servere mad, der smager af [kær]lighed.</h2>
-      <Image class="lemon absolute bottom-4 right-0" src={Lemon} alt="citron" />
+      <Image class="lemon absolute bottom-4 right-0" src={Lemon} alt="citron" width={90} height={90} />
       <Image class="croissant absolute bottom-0 left-0" src={Croissant} width={90} height={90} alt="croissant" />
+    </section>
+    <section>
+      <div class="grid gap-extra-large">
+        <div class="pl-default pr-default grid gap-extra-large">
+          <h1 class="text-neutral-1 font-header text-header-1">Hold dit næste arrangement hos Kær Kaffebar</h1>
+          <div>
+            <p class="text-neutral-1 text-label"><strong>Skab mindeværdige øjeblikke i hjertet af Valby.</strong></p>
+            <h3 class="text-neutral-1 font-body-text text-header-3">Drømmer du om en hyggelig, personlig ramme til dit næste arrangement? Hos Kær Kaffebar åbner vi dørene for alt fra fødselsdage og firmaevents til PR-events og små, private fester. Vores café byder på en varm atmosfære, smuk indretning og økologiske specialiteter, der sætter prikken over i'et på din dag.</h3>
+          </div>
+          <Button variant="primary" url="/arrangement" ariaLabel="Læs mere">Læs mere</Button>
+        </div>
+        <Image src={ArrangementIllustration} alt="arrangement illustration" width={375} />
+      </div>
     </section>
   </main>
 </Layout>
