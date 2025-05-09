@@ -25,6 +25,10 @@ import Croissant from "../assets/illustrations/blue/croissant.avif";
 
 //arrangement section illustration
 import ArrangementIllustration from "../assets/illustrations/blue/arrangement.avif";
+
+//runningclub section image and illustration
+import RunningImage from "../assets/img/running-img.webp";
+import CoffeeCupIllustration from "../assets/illustrations/blue/kaer-coffecup.webp";
 ---
 
 <Layout title="Forside">
@@ -81,6 +85,26 @@ import ArrangementIllustration from "../assets/illustrations/blue/arrangement.av
         </div>
         <Image src={ArrangementIllustration} alt="arrangement illustration" width={375} />
       </div>
+    </section>
+    <section class="px-default grid gap-large">
+      <h1 class="text-neutral-1 text-header-1 font-header">Kær løbeklub</h1>
+      <div class="grid gap-large">
+        <div class="grid gap-large">
+          <div class="bg-neutral-2 p-large rounded-default">
+            <h3 class="text-neutral-1 text-header-3 font-body-text">Vidste du, at vi også løber sammen? Kær Kaffebar's løbeklub handler om glæde ved bevægelse – ikke præstationer.</h3>
+          </div>
+          <div class="h-[180px] overflow-hidden rounded-full md:h-[200px]">
+            <Image src={RunningImage} alt="løbe billede" class="object-cover w-full h-full object-bottom" />
+          </div>
+        </div>
+        <div class="grid gap-large">
+          <h2 class="text-neutral-1 text-header-3 font-body-text">Alle er velkomne – uanset form eller erfaring. Kom med næste gang og få motion, smil og måske en ny ven på vejen!</h2>
+          <div class="h-[140px] bg-secondary relative rounded-full">
+            <Image src={CoffeeCupIllustration} width={120} height={120} alt="kaffekop illustration" class="absolute top-2.5 right-1" />
+          </div>
+        </div>
+      </div>
+      <Button variant="primary" url="/runningclub" ariaLabel="tilmeld dig løbeklub">Tilmeld dig løbeklub</Button>
     </section>
   </main>
 </Layout>
