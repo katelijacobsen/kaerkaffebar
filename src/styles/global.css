@@ -4,21 +4,23 @@
 @font-face {
   font-family: Babe Sans;
   font-style: normal;
-  font-weight: 200 700;
+  /* font-weight: 200 700; */
+  font-weight: 400;
+  font-display: swap;
   src: url("/fonts/BabeSansRegular.woff2") format("woff2");
 }
 
 @theme {
   /*Colorpalette*/
   --color-primary: #fcf7f4;
-  --color-primary-2: #FEFBF8;
+  --color-primary-2: #fefbf8;
   --color-primary-3: #ffffff;
   --color-secondary: #c32628;
   --color-accent: #5f773f;
   --color-accent-hover: #4b602e;
   --color-neutral-1: #300d0c;
   --color-neutral-2: #f2d5d6;
-  --color-neutral-3: #BBD5EF ;
+  --color-neutral-3: #bbd5ef;
   --color-disabled: #6a6a6a;
   --color-highlight: #fefbf8;
   --color-faded-highlight: #300d0c4d;
@@ -39,7 +41,7 @@
 
   /* Line Heights */
   --leading-height-header-1: clamp(2.6875rem, 2.6875rem + 2.8571vw, 4.6875rem);
-  --leading-height-header-2: 	1.25rem;
+  --leading-height-header-2: 1.25rem;
   --leading-height-header-3: 2rem;
   --leading-height-tag: 1.25rem;
   --leading-height-paragraph: clamp(1.25rem, 1.25rem + 0.2679vw, 1.5rem);
@@ -48,7 +50,7 @@
   --spacing-button: var(--spacing-medium) var(--spacing-default);
   --spacing-default: 1rem;
   --spacing-small: 4px;
-  --spacing-medium: .5rem;
+  --spacing-medium: 0.5rem;
   --spacing-large: 2rem;
   --spacing-extra-large: 2.5rem;
   --spacing-negative: 4rem;
