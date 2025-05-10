@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import Button from "../components/Button.astro";
+
+const { firstIllustrationSrc, firstIllustrationAlt, firstIllustrationWidth, firstIllustrationHeight } = Astro.props;
+const { secondIllustrationSrc, secondIllustrationAlt, secondIllustrationWidth, secondIllustrationHeight, bottomPosition, rightPosition } = Astro.props;
+const { imageSrc, imageAlt, imageWidth, imageHeight, roundedBorder, objectPostion, aspectRatio } = Astro.props;
+const { ariaLabel, buttonText, url } = Astro.props;
+---
+
+<div class="grid gap-large">
+  <div class="relative">
+    <Image class=`first-illustration absolute top-[-50px] left-[-20px]` src={firstIllustrationSrc} alt={firstIllustrationAlt} width={firstIllustrationWidth} height={firstIllustrationHeight} />
+    <div class=`${roundedBorder} overflow-hidden ${aspectRatio}`>
+      <Image class=`image object-cover w-full h-full ${objectPostion}` ` src={imageSrc} alt={imageAlt} width={imageWidth} height={imageHeight} />
+    </div>
+    <Image class=`second-illustration absolute ${bottomPosition} ${rightPosition}` src={secondIllustrationSrc} alt={secondIllustrationAlt} width={secondIllustrationWidth} height={secondIllustrationHeight} />
+  </div>
+  <div class="grid gap-large">
+    <h1 class="text-neutral-1 font-header text-header-1">Afternoon Tea i Valby</h1>
+    <div class="grid gap-default">
+      <p class="text-neutral-1 font-body-text text-label"><strong>Perfekt til venindetid, fejring eller bare lidt ekstra selvforkælelse.</strong></p>
+      <p class="text-neutral-1 font-body-text text-paragraph">Hos Kær Kaffebar inviterer vi dig til en klassisk Afternoon Tea – fyldt med hjemmelavede kager, friskbagte scones, sandwiches og økologisk te ad libitum. Alt serveret med [kær]lighed, i ægte vintagekopper, hvor detaljerne gør hele forskellen.</p>
+    </div>
+    <Button variant="primary" url={url} ariaLabel={ariaLabel}>{buttonText}</Button>
+  </div>
+</div>

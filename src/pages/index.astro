@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import Button from "../components/Button.astro";
+import AfternoonTeaCoffeeSection from "../components/AfternoonTeaCoffeeSection.astro";
 
 //images for herosection
 import HerosectionBrunchplate from "../assets/img/herosection-brunch-plate.webp";
@@ -29,10 +30,19 @@ import ArrangementIllustration from "../assets/illustrations/blue/arrangement.av
 //runningclub section image and illustration
 import RunningImage from "../assets/img/running-img.webp";
 import CoffeeCupIllustration from "../assets/illustrations/blue/kaer-coffecup.webp";
+
+//Afternoon tea and coffee section images and illustrations
+import AfternoonTeaIllustration from "../assets/illustrations/blue/afternoon-tea.avif";
+import StrawberryIllustration from "../assets/illustrations/blue/strawberry.avif";
+import AfternoonTeaImage from "../assets/img/afternoon-tea.webp";
+import CoffeeBeansIllustration from "../assets/illustrations/blue/coffeebeans.avif";
+import CoffeePotIllustration from "../assets/illustrations/blue/coffepot.avif";
+import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
 ---
 
 <Layout title="Forside">
   <main class="grid gap-negative">
+    <!-- Herosection -->
     <section class="relative h-screen w-screen overflow-hidden rounded-b-xl">
       <Image src={HerosectionBrunchplate} alt="brunch" class="absolute inset-0 w-full h-full object-cover fade-image fade-1" />
       <Image src={SourdoughBuns} alt="tærter" class="absolute inset-0 w-full h-full object-cover fade-image fade-2" />
@@ -47,6 +57,7 @@ import CoffeeCupIllustration from "../assets/illustrations/blue/kaer-coffecup.we
       </div>
     </section>
 
+    <!-- Menusection -->
     <section class="grid gap-large pl-default pr-default">
       <h1 class="text-neutral-1 text-header-1 text-center">Menu</h1>
       <div class="grid grid-cols-2 grid-rows-[auto, 1fr, 1fr, auto] gap-default justify-center">
@@ -60,19 +71,21 @@ import CoffeeCupIllustration from "../assets/illustrations/blue/kaer-coffecup.we
       </div>
       <Button url="/menu" variant="primary" ariaLabel="Se menu">Se menu</Button>
     </section>
+
+    <!-- Quote section -->
     <section>
       <div class="bg-neutral-2 max-w-[98vw] pl-default pt-large pb-large rounded-r-full">
         <p class="text-neutral-1 text-label"><strong>Indehaver af Kær Kaffebar</strong></p>
         <h2 class="text-neutral-1 max-w-[74vw]">“Kær Kaffebar er skabt ud fra en drøm om nærvær, god kaffe – og lysten til at gøre en forskel i lokalsamfundet.”</h2>
       </div>
     </section>
-    <section class="relative pt-[150px] pb-[150px]">
-      <Image class="blueberry absolute top-0 left-[-50px]" src={Blueberry} alt="blåbær" width={70} height={70} />
-      <Image class="coffeemug absolute top-4 right-0" src={CoffeeMug} alt="kaffekop" width={90} height={90} />
-      <h2 class="text-center text-accent">Fra friskbagte boller til brunchtallerkener – vi gør os umage hver dag for at servere mad, der smager af [kær]lighed.</h2>
-      <Image class="lemon absolute bottom-4 right-0" src={Lemon} alt="citron" width={90} height={90} />
-      <Image class="croissant absolute bottom-0 left-0" src={Croissant} width={90} height={90} alt="croissant" />
+
+    <!-- Afternoon tea section -->
+    <section class="px-default">
+      <AfternoonTeaCoffeeSection firstIllustrationSrc={AfternoonTeaIllustration} firstIllustrationAlt="afternoon tea illustration" firstIllustrationWidth="120" secondIllustrationSrc={StrawberryIllustration} secondIllustrationWidth="100" secondIllustrationAlt="jordbær illustration" bottomPosition="bottom-0" rightPosition="right-[-5px]" imageSrc={AfternoonTeaImage} aspectRatio="aspect-[1/1.5]" imageAlt="afternoon tea billede" buttonText="Book bord" url="https://kaerkaffebar.superbexperience.com/" roundedBorder="rounded-full" objectPostion="object-left" />
     </section>
+
+    <!-- Arrangement section -->
     <section>
       <div class="grid gap-extra-large">
         <div class="pl-default pr-default grid gap-extra-large">
@@ -86,6 +99,22 @@ import CoffeeCupIllustration from "../assets/illustrations/blue/kaer-coffecup.we
         <Image src={ArrangementIllustration} alt="arrangement illustration" width={375} />
       </div>
     </section>
+
+    <!-- Coffee section -->
+    <section class="px-default">
+      <AfternoonTeaCoffeeSection firstIllustrationSrc={CoffeeBeansIllustration} firstIllustrationAlt="kaffebønner illustration" firstIllustrationWidth="100" secondIllustrationSrc={CoffeeMug} secondIllustrationAlt="kaffe kande illustration" secondIllustrationWidth="100" bottomPosition="bottom-[-50px]" rightPosition="right-[-20px]" imageSrc={CoffeeBacksImage} imageAlt="just coffee kaffe bønner poser" buttonText="Læs mere" url="/menu/#coffeesection" roundedBorder="rounded-default" />
+    </section>
+
+    <!-- Heavy text with animation section -->
+    <section class="relative pt-[150px] pb-[150px]">
+      <Image class="blueberry absolute top-0 left-[-50px]" src={Blueberry} alt="blåbær" width={70} height={70} />
+      <Image class="coffeemug absolute top-4 right-0" src={CoffeeMug} alt="kaffekop" width={90} height={90} />
+      <h2 class="text-center text-accent">Fra friskbagte boller til brunchtallerkener – vi gør os umage hver dag for at servere mad, der smager af [kær]lighed.</h2>
+      <Image class="lemon absolute bottom-4 right-0" src={Lemon} alt="citron" width={90} height={90} />
+      <Image class="croissant absolute bottom-0 left-0" src={Croissant} width={90} height={90} alt="croissant" />
+    </section>
+
+    <!-- Runningclub section -->
     <section class="px-default grid gap-large">
       <h1 class="text-neutral-1 text-header-1 font-header">Kær løbeklub</h1>
       <div class="grid gap-large">
