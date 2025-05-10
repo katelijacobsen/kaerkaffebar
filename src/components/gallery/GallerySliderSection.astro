@@ -1,0 +1,63 @@
+---
+import GalleryCard from "./GalleryCard.astro";
+
+//arrow icons
+import ForwardArrow from "../../assets/icons/forward-arrow-icon.svg";
+import BackwardArrow from "../../assets/icons/back-arrow-icon.svg";
+
+//gallery card images
+import CheesseCake from "../../assets/img/cheesecake-closeup.webp";
+import SmoerrebroedCloseup from "../../assets/img/smørrebrød-closeup.webp";
+import LatteArt from "../../assets/img/latte-art-closeup.webp";
+import MakingIceCoffee from "../../assets/img/making-ice-coffee.webp";
+import OutsideEspressoSign from "../../assets/img/outside-esprosso-sign.webp";
+import SourdoughBuns from "../../assets/img/sourdough-buns-closeup.webp";
+import MiniTarts from "../../assets/img/mini-tarts-closeup.webp";
+---
+
+<div class="grid gap-default">
+  <div>
+    <div class="grid gap-large">
+      <h1 class="text-neutral-1 font-header text-header-1">Mad galleri</h1>
+      <div class="grid gap-default">
+        <p class="text-neutral-1 text-label font-body-text"><strong>For vi spiser med øjnene først.</strong></p>
+        <h3 class="text-neutral-1 font-body-text text-header-3">Hvis du mangler lidt ekstra lokkelse, så har vi sørget for at du kan se et udsnit af alle de lækre ting, som vi sælger i Kær Kaffebar.</h3>
+      </div>
+      <div class="flex justify-end gap-default">
+        <div id="backBtn" class="bg-accent rounded-full p-default w-fit hover:accent-accent-hover">
+          <img src={BackwardArrow.src} alt="tilbage" width="28" height="28" />
+        </div>
+        <div id="nextBtn" class="bg-accent rounded-full p-default w-fit hover:accent-accent-hover">
+          <img src={ForwardArrow.src} alt="næste" width="28" height="28" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="gallery">
+    <div id="galleryScroll" class="flex overflow-x-scroll h-[400px] gap-default">
+      <GalleryCard src={CheesseCake} alt="cheesecake" />
+      <GalleryCard src={SmoerrebroedCloseup} alt="smørrebrød" />
+      <GalleryCard src={LatteArt} alt="latte art" />
+      <GalleryCard src={MakingIceCoffee} alt="der laves iskaffe" />
+      <GalleryCard src={SourdoughBuns} alt="surdejsboller" />
+      <GalleryCard src={OutsideEspressoSign} alt="billede udefra af Kær Kaffebar's rude" />
+      <GalleryCard src={MiniTarts} alt="minitærter" />
+    </div>
+  </div>
+</div>
+
+<script>
+  const scrollContainer = document.getElementById("galleryScroll");
+  let backBtn = document.getElementById("backBtn");
+  let nextBtn = document.getElementById("nextBtn");
+
+  nextBtn.addEventListener("click", () => {
+    scrollContainer.style.scrollBehavior = "smooth";
+    scrollContainer.scrollLeft += 330;
+  });
+
+  backBtn.addEventListener("click", () => {
+    scrollContainer.style.scrollBehavior = "smooth";
+    scrollContainer.scrollLeft -= 330;
+  });
+</script>

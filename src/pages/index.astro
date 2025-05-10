@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import Button from "../components/Button.astro";
 import AfternoonTeaCoffeeSection from "../components/AfternoonTeaCoffeeSection.astro";
+import GallerySliderSection from "../components/gallery/GallerySliderSection.astro";
 
 //images for herosection
 import HerosectionBrunchplate from "../assets/img/herosection-brunch-plate.webp";
@@ -134,6 +135,11 @@ import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
         </div>
       </div>
       <Button variant="primary" url="/runningclub" ariaLabel="tilmeld dig løbeklub">Tilmeld dig løbeklub</Button>
+    </section>
+
+    <!-- Gallery section -->
+    <section class="px-default">
+      <GallerySliderSection />
     </section>
   </main>
 </Layout>
