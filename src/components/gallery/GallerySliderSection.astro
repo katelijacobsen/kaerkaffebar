@@ -15,7 +15,7 @@ import SourdoughBuns from "../../assets/img/sourdough-buns-closeup.webp";
 import MiniTarts from "../../assets/img/mini-tarts-closeup.webp";
 ---
 
-<div class="grid gap-default">
+<div class="grid gap-default md:grid-cols-2">
   <div>
     <div class="grid gap-large">
       <h1 class="text-neutral-1 font-header text-header-1">Mad galleri</h1>
@@ -23,41 +23,60 @@ import MiniTarts from "../../assets/img/mini-tarts-closeup.webp";
         <p class="text-neutral-1 text-label font-body-text"><strong>For vi spiser med øjnene først.</strong></p>
         <h3 class="text-neutral-1 font-body-text text-header-3">Hvis du mangler lidt ekstra lokkelse, så har vi sørget for at du kan se et udsnit af alle de lækre ting, som vi sælger i Kær Kaffebar.</h3>
       </div>
-      <div class="flex justify-end gap-default">
-        <div id="backBtn" class="bg-accent rounded-full p-default w-fit hover:accent-accent-hover">
+      <div class="flex justify-end gap-default md:hidden">
+        <div id="backBtnMobile" class="bg-accent rounded-full p-default w-fit hover:accent-accent-hover">
           <img src={BackwardArrow.src} alt="tilbage" width="28" height="28" />
         </div>
-        <div id="nextBtn" class="bg-accent rounded-full p-default w-fit hover:accent-accent-hover">
+        <div id="nextBtnMobile" class="bg-accent rounded-full p-default w-fit hover:accent-accent-hover">
           <img src={ForwardArrow.src} alt="næste" width="28" height="28" />
         </div>
       </div>
     </div>
   </div>
-  <div class="gallery">
-    <div id="galleryScroll" class="flex overflow-x-scroll h-[400px] gap-default">
-      <GalleryCard src={CheesseCake} alt="cheesecake" />
-      <GalleryCard src={SmoerrebroedCloseup} alt="smørrebrød" />
-      <GalleryCard src={LatteArt} alt="latte art" />
-      <GalleryCard src={MakingIceCoffee} alt="der laves iskaffe" />
-      <GalleryCard src={SourdoughBuns} alt="surdejsboller" />
-      <GalleryCard src={OutsideEspressoSign} alt="billede udefra af Kær Kaffebar's rude" />
-      <GalleryCard src={MiniTarts} alt="minitærter" />
+  <div class="grid gap-default">
+    <div class="hidden md:flex md:justify-end md:gap-default">
+      <div id="backBtnDesktop" class="bg-accent rounded-full p-default w-fit hover:accent-accent-hover">
+        <img src={BackwardArrow.src} alt="tilbage" width="28" height="28" />
+      </div>
+      <div id="nextBtnDesktop" class="bg-accent rounded-full p-default w-fit hover:accent-accent-hover">
+        <img src={ForwardArrow.src} alt="næste" width="28" height="28" />
+      </div>
+    </div>
+    <div class="gallery">
+      <div id="galleryScroll" class="flex overflow-x-scroll h-[400px] gap-default">
+        <GalleryCard src={CheesseCake} alt="cheesecake" />
+        <GalleryCard src={SmoerrebroedCloseup} alt="smørrebrød" />
+        <GalleryCard src={LatteArt} alt="latte art" />
+        <GalleryCard src={MakingIceCoffee} alt="der laves iskaffe" />
+        <GalleryCard src={SourdoughBuns} alt="surdejsboller" />
+        <GalleryCard src={OutsideEspressoSign} alt="billede udefra af Kær Kaffebar's rude" />
+        <GalleryCard src={MiniTarts} alt="minitærter" />
+      </div>
     </div>
   </div>
 </div>
 
 <script>
   const scrollContainer = document.getElementById("galleryScroll");
-  let backBtn = document.getElementById("backBtn");
-  let nextBtn = document.getElementById("nextBtn");
 
-  nextBtn.addEventListener("click", () => {
-    scrollContainer.style.scrollBehavior = "smooth";
-    scrollContainer.scrollLeft += 330;
-  });
+  const backBtnMobile = document.getElementById("backBtnMobile");
+  const nextBtnMobile = document.getElementById("nextBtnMobile");
 
-  backBtn.addEventListener("click", () => {
-    scrollContainer.style.scrollBehavior = "smooth";
-    scrollContainer.scrollLeft -= 330;
-  });
+  const backBtnDesktop = document.getElementById("backBtnDesktop");
+  const nextBtnDesktop = document.getElementById("nextBtnDesktop");
+
+  const scrollAmount = 330;
+
+  function scrollNext() {
+    scrollContainer.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  }
+
+  function scrollBack() {
+    scrollContainer.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+  }
+
+  if (nextBtnMobile) nextBtnMobile.addEventListener("click", scrollNext);
+  if (backBtnMobile) backBtnMobile.addEventListener("click", scrollBack);
+  if (nextBtnDesktop) nextBtnDesktop.addEventListener("click", scrollNext);
+  if (backBtnDesktop) backBtnDesktop.addEventListener("click", scrollBack);
 </script>
