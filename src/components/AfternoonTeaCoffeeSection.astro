@@ -19,8 +19,8 @@ const { ariaLabel, buttonText, url } = Astro.props;
   <div class={`grid gap-large ${reverse ? "md:order-1" : "md:order-2"} md:justify-center md:self-center`}>
     <h1 class="text-neutral-1 font-header text-header-1">{headline}</h1>
     <div class="grid gap-default">
-      <p class="text-neutral-1 font-body-text text-label"><strong>{subheadline}</strong></p>
-      <h3 class="text-neutral-1 font-body-text text-header-3">{content}</h3>
+      <p class="text-neutral-1 font-body-text text-paragraph"><strong>{subheadline}</strong></p>
+      <h3 class="text-neutral-1 font-body-text text-header-3 leading-height-header-3">{content}</h3>
     </div>
     <Button variant="primary" url={url} ariaLabel={ariaLabel}>{buttonText}</Button>
   </div>
