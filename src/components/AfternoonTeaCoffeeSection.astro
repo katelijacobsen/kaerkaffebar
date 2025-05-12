@@ -1,26 +1,26 @@
 ---
 import { Image } from "astro:assets";
 import Button from "../components/Button.astro";
-
+const { headline, subheadline, content } = Astro.props;
 const { firstIllustrationSrc, firstIllustrationAlt, firstIllustrationWidth, firstIllustrationHeight } = Astro.props;
-const { secondIllustrationSrc, secondIllustrationAlt, secondIllustrationWidth, secondIllustrationHeight, bottomPosition, rightPosition } = Astro.props;
-const { imageSrc, imageAlt, imageWidth, imageHeight, roundedBorder, objectPostion, aspectRatio } = Astro.props;
+const { secondIllustrationSrc, secondIllustrationAlt, secondIllustrationWidth, secondIllustrationHeight, bottomPosition, rightPosition, imageContainerSize } = Astro.props;
+const { imageSrc, imageAlt, imageWidth, imageHeight, roundedBorder, objectPostion, aspectRatio, reverse } = Astro.props;
 const { ariaLabel, buttonText, url } = Astro.props;
 ---
 
-<div class="grid gap-large">
-  <div class="relative">
+<div class="grid gap-large md:grid-cols-2 justify-items-center">
+  <div class={`relative ${reverse ? "md:order-2" : "md:order-1"} `}>
     <Image class=`first-illustration absolute top-[-50px] left-[-20px]` src={firstIllustrationSrc} alt={firstIllustrationAlt} width={firstIllustrationWidth} height={firstIllustrationHeight} />
-    <div class=`${roundedBorder} overflow-hidden ${aspectRatio}`>
-      <Image class=`image object-cover w-full h-full ${objectPostion}` ` src={imageSrc} alt={imageAlt} width={imageWidth} height={imageHeight} />
+    <div class={`overflow-hidden ${aspectRatio} ${roundedBorder} ${imageContainerSize}`}>
+      <Image class=`object-cover w-full h-full ${objectPostion}` ` src={imageSrc} alt={imageAlt} width={imageWidth} height={imageHeight} />
     </div>
     <Image class=`second-illustration absolute ${bottomPosition} ${rightPosition}` src={secondIllustrationSrc} alt={secondIllustrationAlt} width={secondIllustrationWidth} height={secondIllustrationHeight} />
   </div>
-  <div class="grid gap-large">
-    <h1 class="text-neutral-1 font-header text-header-1">Afternoon Tea i Valby</h1>
+  <div class={`grid gap-large ${reverse ? "md:order-1" : "md:order-2"} md:justify-center md:self-center`}>
+    <h1 class="text-neutral-1 font-header text-header-1">{headline}</h1>
     <div class="grid gap-default">
-      <p class="text-neutral-1 font-body-text text-label"><strong>Perfekt til venindetid, fejring eller bare lidt ekstra selvforkælelse.</strong></p>
-      <p class="text-neutral-1 font-body-text text-paragraph">Hos Kær Kaffebar inviterer vi dig til en klassisk Afternoon Tea – fyldt med hjemmelavede kager, friskbagte scones, sandwiches og økologisk te ad libitum. Alt serveret med [kær]lighed, i ægte vintagekopper, hvor detaljerne gør hele forskellen.</p>
+      <p class="text-neutral-1 font-body-text text-label"><strong>{subheadline}</strong></p>
+      <h3 class="text-neutral-1 font-body-text text-header-3">{content}</h3>
     </div>
     <Button variant="primary" url={url} ariaLabel={ariaLabel}>{buttonText}</Button>
   </div>
