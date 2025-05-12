@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import SeasonLeaf from "../../assets/icons/season-leaf.svg";
 
 const { headline, price, showLeaf = true, variant = "primary" } = Astro.props;
@@ -15,7 +14,7 @@ function getVariants(variant: "primary" | "secondary"): string {
 }
 ---
 
-<p class=`${getVariants(variant)} flex items-center`>
+<h3 class=`${getVariants(variant)} flex items-center text-header-3`>
   <strong>{headline}</strong>
   <strong class="ml-2">{price}</strong>
   {
@@ -25,4 +24,4 @@ function getVariants(variant: "primary" | "secondary"): string {
       </span>
     )
   }
-</p>
+</h3>
