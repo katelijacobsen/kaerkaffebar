@@ -24,7 +24,7 @@ function getVariantClasses(variant: "primary" | "secondary" | "neutral" | "disab
 ---
 
 <div>
-  <a href={url}>
+  <a href={url} class="font-button-text text-button">
     <button class={getVariantClasses(variant)} type="button" aria-label={ariaLabel} role="button">
       <slot />
       {
