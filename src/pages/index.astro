@@ -108,8 +108,29 @@ import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
     </section>
 
     <!-- Afternoon tea section -->
-    <section class="px-default">
-      <AfternoonTeaCoffeeSection firstIllustrationSrc={AfternoonTeaIllustration} firstIllustrationAlt="afternoon tea illustration" firstIllustrationWidth="120" secondIllustrationSrc={StrawberryIllustration} secondIllustrationWidth="100" secondIllustrationAlt="jordbær illustration" bottomPosition="bottom-0" rightPosition="right-[-5px]" imageSrc={AfternoonTeaImage} aspectRatio="aspect-[1/1.5]" imageAlt="afternoon tea billede" buttonText="Book bord" url="https://kaerkaffebar.superbexperience.com/" roundedBorder="rounded-full" objectPostion="object-left" />
+    <section class="px-default max-w-[1192px] md:mx-auto">
+      <AfternoonTeaCoffeeSection
+        headline="Afternoon Tea i Valby"
+        subheadline="Perfekt til venindetid, fejring eller bare lidt ekstra selvforkælelse."
+        content="Hos Kær Kaffebar inviterer vi dig til en klassisk Afternoon Tea – fyldt med hjemmelavede kager, friskbagte scones, sandwiches og økologisk te ad libitum. Alt serveret med [kær]lighed, i ægte vintagekopper, hvor detaljerne gør hele forskellen."
+        reverse={true}
+        firstIllustrationSrc={AfternoonTeaIllustration}
+        firstIllustrationAlt="afternoon tea illustration"
+        firstIllustrationWidth="120"
+        secondIllustrationSrc={StrawberryIllustration}
+        secondIllustrationWidth="100"
+        secondIllustrationAlt="jordbær illustration"
+        bottomPosition="bottom-0"
+        rightPosition="right-[-5px] md:right-[20px]"
+        imageSrc={AfternoonTeaImage}
+        aspectRatio="aspect-[1/1.5]"
+        imageAlt="afternoon tea billede"
+        imageContainerSize="max-h-[600px]"
+        buttonText="Book bord"
+        url="https://kaerkaffebar.superbexperience.com/"
+        roundedBorder="rounded-full"
+        objectPostion="object-left"
+      />
     </section>
 
     <!-- Arrangement section -->
@@ -129,7 +150,25 @@ import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
 
     <!-- Coffee section -->
     <section class="px-default">
-      <AfternoonTeaCoffeeSection firstIllustrationSrc={CoffeeBeansIllustration} firstIllustrationAlt="kaffebønner illustration" firstIllustrationWidth="100" secondIllustrationSrc={CoffeeMug} secondIllustrationAlt="kaffe kande illustration" secondIllustrationWidth="100" bottomPosition="bottom-[-50px]" rightPosition="right-[-20px]" imageSrc={CoffeeBacksImage} imageAlt="just coffee kaffe bønner poser" buttonText="Læs mere" url="/menu/#coffeesection" roundedBorder="rounded-default" />
+      <AfternoonTeaCoffeeSection
+        headline="Kær’s kaffe"
+        subheadline="God kaffe. God stemning. Godt selskab."
+        content="Hos Kær Kaffebar brygger vi ikke bare kaffe – vi skaber oplevelser. Vi samarbejder med Just Coffee, der leverer økologiske, bæredygtige bønner af højeste kvalitet, så hver eneste kop hos os er fuld af smag, kærlighed og omtanke."
+        firstIllustrationSrc={CoffeeBeansIllustration}
+        firstIllustrationAlt="kaffebønner illustration"
+        firstIllustrationWidth="100"
+        secondIllustrationSrc={CoffeeMug}
+        secondIllustrationAlt="kaffe kop illustration"
+        secondIllustrationWidth="100"
+        bottomPosition="bottom-[-50px] md:bottom-[0px]"
+        rightPosition="right-[-20px] md:right-[0px]"
+        imageSrc={CoffeeBacksImage}
+        imageAlt="just coffee kaffe bønner poser"
+        imageContainerSize="w-[343px] sm:w-[400px] lg:w-[470]"
+        buttonText="Læs mere"
+        url="/menu/#coffeesection"
+        roundedBorder="rounded-default"
+      />
     </section>
 
     <!-- Heavy text with animation section -->
