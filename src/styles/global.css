@@ -51,9 +51,8 @@
   --spacing-large: 2rem;
   --spacing-extra-large: 2.5rem;
   --spacing-negative: 4rem;
-  --spacing-margin: clamp(7.75rem, -3.75rem + 15vw, 12.75rem) clamp(1rem, -3.75rem + 15vw, 12.75rem);
+  --spacing-margin: clamp(7.75rem, -3.75rem + 15vw, 7.75rem) clamp(1rem, -3.75rem + 15vw, 12.75rem);
   --spacing-section: clamp(1rem, -3.75rem + 15vw, 12.75rem);
-  --spacing-main-padding: 0;
   --spacing-card: clamp(150px, 148px + 0.1vw, 148px);
   --spacing-section: clamp(64px, 64px + 10vw, 224px);
   --spacing-burger-menu: var(--spacing-default) var(--spacing-large);
