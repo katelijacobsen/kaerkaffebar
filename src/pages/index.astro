@@ -18,9 +18,11 @@ import BrunchplateHerosection from "../assets/img/herosection-brunch-plate.webp"
 import IceCoffeeWaffle from "../assets/img/ice-coffee-waffle.webp";
 import OrganicLogo from "../assets/icons/organic-logo.svg";
 import LatteartCloseup from "../assets/img/latte-art-closeup.webp";
+import CoffeePot from "../assets/illustrations/blue/coffepot.avif";
+import Blueberry from "../assets/illustrations/blue/blueberry.avif";
+import SmoerrebroedCloseUp from "../assets/img/smørrebrød-closeup.webp";
 
 //heavy text section illustrations
-import Blueberry from "../assets/illustrations/blue/blueberry.avif";
 import CoffeeMug from "../assets/illustrations/blue/mug.avif";
 import Lemon from "../assets/illustrations/blue/whole-lemon.avif";
 import Croissant from "../assets/illustrations/blue/croissant.avif";
@@ -37,7 +39,6 @@ import AfternoonTeaIllustration from "../assets/illustrations/blue/afternoon-tea
 import StrawberryIllustration from "../assets/illustrations/blue/strawberry.avif";
 import AfternoonTeaImage from "../assets/img/afternoon-tea.webp";
 import CoffeeBeansIllustration from "../assets/illustrations/blue/coffeebeans.avif";
-import CoffeePotIllustration from "../assets/illustrations/blue/coffepot.avif";
 import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
 ---
 
@@ -59,25 +60,50 @@ import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
     </section>
 
     <!-- Menusection -->
-    <section class="grid gap-large pl-default pr-default">
+    <section class="grid gap-large pl-default pr-default max-w-[1192px] mx-auto">
       <h1 class="text-neutral-1 text-header-1 text-center">Menu</h1>
-      <div class="grid grid-cols-2 grid-rows-[auto, 1fr, 1fr, auto] gap-default justify-center">
+      <div class="grid grid-cols-2 grid-rows-[auto, 1fr, 1fr, auto] gap-default justify-center md:hidden">
         <Image width={120} height={120} src={CroissantIllustration} alt="croissant illustration" class="justify-self-center" />
         <div class="h-[140px] overflow-hidden rounded-full">
           <Image src={IceCoffeeWaffle} alt="iskaffe og vaffel" class="object-cover w-full h-full object-left" />
         </div>
         <Image src={BrunchplateHerosection} alt="brunch tallerken" class="col-span-2 rounded-default" />
         <Image src={LatteartCloseup} alt="latte art closeup" class="rounded-default" />
-        <img src={OrganicLogo.src} alt="økologi logo" />
+        <img src={OrganicLogo.src} alt="økologi logo" class="justify-self-center self-center" />
       </div>
-      <Button url="/menu" variant="primary" ariaLabel="Se menu">Se menu</Button>
+      <div>
+        <div class="hidden md:grid md:grid-cols-5 md:grid-rows-[0.1fr_0.5fr_0.5fr_0.5fr] md:gap-default md:justify-center">
+          <Image width={120} height={120} src={CroissantIllustration} alt="croissant illustration" class="justify-self-center self-center col-start-1 col-end-2 row-start-1 row-end-3" />
+          <div class="overflow-hidden rounded-full col-start-2 col-end-4 row-start-1 row-end-3">
+            <Image src={IceCoffeeWaffle} alt="iskaffe og vaffel" class="object-cover w-full h-full" />
+          </div>
+          <div class="col-start-4 col-end-5 row-start-1 row-end-3 overflow-hidden rounded-default">
+            <Image src={LatteartCloseup} alt="latte art closeup" class="object-cover w-full h-full" />
+          </div>
+
+          <Image src={Blueberry} alt="blåbær illustration" class="justify-self-center self-center col-start-5 col-end-5 row-start-1 row-end-2" />
+
+          <Image src={BrunchplateHerosection} alt="brunch tallerken" class="col-start-1 col-end-3 row-start-3 row-end-5 rounded-default" />
+
+          <img src={OrganicLogo.src} alt="økologi logo" class="justify-self-center self-center col-start-3 col-end-4 row-start-3 row-end-5" />
+
+          <Image src={CoffeePot} alt="kaffekande illustration" class="col-start-4 col-end-5 row-start-3 row-end-5" />
+
+          <div class="overflow-hidden rounded-full col-start-[5] col-end-[6] row-start-[2] row-end-[5]">
+            <Image src={CinnamonRolls} alt="kanelsnurre" class="object-cover w-full h-full" />
+          </div>
+        </div>
+      </div>
+      <div class="grid justify-items-center">
+        <Button url="/menu" variant="primary" ariaLabel="Se menu">Se menu</Button>
+      </div>
     </section>
 
     <!-- Quote section -->
     <section>
       <div class="bg-neutral-2 max-w-[98vw] pl-default pt-large pb-large rounded-r-full">
         <p class="text-neutral-1 text-label"><strong>Indehaver af Kær Kaffebar</strong></p>
-        <h2 class="text-neutral-1 max-w-[74vw]">“Kær Kaffebar er skabt ud fra en drøm om nærvær, god kaffe – og lysten til at gøre en forskel i lokalsamfundet.”</h2>
+        <h2 class="text-neutral-1 font-body-text max-w-[74vw]">“Kær Kaffebar er skabt ud fra en drøm om nærvær, god kaffe – og lysten til at gøre en forskel i lokalsamfundet.”</h2>
       </div>
     </section>
 
