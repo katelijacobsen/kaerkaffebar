@@ -3,6 +3,7 @@
 import Logo from "../assets/img/kaer-logo.png";
 import PrimaryButton from "./PrimaryButton.astro";
 import AnchorLink from "./AnchorLink.astro";
+import Button from "./Button.astro";
 ---
 
 <header class="fixed top-0 z-50 w-full">
@@ -17,14 +18,16 @@ import AnchorLink from "./AnchorLink.astro";
           <li><AnchorLink url="/menu">Menu</AnchorLink></li>
           <li><AnchorLink url="/arrangement">Hold dit arrangement og events</AnchorLink></li>
           <li><AnchorLink url="/runningclub">Kær løbeklub</AnchorLink></li>
-          <li><PrimaryButton>Book bord</PrimaryButton></li>
+          <!-- <li><PrimaryButton>Book bord</PrimaryButton></li> -->
+          <li><Button variant="primary" url="https://kaerkaffebar.superbexperience.com/" ariaLabel="tilmeld dig løbeklub">Book bord</Button></li>
           <li class="text-sm">DK / EN</li>
         </ul>
       </nav>
 
       <!-- Mobile Navigation Controls -->
       <div class="flex items-center gap-2 lg:hidden">
-        <PrimaryButton>Book Bord</PrimaryButton>
+        <!-- <PrimaryButton>Book Bord</PrimaryButton> -->
+        <Button variant="primary" url="https://kaerkaffebar.superbexperience.com/" ariaLabel="tilmeld dig løbeklub">Book bord</Button>
         <button id="mobile-menu-button" class="p-2 focus:outline-none" aria-label="Toggle menu">
           <svg class="w-10 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
