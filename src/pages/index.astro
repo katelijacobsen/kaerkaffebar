@@ -94,7 +94,7 @@ import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
           </div>
         </div>
       </div>
-      <div class="grid justify-items-center">
+      <div class="grid md:justify-items-center">
         <Button url="/menu" variant="primary" ariaLabel="Se menu">Se menu</Button>
       </div>
     </section>
@@ -108,12 +108,13 @@ import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
     </section>
 
     <!-- Afternoon tea section -->
-    <section class="px-default max-w-[1192px] md:mx-auto">
+    <section class="max-w-[1192px] md:mx-auto">
       <AfternoonTeaCoffeeSection
         headline="Afternoon Tea i Valby"
         subheadline="Perfekt til venindetid, fejring eller bare lidt ekstra selvforkælelse."
         content="Hos Kær Kaffebar inviterer vi dig til en klassisk Afternoon Tea – fyldt med hjemmelavede kager, friskbagte scones, sandwiches og økologisk te ad libitum. Alt serveret med [kær]lighed, i ægte vintagekopper, hvor detaljerne gør hele forskellen."
         reverse={true}
+        gridItemsPlacement="justify-items-center"
         firstIllustrationSrc={AfternoonTeaIllustration}
         firstIllustrationAlt="afternoon tea illustration"
         firstIllustrationWidth="120"
@@ -134,9 +135,9 @@ import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
     </section>
 
     <!-- Arrangement section -->
-    <section>
+    <section class="px-default lg:px-0 max-w-[1192px] mx-auto">
       <div class="grid gap-extra-large">
-        <div class="pl-default pr-default grid gap-extra-large">
+        <div class="px-defualt grid gap-extra-large lg:px-0">
           <h1 class="text-neutral-1 font-header text-header-1">Hold dit næste arrangement hos Kær Kaffebar</h1>
           <div>
             <p class="text-neutral-1 text-label"><strong>Skab mindeværdige øjeblikke i hjertet af Valby.</strong></p>
@@ -149,22 +150,23 @@ import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
     </section>
 
     <!-- Coffee section -->
-    <section class="px-default">
+    <section class="max-w-[1192px] mx-auto">
       <AfternoonTeaCoffeeSection
         headline="Kær’s kaffe"
         subheadline="God kaffe. God stemning. Godt selskab."
         content="Hos Kær Kaffebar brygger vi ikke bare kaffe – vi skaber oplevelser. Vi samarbejder med Just Coffee, der leverer økologiske, bæredygtige bønner af højeste kvalitet, så hver eneste kop hos os er fuld af smag, kærlighed og omtanke."
+        gridItemsPlacement="justify-items-center md:justify-items-start"
         firstIllustrationSrc={CoffeeBeansIllustration}
         firstIllustrationAlt="kaffebønner illustration"
         firstIllustrationWidth="100"
         secondIllustrationSrc={CoffeeMug}
         secondIllustrationAlt="kaffe kop illustration"
         secondIllustrationWidth="100"
-        bottomPosition="bottom-[-50px] md:bottom-[0px]"
+        bottomPosition="bottom-[-50px] "
         rightPosition="right-[-20px] md:right-[0px]"
         imageSrc={CoffeeBacksImage}
         imageAlt="just coffee kaffe bønner poser"
-        imageContainerSize="w-[343px] sm:w-[400px] lg:w-[470]"
+        imageContainerSize="w-[343px] md:w-[400px] lg:w-[500px]"
         buttonText="Læs mere"
         url="/menu/#coffeesection"
         roundedBorder="rounded-default"
@@ -172,7 +174,7 @@ import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
     </section>
 
     <!-- Heavy text with animation section -->
-    <section class="relative pt-[150px] pb-[150px]">
+    <section class="relative px-default lg:px-0 pt-[150px] pb-[150px] max-w-[1192px] mx-auto">
       <Image class="blueberry absolute top-0 left-[-50px]" src={Blueberry} alt="blåbær" width={70} height={70} />
       <Image class="coffeemug absolute top-4 right-0" src={CoffeeMug} alt="kaffekop" width={90} height={90} />
       <h2 class="text-center text-accent">Fra friskbagte boller til brunchtallerkener – vi gør os umage hver dag for at servere mad, der smager af [kær]lighed.</h2>
