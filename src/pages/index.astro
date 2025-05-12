@@ -94,7 +94,7 @@ import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
           </div>
         </div>
       </div>
-      <div class="grid md:justify-items-center">
+      <div class="grid sm:justify-items-center">
         <Button url="/menu" variant="primary" ariaLabel="Se menu">Se menu</Button>
       </div>
     </section>
@@ -143,7 +143,9 @@ import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
             <p class="text-neutral-1 text-label"><strong>Skab mindeværdige øjeblikke i hjertet af Valby.</strong></p>
             <h3 class="text-neutral-1 font-body-text text-header-3">Drømmer du om en hyggelig, personlig ramme til dit næste arrangement? Hos Kær Kaffebar åbner vi dørene for alt fra fødselsdage og firmaevents til PR-events og små, private fester. Vores café byder på en varm atmosfære, smuk indretning og økologiske specialiteter, der sætter prikken over i'et på din dag.</h3>
           </div>
-          <Button variant="primary" url="/arrangement" ariaLabel="Læs mere">Læs mere</Button>
+          <div class="grid sm:justify-items-center">
+            <Button variant="primary" url="/arrangement" ariaLabel="Læs mere">Læs mere</Button>
+          </div>
         </div>
         <Image src={ArrangementIllustration} alt="arrangement illustration" width={375} />
       </div>
@@ -183,25 +185,27 @@ import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
     </section>
 
     <!-- Runningclub section -->
-    <section class="px-default grid gap-large">
+    <section class="px-default xl:px-0 max-w-[1192px] mx-auto grid gap-large">
       <h1 class="text-neutral-1 text-header-1 font-header">Kær løbeklub</h1>
       <div class="grid gap-large">
-        <div class="grid gap-large">
-          <div class="bg-neutral-2 p-large rounded-default">
+        <div class="grid gap-large md:grid-cols-2">
+          <div class="bg-neutral-2 p-large rounded-default md:order-1">
             <h3 class="text-neutral-1 text-header-3 font-body-text">Vidste du, at vi også løber sammen? Kær Kaffebar's løbeklub handler om glæde ved bevægelse – ikke præstationer.</h3>
           </div>
           <div class="h-[180px] overflow-hidden rounded-full md:h-[200px]">
             <Image src={RunningImage} alt="løbe billede" class="object-cover w-full h-full object-bottom" />
           </div>
         </div>
-        <div class="grid gap-large">
+        <div class="grid gap-large md:grid-cols-[1.5fr_0.7fr]">
           <h2 class="text-neutral-1 text-header-3 font-body-text">Alle er velkomne – uanset form eller erfaring. Kom med næste gang og få motion, smil og måske en ny ven på vejen!</h2>
-          <div class="h-[140px] bg-secondary relative rounded-full">
-            <Image src={CoffeeCupIllustration} width={120} height={120} alt="kaffekop illustration" class="absolute top-2.5 right-1" />
+          <div class="h-[140px] bg-secondary relative rounded-full md:h-[200px]">
+            <Image src={CoffeeCupIllustration} width={120} height={120} alt="kaffekop illustration" class="absolute top-2.5 right-1 md:top-8" />
           </div>
         </div>
       </div>
-      <Button variant="primary" url="/runningclub" ariaLabel="tilmeld dig løbeklub">Tilmeld dig løbeklub</Button>
+      <div class="grid sm:justify-items-center">
+        <Button variant="primary" url="/runningclub" ariaLabel="tilmeld dig løbeklub">Tilmeld dig løbeklub</Button>
+      </div>
     </section>
 
     <!-- Gallery section -->
