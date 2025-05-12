@@ -1,4 +1,3 @@
-@import url("https://use.typekit.net/auz0iym.css");
 @import "tailwindcss";
 
 @font-face {
@@ -24,10 +23,10 @@
   --color-faded-highlight: #300d0c4d;
 
   /*Font*/
-  --font-body-text: "Mr Eaves Mod OT", sans-serif;
-  --font-button-text: "Mr Eaves Mod OT", sans-serif;
+  --font-body-text: "mr-eaves-sans", sans-serif;
+  --font-button-text: "mr-eaves-sans", sans-serif;
   --font-header: "Babe Sans", sans-serif;
-  --font-label: "Mr Eaves Mod OT", sans-serif;
+  --font-label: "mr-eaves-sans", sans-serif;
 
   /* Font Sizes */
   --text-header-1: clamp(2.5rem, 2rem + 2.5vw, 4.25rem);
