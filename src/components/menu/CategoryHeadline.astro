@@ -5,12 +5,12 @@ const { headline, illustration: Illustration, showIllustration = true, alt, widt
 ---
 
 <div class="grid justify-items-center md:grid-cols-[1fr_auto] md:justify-start w-fit md:gap-large md:items-center h-fit">
-  {
+  <!-- {
     showIllustration && Illustration && (
       <span class="grid justify-center md:order-1 w-fit">
         <Image src={Illustration} width={width} height={height} alt={alt} />
       </span>
     )
-  }
+  } -->
   <h2 class="text-neutral-1 text-header-2 font-body-text">{headline}</h2>
 </div>
