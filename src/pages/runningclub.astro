@@ -35,54 +35,54 @@ console.log(events);
 ---
 
 <Layout title="Kær løbeklub">
-  <main class="grid gap-negative mb-negative">
-    <section class="pl-default pr-default relative">
+  <main class="grid gap-negative m-margin text-neutral-1 ">
+    <section class="relative">
       <Image
         src={CoffeeCupIllustration}
         alt="kaffekop illustration"
         class="absolute w-[130px] right-1 top-1 z-[-10]"
       />
       <div>
-        <h1 class="text-header-1 font-header text-neutral-1">Kær løbeklub</h1>
-        <h3 class="text-neutral-1 text-header-3">
+        <h1 class="text-header-1 font-header">Kær løbeklub</h1>
+        <p class="text-paragraph leading-paragraph">
           Kær Klubben’s løbeklub i Valby har <strong
             >fokus på det sociale og på at samle lokalsamfundet</strong
           >, samtidig med at vi bevæger os. <strong
             >Ruten i søndermarken er 2,5 km, så alle kan være med.</strong
           >  Er man hurtig, kan man nå den 2 gange!
-        </h3>
+        </p>
       </div>
     </section>
-    <section class="pl-default pr-default">
+    <section>
       <div class="grid gap-default">
-        <h2 class="text-neutral-1 text-header-2">Kommende ture</h2>
+        <h2 class="text-header-2">Kommende ture</h2>
+        <!-- Mapping events fra API -->
         {
           events.length === 0 ? (
-            <p class="text-neutral-1 text-label">Ingen kommende ture</p>
+            <p class="text-label">Ingen kommende ture</p>
           ) : (
             events.map((event) => <RunningClubCard event={event} />)
           )
         }
-        <p class="text-neutral-1">
+        <p>
           <strong
-            >OBS: ved afmeldning skriv til nummeret: 81610900 mindst 24 timer
+            >OBS: ved afmeldning skriv til nummeret: 81 61 09 00 mindst 24 timer
             inden.</strong
           >
         </p>
       </div>
       <div
         class="grid justify-items-center"
-        style="padding: var(--spacing-default);"
       >
-        <h1 class="font-header text-header-1">FAQ</h1>
+        <h2 class="font-header text-header-1">FAQ</h2>
         <Accordion items={faqItems} />
       </div>
     </section>
-    <section class="grid gap-large pl-default pr-default">
+    <section class="grid gap-large">
       <div class="h-[140px] overflow-hidden rounded-full">
         <Image
           src={RunningImage}
-          alt="løbe billede"
+          alt="billeder-af-to-piger-med-en-løbeklub-t-shirt"
           class="object-cover w-full h-full object-bottom"
         />
       </div>
