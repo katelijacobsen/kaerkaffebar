@@ -5,26 +5,24 @@ import { supabase } from "../../lib/supabase";
 export const prerender = false;
 
 // API route for at håndtere forespørgsel fra form
-export const POST: APIRoute = async ({ request, redirect }) => {
-  console.log(request);
+export const GET: APIRoute = async ({ url }) => {
+  console.log(url);
 
-  const formData = await request.formData();
+  const formData = await url.formData();
 
   // Data
   const data = {
-    fullName: formData.get("fullName"),
-    email: formData.get("email"),
-    phoneNumber: formData.get("phoneNumber"),
-    occasion: formData.get("occasion"),
-    //getAll så vi kan få flere værdier. Former data til array
-    diet: formData.getAll("diet"),
+    month: formData.get("month"),
     date: formData.get("date"),
-    time: formData.get("time"),
-    comment: formData.get("comment"),
+    location: formData.get("location"),
+    diet: formData.getAll("diet"),
+    startTime: formData.get("startTime"),
+    endingTime: formData.get("endingTime"),
   };
   //error håndtering - hvis der skulle være fejl i dataen
   const { error } = await supabase.from("request").insert([data]);
   if (error) {
+
     return new Response(JSON.stringify({ error: error.message }), {
       status: 500,
     });
@@ -32,5 +30,23 @@ export const POST: APIRoute = async ({ request, redirect }) => {
   // Retur hvis forespørgsel er sendt korrekt
   //return new Response(JSON.stringify({ message: "success" }), { status: 200 });
   // Bruger query string til at sende success tilbage til arrangement siden. Hvis brugeren trykker på send uden errors ville url'en vise true
-  return redirect("/arrangement?requestSend=true");
+
 };
+
+export const POST: APIRoute = async ({ request, redirect }) => {
+    
+    const formData = await request.formData();
+
+    const data = {
+        participant: formData.get("participant"),
+    }
+
+    const { error } = await supabase.from("runningclub").insert([data]);
+    if (error) {
+        return new Response(JSON.stringify({ error: error.message }), {
+            status: 500,
+        });
+    }
+
+    return redirect("/runningclub");
+}
