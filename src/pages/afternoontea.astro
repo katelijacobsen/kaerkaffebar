@@ -1,0 +1,74 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import AfternoonTea from "../assets/img/afternoontea-page-image.webp";
+import Macarons from "../assets/img/macarons.webp";
+import LemonsIllustration from "../assets/illustrations/blue/lemon-pieces.webp";
+import QuoteSection from "../components/QuoteSection.astro";
+import AfternoonTeaTwo from "../assets/img/afternoontea-page-image-2.webp";
+import PearAndBlueberry from "../assets/illustrations/blue/pear-and-blueberyy.avif";
+---
+
+<Layout title="Afternoon tea">
+  <main>
+    <div class="m-margin mb-section md:grid md:grid-cols-2">
+      <div class="grid gap-extra-large">
+        <div class="grid gap-default">
+          <h1 class="font-header text-neutral-1 text-header-1 leading-height-header-1">Afternoon Tea</h1>
+          <p class="text-neutral-1 text-paragraph font-bold font-body-text leading-height-paragraph">En hyggelig stund med te, kager og små delikatesser.</p>
+          <p class="text-neutral-1 text-paragraph font-body-text leading-height-paragraph">Perfekt til venindehygge, fejring eller en særlig pause i hverdagen.</p>
+        </div>
+
+        <div class="grid gap-small">
+          <h3 class="text-neutral-1 text-header-3 font-body-text leading-height-header-3">Hvad inkluderer Afternoon Tea hos Kær Kaffebar?</h3>
+          <ul class="list-disc pl-default">
+            <li class="text-neutral-1 text-paragraph font-body-text leading-height-paragraph">Hjemmebagte scones med smør og hjemmelavet kompot</li>
+            <li class="text-neutral-1 text-paragraph font-body-text leading-height-paragraph">Petit fours – et udvalg af små, delikate kager</li>
+            <li class="text-neutral-1 text-paragraph font-body-text leading-height-paragraph">Finger sandwiches i tre forskellige varianter</li>
+            <li class="text-neutral-1 text-paragraph font-body-text leading-height-paragraph">Økologisk engelsk te – serveret ad libitum</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-neutral-1 text-header-3 font-body-text leading-height-header-3">Praktisk information</h3>
+          <ul class="list-disc pl-default">
+            <li class="text-neutral-1 text-paragraph font-body-text leading-height-paragraph">Tidspunkt: Afternoon Tea serveres dagligt fra kl. 13:00.</li>
+            <li class="text-neutral-1 text-paragraph font-body-text leading-height-paragraph font-bold">Booking: reservation skal foretages senest 24 timer i forvejen</li>
+          </ul>
+        </div>
+        <h2 class="text-neutral-1 font-body-text text-header-2 leading-height-header-2">Pris 225,- pr kuvert</h2>
+        <Button variant="primary" url="https://kaerkaffebar.superbexperience.com/" ariaLabel="book bord til afternoon tea">Book bord</Button>
+      </div>
+
+      <div class="grid grid-cols-2 grid-rows-[0.5fr_1fr_1fr] gap-default mt-negative md:hidden">
+        <div class="rounded-default col-start-1 col-end-2 row-span-3 overflow-hidden">
+          <Image class="object-cover w-full h-full object-left" src={AfternoonTea} alt="Afternoon tea" />
+        </div>
+
+        <Image class="col-start-2 col-end-3 row-span-1 justify-self-center self-center" src={LemonsIllustration} alt="illustration af citroner" />
+        <div class="rounded-full col-start-2 col-end-3 row-span-2 overflow-hidden">
+          <Image class="object-cover w-full h-full object-right" src={Macarons} alt="macarons" />
+        </div>
+      </div>
+
+      <div class="hidden md:grid md:grid-cols-2 md:grid-rows-[0.1fr_0.2fr_0.2fr_0.5fr] md:gap-default md:mt-negative">
+        <div class="rounded-default col-start-1 col-end-2 row-span-3 overflow-hidden">
+          <Image class="object-cover w-full h-full object-left" src={AfternoonTea} alt="afternoon tea" />
+        </div>
+        <Image class="col-start-2 col-end-3 row-span-1 justify-self-center self-center" src={LemonsIllustration} alt="illustration af citroner" />
+        <div class="rounded-full col-start-2 col-end-3 row-span-2 overflow-hidden">
+          <Image class="object-cover w-full h-full object-right" src={Macarons} alt="macarons" />
+        </div>
+        <Image class="col-start-1 col-end-2 row-span-1 justify-self-center self-center" src={PearAndBlueberry} width={150} height={150} alt="pære og blåbær illustration" />
+        <div class="rounded-default col-start-2 col-end-3 row-span-1 overflow-hidden">
+          <Image class="object-cover w-full h-full object-left" src={AfternoonTeaTwo} alt="afternoon tea" />
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-negative">
+      <QuoteSection content="Skab nye minder over fine porcelænskopper, varme scones og liflig te – en lille stund af ro og forkælelse midt i Valby." bgColor="bg-neutral-3" />
+    </div>
+  </main>
+</Layout>

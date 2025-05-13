@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import Button from "../components/Button.astro";
 import AfternoonTeaCoffeeSection from "../components/AfternoonTeaCoffeeSection.astro";
 import GallerySliderSection from "../components/gallery/GallerySliderSection.astro";
+import QuoteSection from "../components/QuoteSection.astro";
 
 //images for herosection
 import HerosectionBrunchplate from "../assets/img/herosection-brunch-plate.webp";
@@ -100,12 +101,7 @@ import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
     </section>
 
     <!-- Quote section -->
-    <section>
-      <div class="bg-neutral-2 max-w-[98vw] pl-default py-large rounded-r-full sm:pl-large sm:pr-large md:max-w-[1316px] md:px-[124px] md:py-[64px]">
-        <p class="text-neutral-1 text-paragraph font-bold font-body-text leading-height-paragraph">Indehaver af Kær Kaffebar</p>
-        <h2 class="text-neutral-1 text-header-2 font-body-text max-w-[74vw] leading-height-header-2">“Kær Kaffebar er skabt ud fra en drøm om nærvær, god kaffe – og lysten til at gøre en forskel i lokalsamfundet.”</h2>
-      </div>
-    </section>
+    <QuoteSection label="Indehaver af Kær Kaffebar" content="“Kær Kaffebar er skabt ud fra en drøm om nærvær, god kaffe – og lysten til at gøre en forskel i lokalsamfundet.”" bgColor="bg-neutral-2" />
 
     <!-- Afternoon tea section -->
     <section class="max-w-[1192px] md:mx-auto">
