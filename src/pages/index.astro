@@ -55,13 +55,13 @@ import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
 
       <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-primary text-center pl-default pr-default">
         <img src={Logo.src} class="w-[300px] md:w-[500px] mb-6" alt="Kær Kaffebar logo" />
-        <h1 class="text-4xl md:text-6xl font-bold text-primary">... den hyggeligste kaffebar i Valby</h1>
+        <h1 class="text-4xl md:text-6xl font-bold text-header leading-height-header-1 text-primary">...den hyggeligste kaffebar i Valby</h1>
       </div>
     </section>
 
     <!-- Menusection -->
     <section class="grid gap-large pl-default pr-default md:px-large lg:px-0 max-w-[1192px] mx-auto">
-      <h1 class="text-neutral-1 text-header-1 text-center">Menu</h1>
+      <h1 class="text-neutral-1 text-header-1 text-center text-header leading-height-header-1">Menu</h1>
       <div class="grid grid-cols-2 grid-rows-[auto, 1fr, 1fr, auto] gap-default justify-center md:hidden">
         <Image width={120} height={120} src={CroissantIllustration} alt="croissant illustration" class="justify-self-center" />
         <div class="h-[140px] overflow-hidden rounded-full">
@@ -102,8 +102,8 @@ import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
     <!-- Quote section -->
     <section>
       <div class="bg-neutral-2 max-w-[98vw] pl-default py-large rounded-r-full sm:pl-large sm:pr-large md:max-w-[1316px] md:px-[124px] md:py-[64px]">
-        <p class="text-neutral-1 text-label"><strong>Indehaver af Kær Kaffebar</strong></p>
-        <h2 class="text-neutral-1 font-body-text max-w-[74vw] leading-height-header-2">“Kær Kaffebar er skabt ud fra en drøm om nærvær, god kaffe – og lysten til at gøre en forskel i lokalsamfundet.”</h2>
+        <p class="text-neutral-1 text-paragraph font-bold font-body-text leading-height-paragraph">Indehaver af Kær Kaffebar</p>
+        <h2 class="text-neutral-1 text-header-2 font-body-text max-w-[74vw] leading-height-header-2">“Kær Kaffebar er skabt ud fra en drøm om nærvær, god kaffe – og lysten til at gøre en forskel i lokalsamfundet.”</h2>
       </div>
     </section>
 
@@ -138,10 +138,10 @@ import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
     <section class="px-default lg:px-0 max-w-[1192px] mx-auto">
       <div class="grid gap-extra-large">
         <div class="px-defualt grid gap-extra-large lg:px-0">
-          <h1 class="text-neutral-1 font-header text-header-1">Hold dit næste arrangement hos Kær Kaffebar</h1>
+          <h1 class="text-neutral-1 font-header text-header-1 leading-height-header-1">Hold dit næste arrangement hos Kær Kaffebar</h1>
           <div>
-            <p class="text-neutral-1 text-label"><strong>Skab mindeværdige øjeblikke i hjertet af Valby.</strong></p>
-            <h3 class="text-neutral-1 font-body-text text-header-3">Drømmer du om en hyggelig, personlig ramme til dit næste arrangement? Hos Kær Kaffebar åbner vi dørene for alt fra fødselsdage og firmaevents til PR-events og små, private fester. Vores café byder på en varm atmosfære, smuk indretning og økologiske specialiteter, der sætter prikken over i'et på din dag.</h3>
+            <p class="text-neutral-1 text-paragraph font-bold font-body-text leading-height-paragraph">Skab mindeværdige øjeblikke i hjertet af Valby.</p>
+            <h3 class="text-neutral-1 font-body-text text-header-3 leading-height-header-3">Drømmer du om en hyggelig, personlig ramme til dit næste arrangement? Hos Kær Kaffebar åbner vi dørene for alt fra fødselsdage og firmaevents til PR-events og små, private fester. Vores café byder på en varm atmosfære, smuk indretning og økologiske specialiteter, der sætter prikken over i'et på din dag.</h3>
           </div>
           <div class="grid sm:justify-items-center">
             <Button variant="primary" url="/arrangement" ariaLabel="Læs mere">Læs mere</Button>
@@ -179,18 +179,18 @@ import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
     <section class="relative px-default lg:px-0 pt-[150px] pb-[150px] max-w-[1192px] mx-auto">
       <Image class="blueberry absolute top-0 left-[-50px]" src={Blueberry} alt="blåbær" width={70} height={70} />
       <Image class="coffeemug absolute top-4 right-0" src={CoffeeMug} alt="kaffekop" width={90} height={90} />
-      <h2 class="text-center text-accent">Fra friskbagte boller til brunchtallerkener – vi gør os umage hver dag for at servere mad, der smager af [kær]lighed.</h2>
+      <h2 class="text-center text-accent text-header-2 font-body-text leading-height-header-2">Fra friskbagte boller til brunchtallerkener – vi gør os umage hver dag for at servere mad, der smager af [kær]lighed.</h2>
       <Image class="lemon absolute bottom-4 right-0" src={Lemon} alt="citron" width={90} height={90} />
       <Image class="croissant absolute bottom-0 left-0" src={Croissant} width={90} height={90} alt="croissant" />
     </section>
 
     <!-- Runningclub section -->
     <section class="px-default xl:px-0 max-w-[1192px] mx-auto grid gap-large">
-      <h1 class="text-neutral-1 text-header-1 font-header">Kær løbeklub</h1>
+      <h1 class="text-neutral-1 text-header-1 font-header leading-height-header-1">Kær løbeklub</h1>
       <div class="grid gap-large">
         <div class="grid gap-large md:grid-cols-2">
           <div class="bg-neutral-2 p-large rounded-default md:order-1">
-            <h3 class="text-neutral-1 text-header-3 font-body-text leading-height-header-3">Vidste du, at vi også løber sammen? Kær Kaffebar's løbeklub handler om glæde ved bevægelse – ikke præstationer.</h3>
+            <h3 class="text-neutral-1 text-header-3 font-body-text leading-height-header-3">Vidste du, at vi også løber sammen? <strong>Kær Kaffebar's løbeklub</strong> handler om <strong>glæde ved bevægelse – ikke præstationer.</strong></h3>
           </div>
           <div class="h-[180px] overflow-hidden rounded-full md:h-[200px]">
             <Image src={RunningImage} alt="løbe billede" class="object-cover w-full h-full object-bottom" />
