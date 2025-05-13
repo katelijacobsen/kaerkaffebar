@@ -98,28 +98,5 @@ console.log(events);
         />
       </div>
     </section>
-    <div class="grid gap-negative md:mt-negative">
-      <section class="grid gap-large md:grid-cols-2 md:gap-negative">
-        <div class="grid gap-default">
-          <h2 class="text-neutral-1 text-header-2 text-left font-body-text leading-height-header-2">Kommende ture</h2>
-          <RunningClubCard />
-          <RunningClubCard />
-          <p class="text-neutral-1 text-center font-body-text text-label leading-height-paragraph"><strong>OBS: ved afmeldning skriv til nummeret: 81610900 mindst 24 timer inden.</strong></p>
-        </div>
-        <div class="grid justify-items-center grid-rows-[0.1fr_auto] max-h-[400px] overflow-y-auto">
-          <h1 class="font-header text-header-1 leading-height-header-1 text-neutral-1">FAQ</h1>
-          <Accordion items={faqItems} />
-        </div>
-      </section>
-      <section class="grid gap-large md:grid-cols-2 md:gap-negative">
-        <div class="h-[140px] overflow-hidden rounded-full md:h-[200px]">
-          <Image src={RunningImage} alt="løbe billede" class="object-cover w-full h-full object-bottom" />
-        </div>
-        <div class="relative h-[250px]">
-          <h2 class="text-accent text-header-2 leading-height-header-2 font-body-text text-center">Hos Kær Kaffebar handler det ikke kun om tempo, men om fællesskab og lokale bånd.</h2>
-          <Image src={LemonPiecesIllustration} alt="illustration af citroner" class="absolute bottom-0 right-0 z-[-10]" />
-        </div>
-      </section>
-    </div>
   </main>
 </Layout>
