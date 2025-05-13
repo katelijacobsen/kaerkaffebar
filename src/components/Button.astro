@@ -14,6 +14,7 @@ function getVariantClasses(variant: "primary" | "secondary" | "neutral" | "disab
 
   const variants = {
     primary: "bg-accent text-button text-primary p-button font-button-text hover:bg-accent-hover",
+    primaryOutline: "text-button text-primary p-button font-body-text border border-primary",
     secondary: "bg-transparent text-accent text-button p-button border border-accent hover:border-accent-hover hover:text-accent-hover",
     neutral: "bg-accent text-button text-primary p-button font-button-text hover:bg-accent-hover",
     disabled: "bg-disabled text-button text-primary p-button font-button-text",
@@ -28,7 +29,7 @@ function getVariantClasses(variant: "primary" | "secondary" | "neutral" | "disab
     <button class={getVariantClasses(variant)} type="button" aria-label={ariaLabel} role="button">
       <slot />
       {
-        variant === "primary" && showArrow && (
+        (variant === "primary" || variant === "primaryOutline") && showArrow && (
           <span class="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] group-hover:-translate-y-1 group-hover:translate-x-1">
             <Icon width="20" height="20" />
           </span>
