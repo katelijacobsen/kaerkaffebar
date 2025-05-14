@@ -53,8 +53,8 @@ console.log(events);
         </p>
       </div>
     </section>
-    <section>
-      <div class="grid gap-default">
+    <section class="lg:flex lg:flex-row gap-large">
+      <div class="grid gap-default flex-shrink-0">
         <h2 class="text-header-2">Kommende ture</h2>
         <!-- Mapping events fra API -->
         {
@@ -72,14 +72,14 @@ console.log(events);
         </p>
       </div>
       <div
-        class="grid justify-items-center"
+        class="flex flex-col items-center"
       >
-        <h2 class="font-header text-header-1">FAQ</h2>
+        <h2 class="font-header text-header-2">FAQ</h2>
         <Accordion items={faqItems} />
       </div>
     </section>
-    <section class="grid gap-large">
-      <div class="h-[140px] overflow-hidden rounded-full">
+    <section class="lg:flex lg:flex-row gap-large">
+      <div class="h-[140px] lg:h-[60%] overflow-hidden rounded-full lg:w-[100%]">
         <Image
           src={RunningImage}
           alt="billeder-af-to-piger-med-en-løbeklub-t-shirt"
