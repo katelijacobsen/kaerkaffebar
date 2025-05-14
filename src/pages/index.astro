@@ -29,17 +29,14 @@ import Lemon from "../assets/illustrations/blue/lemons.svg";
 import Croissant from "../assets/illustrations/blue/croissant.avif";
 
 //arrangement section illustration
-import ArrangementIllustration from "../assets/illustrations/blue/arrangement.avif";
+import ArrangementIllustration from "../assets/illustrations/brown/afternoon-tea-illustration.png";
 
 //runningclub section image and illustration
 import RunningImage from "../assets/img/running-img.webp";
 import CoffeeCupIllustration from "../assets/illustrations/blue/kaer-coffecup.webp";
 
 //Afternoon tea and coffee section images and illustrations
-import AfternoonTeaIllustration from "../assets/illustrations/blue/afternoon-tea.avif";
-import StrawberryIllustration from "../assets/illustrations/blue/strawberry.avif";
 import AfternoonTeaImage from "../assets/img/afternoon-tea.webp";
-import CoffeeBeansIllustration from "../assets/illustrations/blue/coffeebeans.avif";
 import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
 ---
 
@@ -105,70 +102,26 @@ import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
 
     <!-- Afternoon tea section -->
     <section class="max-w-[1192px] md:mx-auto">
-      <AfternoonTeaCoffeeSection
-        headline="Afternoon Tea i Valby"
-        subheadline="Perfekt til venindetid, fejring eller bare lidt ekstra selvforkælelse."
-        content="Hos Kær Kaffebar inviterer vi dig til en klassisk Afternoon Tea – fyldt med hjemmelavede kager, friskbagte scones, sandwiches og økologisk te ad libitum. Alt serveret med [kær]lighed, i ægte vintagekopper, hvor detaljerne gør hele forskellen."
-        reverse={true}
-        gridItemsPlacement="justify-items-center"
-        firstIllustrationSrc={AfternoonTeaIllustration}
-        firstIllustrationAlt="afternoon tea illustration"
-        firstIllustrationWidth="120"
-        secondIllustrationSrc={StrawberryIllustration}
-        secondIllustrationWidth="100"
-        secondIllustrationAlt="jordbær illustration"
-        bottomPosition="bottom-0"
-        rightPosition="right-[-5px] md:right-[20px]"
-        imageSrc={AfternoonTeaImage}
-        aspectRatio="aspect-[1/1.5]"
-        imageAlt="afternoon tea billede"
-        imageContainerSize="max-h-[600px]"
-        buttonText="Book bord"
-        url="https://kaerkaffebar.superbexperience.com/"
-        roundedBorder="rounded-full"
-        objectPostion="object-left"
-      />
+      <AfternoonTeaCoffeeSection headline="Afternoon Tea i Valby" subheadline="Perfekt til venindetid, fejring eller bare lidt ekstra selvforkælelse." content="Hos Kær Kaffebar inviterer vi dig til en klassisk Afternoon Tea – fyldt med hjemmelavede kager, friskbagte scones, sandwiches og økologisk te ad libitum. Alt serveret med [kær]lighed, i ægte vintagekopper, hvor detaljerne gør hele forskellen." reverse={true} imageSrc={AfternoonTeaImage} aspectRatio="aspect-[1/1.2]" imageAlt="afternoon tea billede" imageContainerSize="max-h-[600px]" buttonText="Book bord" url="https://kaerkaffebar.superbexperience.com/" roundedBorder="rounded-full" objectPostion="object-left" />
     </section>
 
     <!-- Arrangement section -->
     <section class="px-default lg:px-0 max-w-[1192px] mx-auto">
-      <div class="grid gap-extra-large">
-        <div class="px-defualt grid gap-extra-large lg:px-0">
-          <h1 class="text-neutral-1 font-header text-header-1 leading-height-header-1">Hold dit næste arrangement hos Kær Kaffebar</h1>
-          <div>
+      <div class="grid gap-default md:gap-large md:grid-cols-2">
+        <div class="flex items-end justify-center overflow-hidden h-[350px] md:h-full bg-neutral-3 rounded-default">
+          <Image class="h-[200px] md:h-[400px] w-auto" src={ArrangementIllustration} alt="arrangement illustration" />
+        </div>
+        <div class="p-default bg-highlight grid gap-default rounded-default shadow-pink">
+          <h1 class="text-neutral-1 font-header text-header-1 leading-height-header-1">Book vores lokale til dit næste arrangement</h1>
+          <div class="grid gap-default">
             <p class="text-neutral-1 text-paragraph font-bold font-body-text leading-height-paragraph">Skab mindeværdige øjeblikke i hjertet af Valby.</p>
             <h3 class="text-neutral-1 font-body-text text-header-3 leading-height-header-3">Drømmer du om en hyggelig, personlig ramme til dit næste arrangement? Hos Kær Kaffebar åbner vi dørene for alt fra fødselsdage og firmaevents til PR-events og små, private fester. Vores café byder på en varm atmosfære, smuk indretning og økologiske specialiteter, der sætter prikken over i'et på din dag.</h3>
           </div>
-          <div class="grid sm:justify-items-center">
+          <div class="grid">
             <Button variant="primary" url="/arrangement" ariaLabel="Læs mere">Læs mere</Button>
           </div>
         </div>
-        <Image src={ArrangementIllustration} alt="arrangement illustration" width={375} />
       </div>
-    </section>
-
-    <!-- Coffee section -->
-    <section class="max-w-[1192px] mx-auto">
-      <AfternoonTeaCoffeeSection
-        headline="Kær’s kaffe"
-        subheadline="God kaffe. God stemning. Godt selskab."
-        content="Hos Kær Kaffebar brygger vi ikke bare kaffe – vi skaber oplevelser. Vi samarbejder med Just Coffee, der leverer økologiske, bæredygtige bønner af højeste kvalitet, så hver eneste kop hos os er fuld af smag, kærlighed og omtanke."
-        gridItemsPlacement="justify-items-center md:justify-items-start"
-        firstIllustrationSrc={CoffeeBeansIllustration}
-        firstIllustrationAlt="kaffebønner illustration"
-        firstIllustrationWidth="100"
-        secondIllustrationSrc={CoffeeMug}
-        secondIllustrationAlt="kaffe kop illustration"
-        secondIllustrationWidth="100"
-        bottomPosition="bottom-[-50px] "
-        rightPosition="right-[-20px] md:right-[0px]"
-        imageSrc={CoffeeBacksImage}
-        imageAlt="just coffee kaffe bønner poser"
-        imageContainerSize="w-[343px] md:w-[400px] lg:w-[500px]"
-        buttonText="Læs mere"
-        url="/menu/#coffeesection"
-        roundedBorder="rounded-default"
-      />
     </section>
 
     <!-- Heavy text with animation section -->
@@ -178,6 +131,11 @@ import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
       <h2 class="text-center text-accent text-header-2 font-body-text leading-height-header-2">Fra friskbagte boller til brunchtallerkener – vi gør os umage hver dag for at servere mad, der smager af [kær]lighed.</h2>
       <Image class="lemon absolute bottom-4 right-0" src={Lemon} alt="citron" width={90} height={90} />
       <Image class="croissant absolute bottom-0 left-0" src={Croissant} width={90} height={90} alt="croissant" />
+    </section>
+
+    <!-- Coffee section -->
+    <section class="max-w-[1192px] mx-auto">
+      <AfternoonTeaCoffeeSection headline="Kær’s kaffe" subheadline="God kaffe. God stemning. Godt selskab." content="Hos Kær Kaffebar brygger vi ikke bare kaffe – vi skaber oplevelser. Vi samarbejder med Just Coffee, der leverer økologiske, bæredygtige bønner af højeste kvalitet, så hver eneste kop hos os er fuld af smag, kærlighed og omtanke." imageSrc={CoffeeBacksImage} imageAlt="just coffee kaffe bønner poser" buttonText="Læs mere" url="/menu/#coffeesection" roundedBorder="rounded-default" />
     </section>
 
     <!-- Runningclub section -->

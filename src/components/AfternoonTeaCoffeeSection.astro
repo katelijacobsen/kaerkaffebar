@@ -2,26 +2,24 @@
 import { Image } from "astro:assets";
 import Button from "../components/Button.astro";
 const { headline, subheadline, content } = Astro.props;
-const { firstIllustrationSrc, firstIllustrationAlt, firstIllustrationWidth, firstIllustrationHeight, gridItemsPlacement } = Astro.props;
-const { secondIllustrationSrc, secondIllustrationAlt, secondIllustrationWidth, secondIllustrationHeight, bottomPosition, rightPosition, imageContainerSize } = Astro.props;
-const { imageSrc, imageAlt, imageWidth, imageHeight, roundedBorder, objectPostion, aspectRatio, reverse } = Astro.props;
+const { imageSrc, imageAlt, roundedBorder, objectPostion, aspectRatio, reverse, imageContainerSize } = Astro.props;
 const { ariaLabel, buttonText, url } = Astro.props;
 ---
 
-<div class={`grid gap-large md:grid-cols-2 ${gridItemsPlacement} px-default xl:px-0`}>
+<div class={`grid gap-default md:gap-large md:grid-cols-2 px-default xl:px-0`}>
   <div class={`relative ${reverse ? "md:order-2" : "md:order-1"} `}>
-    <Image class=`first-illustration absolute top-[-50px] left-[-20px]` src={firstIllustrationSrc} alt={firstIllustrationAlt} width={firstIllustrationWidth} height={firstIllustrationHeight} />
     <div class={`overflow-hidden ${aspectRatio} ${roundedBorder} ${imageContainerSize}`}>
-      <Image class=`object-cover w-full h-full ${objectPostion}` ` src={imageSrc} alt={imageAlt} width={imageWidth} height={imageHeight} />
+      <Image class=`object-cover w-full h-full ${objectPostion}` ` src={imageSrc} alt={imageAlt} />
     </div>
-    <Image class=`second-illustration absolute ${bottomPosition} ${rightPosition}` src={secondIllustrationSrc} alt={secondIllustrationAlt} width={secondIllustrationWidth} height={secondIllustrationHeight} />
   </div>
-  <div class={`grid gap-large ${reverse ? "md:order-1" : "md:order-2"} md:justify-center md:self-center`}>
-    <h1 class="text-neutral-1 font-header text-header-1 leading-height-header-1">{headline}</h1>
+  <div class={`${reverse ? "md:order-1" : "md:order-2"} md:justify-center md:self-center bg-highlight shadow-pink p-default rounded-default h-full `}>
     <div class="grid gap-default">
-      <p class="text-neutral-1 font-body-text text-paragraph leading-height-tag"><strong>{subheadline}</strong></p>
-      <h3 class="text-neutral-1 font-body-text text-header-3 leading-height-header-3">{content}</h3>
+      <h1 class="text-neutral-1 font-header text-header-1 leading-height-header-1">{headline}</h1>
+      <div class="grid gap-default">
+        <p class="text-neutral-1 font-body-text text-paragraph leading-height-tag font-bold">{subheadline}</p>
+        <h3 class="text-neutral-1 font-body-text text-header-3 leading-height-header-3">{content}</h3>
+      </div>
+      <Button variant="primary" url={url} ariaLabel={ariaLabel}>{buttonText}</Button>
     </div>
-    <Button variant="primary" url={url} ariaLabel={ariaLabel}>{buttonText}</Button>
   </div>
 </div>
