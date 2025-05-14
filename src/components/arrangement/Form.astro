@@ -6,23 +6,25 @@ import Fish from "../../assets/icons/fish-icon.svg";
 import Vegetarian from "../../assets/icons/vegetarian-icon.svg";
 import Vegan from "../../assets/icons/vegan-icon.svg";
 import Checkbox from "./Checkbox.astro";
-import PrimaryButton from "../PrimaryButton.astro";
+import Button from "../Button.astro";
 import RadioButton from "./RadioButton.astro";
+import PopUp from "../runningclub/PopUp.astro";
 
 const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
 ---
 
-<article>
+<article class="relative">
   <!--On Success Message -->
+  <!--Dynamic HTML: Conditionally displaying HTML using logical operators -->
   {
     requestSuccess && (
-      <div
-        class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-smal"
-        role="alert"
-      >
-        <strong class="font-bold">Tak for din forespørgelse!</strong>
-        <span class="block sm:inline">Vi kontakter dig hurtigst muligt.</span>
-      </div>
+      <PopUp id="success-popup" textStyle="text-center" class="hidden">
+        <h3>Tak for din forespørgsel hos Kær Kaffebar</h3>
+        <p>
+          Vi glæder os til at byde dig velkommen. Du vil høre fra os tilbage
+          hurtigst muligt.
+        </p>
+      </PopUp>
     )
   }
 
@@ -31,7 +33,10 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
     action="/api/request"
     class="bg-primary-2 border-2 border-faded-highlight rounded-md p-large flex flex-col gap-large"
   >
-    <h3>Udfyld formular og send forespørgelse til enten arrangement, event eller catering</h3>
+    <h3>
+      Udfyld formular og send forespørgelse til enten arrangement, event eller
+      catering
+    </h3>
     <div class="flex flex-col gap-default">
       <label class="flex flex-col mb-smal font-bold gap-small">
         Fulde Navn
@@ -100,7 +105,9 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
     <fieldset
       class="flex flex-wrap items-end gap-default self-stretch content-end"
     >
-      <legend class="text-header-3 my-default">Allergier og ønsker til menuen</legend>
+      <legend class="text-header-3 my-default"
+        >Allergier og ønsker til menuen</legend
+      >
       <Checkbox Diet="Laktose" Icon={Milk} />
       <Checkbox Diet="Gluten" Icon={Gluten} />
       <Checkbox Diet="Nødder" Icon={Nuts} />
@@ -121,6 +128,6 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
       Obs: Hvis du har nogen spørgsmål eller bekymringer <br /> så kontakt os på
       81 61 09 00
     </p>
-    <PrimaryButton type="submit" showArrow={false}> Send </PrimaryButton>
+    <Button type="submit" showArrow={false} variant="primary"> Send </Button>
   </form>
 </article>
