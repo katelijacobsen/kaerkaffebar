@@ -6,9 +6,10 @@ const {
   variant = "primary",
   ariaLabel = "Knap", // fallback hvis man glemmer at sætte det
   url = "",
-  element,
+  isAnchor,
   type,
   closePopUp,
+  openPopUp,
 } = Astro.props;
 
 // Variant-baserede klasser
@@ -37,7 +38,7 @@ function getVariantClasses(
 ---
 
 {
-  element ? (
+  isAnchor ? (
     <a href={url} class={getVariantClasses(variant)} aria-label={ariaLabel}>
       <slot />
       {(variant === "primary" || variant === "primaryOutline") && showArrow && (
@@ -53,6 +54,8 @@ function getVariantClasses(
       aria-label={ariaLabel}
       role="button"
       data-close-popup={closePopUp}
+      data-open-popup={openPopUp}
+      {...Astro.props}
     >
       <slot />
       {(variant === "primary" || variant === "primaryOutline") && showArrow && (

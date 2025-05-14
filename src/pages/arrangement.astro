@@ -19,7 +19,9 @@ import smallCakes from "../assets/img/smallCakes.avif";
   <main class="m-margin mb-section relative">
     <article class="mb-section inline-flex flex-col lg:flex-row gap-large">
       <div>
-        <h1 class="text-header-1 leading-height-header-1">Arrangementer & events hos Kær Kaffebar</h1>
+        <h1 class="text-header-1 leading-height-header-1">
+          Arrangementer & events hos Kær Kaffebar
+        </h1>
         <p>
           Skab uforglemmelige øjeblikke ved at <bold class="font-bold">
             afholde dit næste arrangement i de stemningsfulde lokaler hos Kær
@@ -35,7 +37,12 @@ import smallCakes from "../assets/img/smallCakes.avif";
         </bold>
       </div>
       <div class="flex flex-col gap-large">
-        <video muted loop autoplay class="rounded-full w-[100%] lg:w-[80%] h-[50%]">
+        <video
+          muted
+          loop
+          autoplay
+          class="rounded-full w-[100%] lg:w-[80%] h-[50%]"
+        >
           <source
             src="/video/arrangement-og-event-video.mp4"
             type="video/mp4"
@@ -60,10 +67,10 @@ import smallCakes from "../assets/img/smallCakes.avif";
         </div>
       </div>
     </article>
-    <div
-      class="flex flex-col lg:flex-row lg:items-start lg:gap-extra-large"
-    >
-      <section class="lg:flex-1 flex flex-wrap flex-col gap-extra-large mb-section">
+    <div class="flex flex-col lg:flex-row lg:items-start lg:gap-extra-large">
+      <section
+        class="lg:flex-1 flex flex-wrap flex-col gap-extra-large mb-section"
+      >
         <Card
           image={Teapot}
           imageSize="w-full h-auto"
@@ -73,6 +80,8 @@ import smallCakes from "../assets/img/smallCakes.avif";
           title="Arrangement"
           subtitle="Hold dit næste arrangement hos os"
           description="Små selskaber i hyggelige rammer – perfekt til fødselsdage, babyshowers og bogklubber."
+          popUpTitle="Arrangement"
+          details="Hvis du leder efter det ideelle sted til dit næste arrangement, behøver du ikke lede længere end Kær Kaffebar. Send en forespørgelse om arrangement her og så vil vi kontakte dig angående flere detaljer. Lad os sammen skabe et mindeværdigt arrangement, som dine gæster vil tale om i lang tid fremover!"
         />
         <Card
           image={Cutlery}
@@ -83,18 +92,20 @@ import smallCakes from "../assets/img/smallCakes.avif";
           title="Event"
           subtitle="Planlæg et unikt event på Kær Kaffebar"
           description="Workshops, pop-ups eller private aftenarrangementer? Vi hjælper dig med at skabe stemningen"
+          popUpTitle="Event"
+          details="Hos Kær Kaffebar tilbyder vi den perfekte ramme for dit næste PR-event. Vores hyggelige og stemningsfulde café i hjertet af Valby er ideel til at skabe en intim og imødekommende atmosfære, hvor din virksomheds budskab kan komme til sin ret. Med vores flotte indretning, udendørs siddepladser i solen og lækre udvalg af økologisk kaffe, friskpresset juice, og hjemmelavede specialiteter, kan du give dine gæster en uforglemmelig oplevelse. Uanset om det drejer sig om en produktlancering, en netværksbegivenhed eller andet, kan vi skræddersy arrangementet til dine behov. Vi tilbyder muligheden for at reservere hele caféen og vores dedikerede personale sørger for, at alt forløber glat. Vi kan desuden arrangere specialmenuer, der passer til dit event, med tanke for dit brands identitet."
         />
         <Card
           image={Citroner}
           imageSize="w-[70%] h-auto"
           imagePosition="my-[2%] mx-[40%] rotate-[140deg]"
-          bgColor="bg-primary"
+          bgColor="bg-neutral-2"
           fontColor="text-neutral-1"
-          border="border-2"
-          borderColor="border-faded-highlight"
           title="Catering"
           subtitle="Catering med kærlighed og kvalitet"
           description="Bestil morgenmad, frokost eller kagebord til din næste sammenkomst – lavet med omtanke."
+          popUpTitle="Catering"
+          details="Lad os tage os af maden – så du kan tage dig af gæsterne. Hos Kær Kaffebar tilbyder vi catering til både private og professionelle arrangementer, store som små. Uanset om du planlægger en fødselsdag, et firmaevent, en reception eller et møde, står vi klar med smagfulde løsninger, der passer perfekt til anledningen. Vi laver alt fra friskbagte kager og brød til lette anretninger, brunch, frokost og specialkaffe. Vores retter er lavet med kærlighed og omtanke – og vi bruger kun friske, økologiske råvarer, hvor det er muligt. Har du særlige ønsker eller behov? Vi skræddersyr gerne en menu, der matcher dine præferencer og dit arrangement – både i smag og stil."
         />
         <Card
           image={Croissant}
@@ -107,6 +118,8 @@ import smallCakes from "../assets/img/smallCakes.avif";
           title="Kage og bestilling"
           subtitle="Bestil hjemmelavede kager til enhver lejlighed"
           description="Bryllup, fødselsdage eller bare fordi - vi bager med smag og stil"
+          popUpTitle="Kage og bestilling"
+          details="Skal der lidt ekstra sødt på bordet? Bestil en eller flere af vores populære hjemmebagte kager til din fest eller fejring. Vi bager efter sæson og tilbyder alt fra klassiske favoritter til unikke specialiteter."
         />
       </section>
       <section class="flex-1 relative">

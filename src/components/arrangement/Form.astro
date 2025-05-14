@@ -12,41 +12,22 @@ import PopUp from "../PopUp.astro";
 
 
 const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
-
-
-// Uddrag fra din Button.astro
-const variants = {
-  primary:
-    "bg-accent text-button text-primary p-button font-button-text hover:bg-accent-hover text-center",
-  primaryOutline: // Denne variant bruges nu for "Event" kortets knap
-    "text-button text-primary p-button font-body-text border border-primary", // Inkluderer border
-  secondary:
-    "bg-transparent text-accent text-paragraph p-button border border-accent hover:border-accent-hover hover:bg-accent-hover hover:text-primary",
-  neutral:
-    "bg-accent text-button text-primary p-button font-button-text hover:bg-accent-hover",
-  disabled: "bg-disabled text-button text-primary p-button font-button-text",
-};
 ---
 
-<article class="relative">
+<article>
   <!--On Success Message -->
-  <!--Dynamic HTML: Conditionally displaying HTML using logical operators -->
-  {
-    requestSuccess && (
-      <PopUp id="success-popup" textStyle="text-center" class="hidden">
-        <h3>Tak for din forespørgsel hos Kær Kaffebar</h3>
-        <p>
-          Vi glæder os til at byde dig velkommen. Du vil høre fra os tilbage
-          hurtigst muligt.
-        </p>
-      </PopUp>
-    )
-  }
+    <PopUp show={requestSuccess} id="success-popup" textStyle="text-center">
+      <h3>Tak for din forespørgsel hos Kær Kaffebar</h3>
+      <p>
+        Vi glæder os til at byde dig velkommen. Du vil høre fra os tilbage
+        hurtigst muligt.
+      </p>
+    </PopUp>
 
   <form
     method="POST"
     action="/api/request"
-    class="bg-primary-2 border-2 border-faded-highlight rounded-md p-large flex flex-col gap-large"
+    class="bg-primary-2 rounded-md p-large flex flex-col gap-large pin-skadow"
   >
     <h3>
       Udfyld formular og send forespørgelse til enten arrangement, event eller
@@ -60,7 +41,7 @@ const variants = {
           type="text"
           name="fullName"
           required
-          class="border border-bright-bg rounded-sm p-2 bg-white"
+          class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
         />
       </label>
       <label class="flex flex-col mb-smal font-bold gap-small">
@@ -70,7 +51,7 @@ const variants = {
           type="email"
           name="email"
           required
-          class="border border-bright-bg rounded-sm p-2 bg-white"
+          class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
         />
       </label>
       <label class="flex flex-col mb-smal font-bold gap-small">
@@ -81,7 +62,7 @@ const variants = {
           pattern="[0-9]*"
           name="phoneNumber"
           required
-          class="[appearance:textfield] border border-bright-bg rounded-sm p-2 bg-white"
+          class="[appearance:textfield] border-2 border-faded-highlight rounded-sm p-2 bg-white"
         />
       </label>
     </div>
@@ -101,7 +82,7 @@ const variants = {
           name="time"
           min="10:00"
           max="16:00"
-          class="border border-bright-bg rounded-sm p-2 bg-white"
+          class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
           required
         />
       </label>
@@ -112,7 +93,7 @@ const variants = {
           id="date"
           name="date"
           min="2025-12-29"
-          class="border border-bright-bg rounded-sm p-2 bg-white"
+          class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
           required
         />
       </label>
@@ -136,7 +117,7 @@ const variants = {
         name="comment"
         rows="4"
         cols="20"
-        class="border border-bright-bg rounded-sm p-2 bg-white"
+        class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
         placeholder="Skriv dine kommentarer her..."></textarea>
     </fieldset>
     <p>

@@ -2,23 +2,20 @@
 import Closing from "../assets/icons/exit-icon.svg";
 import Button from "./Button.astro";
 
-const { id, textStyle } = Astro.props;
+const { id, textStyle, show } = Astro.props;
 ---
 
+<!-- class="sticky top-[30vw] right-[5vw] left-[5vw] z-50 bg-highlight p-large flex flex-col gap-large pin-skadow rounded-default" --><!-- Spread operatør -->
 <div
+  {...Astro.props}
   id={id}
-  class="fixed top-1/2 right-1/4 z-50 bg-highlight p-large flex flex-col gap-large pin-skadow rounded-default overflow-y-auto"
+  class=`${show ? '' : "hidden"} w-[90%] lg:w-[60%] fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-60 bg-highlight p-large flex-col gap-large pin-skadow rounded-default overflow-y-auto`
 >
-  <div class="flex justify-end">
-    <Button showArrow={false} type="button" closePopUp={id}>
-      <Closing />
-    </Button>
-  </div>
   <div class=`${textStyle}`>
     <!-- Skifte indhold ud for arrangement & runningclub -->
     <slot />
   </div>
-  <div class="flex justify-center mt-auto">
+  <div class="flex justify-center mt-auto p-medium">
     <Button showArrow={false} type="button" closePopUp={id}>Luk</Button>
   </div>
 </div>
@@ -26,18 +23,30 @@ const { id, textStyle } = Astro.props;
 <script is:inline lang="javascript">
   function openPopUp(id) {
     document.getElementById(id)?.classList.remove("hidden");
-    document.body.classList.add("overflow-hidden");
+    //document.body.classList.add("overflow-hidden");
   }
+
   function closingPopUp(id) {
     document.getElementById(id)?.classList.add("hidden");
     document.body.classList.remove("overflow-hidden");
   }
 
-  window.openPopUp = openPopUp;
-  window.closingPopUp = closingPopUp;
+  //  window.openPopUp = openPopUp;
+  //  window.closingPopUp = closingPopUp;
 
+  // Event listener for at lukke pop-up ved at klikke på vores Button komponent
+  document.addEventListener("DOMContentLoaded", () => {
+    // vælger alle knapper med vores attribute. Vi bruger btn som parameter i vores callback
+    // og tilføjer en event listener til hver knap
+    document.querySelectorAll("[data-open-popup]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const popupId = btn.getAttribute("data-open-popup");
+        openPopUp(popupId);
+      });
+    });
+  });
 
-// Event listener for at lukke pop-up ved at klikke på vores Button komponent
+  // Event listener for at lukke pop-up ved at klikke på vores Button komponent
   document.addEventListener("DOMContentLoaded", () => {
     // vælger alle knapper med vores attribute. Vi bruger btn som parameter i vores callback
     // og tilføjer en event listener til hver knap
