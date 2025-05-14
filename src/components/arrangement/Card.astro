@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import PrimaryButton from "../PrimaryButton.astro";
+import Button from "../Button.astro";
 
 const {
   title,
@@ -15,6 +15,7 @@ const {
   imageOpacity,
   imageSize,
 } = Astro.props;
+
 ---
 
 <article
@@ -39,6 +40,6 @@ const {
     <p>{description}</p>
   </div>
   <div class="relative z-10 flex justify-end">
-    <PrimaryButton type="button">Læs mere</PrimaryButton>
+    <Button type="button" variant={title === 'Event' ? 'primaryOutline' : 'primary'}>Læs mere</Button>
   </div>
 </article>

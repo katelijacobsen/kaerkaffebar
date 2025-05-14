@@ -12,6 +12,20 @@ import PopUp from "../PopUp.astro";
 
 
 const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
+
+
+// Uddrag fra din Button.astro
+const variants = {
+  primary:
+    "bg-accent text-button text-primary p-button font-button-text hover:bg-accent-hover text-center",
+  primaryOutline: // Denne variant bruges nu for "Event" kortets knap
+    "text-button text-primary p-button font-body-text border border-primary", // Inkluderer border
+  secondary:
+    "bg-transparent text-accent text-paragraph p-button border border-accent hover:border-accent-hover hover:bg-accent-hover hover:text-primary",
+  neutral:
+    "bg-accent text-button text-primary p-button font-button-text hover:bg-accent-hover",
+  disabled: "bg-disabled text-button text-primary p-button font-button-text",
+};
 ---
 
 <article class="relative">
