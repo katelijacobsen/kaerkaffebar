@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import Button from "../components/Button.astro";
-import AfternoonTeaCoffeeSection from "../components/AfternoonTeaCoffeeSection.astro";
+import ImageTextSection from "../components/ImageTextSection.astro";
 import GallerySliderSection from "../components/gallery/GallerySliderSection.astro";
 import QuoteSection from "../components/QuoteSection.astro";
 
@@ -102,14 +102,14 @@ import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
 
     <!-- Afternoon tea section -->
     <section class="max-w-[1192px] md:mx-auto">
-      <AfternoonTeaCoffeeSection headline="Afternoon Tea i Valby" subheadline="Perfekt til venindetid, fejring eller bare lidt ekstra selvforkælelse." content="Hos Kær Kaffebar inviterer vi dig til en klassisk Afternoon Tea – fyldt med hjemmelavede kager, friskbagte scones, sandwiches og økologisk te ad libitum. Alt serveret med [kær]lighed, i ægte vintagekopper, hvor detaljerne gør hele forskellen." reverse={true} imageSrc={AfternoonTeaImage} aspectRatio="aspect-[1/1.2]" imageAlt="afternoon tea billede" imageContainerSize="max-h-[600px]" buttonText="Book bord" url="https://kaerkaffebar.superbexperience.com/" roundedBorder="rounded-full" objectPostion="object-left" />
+      <ImageTextSection headline="Afternoon Tea i Valby" subheadline="Perfekt til venindetid, fejring eller bare lidt ekstra selvforkælelse." content="Hos Kær Kaffebar inviterer vi dig til en klassisk Afternoon Tea – fyldt med hjemmelavede kager, friskbagte scones, sandwiches og økologisk te ad libitum. Alt serveret med [kær]lighed, i ægte vintagekopper, hvor detaljerne gør hele forskellen." reverse={true} imageSrc={AfternoonTeaImage} aspectRatio="aspect-[1/1.2]" imageAlt="afternoon tea billede" imageContainerSize="max-h-[600px]" buttonText="Book bord" url="https://kaerkaffebar.superbexperience.com/" roundedBorder="rounded-full" objectPostion="object-left" />
     </section>
 
     <!-- Arrangement section -->
     <section class="px-default lg:px-0 max-w-[1192px] mx-auto">
       <div class="grid gap-default md:gap-large md:grid-cols-2">
         <div class="flex items-end justify-center overflow-hidden h-[350px] md:h-full bg-neutral-3 rounded-default">
-          <Image class="h-[200px] md:h-[400px] w-auto" src={ArrangementIllustration} alt="arrangement illustration" />
+          <Image class="h-[200px] sm:h-[330px] md:h-[350px] w-auto" src={ArrangementIllustration} alt="arrangement illustration" />
         </div>
         <div class="p-default bg-highlight grid gap-default rounded-default shadow-pink">
           <h1 class="text-neutral-1 font-header text-header-1 leading-height-header-1">Book vores lokale til dit næste arrangement</h1>
@@ -135,7 +135,7 @@ import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
 
     <!-- Coffee section -->
     <section class="max-w-[1192px] mx-auto">
-      <AfternoonTeaCoffeeSection headline="Kær’s kaffe" subheadline="God kaffe. God stemning. Godt selskab." content="Hos Kær Kaffebar brygger vi ikke bare kaffe – vi skaber oplevelser. Vi samarbejder med Just Coffee, der leverer økologiske, bæredygtige bønner af højeste kvalitet, så hver eneste kop hos os er fuld af smag, kærlighed og omtanke." imageSrc={CoffeeBacksImage} imageAlt="just coffee kaffe bønner poser" buttonText="Læs mere" url="/menu/#coffeesection" roundedBorder="rounded-default" />
+      <ImageTextSection headline="Kær’s kaffe" subheadline="God kaffe. God stemning. Godt selskab." content="Hos Kær Kaffebar brygger vi ikke bare kaffe – vi skaber oplevelser. Vi samarbejder med Just Coffee, der leverer økologiske, bæredygtige bønner af højeste kvalitet, så hver eneste kop hos os er fuld af smag, kærlighed og omtanke." imageSrc={CoffeeBacksImage} imageAlt="just coffee kaffe bønner poser" buttonText="Læs mere" url="/menu/#coffeesection" roundedBorder="rounded-default" />
     </section>
 
     <!-- Runningclub section -->
