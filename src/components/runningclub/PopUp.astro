@@ -1,0 +1,30 @@
+---
+import Button from "../Button.astro";
+import Closing from "../../assets/icons/closing-icon.svg";
+
+const { id } = Astro.props;
+---
+
+<div id={id}>
+  <Button showArrow={false} > <Closing /> </Button>
+  <div>
+    <!-- Skifte indhold ud for arrangement & runningclub -->
+    <slot />
+  </div>
+  <Button showArrow={false} >Luk</Button>
+</div>
+
+<script is:inline lang="javascript">
+function openPopUp(id) {
+  document.getElementById(id)?.classList.remove("hidden");
+  document.body.classList.add("overflow-hidden");
+}
+function closingPopUp(id) {
+  document.getElementById(id)?.classList.add("hidden");
+  document.body.classList.remove("overflow-hidden");
+}
+
+window.openPopUp = openPopUp;
+window.closingPopUp = closingPopUp;
+
+</script>
