@@ -1,0 +1,51 @@
+---
+import Button from "../Button.astro";
+import Closing from "../../assets/icons/exit-icon.svg";
+
+const { id, textStyle } = Astro.props;
+---
+
+<div
+  id={id}
+  class="fixed top-1/2 right-1/4 z-50 bg-highlight p-large flex flex-col gap-large pin-skadow rounded-default overflow-y-auto"
+>
+  <div class="flex justify-end">
+    <Button showArrow={false} type="button" closePopUp={id}>
+      <Closing />
+    </Button>
+  </div>
+  <div class=`${textStyle}`>
+    <!-- Skifte indhold ud for arrangement & runningclub -->
+    <slot />
+  </div>
+  <div class="flex justify-center mt-auto">
+    <Button showArrow={false} type="button" closePopUp={id}>Luk</Button>
+  </div>
+</div>
+
+<script is:inline lang="javascript">
+  function openPopUp(id) {
+    document.getElementById(id)?.classList.remove("hidden");
+    document.body.classList.add("overflow-hidden");
+  }
+  function closingPopUp(id) {
+    document.getElementById(id)?.classList.add("hidden");
+    document.body.classList.remove("overflow-hidden");
+  }
+
+  window.openPopUp = openPopUp;
+  window.closingPopUp = closingPopUp;
+
+
+// Event listener for at lukke pop-up ved at klikke på vores Button komponent
+  document.addEventListener("DOMContentLoaded", () => {
+    // vælger alle knapper med vores attribute. Vi bruger btn som parameter i vores callback
+    // og tilføjer en event listener til hver knap
+    document.querySelectorAll("[data-close-popup]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const popupId = btn.getAttribute("data-close-popup");
+        closingPopUp(popupId);
+      });
+    });
+  });
+</script>

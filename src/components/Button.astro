@@ -6,17 +6,27 @@ const {
   variant = "primary",
   ariaLabel = "Knap", // fallback hvis man glemmer at sætte det
   url = "",
+  element,
+  type,
+  closePopUp,
 } = Astro.props;
 
 // Variant-baserede klasser
-function getVariantClasses(variant: "primary" | "secondary" | "neutral" | "disabled"): string {
-  const base = "group flex-wrap p-button w-full sm:w-fit justify-center rounded-full flex items-center gap-medium transition-colors duration-400 ease-in-out";
+function getVariantClasses(
+  variant: "primary" | "secondary" | "neutral" | "disabled"
+): string {
+  const base =
+    "group flex-wrap p-button w-full sm:w-fit justify-center rounded-full flex items-center gap-medium transition-colors duration-400 ease-in-out";
 
   const variants = {
-    primary: "bg-accent text-button text-primary p-button font-button-text hover:bg-accent-hover",
-    primaryOutline: "text-button text-primary p-button font-body-text border border-primary",
-    secondary: "bg-transparent text-accent text-paragraph p-button border border-accent hover:border-accent-hover hover:bg-accent-hover hover:text-primary",
-    neutral: "bg-accent text-button text-primary p-button font-button-text hover:bg-accent-hover",
+    primary:
+      "bg-accent text-button text-primary p-button font-button-text hover:bg-accent-hover text-center",
+    primaryOutline:
+      "text-button text-primary p-button font-body-text border border-primary",
+    secondary:
+      "bg-transparent text-accent text-paragraph p-button border border-accent hover:border-accent-hover hover:bg-accent-hover hover:text-primary",
+    neutral:
+      "bg-accent text-button text-primary p-button font-button-text hover:bg-accent-hover",
     disabled: "bg-disabled text-button text-primary p-button font-button-text",
   };
 
@@ -24,17 +34,53 @@ function getVariantClasses(variant: "primary" | "secondary" | "neutral" | "disab
 }
 ---
 
-<div>
-  <a href={url} class="font-button-text text-button">
-    <button class={getVariantClasses(variant)} type="button" aria-label={ariaLabel} role="button">
+{
+  element ? (
+    <a href={url} class={getVariantClasses(variant)} aria-label={ariaLabel}>
+      <slot />
+      {(variant === "primary" || variant === "primaryOutline") && showArrow && (
+        <span class="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] group-hover:-translate-y-1 group-hover:translate-x-1">
+          <Icon width="20" height="20" />
+        </span>
+      )}
+    </a>
+  ) : (
+    <button
+      class={getVariantClasses(variant)}
+      type={type}
+      aria-label={ariaLabel}
+      role="button"
+      data-close-popup={closePopUp}
+    >
+      <slot />
+      {(variant === "primary" || variant === "primaryOutline") && showArrow && (
+        <span class="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] group-hover:-translate-y-1 group-hover:translate-x-1">
+          <Icon width="20" height="20" />
+        </span>
+      )}
+    </button>
+  )
+}
+
+<!--
+  <div>
+    <a href={url} class="font-button-text text-button">
+      <button
+      class={getVariantClasses(variant)}
+      type={type}
+      aria-label={ariaLabel}
+      role="button"
+      >
       <slot />
       {
-        (variant === "primary" || variant === "primaryOutline") && showArrow && (
-          <span class="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] group-hover:-translate-y-1 group-hover:translate-x-1">
-            <Icon width="20" height="20" />
-          </span>
+        (variant === "primary" || variant === "primaryOutline") &&
+        showArrow && (
+        <span class="transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] group-hover:-translate-y-1 group-hover:translate-x-1">
+          <Icon width="20" height="20" />
+        </span>
         )
       }
     </button>
   </a>
 </div>
+-->

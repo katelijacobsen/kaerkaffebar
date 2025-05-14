@@ -9,8 +9,10 @@ const { event } = Astro.props;
 console.log("Cardevent:", event);
 ---
 
-<article class="flex bg-highlight shadow-pink rounded-default p-default gap-medium justify-between">
-  <p class="text-secondary text-label"><strong>{event.date} - {event.day}</strong></p>
+<article
+  class="flex bg-highlight border border-accent rounded-medium p-default gap-medium justify-between"
+>
+  <p class="text-secondary text-label"><strong>{event.date} {event.day}</strong></p>
   <div>
     <p class="text-neutral-1 text-label"><strong>{event.club}</strong></p>
     <div class="flex items-center gap-small">
