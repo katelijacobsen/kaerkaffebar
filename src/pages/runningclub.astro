@@ -10,6 +10,8 @@ import LemonPiecesIllustration from "../assets/illustrations/blue/lemon-pieces.w
 import PopUp from "../components/PopUp.astro";
 import Button from "../components/Button.astro";
 
+export const prerender = false;
+
 // Fetch events fra vores API
 const events = await fetch(new URL("/api/clubevents", Astro.url))
   .then((res) => res.json())
@@ -32,7 +34,12 @@ const faqItems = [
   },
 ];
 
-console.log(events);
+
+
+const requestSend = Astro.url.searchParams.get("requestSend") ? true : false;
+
+
+console.log(requestSend);
 ---
 
 <Layout title="Kær løbeklub">
@@ -69,6 +76,9 @@ console.log(events);
             <div class="select-arrow"></div>
           </div>
         </div>
+        <PopUp show={requestSend} id="popup-confirmation">
+          <h3 id="confirmation"> Tak for din Tilmelding </h3>
+        </PopUp>
         <!-- Mapping events fra API -->
         {
           events.length === 0 ? (
@@ -76,7 +86,6 @@ console.log(events);
           ) : (
             events.map((event) => (
             <PopUp show={false} id={`popup-${event.id}`}>
-              <h3 id="confirmation" class="hidden"> Tak for din Tilmelding </h3>
               <form method="POST" action="/api/clubevents" class="flex flex-col gap-default">
                 <h3>Tilmelding</h3>
               <div class="flex flex-col gap-small">
