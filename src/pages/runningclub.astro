@@ -70,41 +70,48 @@ console.log(events);
           </div>
         </div>
         <!-- Mapping events fra API -->
-                 {events.map(event => 
-          <PopUp show={false} id={`popup-${event.id}`}>
-            <form method="POST" action="/api/clubevents">
-              <label for="name"> Fulde Navn
-                <input type="text" id="name" name="name" placeholder="Navn" required />
-              </>
-              <label for="email"> E-mail
+        {
+          events.map((event) => (
+            <PopUp show={false} id={`popup-${event.id}`}>
+              <form method="POST" action="/api/clubevents">
+                <label for="name">Fulde Navn</label>
                 <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="E-mail"
-                required
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Navn"
+                  required
                 />
-            <Button type="submit" showArrow={false}>Tilmeld</Button>
-          </form>
-        </PopUp>
-        )}
+                <label for="email"> E-mail</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="E-mail"
+                  required
+                />
+                <Button type="submit" showArrow={false}>
+                  Tilmeld
+                </Button>
+              </form>
+            </PopUp>
+          ))
+        }
 
         {
           events.length === 0 ? (
             <p class="text-label">Ingen kommende ture</p>
           ) : (
             events.map((event) => (
-              <RunningClubCard
-                event={event}
-                popupId={`popup-${event.id}`}
-              />
+              <RunningClubCard event={event} popupId={`popup-${event.id}`} />
             ))
           )
         }
         <p>
           <strong
             >OBS: ved afmeldning skriv til nummeret: 81 61 09 00 mindst 24 timer
-            inden.</strong>
+            inden.</strong
+          >
         </p>
       </div>
 
