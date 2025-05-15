@@ -1,5 +1,4 @@
 ---
-import Closing from "../assets/icons/exit-icon.svg";
 import Button from "./Button.astro";
 
 const { id, textStyle, show } = Astro.props;
@@ -20,41 +19,29 @@ const { id, textStyle, show } = Astro.props;
   </div>
 </div>
 
-<script is:inline lang="javascript">
-  function openPopUp(id) {
-    document.getElementById(id)?.classList.remove("hidden");
-    //document.body.classList.add("overflow-hidden");
-  }
+<!-- <script is:inline lang="javascript">
+  const form = document.getElementById(`form-${id}`);
+  if (form) {
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const data = new FormData(form);
 
-  function closingPopUp(id) {
-    document.getElementById(id)?.classList.add("hidden");
-    document.body.classList.remove("overflow-hidden");
-  }
-
-  //  window.openPopUp = openPopUp;
-  //  window.closingPopUp = closingPopUp;
-
-  // Event listener for at lukke pop-up ved at klikke på vores Button komponent
-  document.addEventListener("DOMContentLoaded", () => {
-    // vælger alle knapper med vores attribute. Vi bruger btn som parameter i vores callback
-    // og tilføjer en event listener til hver knap
-    document.querySelectorAll("[data-open-popup]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const popupId = btn.getAttribute("data-open-popup");
-        openPopUp(popupId);
+      const res = await fetch('/api/clubevents', {
+        method: 'POST',
+        body: JSON.stringify({
+          name: data.get('name'),
+          email: data.get('email'),
+        }),
+        headers: { 'Content-Type': 'application/json' },
       });
+      if (res.ok) {
+        // Skift indholdet ud med tak‑besked
+        document.getElementById(`content-${id}`).innerHTML =
+          `<p class="text-center text-lg">Tak for din tilmelding!</p>`;
+      } else {
+        // evt. fejl‑håndtering
+        alert('Noget gik galt – prøv igen.');
+      }
     });
-  });
-
-  // Event listener for at lukke pop-up ved at klikke på vores Button komponent
-  document.addEventListener("DOMContentLoaded", () => {
-    // vælger alle knapper med vores attribute. Vi bruger btn som parameter i vores callback
-    // og tilføjer en event listener til hver knap
-    document.querySelectorAll("[data-close-popup]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const popupId = btn.getAttribute("data-close-popup");
-        closingPopUp(popupId);
-      });
-    });
-  });
-</script>
+  }
+</script> -->

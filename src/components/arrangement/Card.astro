@@ -19,7 +19,6 @@ const {
   details,
 } = Astro.props;
 
-
 const popUpId = `popup-${popUpTitle}`;
 ---
 
@@ -59,8 +58,7 @@ const popUpId = `popup-${popUpTitle}`;
         type="button"
         variant={title === "Event" ? "primaryOutline" : "primary"}
         data-open-popup={popUpId}
-        element={false}
-        >Læs mere</Button
+        element={false}>Læs mere</Button
       >
     </div>
   </article>
