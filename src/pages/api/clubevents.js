@@ -1,6 +1,7 @@
 // Importere moduler og supabase
 import { supabase } from "../../lib/supabase";
 
+
 export const prerender = false;
 //
 
@@ -20,15 +21,14 @@ export async function GET() {
   }
 
   // Returnere data som JSON
-  return new Response(
-    JSON.stringify(data),
-    {status: 200, headers: { "Content-Type": "application/json" } }
-  )
+  return new Response(JSON.stringify(data), {
+    status: 200,
+    headers: { "Content-Type": "application/json" },
+  });
 }
 
-
 // API route for at håndtere forespørgsel fra form
-export async function POST ({ request, redirect }) {
+export async function POST({ request, redirect }) {
   console.log(request);
 
   const formData = await request.formData();
@@ -38,8 +38,11 @@ export async function POST ({ request, redirect }) {
     fullName: formData.get("name"),
     phoneNumber: formData.get("number"),
   };
+
+
   //error håndtering - hvis der skulle være fejl i dataen
   const { error } = await supabase.from("request").insert([data]);
+  
   if (error) {
     return new Response(JSON.stringify({ error: error.message }), {
       status: 500,
@@ -49,4 +52,4 @@ export async function POST ({ request, redirect }) {
   //return new Response(JSON.stringify({ message: "success" }), { status: 200 });
   // Bruger query string til at sende success tilbage til arrangement siden. Hvis brugeren trykker på send uden errors ville url'en vise true
   return redirect("/runningclub?success=true");
-};
+}

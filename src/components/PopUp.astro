@@ -19,29 +19,3 @@ const { id, textStyle, show } = Astro.props;
   </div>
 </div>
 
-<!-- <script is:inline lang="javascript">
-  const form = document.getElementById(`form-${id}`);
-  if (form) {
-    form.addEventListener('submit', async e => {
-      e.preventDefault();
-      const data = new FormData(form);
-
-      const res = await fetch('/api/clubevents', {
-        method: 'POST',
-        body: JSON.stringify({
-          name: data.get('name'),
-          email: data.get('email'),
-        }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-      if (res.ok) {
-        // Skift indholdet ud med tak‑besked
-        document.getElementById(`content-${id}`).innerHTML =
-          `<p class="text-center text-lg">Tak for din tilmelding!</p>`;
-      } else {
-        // evt. fejl‑håndtering
-        alert('Noget gik galt – prøv igen.');
-      }
-    });
-  }
-</script> -->

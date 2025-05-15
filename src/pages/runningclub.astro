@@ -70,14 +70,16 @@ console.log(events);
           </div>
         </div>
         <!-- Mapping events fra API -->
-
         {
           events.length === 0 ? (
             <p class="text-label">Ingen kommende ture</p>
           ) : (
             events.map((event) => (
             <PopUp show={false} id={`popup-${event.id}`}>
-              <form method="POST" action="/api/clubevents">
+              <h3 id="confirmation" class="hidden"> Tak for din Tilmelding </h3>
+              <form method="POST" action="/api/clubevents" class="flex flex-col gap-default">
+                <h3>Tilmelding</h3>
+              <div class="flex flex-col gap-small">
                 <label for="name">Fulde Navn</label>
                 <input
                   type="text"
@@ -85,7 +87,10 @@ console.log(events);
                   name="name"
                   placeholder="Navn"
                   required
-                />
+                  class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
+                  />
+              </div>
+              <div class="flex flex-col gap-small">
                 <label for="email"> E-mail</label>
                 <input
                   type="email"
@@ -93,7 +98,9 @@ console.log(events);
                   name="email"
                   placeholder="E-mail"
                   required
-                />
+                  class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
+                  />
+              </div>
                 <Button type="submit" showArrow={false}> 
                   Tilmeld
                 </Button>

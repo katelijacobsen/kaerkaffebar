@@ -11,7 +11,7 @@ console.log("Cardevent:", event);
 ---
 
 <article
-  class="flex bg-highlight border border-accent rounded-medium p-default gap-medium justify-between"
+  class="flex bg-highlight rounded-medium p-default gap-medium justify-between pin-skadow duration-200 ease-in-out scale-none hover:scale-105"
 >
   <p class="text-secondary text-label"><strong>{event.date} {event.day}</strong></p>
   <div>
@@ -30,6 +30,6 @@ console.log("Cardevent:", event);
     </div>
   </div>
   <div class="self-end">
-    <Button variant="secondary" ariaLabel="Tilmeld dig løbeklub" data-open-popup={popupId}>Tilmeld</Button>
+    <Button variant="primary" showArrow={false} ariaLabel="Tilmeld dig løbeklub" data-open-popup={popupId}>Tilmeld</Button>
   </div>
 </article>
