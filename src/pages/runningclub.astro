@@ -7,9 +7,13 @@ import RunningClubCard from "../components/runningclub/RunningClubCard.astro";
 import RunningImage from "../assets/img/running-img.webp";
 import CoffeeCupIllustration from "../assets/illustrations/blue/kaer-coffecup.webp";
 import LemonPiecesIllustration from "../assets/illustrations/blue/lemon-pieces.webp";
+import PopUp from "../components/PopUp.astro";
+import Button from "../components/Button.astro";
+
+export const prerender = false;
 
 // Fetch events fra vores API
-const events = await fetch( new URL("/api/clubevents" , Astro.url))
+const events = await fetch(new URL("/api/clubevents", Astro.url))
   .then((res) => res.json())
   .catch(() => []);
 
@@ -30,12 +34,16 @@ const faqItems = [
   },
 ];
 
-console.log(events);
 
+
+const requestSend = Astro.url.searchParams.get("requestSend") ? true : false;
+
+
+console.log(requestSend);
 ---
 
 <Layout title="Kær løbeklub">
-  <main class="grid gap-negative m-margin text-neutral-1 ">
+  <main class="grid gap-negative m-margin text-neutral-1">
     <section class="relative">
       <Image
         src={CoffeeCupIllustration}
@@ -55,13 +63,60 @@ console.log(events);
     </section>
     <section class="lg:flex lg:flex-row gap-large">
       <div class="grid gap-default flex-shrink-0">
-        <h2 class="text-header-2">Kommende ture</h2>
+        <div class="flex items-center gap-default">
+          <h2 class="text-header-2">Kommende ture</h2>
+          <div>
+            <select
+              class="border border-accent p-small rounded-md color-accent"
+            >
+              <option>Juni</option>
+              <option>Juli</option>
+              <option>August</option>
+            </select>
+            <div class="select-arrow"></div>
+          </div>
+        </div>
+        <PopUp show={requestSend} id="popup-confirmation">
+          <h3 id="confirmation"> Tak for din Tilmelding </h3>
+        </PopUp>
         <!-- Mapping events fra API -->
         {
           events.length === 0 ? (
             <p class="text-label">Ingen kommende ture</p>
           ) : (
-            events.map((event) => <RunningClubCard event={event} />)
+            events.map((event) => (
+            <PopUp show={false} id={`popup-${event.id}`}>
+              <form method="POST" action="/api/clubevents" class="flex flex-col gap-default">
+                <h3>Tilmelding</h3>
+              <div class="flex flex-col gap-small">
+                <label for="name">Fulde Navn</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Navn"
+                  required
+                  class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
+                  />
+              </div>
+              <div class="flex flex-col gap-small">
+                <label for="email"> E-mail</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="E-mail"
+                  required
+                  class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
+                  />
+              </div>
+                <Button type="submit" showArrow={false}> 
+                  Tilmeld
+                </Button>
+              </form>
+            </PopUp>
+              <RunningClubCard event={event} popupId={`popup-${event.id}`} />
+            ))
           )
         }
         <p>
@@ -71,15 +126,16 @@ console.log(events);
           >
         </p>
       </div>
-      <div
-        class="flex flex-col items-center"
-      >
+
+      <div class="flex flex-col items-center">
         <h2 class="font-header text-header-2">FAQ</h2>
         <Accordion items={faqItems} />
       </div>
     </section>
     <section class="lg:flex lg:flex-row gap-large">
-      <div class="h-[140px] lg:h-[60%] overflow-hidden rounded-full lg:w-[100%]">
+      <div
+        class="h-[140px] lg:h-[60%] overflow-hidden rounded-full lg:w-[100%]"
+      >
         <Image
           src={RunningImage}
           alt="billeder-af-to-piger-med-en-løbeklub-t-shirt"
