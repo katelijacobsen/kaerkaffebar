@@ -70,8 +70,12 @@ console.log(events);
           </div>
         </div>
         <!-- Mapping events fra API -->
+
         {
-          events.map((event) => (
+          events.length === 0 ? (
+            <p class="text-label">Ingen kommende ture</p>
+          ) : (
+            events.map((event) => (
             <PopUp show={false} id={`popup-${event.id}`}>
               <form method="POST" action="/api/clubevents">
                 <label for="name">Fulde Navn</label>
@@ -90,19 +94,11 @@ console.log(events);
                   placeholder="E-mail"
                   required
                 />
-                <Button type="submit" showArrow={false}>
+                <Button type="submit" showArrow={false}> 
                   Tilmeld
                 </Button>
               </form>
             </PopUp>
-          ))
-        }
-
-        {
-          events.length === 0 ? (
-            <p class="text-label">Ingen kommende ture</p>
-          ) : (
-            events.map((event) => (
               <RunningClubCard event={event} popupId={`popup-${event.id}`} />
             ))
           )
