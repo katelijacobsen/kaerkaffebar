@@ -1,15 +1,43 @@
 // Importere moduler og supabase
 import { supabase } from "../../lib/supabase";
+import type { APIRoute } from "astro";
 
 
 export const prerender = false;
-//
 
-export async function GET() {
+export const months = [
+  "jan",
+  "feb",
+  "mar",
+  "apr",
+  "maj",
+  "jun",
+  "jul",
+  "aug",
+  "sep",
+  "okt",
+  "nov",
+  "dec",
+];
+
+export const GET : APIRoute = async ({ request, redirect }) => {
+  const url = new URL(request.url);
+  const searchParams = url.searchParams;
+
+  let defaultMonth = "aug";
+  let month = searchParams.get("month");
+  if (!month) {
+    month = defaultMonth;
+  }
+  if (!months.includes(month)) {
+    month = defaultMonth;
+  }
+
   // Henter data fra vores supabase database & bruger metoder som from, select og order
   const { data, error } = await supabase
     .from("runningclub")
-    .select("id, date, day, location, startTime, endTime, participants")
+    .select("id, month, date, day, location, startTime, endTime, participants")
+    .eq("month", month)
     .order("date", { ascending: true });
 
   // Error håndtering
@@ -28,7 +56,7 @@ export async function GET() {
 }
 
 // API route for at håndtere forespørgsel fra form
-export async function POST({ request, redirect }) {
+export const POST : APIRoute = async ({ request, redirect }) =>{
   console.log(request);
 
   const formData = await request.formData();

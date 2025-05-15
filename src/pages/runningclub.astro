@@ -9,11 +9,15 @@ import CoffeeCupIllustration from "../assets/illustrations/blue/kaer-coffecup.we
 import LemonPiecesIllustration from "../assets/illustrations/blue/lemon-pieces.webp";
 import PopUp from "../components/PopUp.astro";
 import Button from "../components/Button.astro";
+import { months } from "./api/clubevents";
 
 export const prerender = false;
 
+const month = Astro.url.searchParams.get("month") || months[new Date().getMonth()];
+
+
 // Fetch events fra vores API
-const events = await fetch(new URL("/api/clubevents", Astro.url))
+const events = await fetch(new URL(`/api/clubevents?month=${month}`, Astro.url))
   .then((res) => res.json())
   .catch(() => []);
 
@@ -66,12 +70,34 @@ console.log(requestSend);
         <div class="flex items-center gap-default">
           <h2 class="text-header-2">Kommende ture</h2>
           <div>
-            <select
+            <select 
+              id="month-filter"
               class="border border-accent p-small rounded-md color-accent"
             >
-              <option>Juni</option>
-              <option>Juli</option>
-              <option>August</option>
+            {
+              [
+                "Januar",
+                "Februar",
+                "Marts",
+                "April",
+                "Maj",
+                "Juni",
+                "Juli",
+                "August",
+                "September",
+                "Oktober",
+                "November",
+                "December",
+              ].map((m, idx) => (
+                <option
+                  value={months[idx]}
+                  selected={months[idx] === month}
+                  class="text-neutral-1"
+                >
+                  {m}
+                </option>
+              ))
+            }
             </select>
             <div class="select-arrow"></div>
           </div>
