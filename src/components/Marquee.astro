@@ -10,7 +10,7 @@ import { Image } from "astro:assets";
     height={100}
     src={Mug}
     alt="kaffekop illustration"
-    class=" itemLeft item2"
+    class="itemLeft item2"
   />
   <h3 class="itemLeft item3">Kær Kaffebar</h3>
   <Image
@@ -18,7 +18,7 @@ import { Image } from "astro:assets";
     height={100}
     src={Mug}
     alt="kaffekop illustration"
-    class=" itemLeft item4"
+    class="itemLeft item4"
   />
   <h3 class="itemLeft item5">Kær Kaffebar</h3>
   <Image
@@ -52,7 +52,7 @@ import { Image } from "astro:assets";
     height={100}
     src={Mug}
     alt="kaffekop illustration"
-    class=" itemRight item4"
+    class="itemRight item4"
   />
   <h3 class="itemRight item5">Kær Kaffebar</h3>
   <Image
@@ -60,7 +60,7 @@ import { Image } from "astro:assets";
     height={100}
     src={Mug}
     alt="kaffekop illustration"
-    class=" itemRight item6"
+    class="itemRight item6"
   />
   <h3 class="itemRight item7">Kær Kaffebar</h3>
   <Image
@@ -68,7 +68,7 @@ import { Image } from "astro:assets";
     height={100}
     src={Mug}
     alt="kaffekop illustration"
-    class=" itemRight item8"
+    class="itemRight item8"
   />
 </div>
 
@@ -91,12 +91,11 @@ import { Image } from "astro:assets";
     white-space: nowrap;
     overflow: hidden;
     display: flex;
-
   }
 
   .wrapper {
     margin-top: 2rem;
-    width: 100%;
+    width: 90%;
     max-width: 1440px;
     margin-inline: auto;
     height: 200px;
@@ -113,13 +112,13 @@ import { Image } from "astro:assets";
 
   @keyframes scrollLeft {
     to {
-      left: -200px;
+      left: -300px;
     }
   }
 
   @keyframes scrollRight {
     to {
-      right: -200px;
+      right: -300px;
     }
   }
 
@@ -135,15 +134,15 @@ import { Image } from "astro:assets";
     animation-iteration-count: infinite;
   }
 
-  .itemLeft {
-    left: max(calc(200px * 8), 100%);
-    animation-name: scrollLeft;
-  }
+.itemLeft {
+  left: max(calc(200px * 8), 100%);
+  animation-name: scrollLeft;
+}
 
-  .itemRight {
-    right: max(calc(200px * 8), calc(100% + 200px));
-    animation-name: scrollRight;
-  }
+.itemRight {
+  right: max(calc(200px * 8), calc(100% + 200px));
+  animation-name: scrollRight;
+}
 
   .item1 {
     animation-delay: calc(30s / 8 * (8 - 1) * -1);
