@@ -1,12 +1,13 @@
 ---
 import "../styles/global.css";
 import { Image } from "astro:assets";
+import Picture from "astro/components/Picture.astro";
 import Layout from "../layouts/Layout.astro";
 import Accordion from "../components/runningclub/Accordion.astro";
 import RunningClubCard from "../components/runningclub/RunningClubCard.astro";
 import RunningImage from "../assets/img/running-img.webp";
-import CoffeeCupIllustration from "../assets/illustrations/blue/kaer-coffecup.webp";
-import LemonPiecesIllustration from "../assets/illustrations/blue/lemon-pieces.webp";
+import RunningCoffeeCupIllustration from "../assets/illustrations/blue/running-coffee-cup.svg";
+import LemonPiecesIllustration from "../assets/illustrations/blue/lemon-pieces.svg";
 import PopUp from "../components/PopUp.astro";
 import Button from "../components/Button.astro";
 import { months } from "./api/clubevents";
@@ -49,11 +50,7 @@ console.log(requestSend);
 <Layout title="Kær løbeklub">
   <main class="grid gap-negative m-margin text-neutral-1">
     <section class="relative">
-      <Image
-        src={CoffeeCupIllustration}
-        alt="kaffekop illustration"
-        class="absolute w-[130px] right-1 top-1 z-[-10]"
-      />
+      <Picture class="absolute w-[130px] right-1 top-1 z-[-10]" src={RunningCoffeeCupIllustration} formats={["svg"]} alt="løbende kaffekop illustration" />
       <div>
         <h1 class="text-header-1 font-header">Kær løbeklub</h1>
         <p class="text-paragraph leading-paragraph">
