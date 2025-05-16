@@ -3,7 +3,7 @@ import "../styles/global.css";
 import { Image } from "astro:assets";
 import Picture from "astro/components/Picture.astro";
 import Layout from "../layouts/Layout.astro";
-import Accordion from "../components/runningclub/Accordion.astro";
+//import Accordion from "../components/runningclub/Accordion.astro";
 import RunningClubCard from "../components/runningclub/RunningClubCard.astro";
 import RunningImage from "../assets/img/running-img.webp";
 import RunningCoffeeCupIllustration from "../assets/illustrations/blue/running-coffee-cup.svg";
@@ -11,6 +11,7 @@ import LemonPiecesIllustration from "../assets/illustrations/blue/lemon-pieces.s
 import PopUp from "../components/PopUp.astro";
 import Button from "../components/Button.astro";
 import { months } from "./api/clubevents";
+import Accordion from "../components/runningclub/Accordion.astro";
 
 export const prerender = false;
 
@@ -152,7 +153,7 @@ console.log(requestSend);
 
       <div class="flex flex-col items-center">
         <h2 class="font-header text-header-2">FAQ</h2>
-        <Accordion items={faqItems} />
+        <Accordion />
       </div>
     </section>
     <section class="lg:flex lg:flex-row gap-large">
