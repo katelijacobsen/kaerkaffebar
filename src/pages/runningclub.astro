@@ -13,7 +13,7 @@ import Button from "../components/Button.astro";
 import { months } from "./api/clubevents";
 import Accordion from "../components/runningclub/Accordion.astro";
 
-export const prerender = false;
+export const prerender = true;
 
 const month = Astro.url.searchParams.get("month") || months[new Date().getMonth()];
 
