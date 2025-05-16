@@ -14,18 +14,11 @@ import Coffee from "../assets/img/coffee-beans.webp";
 import GallerySliderSection from "../components/gallery/GallerySliderSection.astro";
 
 //illustrations
-import PancakeIllustration from "../assets/illustrations/blue/pancake.avif";
-import WaffleIllustration from "../assets/illustrations/blue/waffles.avif";
-import BowlIllustration from "../assets/illustrations/blue/bowl.avif";
-import CroissantIllustration from "../assets/illustrations/blue/croissant.avif";
-import SmoerrebroedIllustration from "../assets/illustrations/blue/broed.avif";
-import KnifeForkIllustration from "../assets/illustrations/blue/knife-fork.avif";
-import Toast from "../assets/illustrations/blue/grillet-sandwich.avif";
-import Salat from "../assets/illustrations/blue/salat.avif";
-import CoffeeMug from "../assets/illustrations/blue/mug.avif";
-import ColdDrinks from "../assets/illustrations/blue/kolde-drikke.avif";
-import Homemade from "../assets/illustrations/blue/homemade.avif";
-import CoffeeBeans from "../assets/illustrations/blue/coffeebeans.avif";
+import PancakeIllustration from "../assets/illustrations/blue/pancakes.svg";
+import CroissantIllustration from "../assets/illustrations/blue/croissant.svg";
+import SmoerrebroedIllustration from "../assets/illustrations/blue/smoerrebroed.svg";
+import CoffeeMug from "../assets/illustrations/blue/coffee-cup.svg";
+import ColdDrinks from "../assets/illustrations/blue/cold-drink.svg";
 ---
 
 <Layout title="menu">
@@ -35,7 +28,7 @@ import CoffeeBeans from "../assets/illustrations/blue/coffeebeans.avif";
       <Readline />
     </div>
     <div class="mt-large">
-      <Image class="mx-auto md:mb-large" src={PancakeIllustration} width={80} height={80} alt="pandekage illustration" />
+      <img class="mx-auto md:mb-large h-[80px] w-[80px]" src={PancakeIllustration.src} alt="pandekage illustration" />
       <div class="grid gap-extra-large md:gap-negative mt-small md:mt-large md:max-w-[1000px] md:mx-auto">
         <div class="grid gap-extra-large md:gap-negative md:grid-cols-2">
           <section class="grid gap-default md:grid-rows-[0.1fr_0.5fr_auto] md:gap-extra-large" id="brunch">
@@ -127,7 +120,7 @@ import CoffeeBeans from "../assets/illustrations/blue/coffeebeans.avif";
       </div>
 
       <div class="mt-negative">
-        <Image class="mx-auto" src={CroissantIllustration} width={80} height={80} alt="croissant illustration" />
+        <img class="mx-auto md:mb-large h-[80px] w-[80px]" src={CroissantIllustration.src} alt="croissant illustration" />
         <div class="grid gap-extra-large mt-small md:mt-large md:gap-negative md:grid-cols-2">
           <section class="grid gap-default" id="broed">
             <div class="grid justify-center gap-default md:justify-start">
@@ -181,7 +174,7 @@ import CoffeeBeans from "../assets/illustrations/blue/coffeebeans.avif";
         </div>
       </div>
       <div class="mt-negative">
-        <Image class="mx-auto md:mb-large" src={SmoerrebroedIllustration} width={80} height={80} alt="smørrebrød illustration" />
+        <img class="mx-auto md:mb-large h-[90px] w-[90px]" src={SmoerrebroedIllustration.src} alt="smørrebrød illustration" />
         <div class="grid gap-extra-large md:gap-negative md:grid-cols-2">
           <section class="grid gap-default md:grid-rows-[0.1fr_0.5fr_0.2fr_auto] md:gap-extra-large" id="smoerrebroed">
             <div class="grid justify-center gap-default md:justify-start">
@@ -263,11 +256,11 @@ import CoffeeBeans from "../assets/illustrations/blue/coffeebeans.avif";
       </div>
 
       <div class="mt-negative">
-        <Image class="mx-auto md:mb-large" src={CoffeeMug} width={80} height={80} alt="kaffekop illustration" />
+        <img class="mx-auto md:mb-large h-[80px] w-[80px]" src={CoffeeMug.src} alt="kaffekop illustration" />
         <div class="grid gap-extra-large md:gap-negative md:grid-cols-2">
           <section class="grid gap-default md:grid-rows-[0.1fr_0.6fr]" id="kaffe">
             <div class="grid justify-center gap-default md:justify-start">
-              <CategoryHeadline headline="Kaffe" illustration={CoffeeMug} alt="kaffe" width={60} height={60} />
+              <CategoryHeadline headline="Kaffe" />
             </div>
             <div class="grid gap-default">
               <ProductHeadline variant="primary" headline="Espresso" price="32 kr" />
@@ -285,7 +278,7 @@ import CoffeeBeans from "../assets/illustrations/blue/coffeebeans.avif";
           </section>
           <section class="grid gap-default md:grid-rows-[0.1fr_0.6fr]" id="varme-drikke">
             <div class="grid justify-center gap-default md:justify-start">
-              <CategoryHeadline headline="Varme drikke" illustration={CoffeeMug} alt="kaffe" width={60} height={60} />
+              <CategoryHeadline headline="Varme drikke" />
             </div>
             <div class="grid gap-small">
               <ProductHeadline variant="primary" headline="Te" price="36 kr" />
@@ -299,7 +292,7 @@ import CoffeeBeans from "../assets/illustrations/blue/coffeebeans.avif";
       </div>
 
       <div class="mt-negative">
-        <Image class="mx-auto md:mb-large" src={ColdDrinks} width={60} height={60} alt="Kold drikkevare illustration" />
+        <img class="mx-auto md:mb-large h-[80px] w-[80px]" src={ColdDrinks.src} alt="kold drikkevare illustration" />
         <div class="grid gap-extra-large md:gap-negative md:grid-cols-2">
           <section class="grid gap-default md:grid-rows-[0.1fr_auto]" id="kolde-drikke">
             <div class="grid justify-center gap-default md:justify-start">

@@ -3,21 +3,7 @@ import { Image } from "astro:assets";
 import Button from "../Button.astro";
 import PopUp from "../PopUp.astro";
 
-const {
-  title,
-  subtitle,
-  description,
-  image,
-  bgColor,
-  border,
-  borderColor,
-  fontColor,
-  imagePosition,
-  imageOpacity,
-  imageSize,
-  popUpTitle,
-  details,
-} = Astro.props;
+const { title, subtitle, description, image, bgColor, border, borderColor, fontColor, imagePosition, imageOpacity, imageSize, popUpTitle, details } = Astro.props;
 
 const popUpId = `popup-${popUpTitle}`;
 ---
@@ -32,34 +18,18 @@ const popUpId = `popup-${popUpTitle}`;
     </div>
   </PopUp>
 
-  <article
-    class={`relative ${bgColor} ${border} ${borderColor} ${fontColor} p-card rounded-md gap-default inline-flex flexwrap flex-col overflow-hidden `}
-  >
-    <div
-      class={`absolute z-0 opacity-[40%] ${imagePosition} ${imageOpacity} ${imageSize}`}
-    >
-      <Image
-        src={image}
-        alt="white colored illustration with outlined flowing teapot with three teacups"
-        class="w-[50%] h-[50%] object-fit"
-        width={512}
-        height={200}
-        loading="lazy"
-      />
+  <article class={`relative ${bgColor} ${border} ${borderColor} ${fontColor} p-card rounded-md gap-default inline-flex flexwrap flex-col overflow-hidden `}>
+    <div class={`absolute z-0 opacity-[40%] ${imagePosition} ${imageOpacity} ${imageSize}`}>
+      <Image src={image} alt="white colored illustration with outlined flowing teapot with three teacups" class="w-[50%] h-[50%] object-fit" width={512} height={200} loading="lazy" />
     </div>
 
     <div class="relative z-10 text-left flex flex-col gap-medium me-16">
-      <h2 class="font-header">{title}</h2>
-      <h3>{subtitle}</h3>
-      <p>{description}</p>
+      <h2 class="font-header text-header-2 leading-height-header-2">{title}</h2>
+      <h3 class="text-header-3 font-body-text leading-height-header-3">{subtitle}</h3>
+      <p class="text-paragraph font-body-text leading-height-paragraph">{description}</p>
     </div>
     <div class="relative z-10 flex justify-end">
-      <Button
-        type="button"
-        variant={title === "Event" ? "primaryOutline" : "primary"}
-        data-open-popup={popUpId}
-        element={false}>Læs mere</Button
-      >
+      <Button type="button" variant={title === "Event" ? "primaryOutline" : "primary"} data-open-popup={popUpId} element={false}>Læs mere</Button>
     </div>
   </article>
 </div>

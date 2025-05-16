@@ -4,10 +4,10 @@ import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
 import AfternoonTea from "../assets/img/afternoontea-page-image.webp";
 import Macarons from "../assets/img/macarons.webp";
-import LemonsIllustration from "../assets/illustrations/blue/lemon-pieces.webp";
+import LemonsIllustration from "../assets/illustrations/blue/lemon-pieces.svg";
 import QuoteSection from "../components/QuoteSection.astro";
 import AfternoonTeaTwo from "../assets/img/afternoontea-page-image-2.webp";
-import PearAndBlueberry from "../assets/illustrations/blue/pear-and-blueberyy.avif";
+import BlueberryAndPears from "../assets/illustrations/blue/blueberry-and-pears.svg";
 ---
 
 <Layout title="Afternoon tea">
@@ -45,8 +45,7 @@ import PearAndBlueberry from "../assets/illustrations/blue/pear-and-blueberyy.av
         <div class="rounded-default col-start-1 col-end-2 row-span-3 overflow-hidden">
           <Image class="object-cover w-full h-full object-left" src={AfternoonTea} alt="Afternoon tea" />
         </div>
-
-        <Image class="col-start-2 col-end-3 row-span-1 justify-self-center self-center" src={LemonsIllustration} alt="illustration af citroner" />
+        <img class="col-start-2 col-end-3 row-span-1 justify-self-center self-center" src={LemonsIllustration.src} alt="citroner illustration" />
         <div class="rounded-full col-start-2 col-end-3 row-span-2 overflow-hidden">
           <Image class="object-cover w-full h-full object-right" src={Macarons} alt="macarons" />
         </div>
@@ -56,11 +55,11 @@ import PearAndBlueberry from "../assets/illustrations/blue/pear-and-blueberyy.av
         <div class="rounded-default col-start-1 col-end-2 row-span-3 overflow-hidden">
           <Image class="object-cover w-full h-full object-left" src={AfternoonTea} alt="afternoon tea" />
         </div>
-        <Image class="col-start-2 col-end-3 row-span-1 justify-self-center self-center" src={LemonsIllustration} alt="illustration af citroner" />
+        <img class="col-start-2 col-end-3 row-span-1 justify-self-center self-center" src={LemonsIllustration.src} alt="citroner illustration" />
         <div class="rounded-full col-start-2 col-end-3 row-span-2 overflow-hidden">
           <Image class="object-cover w-full h-full object-right" src={Macarons} alt="macarons" />
         </div>
-        <Image class="col-start-1 col-end-2 row-span-1 justify-self-center self-center" src={PearAndBlueberry} width={150} height={150} alt="pære og blåbær illustration" />
+        <img class="col-start-1 col-end-2 row-span-1 justify-self-center self-center h-[200px] w-[200px]" src={BlueberryAndPears.src} alt="blåbær og pære illustration" />
         <div class="rounded-default col-start-2 col-end-3 row-span-1 overflow-hidden">
           <Image class="object-cover w-full h-full object-left" src={AfternoonTeaTwo} alt="afternoon tea" />
         </div>
