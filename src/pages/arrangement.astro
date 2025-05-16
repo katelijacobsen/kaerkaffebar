@@ -5,6 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import Form from "../components/arrangement/Form.astro";
 import Card from "../components/arrangement/Card.astro";
 import Picture from "astro/components/Picture.astro";
+import {Image} from "astro:assets";
 
 //Billeder
 import Teapot from "../assets/illustrations/white/teapot-with-three-cups.webp";
@@ -54,6 +55,12 @@ import smallCakes from "../assets/img/smallCakes.avif";
           Your browser does not support the video tag.
         </video>
         <div class="flex items-start gap-large">
+          <Image
+            src={Vase}
+            alt="Illustration of teapot"
+            width={150}
+            height={150}/>
+
           <Picture
             src={Vase}
             formats={["svg"]}
