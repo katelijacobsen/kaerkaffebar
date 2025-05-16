@@ -31,7 +31,7 @@ import CoffeeBeans from "../assets/illustrations/blue/coffeebeans.avif";
 <Layout title="menu">
   <main class="m-margin mb-section">
     <h1 class="text-header-1 font-header leading-height-header-1 text-neutral-1 text-center mb-large">Menu</h1>
-    <div class="md:max-w-[1000px] md:mx-auto sticky top-[130px] md:top-[110px] z-20">
+    <div class="md:max-w-[1000px] md:mx-auto sticky top-[100px] md:top-[110px] z-20">
       <Readline />
     </div>
     <div class="mt-large">
@@ -39,9 +39,11 @@ import CoffeeBeans from "../assets/illustrations/blue/coffeebeans.avif";
       <div class="grid gap-extra-large md:gap-negative mt-small md:mt-large md:max-w-[1000px] md:mx-auto">
         <div class="grid gap-extra-large md:gap-negative md:grid-cols-2">
           <section class="grid gap-default md:grid-rows-[0.1fr_0.5fr_auto] md:gap-extra-large" id="brunch">
-            <div class="grid justify-center gap-default md:justify-start md:gap-medium h-fit">
-              <CategoryHeadline headline="Brunch" illustration={PancakeIllustration} alt="pandekager" width={60} height={60} />
-              <TimeSlot time="09:00 - 14:00" />
+            <div class="grid justify-center gap-default md:justify-start text-center">
+              <CategoryHeadline headline="Brunch" />
+              <div class="grid justify-center md:justify-start">
+                <TimeSlot time="09:00 - 14:00" />
+              </div>
             </div>
             <div class="grid gap-medium md:h-fit">
               <div>
@@ -74,7 +76,7 @@ import CoffeeBeans from "../assets/illustrations/blue/coffeebeans.avif";
           <div class="grid gap-extra-large md:gap-negative">
             <section class="grid gap-default" id="vafler">
               <div class="grid justify-center gap-default md:justify-start md:gap-medium">
-                <CategoryHeadline headline="Vafler" illustration={WaffleIllustration} alt="vafler" width={60} height={60} />
+                <CategoryHeadline headline="Vafler" />
               </div>
               <div class="grid gap-medium">
                 <div>
@@ -97,7 +99,7 @@ import CoffeeBeans from "../assets/illustrations/blue/coffeebeans.avif";
             </section>
             <section class="grid gap-default" id="bowls">
               <div class="grid justify-center gap-default md:justify-start md:gap-medium">
-                <CategoryHeadline headline="Bowls" illustration={BowlIllustration} alt="bowl" width={60} height={60} />
+                <CategoryHeadline headline="Bowls" />
               </div>
               <div class="grid gap-medium">
                 <div class="grid gap-medium">
@@ -161,7 +163,7 @@ import CoffeeBeans from "../assets/illustrations/blue/coffeebeans.avif";
           </section>
           <section class="grid gap-default md:grid-rows-[0.1fr_auto]" id="bagvaerk">
             <div class="grid justify-center gap-default md:justify-start h-fit">
-              <CategoryHeadline headline="Bagværk" illustration={CroissantIllustration} alt="croissant" width={60} height={60} />
+              <CategoryHeadline headline="Bagværk" />
             </div>
             <i class="text-center md:text-left"><Description content="Dagens bagværk varierer. Se montre for dagens udvalg." /></i>
             <div class="grid gap-medium">
@@ -221,7 +223,7 @@ import CoffeeBeans from "../assets/illustrations/blue/coffeebeans.avif";
           <div class="grid gap-extra-large">
             <section class="grid gap-default" id="sandwich">
               <div class="grid justify-center gap-default md:justify-start">
-                <CategoryHeadline headline="Sandwich" illustration={KnifeForkIllustration} alt="kniv og gaffel" width={60} height={60} />
+                <CategoryHeadline headline="Sandwich" />
               </div>
               <div class="grid gap-medium">
                 <div>
@@ -240,7 +242,7 @@ import CoffeeBeans from "../assets/illustrations/blue/coffeebeans.avif";
             </section>
             <section class="grid gap-default" id="toast">
               <div class="grid justify-center gap-default md:justify-start">
-                <CategoryHeadline headline="Grillet toast" illustration={Toast} alt="grillet sandwich" width={60} height={60} />
+                <CategoryHeadline headline="Grillet toast" />
               </div>
               <div>
                 <ProductHeadline variant="primary" headline="Tunsandwich" price="90 kr" />
@@ -249,7 +251,7 @@ import CoffeeBeans from "../assets/illustrations/blue/coffeebeans.avif";
             </section>
             <section class="grid gap-default" id="salat">
               <div class="grid justify-center gap-default md:justify-start">
-                <CategoryHeadline headline="Salat" illustration={Salat} alt="salat" width={60} height={60} />
+                <CategoryHeadline headline="Salat" />
               </div>
               <div>
                 <ProductHeadline variant="primary" headline="Falafel bowl" price="109 kr" />
@@ -330,7 +332,7 @@ import CoffeeBeans from "../assets/illustrations/blue/coffeebeans.avif";
           </section>
           <section class="grid gap-default md:grid-rows-[0.1fr_0.5fr]" id="hjemmelavet">
             <div class="grid justify-center gap-default md:justify-start">
-              <CategoryHeadline headline="Hjemmelavet" illustration={Homemade} alt="hjemmelavet lemonade i kande" width={60} height={60} />
+              <CategoryHeadline headline="Hjemmelavet" />
             </div>
             <div class="grid gap-default">
               <div class="grid gap-default">
@@ -359,9 +361,8 @@ import CoffeeBeans from "../assets/illustrations/blue/coffeebeans.avif";
 
     <section id="coffeesection" class="mt-negative">
       <div class="grid gap-extra-large lg:grid-cols-2">
-        <div class="relative lg:h-[500px]">
+        <div class="lg:h-[500px]">
           <Image class="h-full w-full object-cover object-center rounded-default" src={Coffee} alt="billede af to poser kaffebønner" />
-          <Image src={CoffeeBeans} alt="kaffebønne illustration" width={80} height={80} class="absolute -top-6 -right-3 z-10 lg:w-[100px] lg:h-[100px] lg:-top-10" />
         </div>
         <div>
           <h1 class="text-neutral-1 text-header-1 font-header leading-height-header-1">Hos Kær Kaffebar brænder vi for god kaffe.</h1>
@@ -376,14 +377,14 @@ import CoffeeBeans from "../assets/illustrations/blue/coffeebeans.avif";
             <div class="max-h-0 overflow-hidden transition-all duration-[350ms] peer-checked:max-h-[80rem] grid gap-large">
               <div>
                 <h2 class="text-neutral-1">Økologisk kaffe</h2>
-                <p class="text-neutral-1">Vores kaffe på kær kaffebar i Valby, er brygget med økologiske bønner fra Just Coffee. Just Coffee’s risteri ligger i Roskilde og handler bæredygtigt med bønderne om bønnerne fra Sydamerika. Alle vores kaffedrikke er brygget på deres Sol&Måne Espresso kaffe, som er en mørkristet arabica af hele bønner fra Colombia, Nicaragua, Honduras og Etiopien. Vælg roligt Kær Kaffebar for lækker økologisk kaffe i Valby. Du kan læse mere om Just Coffe’s principper på deres hjemmeside.</p>
+                <p class="text-neutral-1 text-paragraph font-body-text leading-height-paragraph">Vores kaffe på kær kaffebar i Valby, er brygget med økologiske bønner fra Just Coffee. Just Coffee’s risteri ligger i Roskilde og handler bæredygtigt med bønderne om bønnerne fra Sydamerika. Alle vores kaffedrikke er brygget på deres Sol&Måne Espresso kaffe, som er en mørkristet arabica af hele bønner fra Colombia, Nicaragua, Honduras og Etiopien. Vælg roligt Kær Kaffebar for lækker økologisk kaffe i Valby. Du kan læse mere om Just Coffe’s principper på deres hjemmeside.</p>
               </div>
               <div>
                 <h2 class="text-neutral-1">Milk matters</h2>
                 <div class="grid gap-default">
-                  <p class="text-neutral-1">For at sikre den høje kvalitet, den gode smag og bæredygtighed – er mælken også nøje udvalgt. Vi har valgt at arbejde med den Økologiske Thise Mælk, som giver kaffen en skøn skum og rundhed. Så når du skal bruge kaffe i Valby, er du her garanteret de bedste råvarer.</p>
-                  <p class="text-neutral-1">Er der fare på færde hvis du får laktose i mælken, har vi selvfølgelig også laktose fri mælk. Både laktosefri sødmælk og laktosefri minimælk.</p>
-                  <p class="text-neutral-1">Kan man mon få vegansk kaffe i Valby? Ja! Er man ikke til animalsk mælk, men hellere vil have en vegansk udgave, har vi selvfølgelig også havremælk og det koster ikke ekstra.</p>
+                  <p class="text-neutral-1 text-paragraph font-body-text leading-height-paragraph">For at sikre den høje kvalitet, den gode smag og bæredygtighed – er mælken også nøje udvalgt. Vi har valgt at arbejde med den Økologiske Thise Mælk, som giver kaffen en skøn skum og rundhed. Så når du skal bruge kaffe i Valby, er du her garanteret de bedste råvarer.</p>
+                  <p class="text-neutral-1 text-paragraph font-body-text leading-height-paragraph">Er der fare på færde hvis du får laktose i mælken, har vi selvfølgelig også laktose fri mælk. Både laktosefri sødmælk og laktosefri minimælk.</p>
+                  <p class="text-neutral-1 text-paragraph font-body-text leading-height-paragraph">Kan man mon få vegansk kaffe i Valby? Ja! Er man ikke til animalsk mælk, men hellere vil have en vegansk udgave, har vi selvfølgelig også havremælk og det koster ikke ekstra.</p>
                 </div>
               </div>
             </div>
