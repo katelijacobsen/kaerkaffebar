@@ -3,7 +3,7 @@ import { supabase } from "../../lib/supabase";
 import type { APIRoute } from "astro";
 
 
-export const prerender = false;
+export const prerender = true;
 
 export const months = [
   "jan",

@@ -2,7 +2,7 @@
 import type { APIRoute } from "astro";
 import { supabase } from "../../lib/supabase";
 
-export const prerender = false;
+export const prerender = true;
 
 // API route for at håndtere forespørgsel fra form
 export const POST: APIRoute = async ({ request, redirect }) => {
