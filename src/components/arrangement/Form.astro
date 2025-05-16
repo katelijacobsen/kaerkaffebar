@@ -10,61 +10,77 @@ import Button from "../Button.astro";
 import RadioButton from "./RadioButton.astro";
 import PopUp from "../PopUp.astro";
 
-
 const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
 ---
 
 <article>
   <!--On Success Message -->
-    <PopUp show={requestSuccess} id="success-popup" textStyle="text-center">
-      <h3>Tak for din forespørgsel hos Kær Kaffebar</h3>
-      <p>
-        Vi glæder os til at byde dig velkommen. Du vil høre fra os tilbage
-        hurtigst muligt.
-      </p>
-    </PopUp>
+  <PopUp
+    show={requestSuccess}
+    id="success-popup"
+    textStyle="text-center"
+    aria-live="polite"
+    role="status"
+  >
+    <h3>Tak for din forespørgsel hos Kær Kaffebar</h3>
+    <p>
+      Vi glæder os til at byde dig velkommen. Du vil høre fra os tilbage
+      hurtigst muligt.
+    </p>
+  </PopUp>
 
   <form
     method="POST"
     action="/api/request"
-    class="bg-primary-2 rounded-md p-large flex flex-col gap-large pin-skadow"
+    class="bg-primary-2 rounded-default p-large flex flex-col gap-large pin-skadow"
   >
     <h3>
       Udfyld formular og send forespørgelse til enten arrangement, event eller
       catering
     </h3>
-    <div class="flex flex-col gap-default">
-      <label class="flex flex-col mb-smal font-bold gap-small">
+    <div class="flex flex-col gap-small">
+      <label for="fullName" class="flex flex-row mb-smal font-bold gap-small">
         Fulde Navn
-        <input
-          required
-          type="text"
-          name="fullName"
-          required
-          class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
-        />
       </label>
-      <label class="flex flex-col mb-smal font-bold gap-small">
+      <input
+        aria-describedby="fullNameError"
+        id="fullName"
+        required
+        type="text"
+        name="fullName"
+        required
+        class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
+      />
+      <span id="fullNameError" class="error-message hidden" aria-live="polite">
+        Venligst udfylde dit fulde navn</span
+      >
+      <label for="email" class="flex flex-col mb-smal font-bold gap-small">
         Email
-        <input
-          required
-          type="email"
-          name="email"
-          required
-          class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
-        />
       </label>
-      <label class="flex flex-col mb-smal font-bold gap-small">
+      <input
+        id="email"
+        required
+        type="email"
+        name="email"
+        required
+        class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
+      />
+      <label
+        for="phoneNumber"
+        class="flex flex-col mb-smal font-bold gap-small"
+      >
         Telefonnummer
-        <input
-          required
-          type="number"
-          pattern="[0-9]*"
-          name="phoneNumber"
-          required
-          class="[appearance:textfield] border-2 border-faded-highlight rounded-sm p-2 bg-white"
-        />
       </label>
+      <input
+        id="phoneNumber"
+        required
+        type="tel"
+        pattern="[0-9+]{8.}"
+        name="phoneNumber"
+        inputmode="numeric"
+        required
+        class="[appearance:textfield] border-2 border-faded-highlight rounded-sm p-2 bg-white"
+      />
     </div>
     <fieldset class="flex flex-wrap flex-col gap-default">
       <legend class="text-header-3">Anledning</legend>
@@ -92,7 +108,7 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
           type="date"
           id="date"
           name="date"
-          min="2025-12-29"
+          min={new Date().toISOString()}
           class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
           required
         />
@@ -101,15 +117,18 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
     <fieldset
       class="flex flex-wrap items-end gap-default self-stretch content-end"
     >
-      <legend class="text-header-3 my-default"
-        >Allergier og ønsker til menuen</legend
-      >
-      <Checkbox Diet="Laktose" Icon={Milk} />
-      <Checkbox Diet="Gluten" Icon={Gluten} />
-      <Checkbox Diet="Nødder" Icon={Nuts} />
-      <Checkbox Diet="Fisk" Icon={Fish} />
-      <Checkbox Diet="Vegetarisk" Icon={Vegetarian} />
-      <Checkbox Diet="Vegansk" Icon={Vegan} />
+      <legend class="text-header-3 my-default">Allergier</legend>
+      <Checkbox Diet="Laktose" Icon={Milk} aria-Label="Laktosefri" />
+      <Checkbox Diet="Gluten" Icon={Gluten} aria-Label="Glutenfri" />
+      <Checkbox Diet="Nødder" Icon={Nuts} aria-Label="Nøddefri" />
+      <Checkbox Diet="Fisk" Icon={Fish} aria-Label="Fiskfri" />
+    </fieldset>
+    <fieldset
+      class="flex flex-wrap items-end gap-default self-stretch content-end"
+    >
+      <legend class="text-header-3 my-default">Ønsker til menuen</legend>
+      <Checkbox Diet="Vegetarisk" Icon={Vegetarian} aria-Label="Vegetarisk" />
+      <Checkbox Diet="Vegansk" Icon={Vegan} aria-Label="Vegansk" />
     </fieldset>
     <fieldset class="flex flex-col mb-smal font-bold gap-default">
       <legend>Kommentar</legend>
@@ -124,6 +143,8 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
       Obs: Hvis du har nogen spørgsmål eller bekymringer <br /> så kontakt os på
       81 61 09 00
     </p>
-    <Button type="submit" showArrow={false} variant="primary"> Send </Button>
+    <Button type="submit" showArrow={false} variant="primary">
+      Send forespørgelse</Button
+    >
   </form>
 </article>

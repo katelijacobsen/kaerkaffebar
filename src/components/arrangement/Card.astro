@@ -22,7 +22,7 @@ const {
 const popUpId = `popup-${popUpTitle}`;
 ---
 
-<div>
+<span>
   <PopUp id={popUpId} show={false}>
     <div class="flex flex-col gap-default overflow-y-auto max-h-[50dvh]">
       <h3>{popUpTitle}</h3>
@@ -33,7 +33,7 @@ const popUpId = `popup-${popUpTitle}`;
   </PopUp>
 
   <article
-    class={`relative ${bgColor} ${border} ${borderColor} ${fontColor} p-card rounded-md gap-default inline-flex flexwrap flex-col overflow-hidden `}
+    class={`relative ${bgColor} ${border} ${borderColor} ${fontColor} p-card rounded-default gap-default inline-flex flexwrap flex-col overflow-hidden `}
   >
     <div
       class={`absolute z-0 opacity-[40%] ${imagePosition} ${imageOpacity} ${imageSize}`}
@@ -53,13 +53,13 @@ const popUpId = `popup-${popUpTitle}`;
       <h3>{subtitle}</h3>
       <p>{description}</p>
     </div>
-    <div class="relative z-10 flex justify-end">
+    <span class="relative z-10 flex justify-end">
       <Button
         type="button"
         variant={title === "Event" ? "primaryOutline" : "primary"}
         data-open-popup={popUpId}
         element={false}>Læs mere</Button
       >
-    </div>
+    </span>
   </article>
-</div>
+</span>
