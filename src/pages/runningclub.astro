@@ -49,8 +49,7 @@ console.log(requestSend);
 
 <Layout title="Kær løbeklub">
   <main class="grid gap-negative m-margin text-neutral-1">
-    <section>
-      <Picture class="absolute w-[130px] right-1 top-1 z-[-10]" src={RunningCoffeeCupIllustration} formats={["svg"]} alt="løbende kaffekop illustration" />
+    <section class="grid md:grid-cols-2 relative">
       <div>
         <h1 class="text-header-1 font-header">Kær løbeklub</h1>
         <p class="text-paragraph leading-paragraph">
@@ -61,6 +60,7 @@ console.log(requestSend);
           >  Er man hurtig, kan man nå den 2 gange!
         </p>
       </div>
+        <Picture class="absolute w-[130px] right-1 top-[15rem] md:top-[0rem] z-[-10] md:w-[300px]" src={RunningCoffeeCupIllustration} formats={["svg"]} alt="løbende kaffekop illustration" />
     </section>
     <section class="lg:flex lg:flex-row gap-large">
       <div class="grid gap-default flex-shrink-0">
