@@ -39,6 +39,9 @@ import CoffeeCupIllustration from "../assets/illustrations/blue/kaer-coffecup.we
 import AfternoonTeaImage from "../assets/img/afternoon-tea.webp";
 import CoffeeBacksImage from "../assets/img/coffee-beans-backs.webp";
 import Marquee from "../components/Marquee.astro";
+
+//Images for stampcard section
+import Stampcard from "../assets/img/stempelkort.webp";
 ---
 
 <Layout title="Forside">
@@ -338,7 +341,8 @@ import Marquee from "../components/Marquee.astro";
               Vidste du, at vi også løber sammen? <strong
                 >Kær Kaffebar's løbeklub</strong
               > handler om <strong
-                >glæde ved bevægelse – ikke præstationer.</strong>
+                >glæde ved bevægelse – ikke præstationer.</strong
+              >
             </h3>
           </div>
           <div class="h-[180px] overflow-hidden rounded-full md:h-[200px]">
@@ -378,8 +382,19 @@ import Marquee from "../components/Marquee.astro";
       </div>
     </section>
     <!-- Stampcard section -->
-    <section>
-      <Marquee/>
+    <section class="relative flex items-center justify-center flex-col">
+      <h1 class="text-header-1 font-header">Kær Kaffebar stempelkort</h1>
+      <p class="text-header-3 font-body-text">Få din 9. kop på huset med et gratis kaffe stempelkort</p>
+      <Image
+        src={Stampcard}
+        width={700}
+        height={700}
+        alt="rødt hvidt stempelkort af kær kaffebar"
+        class="relative z-50"
+      />
+      <div class="absolute top-1/2 left-0 w-full h-full">
+        <Marquee />
+      </div>
     </section>
 
     <!-- Gallery section -->

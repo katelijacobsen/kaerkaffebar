@@ -73,20 +73,12 @@ import { Image } from "astro:assets";
 </div>
 
 <style>
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-
-  * {
-    margin: 0;
-  }
 
   h3 {
-    font-size: 48px;
-    font-weight: 700;
-    color: var(--color-neutral-1);
+    font-family: var(--font-header);
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--color-neutral-3);
     line-height: 100px;
     white-space: nowrap;
     overflow: hidden;
@@ -94,6 +86,7 @@ import { Image } from "astro:assets";
   }
 
   .wrapper {
+    transform: rotate(-15deg);
     margin-top: 2rem;
     width: 90%;
     max-width: 1440px;
@@ -124,7 +117,7 @@ import { Image } from "astro:assets";
 
   .itemLeft,
   .itemRight {
-    width: 300px;
+    width: 250px;
     height: 100px;
     object-fit: contain;
     border-radius: 6px;
