@@ -1,4 +1,10 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+
 // src/components/Header.astro
 import Logo from "../assets/img/kaer-logo.png";
 import AnchorLink from "./AnchorLink.astro";

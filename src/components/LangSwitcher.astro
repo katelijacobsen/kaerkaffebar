@@ -1,20 +1,41 @@
+---
+import { languages } from "../i18n/utils";
+const { lang, otherLang } = Astro.props as {
+  lang: keyof typeof languages;
+  otherLang: keyof typeof languages;
+};
+---
+
 <div class="switch">
   <input
     id="language-toggle"
     class="check-toggle check-toggle-round-flat"
     type="checkbox"
+    checked={lang === otherLang ? false : lang === "da"}
   />
   <label for="language-toggle"></label>
   <span class="on">DA</span>
   <span class="off">EN</span>
 </div>
 
+<script is:inline lang="javascript">
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("language-toggle");
+    if (toggle) {
+      toggle.addEventListener("change", () => {
+        const da = "{{lang}}";
+        const en = "{{otherLang}}";
+        location.pathname = location.pathname.replace(`/${da}/`, `/${en}/`);
+      });
+    }
+  });
+</script>
+
 <style>
   .switch {
     position: relative;
     display: inline-block;
-    margin-inline-end: 1rem
-    
+    margin-inline-end: 1rem;
   }
 
   .switch > span {
@@ -84,7 +105,6 @@
     background-color: var(--color-primary);
     border: 2px solid var(--color-accent);
     border-radius: 16px;
-    
   }
   input.check-toggle-round-flat + label:after {
     top: 0px;
