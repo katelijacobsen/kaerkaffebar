@@ -1,7 +1,7 @@
 ---
 const locales = ["da", "en"];
 const currentPath = Astro.url.pathname.split("/");
-const currentLocale = locales.includes(currentPath[1]) ? currentPath[1] : null;
+const currentLocale = locales.includes(currentPath[1]) ? currentPath[1] : locales[0];
 const page = currentLocale ? currentPath.slice(2).join("/") : currentPath.slice(1).join("/");
 ---
 

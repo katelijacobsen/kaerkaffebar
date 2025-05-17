@@ -1,4 +1,6 @@
 ---
+
+import { t } from "astro-i18n";
 export const prerender = false;
 //Komponenter
 import Layout from "../layouts/Layout.astro";
@@ -20,24 +22,22 @@ import smallCakes from "../assets/img/smallCakes.avif";
     <article class="mb-section inline-flex flex-col lg:flex-row gap-large">
       <div>
         <h1 class="text-header-1 leading-height-header-1">
-          Arrangementer & events hos Kær Kaffebar
+          {t("Arrangementer & events hos Kær Kaffebar")}
         </h1>
         <p
           class="text-neutral-1 text-paragraph font-body-text leading-height-paragraph"
         >
-          Skab uforglemmelige øjeblikke ved at <strong>
-            afholde dit næste arrangement i de stemningsfulde lokaler hos Kær
-            Kaffebar!
+          {t("Skab uforglemmelige øjeblikke ved at")} <strong>
+            {t("afholde dit næste arrangement i de stemningsfulde lokaler hos Kær Kaffebar!")}
           </strong>
         </p>
         <br />
         <strong
           class="font-bold text-neutral-1 font-body-text text-paragraph leading-height-paragraph"
         >
-          Vi stiller gerne vores hyggelige og indbydende rammer til rådighed
-        </strong> for alt fra fødselsdagsfester og firmaarrangementer til PR-events
-        og meget mere –<bold>
-          du skal blot sende os en forespørgsel, så tager vi den derfra.
+          {t("Vi stiller gerne vores hyggelige og indbydende rammer til rådighed")}
+        </strong> {t("for alt fra fødselsdagsfester og firmaarrangementer til PR-events og meget mere –")}<bold>
+          {t("du skal blot sende os en forespørgsel, så tager vi den derfra.")}
         </bold>
       </div>
       <div class="flex flex-col gap-large">
@@ -51,18 +51,18 @@ import smallCakes from "../assets/img/smallCakes.avif";
             src="/video/arrangement-og-event-video.mp4"
             type="video/mp4"
           />
-          Your browser does not support the video tag.
+          {t("Your browser does not support the video tag.")}
         </video>
         <div class="flex items-start gap-large">
           <Image
             src={Vase}
-            alt="Illustration of teapot"
+            alt={t("Illustration of teapot")}
             width={150}
             height={150}
           />
           <Image
             src={smallCakes}
-            alt="Picture of small cakes"
+            alt={t("Picture of small cakes")}
             width={270}
             height={270}
           />
@@ -79,11 +79,11 @@ import smallCakes from "../assets/img/smallCakes.avif";
           imagePosition="my-[-10%] mx-[50%]"
           bgColor="bg-neutral-3"
           fontColor="text-neutral-1"
-          title="Arrangement"
-          subtitle="Hold dit næste arrangement hos os"
-          description="Små selskaber i hyggelige rammer – perfekt til fødselsdage, babyshowers og bogklubber."
-          popUpTitle="Arrangement"
-          details="Hvis du leder efter det ideelle sted til dit næste arrangement, behøver du ikke lede længere end Kær Kaffebar. Send en forespørgelse om arrangement her og så vil vi kontakte dig angående flere detaljer. Lad os sammen skabe et mindeværdigt arrangement, som dine gæster vil tale om i lang tid fremover!"
+          title={t("Arrangement")}
+          subtitle={t("Hold dit næste arrangement hos os")}
+          description={t("Små selskaber i hyggelige rammer – perfekt til fødselsdage, babyshowers og bogklubber.")}
+          popUpTitle={t("Arrangement")}
+          details={t("Hvis du leder efter det ideelle sted til dit næste arrangement, behøver du ikke lede længere end Kær Kaffebar. Send en forespørgelse om arrangement her og så vil vi kontakte dig angående flere detaljer. Lad os sammen skabe et mindeværdigt arrangement, som dine gæster vil tale om i lang tid fremover!")}
         />
         <Card
           image={Cutlery}
@@ -91,11 +91,11 @@ import smallCakes from "../assets/img/smallCakes.avif";
           imagePosition="my-[-10%] mx-[75%] rotate-[-30deg]"
           bgColor="bg-accent"
           fontColor="text-primary"
-          title="Event"
-          subtitle="Planlæg et unikt event på Kær Kaffebar"
-          description="Workshops, pop-ups eller private aftenarrangementer? Vi hjælper dig med at skabe stemningen"
-          popUpTitle="Event"
-          details="Hos Kær Kaffebar tilbyder vi den perfekte ramme for dit næste PR-event. Vores hyggelige og stemningsfulde café i hjertet af Valby er ideel til at skabe en intim og imødekommende atmosfære, hvor din virksomheds budskab kan komme til sin ret. Med vores flotte indretning, udendørs siddepladser i solen og lækre udvalg af økologisk kaffe, friskpresset juice, og hjemmelavede specialiteter, kan du give dine gæster en uforglemmelig oplevelse. Uanset om det drejer sig om en produktlancering, en netværksbegivenhed eller andet, kan vi skræddersy arrangementet til dine behov. Vi tilbyder muligheden for at reservere hele caféen og vores dedikerede personale sørger for, at alt forløber glat. Vi kan desuden arrangere specialmenuer, der passer til dit event, med tanke for dit brands identitet."
+          title={t("Event")}
+          subtitle={t("Planlæg et unikt event på Kær Kaffebar")}
+          description={t("Workshops, pop-ups eller private aftenarrangementer? Vi hjælper dig med at skabe stemningen")}
+          popUpTitle={t("Event")}
+          details={t("Hos Kær Kaffebar tilbyder vi den perfekte ramme for dit næste PR-event. Vores hyggelige og stemningsfulde café i hjertet af Valby er ideel til at skabe en intim og imødekommende atmosfære, hvor din virksomheds budskab kan komme til sin ret. Med vores flotte indretning, udendørs siddepladser i solen og lækre udvalg af økologisk kaffe, friskpresset juice, og hjemmelavede specialiteter, kan du give dine gæster en uforglemmelig oplevelse. Uanset om det drejer sig om en produktlancering, en netværksbegivenhed eller andet, kan vi skræddersy arrangementet til dine behov. Vi tilbyder muligheden for at reservere hele caféen og vores dedikerede personale sørger for, at alt forløber glat. Vi kan desuden arrangere specialmenuer, der passer til dit event, med tanke for dit brands identitet.")}
         />
         <Card
           image={Citroner}
@@ -103,11 +103,11 @@ import smallCakes from "../assets/img/smallCakes.avif";
           imagePosition="my-[2%] mx-[40%] rotate-[140deg]"
           bgColor="bg-neutral-2"
           fontColor="text-neutral-1"
-          title="Catering"
-          subtitle="Catering med kærlighed og kvalitet"
-          description="Bestil morgenmad, frokost eller kagebord til din næste sammenkomst – lavet med omtanke."
-          popUpTitle="Catering"
-          details="Lad os tage os af maden – så du kan tage dig af gæsterne. Hos Kær Kaffebar tilbyder vi catering til både private og professionelle arrangementer, store som små. Uanset om du planlægger en fødselsdag, et firmaevent, en reception eller et møde, står vi klar med smagfulde løsninger, der passer perfekt til anledningen. Vi laver alt fra friskbagte kager og brød til lette anretninger, brunch, frokost og specialkaffe. Vores retter er lavet med kærlighed og omtanke – og vi bruger kun friske, økologiske råvarer, hvor det er muligt. Har du særlige ønsker eller behov? Vi skræddersyr gerne en menu, der matcher dine præferencer og dit arrangement – både i smag og stil."
+          title={t("Catering")}
+          subtitle={t("Catering med kærlighed og kvalitet")}
+          description={t("Bestil morgenmad, frokost eller kagebord til din næste sammenkomst – lavet med omtanke.")}
+          popUpTitle={t("Catering")}
+          details={t("Lad os tage os af maden – så du kan tage dig af gæsterne. Hos Kær Kaffebar tilbyder vi catering til både private og professionelle arrangementer, store som små. Uanset om du planlægger en fødselsdag, et firmaevent, en reception eller et møde, står vi klar med smagfulde løsninger, der passer perfekt til anledningen. Vi laver alt fra friskbagte kager og brød til lette anretninger, brunch, frokost og specialkaffe. Vores retter er lavet med kærlighed og omtanke – og vi bruger kun friske, økologiske råvarer, hvor det er muligt. Har du særlige ønsker eller behov? Vi skræddersyr gerne en menu, der matcher dine præferencer og dit arrangement – både i smag og stil.")}
         />
         <Card
           image={Croissant}
@@ -117,11 +117,11 @@ import smallCakes from "../assets/img/smallCakes.avif";
           fontColor="text-neutral-1"
           border="border-2"
           borderColor="border-faded-highlight"
-          title="Kage og bestilling"
-          subtitle="Bestil hjemmelavede kager til enhver lejlighed"
-          description="Bryllup, fødselsdage eller bare fordi - vi bager med smag og stil"
-          popUpTitle="Kage og bestilling"
-          details="Skal der lidt ekstra sødt på bordet? Bestil en eller flere af vores populære hjemmebagte kager til din fest eller fejring. Vi bager efter sæson og tilbyder alt fra klassiske favoritter til unikke specialiteter."
+          title={t("Kage og bestilling")}
+          subtitle={t("Bestil hjemmelavede kager til enhver lejlighed")}
+          description={t("Bryllup, fødselsdage eller bare fordi - vi bager med smag og stil")}
+          popUpTitle={t("Kage og bestilling")}
+          details={t("Skal der lidt ekstra sødt på bordet? Bestil en eller flere af vores populære hjemmebagte kager til din fest eller fejring. Vi bager efter sæson og tilbyder alt fra klassiske favoritter til unikke specialiteter.")}
         />
       </section>
       <section class="flex-1">
