@@ -8,11 +8,14 @@ export default defineAstroI18nConfig({
   run: "client+server", // "client+server" or "server"
   showPrimaryLocale: false, // "/en/about" vs "/about"
   translationLoadingRules: [], // per page group loading
-  translationDirectory: "i18n", // translation directory names
+  translationDirectory: {}, // translation directory names
   translations: {
     common: {
-      da: () => import("./src/i18n/common/da.json"),
-      en: () => import("./src/i18n/common/en.json"),
+      en: {
+        "Arrangement & Event": "Arrangement & Event",
+        "Kærs løbeklub": "Kærs runningclub",
+        "Book bord": "Book table",
+      },
     },
   }, // { [translation_group1]: { [locale1]: {}, ... } }
   routes: {}, // { [secondary_locale1]: { about: "about-translated", ... } }
