@@ -1,0 +1,393 @@
+---
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+import Readline from "../components/menu/Readline.astro";
+import CategoryHeadline from "../components/menu/CategoryHeadline.astro";
+import TimeSlot from "../components/menu/TimeSlot.astro";
+import ProductHeadline from "../components/menu/ProductHeadline.astro";
+import Description from "../components/menu/Description.astro";
+import AddItem from "../components/menu/AddItem.astro";
+import AllergyIndicator from "../components/menu/AllergyIndicator.astro";
+import Coffee from "../assets/img/coffee-beans.webp";
+import GallerySliderSection from "../components/gallery/GallerySliderSection.astro";
+
+//illustrations
+import PancakeIllustration from "../assets/illustrations/blue/pancakes.svg";
+import CroissantIllustration from "../assets/illustrations/blue/croissant.svg";
+import SmoerrebroedIllustration from "../assets/illustrations/blue/smoerrebroed.svg";
+import CoffeeMug from "../assets/illustrations/blue/coffee-cup.svg";
+import ColdDrinks from "../assets/illustrations/blue/cold-drink.svg";
+---
+
+<Layout title="menu">
+  <main class="m-margin mb-section">
+    <h1 class="text-header-1 font-header leading-height-header-1 text-neutral-1 text-center mb-large">Menu</h1>
+    <div class="md:max-w-[1000px] md:mx-auto sticky top-[100px] md:top-[110px] z-20">
+      <Readline />
+    </div>
+    <div class="mt-large">
+      <img class="mx-auto md:mb-large h-[80px] w-[80px]" src={PancakeIllustration.src} alt="pandekage illustration" />
+      <div class="grid gap-extra-large md:gap-negative mt-small md:mt-large md:max-w-[1000px] md:mx-auto">
+        <div class="grid gap-extra-large md:gap-negative md:grid-cols-2">
+          <section class="grid gap-default md:grid-rows-[0.1fr_0.5fr_auto] md:gap-extra-large" id="brunch">
+            <div class="grid justify-center gap-default md:justify-start text-center">
+              <CategoryHeadline headline="Brunch" />
+              <div class="grid justify-center md:justify-start">
+                <TimeSlot time="09:00 - 14:00" />
+              </div>
+            </div>
+            <div class="grid gap-medium md:h-fit">
+              <div>
+                <ProductHeadline variant="primary" headline="Kær tallerken" price="95 kr" />
+                <Description content="Lille morgenkomplet med blødkogt øko æg, avokado, yogurt, frugt, smør, syltetøj, okø ost, brød" />
+              </div>
+              <div>
+                <p class="text-neutral-1 text-paragraph-2"><strong>Tilføj</strong></p>
+                <AddItem item="Æg 12 kr" />
+                <AddItem item="Gammelknas 20 kr" />
+                <AddItem item="Fennikel salami 12 kr" />
+                <AddItem item="Pålægschokolade 12 kr" />
+                <AddItem item="Tunsalat 20 kr" />
+                <AddItem item="Croissant 20 kr" />
+              </div>
+            </div>
+            <div class="grid gap-medium md:h-fit">
+              <div>
+                <ProductHeadline variant="primary" headline="Kær brunch" price="175 kr" />
+                <Description content="Stor brunch med æggekage af øko æg, røget oksepølse, hummus m. rugbrødschips, gammel knas ost, yogurt, fennikel salami, avokado, frugt, syltetøj, smør, brød" />
+              </div>
+              <div>
+                <p class="text-neutral-1 text-paragraph-2"><strong>Tilføj</strong></p>
+                <AddItem item="Pålægschokolade 12 kr" />
+                <AddItem item="Tunsalat 20 kr" />
+                <AddItem item="Croissant 20 kr" />
+              </div>
+            </div>
+          </section>
+          <div class="grid gap-extra-large md:gap-negative">
+            <section class="grid gap-default" id="vafler">
+              <div class="grid justify-center gap-default md:justify-start md:gap-medium">
+                <CategoryHeadline headline="Vafler" />
+              </div>
+              <div class="grid gap-medium">
+                <div>
+                  <ProductHeadline variant="primary" headline="Valnødder" price="85 kr" />
+                  <Description content="2 kærlighedsvafler med valnøddecremeost, brombærkompot, valnødder og skovsyre" />
+                </div>
+                <div>
+                  <ProductHeadline variant="primary" headline="Yoghurt og bær" price="45 kr" />
+                  <Description content="2 kærlighedsvafler med græsk yoghurt, bær og kokos flager" />
+                </div>
+                <div>
+                  <ProductHeadline variant="primary" headline="Choko og banan" price="45 kr" />
+                  <Description content="2 kærlighedsvafler med chokoladesov, banan, flødeskum og ristede hasselnødder" />
+                </div>
+                <div>
+                  <ProductHeadline variant="primary" headline="Enkel vaffel" price="43 kr" />
+                  <Description content="1 kærlighedsvaffel med sirup" />
+                </div>
+              </div>
+            </section>
+            <section class="grid gap-default" id="bowls">
+              <div class="grid justify-center gap-default md:justify-start md:gap-medium">
+                <CategoryHeadline headline="Bowls" />
+              </div>
+              <div class="grid gap-medium">
+                <div class="grid gap-medium">
+                  <div>
+                    <ProductHeadline variant="primary" headline="Acaí bowl" price="85 kr" />
+                    <Description content="Bær, banan og acaí blended og toppet med friske bær, kokos og hjemmeristet granola" />
+                  </div>
+                  <div>
+                    <p class="text-neutral-1 text-paragraph-2"><strong>Tilføj</strong></p>
+                    <AddItem item="Peanutbutter 5 kr" />
+                  </div>
+                </div>
+                <div>
+                  <ProductHeadline variant="primary" headline="Brombær og valnødder" price="79 kr" />
+                  <Description content="Græsk yoghurt med brombærkompot, valnødder, hjemmeristet granola og skovsyre" />
+                </div>
+                <div>
+                  <ProductHeadline variant="secondary" headline="Peanutbutter og banan" price="79 kr" />
+                  <Description content="Græsk yoghurt, peanubutter, banan, bær, hjemmeristet granola, hampefrø og kanel" />
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-negative">
+        <img class="mx-auto md:mb-large h-[80px] w-[80px]" src={CroissantIllustration.src} alt="croissant illustration" />
+        <div class="grid gap-extra-large mt-small md:mt-large md:gap-negative md:grid-cols-2">
+          <section class="grid gap-default" id="broed">
+            <div class="grid justify-center gap-default md:justify-start">
+              <CategoryHeadline headline="Brød og pålæg" illustration={CroissantIllustration} alt="croissant" width={60} height={60} />
+            </div>
+            <div class="grid gap-medium">
+              <div>
+                <ProductHeadline variant="primary" headline="BMO øko ost" price="35 kr" />
+                <Description content="Hjemmebagt surdejsbolle m. øko ost" />
+              </div>
+              <div>
+                <ProductHeadline variant="primary" headline="BMO gammel knas" price="45 kr" />
+                <Description content="Hjemmebagt surdejsbolle m. gammel knas ost" />
+              </div>
+              <div>
+                <ProductHeadline variant="primary" headline="Rugbrød og æg" price="45 kr" />
+                <Description content="Smilende øko æg m. smør og ristet rugbrød" />
+              </div>
+              <div>
+                <ProductHeadline variant="primary" headline="Fyldt croissant" price="45 kr" />
+                <Description content="Croissant med ost, skinke og feldsalat. Lunet." />
+              </div>
+              <div>
+                <p class="text-neutral-1 text-paragraph-2"><strong>Til brødet</strong></p>
+                <AddItem item="Gammel knas 12 kr" />
+                <AddItem item="Fennikel salami 12 kr" />
+                <AddItem item="Hjemmelavet syltetøj 10 kr" />
+                <AddItem item="Pålægschokolade 12 kr" />
+                <AddItem item="Tunsalat 20 kr" />
+                <AddItem item="Honning 5 kr" />
+              </div>
+            </div>
+          </section>
+          <section class="grid gap-default md:grid-rows-[0.1fr_auto]" id="bagvaerk">
+            <div class="grid justify-center gap-default md:justify-start h-fit">
+              <CategoryHeadline headline="Bagværk" />
+            </div>
+            <i class="text-center md:text-left"><Description content="Dagens bagværk varierer. Se montre for dagens udvalg." /></i>
+            <div class="grid gap-medium">
+              <ProductHeadline variant="primary" headline="Croissant" price="29 kr" />
+              <ProductHeadline variant="primary" headline="Frøsnapper" price="29 kr" />
+              <ProductHeadline variant="primary" headline="Cookie" price="32 kr" />
+              <ProductHeadline variant="primary" headline="Surdejsbolle" price="15 kr" />
+              <ProductHeadline variant="primary" headline="Øko kaneltop" price="32 kr" />
+              <ProductHeadline variant="primary" headline="Muffin" price="35 kr" />
+              <ProductHeadline variant="primary" headline="Cupcake" price="42 kr" />
+              <ProductHeadline variant="primary" headline="Banankage" price="35 kr" />
+              <ProductHeadline variant="primary" headline="Mousse" price="40/35 kr" />
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="mt-negative">
+        <img class="mx-auto md:mb-large h-[90px] w-[90px]" src={SmoerrebroedIllustration.src} alt="smørrebrød illustration" />
+        <div class="grid gap-extra-large md:gap-negative md:grid-cols-2">
+          <section class="grid gap-default md:grid-rows-[0.1fr_0.5fr_0.2fr_auto] md:gap-extra-large" id="smoerrebroed">
+            <div class="grid justify-center gap-default md:justify-start">
+              <CategoryHeadline headline="Smørrebrød" illustration={SmoerrebroedIllustration} alt="smørrebrød" width={60} height={60} />
+              <div class="grid justify-center md:justify-start">
+                <TimeSlot time="Fra kl. 10" />
+              </div>
+            </div>
+            <div class="grid gap-medium">
+              <div>
+                <ProductHeadline variant="primary" headline="Avocadomad" price="90 kr" />
+                <Description content="Avocado, hvidløgsspire, råsyltede rødløg, persillepesto" />
+              </div>
+              <div>
+                <p class="text-neutral-1 text-paragraph"><strong>Vælg brød</strong></p>
+                <AddItem item="Rugbrød" />
+                <AddItem item="Focaccia" />
+              </div>
+              <div>
+                <p class="text-neutral-1 text-paragraph-2"><strong>Tilføj</strong></p>
+                <AddItem item="Smilende æg 20 kr" />
+              </div>
+            </div>
+            <div>
+              <ProductHeadline variant="primary" headline="Kartoffelmad" price="85 kr" />
+              <Description content="Kartoffel, urtemayonnaise, gammel knas, feld salat, frisk timian og brøndkarse på rugbrød" />
+            </div>
+            <div class="grid gap-medium md:grid-rows-[0.1fr_auto]">
+              <div>
+                <ProductHeadline variant="primary" headline="Æggemad" price="85 kr" />
+                <Description content="Smilende æg, urtemayonnaise, brøndkarse, dild og feldsalat på rugbrød" />
+              </div>
+              <div>
+                <p class="text-neutral-1 text-paragraph-2"><strong>Tilføj</strong></p>
+                <AddItem item="Rejer 20 kr" />
+              </div>
+            </div>
+          </section>
+          <div class="grid gap-extra-large">
+            <section class="grid gap-default" id="sandwich">
+              <div class="grid justify-center gap-default md:justify-start">
+                <CategoryHeadline headline="Sandwich" />
+              </div>
+              <div class="grid gap-medium">
+                <div>
+                  <ProductHeadline variant="primary" headline="Tunsandwich" price="95 kr" />
+                  <Description content="Rørt tunsalat, chili flager, hvidløgsspire, salat, pesto og agurk på vores hjemmebagte focaccia" />
+                </div>
+                <div>
+                  <ProductHeadline variant="primary" headline="Fennikel salami og gammel knas" price="95 kr" />
+                  <Description content="Fennikel salami, gammel knas ost, tomat, råsyltede rødløg, salat, hummus, og pesto på vores hjemmebagte focaccia" />
+                </div>
+                <div>
+                  <ProductHeadline variant="primary" headline="Falafelsandwich" price="99 kr" />
+                  <Description content="Falafel, avokado, hummus, salat, agurk, chili, mayo og syltede rødløg på vores hjemmebagte focaccia" />
+                </div>
+              </div>
+            </section>
+            <section class="grid gap-default" id="toast">
+              <div class="grid justify-center gap-default md:justify-start">
+                <CategoryHeadline headline="Grillet toast" />
+              </div>
+              <div>
+                <ProductHeadline variant="primary" headline="Tunsandwich" price="90 kr" />
+                <Description content="Ost, skinke, bagt tomat, persillepesto og råsyltede rødløg på vores hjemmebagte focaccia" />
+              </div>
+            </section>
+            <section class="grid gap-default" id="salat">
+              <div class="grid justify-center gap-default md:justify-start">
+                <CategoryHeadline headline="Salat" />
+              </div>
+              <div>
+                <ProductHeadline variant="primary" headline="Falafel bowl" price="109 kr" />
+                <Description content="Varm rødbedefalafel, avokado, salat, agurk, persilleolie, sesam og hummus" />
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-negative">
+        <img class="mx-auto md:mb-large h-[80px] w-[80px]" src={CoffeeMug.src} alt="kaffekop illustration" />
+        <div class="grid gap-extra-large md:gap-negative md:grid-cols-2">
+          <section class="grid gap-default md:grid-rows-[0.1fr_0.6fr]" id="kaffe">
+            <div class="grid justify-center gap-default md:justify-start">
+              <CategoryHeadline headline="Kaffe" />
+            </div>
+            <div class="grid gap-default">
+              <ProductHeadline variant="primary" headline="Espresso" price="32 kr" />
+              <ProductHeadline variant="primary" headline="Americano" price="37 kr" />
+              <ProductHeadline variant="primary" headline="Cortado" price="40 kr" />
+              <ProductHeadline variant="primary" headline="Flat white" price="42 kr" />
+              <ProductHeadline variant="primary" headline="Cappuccino" price="45 kr" />
+              <ProductHeadline variant="primary" headline="Café latte" price="47/52 kr" />
+              <ProductHeadline variant="primary" headline="Vanilje latte" price="49 kr" />
+              <div>
+                <ProductHeadline variant="secondary" headline="Spiced latte" price="49 kr" />
+                <Description content="Latte med hjemmelavet krydresirup og kanel" />
+              </div>
+            </div>
+          </section>
+          <section class="grid gap-default md:grid-rows-[0.1fr_0.6fr]" id="varme-drikke">
+            <div class="grid justify-center gap-default md:justify-start">
+              <CategoryHeadline headline="Varme drikke" />
+            </div>
+            <div class="grid gap-small">
+              <ProductHeadline variant="primary" headline="Te" price="36 kr" />
+              <ProductHeadline variant="primary" headline="Matcha latte" price="49/54 kr" />
+              <ProductHeadline variant="primary" headline="Chai latte" price="47/52 kr" />
+              <ProductHeadline variant="primary" headline="Varm kakao" price="45/50 kr" />
+              <ProductHeadline variant="primary" headline="Varm hyldeblomst" price="47 kr" />
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="mt-negative">
+        <img class="mx-auto md:mb-large h-[80px] w-[80px]" src={ColdDrinks.src} alt="kold drikkevare illustration" />
+        <div class="grid gap-extra-large md:gap-negative md:grid-cols-2">
+          <section class="grid gap-default md:grid-rows-[0.1fr_auto]" id="kolde-drikke">
+            <div class="grid justify-center gap-default md:justify-start">
+              <CategoryHeadline headline="Kolde drikke" illustration={ColdDrinks} alt="kold drink" width={50} height={50} />
+            </div>
+            <div class="grid gap-default">
+              <div class="grid gap-default">
+                <ProductHeadline variant="primary" headline="Iced latte" price="49 kr" />
+                <ProductHeadline variant="primary" headline="Iced matcha" price="49 kr" />
+                <ProductHeadline variant="primary" headline="Iced chai latte" price="49 kr" />
+                <ProductHeadline variant="primary" headline="Iced americano" price="39 kr" />
+              </div>
+              <div>
+                <ProductHeadline variant="secondary" headline="Spiced iced latte" price="52 kr" />
+                <Description content="Iskaffe med hjemmelavet krydresirup, kanel og flødeskum" />
+              </div>
+              <div class="grid gap-default">
+                <ProductHeadline variant="primary" headline="Hyldeblomst" price="35 kr" />
+                <ProductHeadline variant="primary" headline="Maté maté" price="45 kr" />
+                <ProductHeadline variant="primary" headline="IPA alkoholfri" price="39 kr" />
+                <ProductHeadline variant="primary" headline="Cocio" price="35 kr" />
+                <ProductHeadline variant="primary" headline="Dansk vand" price="35 kr" />
+              </div>
+              <div>
+                <ProductHeadline variant="secondary" headline="BIE's øko" price="35 kr" />
+                <Description content="Rabarber / solbær" />
+                <Description content="Æblemost / æble og ingefær" />
+              </div>
+            </div>
+          </section>
+          <section class="grid gap-default md:grid-rows-[0.1fr_0.5fr]" id="hjemmelavet">
+            <div class="grid justify-center gap-default md:justify-start">
+              <CategoryHeadline headline="Hjemmelavet" />
+            </div>
+            <div class="grid gap-default">
+              <div class="grid gap-default">
+                <ProductHeadline variant="primary" headline="Lime lemonade" price="55 kr" />
+                <ProductHeadline variant="primary" headline="Mynte lemonade" price="55 kr" />
+                <ProductHeadline variant="secondary" headline="Brombær lemonade" price="55 kr" />
+              </div>
+              <div>
+                <ProductHeadline variant="primary" headline="Smoothie" price="60 kr" />
+                <Description content="Se dagens smoothie" />
+              </div>
+              <div>
+                <ProductHeadline variant="primary" headline="Friskpresset appelsin juice" price="59 kr" />
+                <div>
+                  <p class="text-neutral-1 text-paragraph-2"><strong>Tilføj</strong></p>
+                  <AddItem item="Ingefærshot 10 kr" />
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <AllergyIndicator />
+    </div>
+
+    <section id="coffeesection" class="mt-negative">
+      <div class="grid gap-extra-large lg:grid-cols-2">
+        <div class="lg:h-[500px]">
+          <Image class="h-full w-full object-cover object-center rounded-default" src={Coffee} alt="billede af to poser kaffebønner" />
+        </div>
+        <div>
+          <h1 class="text-neutral-1 text-header-1 font-header leading-height-header-1">Hos Kær Kaffebar brænder vi for god kaffe.</h1>
+          <h2 class="text-neutral-1 text-header-2 font-body-text leading-height-header-2">Vi samarbejder med Just Coffee for at sikre kvalitet og bæredygtighed i hver eneste kop.</h2>
+          <div class="relative">
+            <input type="checkbox" id="cb" class="peer absolute z-[-10] opacity-0" name="accordion" />
+
+            <label for="cb" class="cursor-pointer block mb-2">
+              <span class="peer-checked:hidden text-neutral-1 text-paragraph leading-height-paragraph font-body-text"><strong>Læs mere om vores kaffe</strong></span>
+              <span class="hidden peer-checked:inline"><strong>Vis mindre</strong></span>
+            </label>
+            <div class="max-h-0 overflow-hidden transition-all duration-[350ms] peer-checked:max-h-[80rem] grid gap-large">
+              <div>
+                <h2 class="text-neutral-1">Økologisk kaffe</h2>
+                <p class="text-neutral-1 text-paragraph font-body-text leading-height-paragraph">Vores kaffe på kær kaffebar i Valby, er brygget med økologiske bønner fra Just Coffee. Just Coffee’s risteri ligger i Roskilde og handler bæredygtigt med bønderne om bønnerne fra Sydamerika. Alle vores kaffedrikke er brygget på deres Sol&Måne Espresso kaffe, som er en mørkristet arabica af hele bønner fra Colombia, Nicaragua, Honduras og Etiopien. Vælg roligt Kær Kaffebar for lækker økologisk kaffe i Valby. Du kan læse mere om Just Coffe’s principper på deres hjemmeside.</p>
+              </div>
+              <div>
+                <h2 class="text-neutral-1">Milk matters</h2>
+                <div class="grid gap-default">
+                  <p class="text-neutral-1 text-paragraph font-body-text leading-height-paragraph">For at sikre den høje kvalitet, den gode smag og bæredygtighed – er mælken også nøje udvalgt. Vi har valgt at arbejde med den Økologiske Thise Mælk, som giver kaffen en skøn skum og rundhed. Så når du skal bruge kaffe i Valby, er du her garanteret de bedste råvarer.</p>
+                  <p class="text-neutral-1 text-paragraph font-body-text leading-height-paragraph">Er der fare på færde hvis du får laktose i mælken, har vi selvfølgelig også laktose fri mælk. Både laktosefri sødmælk og laktosefri minimælk.</p>
+                  <p class="text-neutral-1 text-paragraph font-body-text leading-height-paragraph">Kan man mon få vegansk kaffe i Valby? Ja! Er man ikke til animalsk mælk, men hellere vil have en vegansk udgave, har vi selvfølgelig også havremælk og det koster ikke ekstra.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Gallery section -->
+    <section class="mt-negative">
+      <GallerySliderSection />
+    </section>
+  </main>
+</Layout>
