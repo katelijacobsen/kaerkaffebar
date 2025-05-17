@@ -1,9 +1,8 @@
 ---
 // src/components/Header.astro
 import Logo from "../assets/img/kaer-logo.png";
-import PrimaryButton from "./PrimaryButton.astro";
 import AnchorLink from "./AnchorLink.astro";
-import Button from "./Button.astro";
+
 ---
 
 <header class="fixed top-0 z-50 w-full">
@@ -15,18 +14,18 @@ import Button from "./Button.astro";
       <!-- Desktop Navigation -->
       <nav class="hidden lg:block">
         <ul class="flex items-center gap-large">
-          <li><AnchorLink url="/menu" variant="neutral">Menu</AnchorLink></li>
-          <li><AnchorLink url="/afternoontea">Afternoon Tea</AnchorLink></li>
-          <li><AnchorLink url="/arrangement">Arrangement & event</AnchorLink></li>
-          <li><AnchorLink url="/runningclub">Kær løbeklub</AnchorLink></li>
-          <li><Button isAnchor={true} variant="primary" url="https://kaerkaffebar.superbexperience.com/" ariaLabel="tilmeld dig løbeklub">Book bord</Button></li>
+          <li><AnchorLink url="/menu" variant="underline">Menu</AnchorLink></li>
+          <li><AnchorLink url="/afternoontea" variant="underline">Afternoon Tea</AnchorLink></li>
+          <li><AnchorLink url="/arrangement" variant="underline">Arrangement & event</AnchorLink></li>
+          <li><AnchorLink url="/runningclub" variant="underline">Kær løbeklub</AnchorLink></li>
+          <li><AnchorLink isAnchor={true} variant="primary" url="https://kaerkaffebar.superbexperience.com/" ariaLabel="tilmeld dig løbeklub">Book bord</AnchorLink></li>
           <li class="text-sm">DK / EN</li>
         </ul>
       </nav>
 
       <!-- Mobile Navigation Controls -->
       <div class="flex items-center gap-2 lg:hidden">
-        <Button variant="primary" url="https://kaerkaffebar.superbexperience.com/" ariaLabel="tilmeld dig løbeklub">Book bord</Button>
+        <AnchorLink variant="primary" url="https://kaerkaffebar.superbexperience.com/" ariaLabel="tilmeld dig løbeklub">Book bord</AnchorLink>
         <button id="mobile-menu-button" class="p-2 focus:outline-none" aria-label="Toggle menu">
           <svg class="w-10 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -39,16 +38,16 @@ import Button from "./Button.astro";
     <nav id="mobile-menu" class="hidden absolute right-0 top-[6em] z-40 bg-primary p-burger-menu border-faded-highlight border-2 rounded-large m-default">
       <ul class="flex flex-col items-center gap-default font-bold">
         <li class="menu-item pb-default pt-default">
-          <AnchorLink url="/menu" >Menu</AnchorLink>
+          <AnchorLink url="/menu" variant="underline" >Menu</AnchorLink>
         </li>
         <li class="menu-item pb-default pt-default">
-          <AnchorLink url="/afternoontea">Afternoon Tea</AnchorLink>
+          <AnchorLink url="/afternoontea" variant="underline">Afternoon Tea</AnchorLink>
         </li>
         <li class="menu-item pb-default">
-          <AnchorLink url="/arrangement">Arrangement & event</AnchorLink>
+          <AnchorLink url="/arrangement" variant="underline">Arrangement & event</AnchorLink>
         </li>
         <li class="menu-item pb-default">
-          <AnchorLink url="/runningclub">Kær løbeklub</AnchorLink>
+          <AnchorLink url="/runningclub" variant="underline" >Kær løbeklub</AnchorLink>
         </li>
       </ul>
     </nav>

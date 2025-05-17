@@ -4,6 +4,7 @@ import Instagram from "../assets/icons/instagram-icon.svg";
 import Smiley from "../assets/icons/smiley-icon.svg";
 import Logo from "../assets/icons/logo.svg";
 import Button from "../components/Button.astro";
+import AnchorLink from "./AnchorLink.astro";
 ---
 
 <footer class="bg-secondary rounded-tl-large rounded-tr-large text-primary p-large grid items-center gap-large text-center">
@@ -36,7 +37,7 @@ import Button from "../components/Button.astro";
   </div>
   <div class="flex flex-col items-center gap-default md:flex-row md:justify-end md:w-full">
     <img src={Smiley.src} alt="glad smiley" loading="lazy" />
-    <Button variant="primaryOutline" ariaLabel="se smileyrapport" url="https://findsmiley.dk/1413587">Smileyrapport</Button>
+    <AnchorLink variant="primaryOutline" ariaLabel="se smileyrapport" url="https://findsmiley.dk/1413587">Smileyrapport</AnchorLink>
   </div>
   <p class="text-center text-paragraph leading-height-paragraph font-body-text font-bold">Du kan til enhver tid ændre eller aflyse din booking via telefonnummer 81 61 09 00</p>
 </footer>

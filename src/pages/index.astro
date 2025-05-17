@@ -41,6 +41,7 @@ import Marquee from "../components/Marquee.astro";
 
 //Images for stampcard section
 import Stampcard from "../assets/img/stempelkort.webp";
+import AnchorLink from "../components/AnchorLink.astro";
 ---
 
 <Layout title="Forside">
@@ -91,7 +92,7 @@ import Stampcard from "../assets/img/stempelkort.webp";
         </div>
       </div>
       <div class="grid sm:justify-items-center">
-        <Button url="/menu" variant="primary" ariaLabel="Se menu">Se menu</Button>
+        <AnchorLink url="/menu" variant="primary" ariaLabel="Se menu">Se menu</AnchorLink>
       </div>
     </section>
 
@@ -116,7 +117,7 @@ import Stampcard from "../assets/img/stempelkort.webp";
             <h3 class="text-neutral-1 font-body-text text-header-3 leading-height-header-3">Drømmer du om en hyggelig, personlig ramme til dit næste arrangement? Hos Kær Kaffebar åbner vi dørene for alt fra fødselsdage og firmaevents til PR-events og små, private fester. Vores café byder på en varm atmosfære, smuk indretning og økologiske specialiteter, der sætter prikken over i'et på din dag.</h3>
           </div>
           <div class="grid">
-            <Button variant="primary" url="/arrangement" ariaLabel="Læs mere">Læs mere</Button>
+            <AnchorLink variant="primary" url="/arrangement" ariaLabel="Læs mere">Læs mere</AnchorLink>
           </div>
         </div>
       </div>
@@ -160,7 +161,7 @@ import Stampcard from "../assets/img/stempelkort.webp";
       </div>
     </div>
     <div class="grid sm:justify-items-center">
-      <Button variant="primary" url="/runningclub" ariaLabel="tilmeld dig løbeklub">Tilmeld dig løbeklub</Button>
+      <AnchorLink variant="primary" url="/runningclub" ariaLabel="tilmeld dig løbeklub">Tilmeld dig løbeklub</AnchorLink>
     </div>
   </section>
   <!-- Stampcard section -->

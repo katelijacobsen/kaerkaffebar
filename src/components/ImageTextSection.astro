@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Button from "../components/Button.astro";
+import AnchorLink from "./AnchorLink.astro";
 const { headline, subheadline, content } = Astro.props;
 const { imageSrc, imageAlt, roundedBorder, objectPostion, aspectRatio, reverse, imageContainerSize } = Astro.props;
 const { ariaLabel, buttonText, url } = Astro.props;
@@ -19,7 +20,7 @@ const { ariaLabel, buttonText, url } = Astro.props;
         <p class="text-neutral-1 font-body-text text-paragraph leading-height-tag font-bold">{subheadline}</p>
         <h3 class="text-neutral-1 font-body-text text-header-3 leading-height-header-3">{content}</h3>
       </div>
-      <Button variant="primary" url={url} ariaLabel={ariaLabel}>{buttonText}</Button>
+      <AnchorLink variant="primary" url="/runningclub" ariaLabel={ariaLabel}>{buttonText}</AnchorLink>
     </div>
   </div>
 </div>
