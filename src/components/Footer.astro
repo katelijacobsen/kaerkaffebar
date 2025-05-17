@@ -1,4 +1,6 @@
 ---
+import { t } from "astro-i18n";
+
 import Facebook from "../assets/icons/facebook-icon.svg";
 import Instagram from "../assets/icons/instagram-icon.svg";
 import Smiley from "../assets/icons/smiley-icon.svg";
@@ -9,35 +11,37 @@ import AnchorLink from "./AnchorLink.astro";
 
 <footer class="bg-secondary rounded-tl-large rounded-tr-large text-primary p-large grid items-center gap-large text-center">
   <div class="flex m-auto gap-large items-center md:justify-end md:items-end md:w-full">
-    <a href="https://www.facebook.com/kaerkaffebar"> <img src={Facebook.src} alt="facebook ikon" loading="lazy" /></a>
-    <a href="https://www.instagram.com/kaerkaffebar/"> <img src={Instagram.src} alt="instagram ikon" loading="lazy" /></a>
+    <a href="https://www.facebook.com/kaerkaffebar"> <img src={Facebook.src} alt={t("facebook ikon")} loading="lazy" /></a>
+    <a href="https://www.instagram.com/kaerkaffebar/"> <img src={Instagram.src} alt={t("instagram ikon")} loading="lazy" /></a>
   </div>
   <div class="flex flex-col gap-large items-center text-center md:flex-row md:justify-start w-full">
-    <a class="md:grow-[0.4]" href="/"><img src={Logo.src} alt="kær kaffebar logo i hvid" loading="lazy" /></a>
+    <a class="md:grow-[0.4]" href="/"><img src={Logo.src} alt={t("kær kaffebar logo i hvid")} loading="lazy" /></a>
     <div class="flex flex-col gap-large md:gap-extra-large items-center text-center md:flex-row md:items-start">
       <div>
-        <h3 class="text-primary text-header-3 font-body-text leading-height-header-3 md:text-left">Åbningstider</h3>
+        <h3 class="text-primary text-header-3 font-body-text leading-height-header-3 md:text-left">{t("Åbningstider")}</h3>
         <div class="md:flex md:gap-default">
-          <p class="text-primary text-paragraph font-body-text leading-height-paragraph">Mandag - Fredag</p>
-          <p class="text-primary text-paragraph font-body-text leading-height-paragraph">07:30 - 18:00</p>
+          <p class="text-primary text-paragraph font-body-text leading-height-paragraph">{t("Mandag - Fredag")}</p>
+          <p class="text-primary text-paragraph font-body-text leading-height-paragraph">{t("07:30 - 18:00")}</p>
         </div>
         <div class="md:flex md:gap-default">
-          <p class="text-primary text-paragraph font-body-text leading-height-paragraph">Lørdag - Søndag</p>
-          <p class="text-primary text-paragraph font-body-text leading-height-paragraph">07:30 - 18:00</p>
+          <p class="text-primary text-paragraph font-body-text leading-height-paragraph">{t("Lørdag - Søndag")}</p>
+          <p class="text-primary text-paragraph font-body-text leading-height-paragraph">{t("07:30 - 18:00")}</p>
         </div>
       </div>
       <div>
-        <h3 class="text-primary text-header-3 font-body-text leading-height-header-3 md:text-left">Kontakt</h3>
+        <h3 class="text-primary text-header-3 font-body-text leading-height-header-3 md:text-left">{t("Kontakt")}</h3>
         <div>
-          <p class="text-primary text-paragraph font-body-text leading-height-paragraph md:text-left">Valby Langgade 86C St. Tv.</p>
-          <p class="text-primary text-paragraph font-body-text leading-height-paragraph md:text-left">Tlf: 81 61 09 00</p>
+          <p class="text-primary text-paragraph font-body-text leading-height-paragraph md:text-left">{t("Valby Langgade 86C St. Tv.")}</p>
+          <p class="text-primary text-paragraph font-body-text leading-height-paragraph md:text-left">{t("Tlf: 81 61 09 00")}</p>
         </div>
       </div>
     </div>
   </div>
   <div class="flex flex-col items-center gap-default md:flex-row md:justify-end md:w-full">
-    <img src={Smiley.src} alt="glad smiley" loading="lazy" />
-    <AnchorLink variant="primaryOutline" ariaLabel="se smileyrapport" url="https://findsmiley.dk/1413587">Smileyrapport</AnchorLink>
+    <img src={Smiley.src} alt={t("glad smiley")} loading="lazy" />
+    <AnchorLink variant="primaryOutline" ariaLabel={t("se smileyrapport")} url="https://findsmiley.dk/1413587">{t("Smileyrapport")}</AnchorLink>
   </div>
-  <p class="text-center text-paragraph leading-height-paragraph font-body-text font-bold">Du kan til enhver tid ændre eller aflyse din booking via telefonnummer 81 61 09 00</p>
+  <p class="text-center text-paragraph leading-height-paragraph font-body-text font-bold">
+    {t("Du kan til enhver tid ændre eller aflyse din booking via telefonnummer 81 61 09 00")}
+  </p>
 </footer>
