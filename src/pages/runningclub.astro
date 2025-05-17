@@ -1,8 +1,9 @@
 ---
+import { t } from "astro-i18n";
+
 export const prerender = false;
 import "../styles/global.css";
 import { Image } from "astro:assets";
-import Picture from "astro/components/Picture.astro";
 import Layout from "../layouts/Layout.astro";
 //import Accordion from "../components/runningclub/Accordion.astro";
 import RunningClubCard from "../components/runningclub/RunningClubCard.astro";
@@ -48,25 +49,25 @@ const requestSend = Astro.url.searchParams.get("requestSend") ? true : false;
 console.log(requestSend);
 ---
 
-<Layout title="Kær løbeklub">
+<Layout title={t("Kær løbeklub")}>
   <main class="grid gap-negative m-margin text-neutral-1">
     <section class="grid md:grid-cols-2 relative">
       <div>
-        <h1 class="text-header-1 font-header">Kær løbeklub</h1>
+        <h1 class="text-header-1 font-header">{t("Kær løbeklub")}</h1>
         <p class="text-paragraph leading-paragraph">
-          Kær Klubben’s løbeklub i Valby har <strong
-            >fokus på det sociale og på at samle lokalsamfundet</strong
-          >, samtidig med at vi bevæger os. <strong
-            >Ruten i søndermarken er 2,5 km, så alle kan være med.</strong
-          >  Er man hurtig, kan man nå den 2 gange!
+          {t("Kær Klubben's løbeklub i Valby har")} <strong
+            >{t("fokus på det sociale og på at samle lokalsamfundet")}</strong
+          >, {t("samtidig med at vi bevæger os.")} <strong
+            >{t("Ruten i søndermarken er 2,5 km, så alle kan være med.")}</strong
+          >  {t("Er man hurtig, kan man nå den 2 gange!")}
         </p>
       </div>
-       <!-- <Picture class="absolute w-[130px] right-1 top-[15rem] md:top-[0rem] z-[-10] md:w-[300px]" src={RunningCoffeeCupIllustration} formats={["avif, webp"]} alt="løbende kaffekop illustration" /> -->
+       <!-- <Picture class="absolute w-[130px] right-1 top-[15rem] md:top-[0rem] z-[-10] md:w-[300px]" src={RunningCoffeeCupIllustration} formats={["avif, webp"]} alt={t("løbende kaffekop illustration")} /> -->
     </section>
     <section class="lg:flex lg:flex-row gap-large">
       <div class="grid gap-default flex-shrink-0">
         <div class="flex items-center gap-default">
-          <h2 class="text-header-2">Kommende ture</h2>
+          <h2 class="text-header-2">{t("Kommende ture")}</h2>
           <div>
             <select 
               id="month-filter"
@@ -74,18 +75,18 @@ console.log(requestSend);
             >
             {
               [
-                "Januar",
-                "Februar",
-                "Marts",
-                "April",
-                "Maj",
-                "Juni",
-                "Juli",
-                "August",
-                "September",
-                "Oktober",
-                "November",
-                "December",
+                t("Januar"),
+                t("Februar"),
+                t("Marts"),
+                t("April"),
+                t("Maj"),
+                t("Juni"),
+                t("Juli"),
+                t("August"),
+                t("September"),
+                t("Oktober"),
+                t("November"),
+                t("December"),
               ].map((m, idx) => (
                 <option
                   value={months[idx]}
@@ -101,41 +102,41 @@ console.log(requestSend);
           </div>
         </div>
         <PopUp show={requestSend} id="popup-confirmation">
-          <h3 id="confirmation"> Tak for din Tilmelding </h3>
+          <h3 id="confirmation">{t("Tak for din Tilmelding")}</h3>
         </PopUp>
         <!-- Mapping events fra API -->
         {
           events.length === 0 ? (
-            <p class="text-label">Ingen kommende ture</p>
+            <p class="text-label">{t("Ingen kommende ture")}</p>
           ) : (
             events.map((event) => (
             <PopUp show={false} id={`popup-${event.id}`}>
               <form method="POST" action="/api/clubevents" class="flex flex-col gap-default">
-                <h3>Tilmelding</h3>
+                <h3>{t("Tilmelding")}</h3>
               <div class="flex flex-col gap-small">
-                <label for="name">Fulde Navn</label>
+                <label for="name">{t("Fulde Navn")}</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
-                  placeholder="Navn"
+                  placeholder={t("Navn")}
                   required
                   class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
                   />
               </div>
               <div class="flex flex-col gap-small">
-                <label for="email"> E-mail</label>
+                <label for="email">{t("E-mail")}</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="E-mail"
+                  placeholder={t("E-mail")}
                   required
                   class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
                   />
               </div>
                 <Button type="submit" showArrow={false}> 
-                  Tilmeld
+                  {t("Tilmeld")}
                 </Button>
               </form>
             </PopUp>
@@ -145,14 +146,13 @@ console.log(requestSend);
         }
         <p>
           <strong
-            >OBS: ved afmeldning skriv til nummeret: 81 61 09 00 mindst 24 timer
-            inden.</strong
+            >{t("OBS: ved afmeldning skriv til nummeret: 81 61 09 00 mindst 24 timer inden.")}</strong
           >
         </p>
       </div>
 
       <div class="flex flex-col items-center">
-        <h2 class="font-header text-header-2">FAQ</h2>
+        <h2 class="font-header text-header-2">{t("FAQ")}</h2>
         <Accordion items={faqItems}/>
       </div>
     </section>
@@ -162,22 +162,20 @@ console.log(requestSend);
       >
         <Image
           src={RunningImage}
-          alt="billeder-af-to-piger-med-en-løbeklub-t-shirt"
+          alt={t("billeder-af-to-piger-med-en-løbeklub-t-shirt")}
           class="object-cover w-full h-full object-bottom"
         />
       </div>
       <div class="relative h-[250px]">
         <h2 class="text-accent text-header-2 leading-header-2 text-center">
-          Hos Kær Kaffebar handler det ikke kun om tempo, men om fællesskab og
-          lokale bånd.
+          {t("Hos Kær Kaffebar handler det ikke kun om tempo, men om fællesskab og lokale bånd.")}
         </h2>
         <Image
           src={LemonPiecesIllustration}
-          alt="illustration af citroner"
+          alt={t("illustration af citroner")}
           class="absolute bottom-0 right-0 z-[-10]"
         />
       </div>
     </section>
-    <p>sdlkgfjadfkløgjadfølkgjaøfsdkælgjadføklgjdlfgj</p>
   </main>
 </Layout>
