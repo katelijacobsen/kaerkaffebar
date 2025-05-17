@@ -7,6 +7,7 @@ export default defineAstroI18nConfig({
   trailingSlash: "never", // "never" or "always"
   run: "client+server", // "client+server" or "server"
   showPrimaryLocale: false, // "/en/about" vs "/about"
+  routes: {}, // { [secondary_locale1]: { about: "about-translated", ... } }
   translationLoadingRules: [], // per page group loading
   translationDirectory: {}, // translation directory names
   translations: {
@@ -17,6 +18,11 @@ export default defineAstroI18nConfig({
         "Book bord": "Book table",
       },
     },
-  }, // { [translation_group1]: { [locale1]: {}, ... } }
-  routes: {}, // { [secondary_locale1]: { about: "about-translated", ... } }
+    "/": {
+      en: {
+        "“Kær Kaffebar er skabt ud fra en drøm om nærvær, god kaffe – og lysten til at gøre en forskel i lokalsamfundet.”":
+          "“Kær Kaffebar was created from a dream of connection, great coffee – and the desire to make a difference in the local community.”",
+      },
+    },
+  },
 });
