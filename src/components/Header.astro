@@ -2,6 +2,7 @@
 // src/components/Header.astro
 import Logo from "../assets/img/kaer-logo.png";
 import AnchorLink from "./AnchorLink.astro";
+import LangSwitcher from "./LangSwitcher.astro";
 
 ---
 
@@ -19,7 +20,7 @@ import AnchorLink from "./AnchorLink.astro";
           <li><AnchorLink url="/arrangement" variant="underline">Arrangement & event</AnchorLink></li>
           <li><AnchorLink url="/runningclub" variant="underline">Kær løbeklub</AnchorLink></li>
           <li><AnchorLink isAnchor={true} variant="primary" url="https://kaerkaffebar.superbexperience.com/" ariaLabel="tilmeld dig løbeklub">Book bord</AnchorLink></li>
-          <li class="text-sm">DK / EN</li>
+          <li class="text-sm"> <LangSwitcher /></li>
         </ul>
       </nav>
 

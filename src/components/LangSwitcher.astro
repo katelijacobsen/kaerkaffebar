@@ -1,0 +1,106 @@
+<div class="switch">
+  <input
+    id="language-toggle"
+    class="check-toggle check-toggle-round-flat"
+    type="checkbox"
+  />
+  <label for="language-toggle"></label>
+  <span class="on">DA</span>
+  <span class="off">EN</span>
+</div>
+
+<style>
+  .switch {
+    position: relative;
+    display: inline-block;
+    margin-inline-end: 1rem
+    
+  }
+
+  .switch > span {
+    position: absolute;
+    top: 14px;
+    pointer-events: none;
+    font-family: var(--font-paragraph);
+    font-weight: bold;
+    font-size: var(--text-button);
+    text-transform: uppercase;
+    width: 42%;
+    text-align: center;
+  }
+
+  input.check-toggle-round-flat:checked ~ .off {
+    color: var(--color-primary);
+  }
+
+  input.check-toggle-round-flat:checked ~ .on {
+    color: var(--color-accent);
+  }
+
+  .switch > span.on {
+    left: 0;
+    padding-left: 2px;
+    color: var(--color-primary);
+  }
+
+  .switch > span.off {
+    right: 0;
+    padding-right: 4px;
+    color: var(--color-accent);
+  }
+
+  .check-toggle {
+    position: absolute;
+    visibility: hidden;
+  }
+  .check-toggle + label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  input.check-toggle-round-flat + label {
+    padding: 1rem;
+    width: 5.15rem;
+    height: 3.2rem;
+  }
+  input.check-toggle-round-flat + label:before,
+  input.check-toggle-round-flat + label:after {
+    display: block;
+    position: absolute;
+    content: "";
+  }
+
+  input.check-toggle-round-flat + label:before {
+    top: 0px;
+    left: -10px;
+    bottom: 0px;
+    right: -10px;
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-accent);
+    border-radius: 16px;
+    
+  }
+  input.check-toggle-round-flat + label:after {
+    top: 0px;
+    left: -10px;
+    bottom: 0px;
+    width: 52px;
+    background-color: var(--color-accent);
+    border-radius: 16px 0 0 16px;
+  }
+
+  input.check-toggle-round-flat:checked + label {
+  }
+
+  input.check-toggle-round-flat:checked + label:after {
+    margin-left: 50px;
+    border-radius: 0 16px 16px 0;
+    width: 52px;
+  }
+</style>
