@@ -1,4 +1,6 @@
 ---
+import { astroI18n, t } from "astro-i18n"
+
 import Milk from "../../assets/icons/milk.svg";
 import Gluten from "../../assets/icons/gluten-icon.svg";
 import Nuts from "../../assets/icons/nuts-icon.svg";
@@ -22,10 +24,9 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
     aria-live="polite"
     role="status"
   >
-    <h3>Tak for din forespørgsel hos Kær Kaffebar</h3>
+    <h3>{t("Tak for din forespørgsel hos Kær Kaffebar")}</h3>
     <p>
-      Vi glæder os til at byde dig velkommen. Du vil høre fra os tilbage
-      hurtigst muligt.
+      {t("Vi glæder os til at byde dig velkommen. Du vil høre fra os tilbage hurtigst muligt.")}
     </p>
   </PopUp>
 
@@ -35,12 +36,11 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
     class="bg-primary-2 rounded-default p-large flex flex-col gap-large pin-skadow"
   >
     <h3>
-      Udfyld formular og send forespørgelse til enten arrangement, event eller
-      catering
+      {t("Udfyld formular og send forespørgelse til enten arrangement, event eller catering")}
     </h3>
     <div class="flex flex-col gap-small">
       <label for="fullName" class="flex flex-row mb-smal font-bold gap-small">
-        Fulde Navn
+        {t("Fulde Navn")}
       </label>
       <input
         aria-describedby="fullNameError"
@@ -52,10 +52,10 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
         class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
       />
       <span id="fullNameError" class="error-message hidden" aria-live="polite">
-        Venligst udfylde dit fulde navn</span
+        {t("Venligst udfylde dit fulde navn")}</span
       >
       <label for="email" class="flex flex-col mb-smal font-bold gap-small">
-        Email
+        {t("Email")}
       </label>
       <input
         id="email"
@@ -69,7 +69,7 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
         for="phoneNumber"
         class="flex flex-col mb-smal font-bold gap-small"
       >
-        Telefonnummer
+        {t("Telefonnummer")}
       </label>
       <input
         id="phoneNumber"
@@ -83,15 +83,15 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
       />
     </div>
     <fieldset class="flex flex-wrap flex-col gap-default">
-      <legend class="text-header-3">Anledning</legend>
-      <RadioButton Occasion="Arrangement" />
-      <RadioButton Occasion="Catering" />
-      <RadioButton Occasion="Event" />
-      <RadioButton Occasion="Kage og bestilling" />
+      <legend class="text-header-3">{t("Anledning")}</legend>
+      <RadioButton Occasion={t("Arrangement")} />
+      <RadioButton Occasion={t("Catering")} />
+      <RadioButton Occasion={t("Event")} />
+      <RadioButton Occasion={t("Kage og bestilling")} />
     </fieldset>
     <div class="flex flex-col gap-default">
       <label class="inline-flex flex-col mb-smal font-bold">
-        Tid
+        {t("Tid")}
         <input
           type="time"
           id="time"
@@ -103,7 +103,7 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
         />
       </label>
       <label class="inline-flex flex-col mb-smal font-bold">
-        Dato
+        {t("Dato")}
         <input
           type="date"
           id="date"
@@ -117,34 +117,33 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
     <fieldset
       class="flex flex-wrap items-end gap-default self-stretch content-end"
     >
-      <legend class="text-header-3 my-default">Allergier</legend>
-      <Checkbox Diet="Laktose" Icon={Milk} aria-Label="Laktosefri" />
-      <Checkbox Diet="Gluten" Icon={Gluten} aria-Label="Glutenfri" />
-      <Checkbox Diet="Nødder" Icon={Nuts} aria-Label="Nøddefri" />
-      <Checkbox Diet="Fisk" Icon={Fish} aria-Label="Fiskfri" />
+      <legend class="text-header-3 my-default">{t("Allergier")}</legend>
+      <Checkbox Diet={t("Laktose")} Icon={Milk} aria-Label={t("Laktosefri")} />
+      <Checkbox Diet={t("Gluten")} Icon={Gluten} aria-Label={t("Glutenfri")} />
+      <Checkbox Diet={t("Nødder")} Icon={Nuts} aria-Label={t("Nøddefri")} />
+      <Checkbox Diet={t("Fisk")} Icon={Fish} aria-Label={t("Fiskfri")} />
     </fieldset>
     <fieldset
       class="flex flex-wrap items-end gap-default self-stretch content-end"
     >
-      <legend class="text-header-3 my-default">Ønsker til menuen</legend>
-      <Checkbox Diet="Vegetarisk" Icon={Vegetarian} aria-Label="Vegetarisk" />
-      <Checkbox Diet="Vegansk" Icon={Vegan} aria-Label="Vegansk" />
+      <legend class="text-header-3 my-default">{t("Ønsker til menuen")}</legend>
+      <Checkbox Diet={t("Vegetarisk")} Icon={Vegetarian} aria-Label={t("Vegetarisk")} />
+      <Checkbox Diet={t("Vegansk")} Icon={Vegan} aria-Label={t("Vegansk")} />
     </fieldset>
     <fieldset class="flex flex-col mb-smal font-bold gap-default">
-      <legend>Kommentar</legend>
+      <legend>{t("Kommentar")}</legend>
       <textarea
         name="comment"
         rows="4"
         cols="20"
         class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
-        placeholder="Skriv dine kommentarer her..."></textarea>
+        placeholder={t("Skriv dine kommentarer her...")}></textarea>
     </fieldset>
     <p>
-      Obs: Hvis du har nogen spørgsmål eller bekymringer <br /> så kontakt os på
-      81 61 09 00
+      {t("Obs: Hvis du har nogen spørgsmål eller bekymringer")} <br /> {t("så kontakt os på 81 61 09 00")}
     </p>
     <Button type="submit" showArrow={false} variant="primary">
-      Send forespørgelse</Button
+      {t("Send forespørgsel")}</Button
     >
   </form>
 </article>
