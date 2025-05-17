@@ -3,7 +3,7 @@ import { useAstroI18n } from "astro-i18n"
 import astroI18nConfig from "../../astro-i18n.config"
 
 const astroI18n = useAstroI18n(
-	undefined,
+	astroI18nConfig,
 	undefined /* custom formatters */,
 )
 
