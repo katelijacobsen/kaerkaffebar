@@ -8,6 +8,15 @@ const {
   url = "",
 } = Astro.props;
 
+const withLocale = (url: string) => {
+  if (url.startsWith("http")) {
+    return url;
+  }
+  
+  const locale = Astro.currentLocale || "da";
+  return `/${locale}${url}`;
+}
+
 // Variant-baserede klasser
 function getVariantClasses(
   variant: "primary" | "secondary" | "neutral" | "disabled" | "underline"
@@ -36,7 +45,7 @@ function getVariantClasses(
 }
 ---
 
-<a href={url} class={getVariantClasses(variant)} aria-label={ariaLabel}>
+<a href={withLocale(url)} class={getVariantClasses(variant)} aria-label={ariaLabel}>
   <slot />
   {
     (variant === "primary" || variant === "primaryOutline") && showArrow && (

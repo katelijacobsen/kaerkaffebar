@@ -1,5 +1,5 @@
 ---
-
+import { astroI18n, t } from "astro-i18n"
 
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
@@ -98,7 +98,7 @@ import AnchorLink from "../components/AnchorLink.astro";
     </section>
 
     <!-- Quote section -->
-    <QuoteSection label="Indehaver af Kær Kaffebar" content="“Kær Kaffebar er skabt ud fra en drøm om nærvær, god kaffe – og lysten til at gøre en forskel i lokalsamfundet.”" bgColor="bg-neutral-2" />
+    <QuoteSection label="Indehaver af Kær Kaffebar" content={t("“Kær Kaffebar er skabt ud fra en drøm om nærvær, god kaffe – og lysten til at gøre en forskel i lokalsamfundet.”")} bgColor="bg-neutral-2" />
 
     <!-- Afternoon tea section -->
     <section class="max-w-[1192px] md:mx-auto">
