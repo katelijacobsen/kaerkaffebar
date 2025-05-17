@@ -5,8 +5,6 @@ import Footer from "../components/Footer.astro";
 const { title } = Astro.props;
 
 // i18n
-import { getLangFromUrl } from '../i18n/utils';
-const lang = getLangFromUrl(Astro.url);
 ---
 
 <script>
@@ -14,7 +12,7 @@ const lang = getLangFromUrl(Astro.url);
   console.log("using GSAP: ", gsap.version);
 </script>
 
-<html lang={lang}>
+<html>
   <head>
     <!-- Set up to redirect to default language
     <meta http-equiv="refresh" content="0;url=/da/" />

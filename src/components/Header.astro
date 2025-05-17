@@ -1,9 +1,4 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
-
 
 // src/components/Header.astro
 import Logo from "../assets/img/kaer-logo.png";
@@ -22,9 +17,9 @@ import LangSwitcher from "./LangSwitcher.astro";
       <nav class="hidden lg:block">
         <ul class="flex items-center gap-large">
           <li><AnchorLink url="/menu" variant="underline">Menu</AnchorLink></li>
-          <li><AnchorLink url="/afternoontea" variant="underline">Afternoon Tea</AnchorLink></li>
-          <li><AnchorLink url="/arrangement" variant="underline">Arrangement & event</AnchorLink></li>
-          <li><AnchorLink url="/runningclub" variant="underline">Kær løbeklub</AnchorLink></li>
+          <li><AnchorLink url="/afternoontea" variant="underline">Afternoon tea</AnchorLink></li>
+          <li><AnchorLink url="/arrangement" variant="underline">Arrangement & Event</AnchorLink></li>
+          <li><AnchorLink url="/runningclub" variant="underline">Kærs løbeklub</AnchorLink></li>
           <li><AnchorLink isAnchor={true} variant="primary" url="https://kaerkaffebar.superbexperience.com/" ariaLabel="tilmeld dig løbeklub">Book bord</AnchorLink></li>
           <li><LangSwitcher /></li>
         </ul>
