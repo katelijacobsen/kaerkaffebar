@@ -338,7 +338,7 @@ export default defineAstroI18nConfig({
           "Can you get vegan coffee in Valby? Yes! If you don't want animal milk but prefer a vegan version, we of course also have oat milk and it doesn't cost extra.",
       },
     },
-    "/afternoon-tea": {
+    "/afternoontea": {
       en: {
         "Afternoon tea": "Afternoon tea",
         "Afternoon Tea": "Afternoon Tea",
