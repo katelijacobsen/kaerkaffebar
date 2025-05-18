@@ -10,7 +10,7 @@ import LangSwitcher from "./LangSwitcher.astro";
 ---
 
 <header class="fixed top-0 z-100 w-full">
-  <div class="bg-primary text-bright-bg p-default m-default shadow-pink rounded-large">
+  <div class="bg-primary-2 text-bright-bg p-default m-default shadow-pink rounded-large">
     <div class="flex flex-wrap justify-between items-center">
       <!-- Logo -->
       <a href="/"><img src={Logo.src} class="h-6 w-auto md:h-10" alt="Kær Kaffebar logo" /></a>
@@ -39,83 +39,87 @@ import LangSwitcher from "./LangSwitcher.astro";
     </div>
 
     <!-- Mobile Menu Dropdown -->
-    <nav id="mobile-menu" class="hidden absolute right-0 top-[6em] z-40 bg-primary p-burger-menu border-faded-highlight border-2 rounded-large m-default">
+    <nav id="mobile-menu" class="hidden absolute right-0 translate-x-[10%] translate-y-2 z-40 bg-primary-2 p-burger-menu rounded-large m-default pin-skadow">
       <ul class="flex flex-col items-center gap-default font-bold">
-        <li class="menu-item pb-default pt-default">
+        <li class="menu-item pb-default pt-default opacity-0">
           <AnchorLink url="/menu" variant="underline" >Menu</AnchorLink>
         </li>
-        <li class="menu-item pb-default pt-default">
+        <li class="menu-item pb-default pt-default opacity-0">
           <AnchorLink url="/afternoontea" variant="underline">Afternoon Tea</AnchorLink>
         </li>
-        <li class="menu-item pb-default">
+        <li class="menu-item pb-default opacity-0">
           <AnchorLink url="/arrangement" variant="underline">Arrangement & event</AnchorLink>
         </li>
-        <li class="menu-item pb-default">
+        <li class="menu-item pb-default opacity-0">
           <AnchorLink url="/runningclub" variant="underline" >Kær løbeklub</AnchorLink>
         </li>
-        <li><LangSwitcher /></li>
+        <li class="menu-item pb-default opacity-0" ><LangSwitcher /></li>
       </ul>
     </nav>
   </div>
 </header>
 
 <script is:inline type="module">
+  // Importere GSAP
   import gsap from "https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js";
 
+  // Konstanter til at få fat i vores id inde i vores elementer
   const menuButton = document.getElementById("mobile-menu-button");
   const mobileMenu = document.getElementById("mobile-menu");
   let isOpen = false;
 
-  function openMenu() {
-    // show the menu container
-    mobileMenu.classList.remove("hidden");
 
-    // animate the container
-    gsap.fromTo(
-      mobileMenu,
-      { scale: 0.95, opacity: 0 },
+// Definere funktionen hvordan menuen skal åbnes
+  function openMenu() {
+    mobileMenu.classList.remove("hidden");
+    gsap.fromTo(mobileMenu,
+      { x: "100%", opacity: 0 },
       {
-        scale: 1,
-        width: "90%",
-        height: "auto",
+        x: 0,
         opacity: 1,
-        duration: 0.4,
-        ease: "expo.out",
+        duration: 0.5,
+        ease: "power3.out",
         onComplete: animateItems,
       }
     );
-
-    function animateItems() {
-      const items = mobileMenu.querySelectorAll(".menu-item");
-      gsap.fromTo(items, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, stagger: 0.1, ease: "power2.out" });
-    }
-
     isOpen = true;
   }
-
+// Definere en funktionen hvordan elementerne inden i skal animeres
+  function animateItems() {
+    const items = mobileMenu.querySelectorAll(".menu-item");
+    gsap.fromTo(items,
+      { x: 20, opacity: 0 },
+      { x: 0, opacity: 1, duration: 0.3, stagger: 0.1, ease: "power2.out" }
+    );
+  }
+// Definere hvordan vi gerne vil lukke menuen
   function closeMenu() {
     const items = mobileMenu.querySelectorAll(".menu-item");
-    // hide items first
-    gsap.to(items, { opacity: 0, duration: 0.2 });
-    // then hide container
-    gsap.to(mobileMenu, {
-      width: 0,
-      height: 0,
-      scale: 0.95,
+    gsap.to(items, {
       opacity: 0,
-      duration: 0.3,
+      x: 60,
+      duration: 0.2,
+      stagger: 0.1,
+      ease: "power2.in",
       onComplete: () => {
-        mobileMenu.classList.add("hidden");
-        // reset inline styles GSAP put on container
-        gsap.set(mobileMenu, { clearProps: "all" });
+        gsap.to(mobileMenu, {
+          x: "100%",
+          opacity: 0,
+          duration: 0.3,
+          ease: "power3.in",
+          onComplete: () => {
+            mobileMenu.classList.add("hidden");
+            gsap.set(mobileMenu, { x: 0, opacity: 1 });
+          },
+        });
       },
     });
     isOpen = false;
   }
-
+// Eventlistener 
   menuButton.addEventListener("click", () => (isOpen ? closeMenu() : openMenu()));
 
-  // click outside to close
+  // Eventlistener ekstra til at brugeren også kan lukke den udenfra
   document.addEventListener("click", (e) => {
     if (isOpen && !menuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
       closeMenu();
