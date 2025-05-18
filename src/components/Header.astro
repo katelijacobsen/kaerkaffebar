@@ -1,65 +1,168 @@
 ---
-import { astroI18n, t } from "astro-i18n"
-
+import { astroI18n, t } from "astro-i18n";
 
 // src/components/Header.astro
 import Logo from "../assets/img/kaer-logo.png";
 import AnchorLink from "./AnchorLink.astro";
 import LangSwitcher from "./LangSwitcher.astro";
-
 ---
 
 <header class="fixed top-0 z-100 w-full">
-  <div class="bg-primary-2 text-bright-bg p-default m-default shadow-pink rounded-large">
+  <div
+    class="bg-primary-2 text-bright-bg p-default m-default shadow-pink rounded-large"
+  >
     <div class="flex flex-wrap justify-between items-center">
       <!-- Logo -->
-      <a href="/"><img src={Logo.src} class="h-6 w-auto md:h-10" alt="Kær Kaffebar logo" /></a>
+      <a href="/"
+        ><img
+          src={Logo.src}
+          class="h-6 w-auto md:h-10"
+          alt="Kær Kaffebar logo"
+        /></a
+      >
 
       <!-- Desktop Navigation -->
       <nav class="hidden lg:block">
         <ul class="flex items-center gap-large">
           <li><AnchorLink url="/menu" variant="underline">Menu</AnchorLink></li>
-          <li><AnchorLink url="/afternoontea" variant="underline">Afternoon tea</AnchorLink></li>
-          <li><AnchorLink url="/arrangement" variant="underline">{t("Arrangement & Event")}</AnchorLink></li>
-          <li><AnchorLink url="/runningclub" variant="underline">{t("Kærs løbeklub")}</AnchorLink></li>
-          <li><AnchorLink isAnchor={true} variant="primary" url="https://kaerkaffebar.superbexperience.com/" ariaLabel="tilmeld dig løbeklub">{t("Book bord")}</AnchorLink></li>
+          <li>
+            <AnchorLink url="/afternoontea" variant="underline"
+              >Afternoon tea</AnchorLink>
+          </li>
+          <li>
+            <AnchorLink url="/arrangement" variant="underline"
+              >{t("Arrangement & Event")}</AnchorLink>
+          </li>
+          <li>
+            <AnchorLink url="/runningclub" variant="underline"
+              >{t("Kærs løbeklub")}</AnchorLink>
+          </li>
+          <li>
+            <AnchorLink
+              isAnchor={true}
+              variant="primary"
+              url="https://kaerkaffebar.superbexperience.com/"
+              ariaLabel="tilmeld dig løbeklub">{t("Book bord")}</AnchorLink>
+          </li>
           <li><LangSwitcher /></li>
         </ul>
       </nav>
 
       <!-- Mobile Navigation Controls -->
-      <div class="flex items-center gap-2 lg:hidden">
-        <AnchorLink variant="primary" url="https://kaerkaffebar.superbexperience.com/" ariaLabel="tilmeld dig løbeklub">Book bord</AnchorLink>
-        <button id="mobile-menu-button" class="p-2 focus:outline-none" aria-label="Toggle menu">
-          <svg class="w-10 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
+      <div class="flex gap-4 items-center lg:hidden mx-large">
+        <AnchorLink
+          variant="primary"
+          url="https://kaerkaffebar.superbexperience.com/"
+          ariaLabel="tilmeld dig løbeklub">Book bord</AnchorLink
+        >
+        <button
+          id="mobile-menu-button"
+          class="p-2 focus:outline-none relative"
+          aria-label="Toggle menu"
+        >
+        <div class="burger-btn rounded-lg p-default">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         </button>
       </div>
     </div>
 
     <!-- Mobile Menu Dropdown -->
-    <nav id="mobile-menu" class="hidden absolute right-0 translate-x-[10%] translate-y-2 z-40 bg-primary-2 p-burger-menu rounded-large m-default pin-skadow">
+    <nav
+      id="mobile-menu"
+      class="hidden absolute right-0 translate-x-[10%] translate-y-2 z-40 bg-primary-2 p-burger-menu rounded-large m-default pin-skadow"
+    >
       <ul class="flex flex-col items-center gap-default font-bold">
         <li class="menu-item pb-default pt-default opacity-0">
-          <AnchorLink url="/menu" variant="underline" >Menu</AnchorLink>
+          <AnchorLink url="/menu" variant="underline">Menu</AnchorLink>
         </li>
         <li class="menu-item pb-default pt-default opacity-0">
-          <AnchorLink url="/afternoontea" variant="underline">Afternoon Tea</AnchorLink>
+          <AnchorLink url="/afternoontea" variant="underline"
+            >Afternoon Tea</AnchorLink
+          >
         </li>
         <li class="menu-item pb-default opacity-0">
-          <AnchorLink url="/arrangement" variant="underline">Arrangement & event</AnchorLink>
+          <AnchorLink url="/arrangement" variant="underline"
+            >Arrangement & event</AnchorLink
+          >
         </li>
         <li class="menu-item pb-default opacity-0">
-          <AnchorLink url="/runningclub" variant="underline" >Kær løbeklub</AnchorLink>
+          <AnchorLink url="/runningclub" variant="underline"
+            >Kær løbeklub</AnchorLink
+          >
         </li>
-        <li class="menu-item pb-default opacity-0" ><LangSwitcher /></li>
+        <li class="menu-item pb-default opacity-0"><LangSwitcher /></li>
       </ul>
     </nav>
   </div>
 </header>
 
+<style>
+  .burger-btn {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+    span {
+      width: 80%;
+      transition: 0.5s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      height: 4px;
+      background: var(--color-accent);
+      position: absolute;
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+      transform: rotate(0);
+      border-radius: 100px;
+      &:nth-child(1) {
+        top: 4px;
+      }
+      &:nth-child(2) {
+        top: 45%;
+        width: 60%;
+        left: 15%;
+      }
+      &:nth-child(3) {
+        bottom: 4px;
+      }
+    }
+    &.active {
+      span {
+        &:nth-child(1) {
+          top: 18px;
+          transform: rotate(-45deg);
+        }
+        &:nth-child(2) {
+          width: 0%;
+        }
+        &:nth-child(3) {
+          bottom: 18px;
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+</style>
+
 <script is:inline type="module">
+
+ //Toggle Burger Button Animation 
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('burger-btn') || e.target.closest('.burger-btn')) {
+    e.preventDefault();
+    const button = e.target.classList.contains('burger-btn') ? e.target : e.target.closest('.burger-btn');
+    button.classList.toggle('active');
+  }
+});
+
+
   // Importere GSAP
   import gsap from "https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js";
 
@@ -68,11 +171,11 @@ import LangSwitcher from "./LangSwitcher.astro";
   const mobileMenu = document.getElementById("mobile-menu");
   let isOpen = false;
 
-
-// Definere funktionen hvordan menuen skal åbnes
+  // Definere funktionen hvordan menuen skal åbnes
   function openMenu() {
     mobileMenu.classList.remove("hidden");
-    gsap.fromTo(mobileMenu,
+    gsap.fromTo(
+      mobileMenu,
       { x: "100%", opacity: 0 },
       {
         x: 0,
@@ -84,15 +187,16 @@ import LangSwitcher from "./LangSwitcher.astro";
     );
     isOpen = true;
   }
-// Definere en funktionen hvordan elementerne inden i skal animeres
+  // Definere en funktionen hvordan elementerne inden i skal animeres
   function animateItems() {
     const items = mobileMenu.querySelectorAll(".menu-item");
-    gsap.fromTo(items,
+    gsap.fromTo(
+      items,
       { x: 20, opacity: 0 },
       { x: 0, opacity: 1, duration: 0.3, stagger: 0.1, ease: "power2.out" }
     );
   }
-// Definere hvordan vi gerne vil lukke menuen
+  // Definere hvordan vi gerne vil lukke menuen
   function closeMenu() {
     const items = mobileMenu.querySelectorAll(".menu-item");
     gsap.to(items, {
@@ -116,12 +220,18 @@ import LangSwitcher from "./LangSwitcher.astro";
     });
     isOpen = false;
   }
-// Eventlistener 
-  menuButton.addEventListener("click", () => (isOpen ? closeMenu() : openMenu()));
+  // Eventlistener
+  menuButton.addEventListener("click", () =>
+    isOpen ? closeMenu() : openMenu()
+  );
 
   // Eventlistener ekstra til at brugeren også kan lukke den udenfra
   document.addEventListener("click", (e) => {
-    if (isOpen && !menuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+    if (
+      isOpen &&
+      !menuButton.contains(e.target) &&
+      !mobileMenu.contains(e.target)
+    ) {
       closeMenu();
     }
   });
