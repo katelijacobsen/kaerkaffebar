@@ -46,7 +46,7 @@ import AnchorLink from "../components/AnchorLink.astro";
 ---
 
 <Layout title={t("Forside")}>
-  <main class="grid gap-negative">
+  <main class="grid gap-section">
     <!-- Herosection -->
     <section class="relative h-screen w-screen overflow-hidden rounded-b-xl">
       <Image
@@ -325,7 +325,7 @@ import AnchorLink from "../components/AnchorLink.astro";
   </section>
 
   <!-- Runningclub section -->
-  <section class="px-default xl:px-0 max-w-[1192px] mx-auto grid gap-large">
+  <section class="px-default xl:px-0 max-w-[1192px] mx-auto grid gap-large my-section">
     <h1
       class="text-neutral-1 text-header-1 font-header leading-height-header-1"
     >
@@ -382,7 +382,7 @@ import AnchorLink from "../components/AnchorLink.astro";
     </div>
   </section>
   <!-- Stampcard section -->
-  <section class="relative flex items-center justify-center flex-col">
+  <section class="relative flex items-center justify-center flex-col my-section">
     <h1 class="text-header-1 font-header">{t("Kær Kaffebar stempelkort")}</h1>
     <p class="text-header-3 font-body-text">
       {t("Få din 9. kop på huset med et gratis kaffe stempelkort")}
@@ -400,7 +400,7 @@ import AnchorLink from "../components/AnchorLink.astro";
   </section>
 
   <!-- Gallery section -->
-  <section class="px-default xl:px-0 max-w-[1192px] mx-auto">
+  <section class="px-default xl:px-0 max-w-[1192px] mx-auto my-section">
     <GallerySliderSection />
   </section>
 </Layout>
