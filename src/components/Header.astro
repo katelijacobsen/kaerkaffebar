@@ -27,22 +27,26 @@ import LangSwitcher from "./LangSwitcher.astro";
           <li><AnchorLink url="/menu" variant="underline">Menu</AnchorLink></li>
           <li>
             <AnchorLink url="/afternoontea" variant="underline"
-              >Afternoon tea</AnchorLink>
+              >Afternoon tea</AnchorLink
+            >
           </li>
           <li>
             <AnchorLink url="/arrangement" variant="underline"
-              >{t("Arrangement & Event")}</AnchorLink>
+              >{t("Arrangement & Event")}</AnchorLink
+            >
           </li>
           <li>
             <AnchorLink url="/runningclub" variant="underline"
-              >{t("Kærs løbeklub")}</AnchorLink>
+              >{t("Kærs løbeklub")}</AnchorLink
+            >
           </li>
           <li>
             <AnchorLink
               isAnchor={true}
               variant="primary"
               url="https://kaerkaffebar.superbexperience.com/"
-              ariaLabel="tilmeld dig løbeklub">{t("Book bord")}</AnchorLink>
+              ariaLabel="tilmeld dig løbeklub">{t("Book bord")}</AnchorLink
+            >
           </li>
           <li><LangSwitcher /></li>
         </ul>
@@ -60,11 +64,11 @@ import LangSwitcher from "./LangSwitcher.astro";
           class="p-2 focus:outline-none relative"
           aria-label="Toggle menu"
         >
-        <div class="burger-btn rounded-lg p-default">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+          <div class="burger-btn rounded-lg p-default">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </button>
       </div>
     </div>
@@ -85,12 +89,12 @@ import LangSwitcher from "./LangSwitcher.astro";
         </li>
         <li class="menu-item pb-default opacity-0">
           <AnchorLink url="/arrangement" variant="underline"
-            >Arrangement & event</AnchorLink
+            >{t("Arrangement & Event")}</AnchorLink
           >
         </li>
         <li class="menu-item pb-default opacity-0">
           <AnchorLink url="/runningclub" variant="underline"
-            >Kær løbeklub</AnchorLink
+            >{t("Kærs løbeklub")}</AnchorLink
           >
         </li>
         <li class="menu-item pb-default opacity-0"><LangSwitcher /></li>
@@ -152,16 +156,19 @@ import LangSwitcher from "./LangSwitcher.astro";
 </style>
 
 <script is:inline type="module">
-
- //Toggle Burger Button Animation 
-document.addEventListener('click', function(e) {
-  if (e.target.classList.contains('burger-btn') || e.target.closest('.burger-btn')) {
-    e.preventDefault();
-    const button = e.target.classList.contains('burger-btn') ? e.target : e.target.closest('.burger-btn');
-    button.classList.toggle('active');
-  }
-});
-
+  //Toggle Burger Button Animation
+  document.addEventListener("click", function (e) {
+    if (
+      e.target.classList.contains("burger-btn") ||
+      e.target.closest(".burger-btn")
+    ) {
+      e.preventDefault();
+      const button = e.target.classList.contains("burger-btn")
+        ? e.target
+        : e.target.closest(".burger-btn");
+      button.classList.toggle("active");
+    }
+  });
 
   // Importere GSAP
   import gsap from "https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js";

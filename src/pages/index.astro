@@ -383,8 +383,8 @@ import AnchorLink from "../components/AnchorLink.astro";
   </section>
   <!-- Stampcard section -->
   <section class="relative flex items-center justify-center flex-col my-section overflow-hidden fade-section">
-    <h1 class="text-header-1 font-header">{t("Kær Kaffebar stempelkort")}</h1>
-    <p class="text-header-3 font-body-text">
+    <h1 class="text-header-1 font-header text-center">{t("Kær Kaffebar stempelkort")}</h1>
+    <p class="text-header-3 font-body-text text-center">
       {t("Få din 9. kop på huset med et gratis kaffe stempelkort")}
     </p>
     <Image
@@ -484,7 +484,7 @@ import AnchorLink from "../components/AnchorLink.astro";
   }
 </style>
 
-<script>
+<script lang="javascript">
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
