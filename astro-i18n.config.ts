@@ -13,6 +13,7 @@ export default defineAstroI18nConfig({
   translations: {
     common: {
       en: {
+        "Luk":"Close",
         "Arrangement & Event": "Events & Parties",
         "Kærs løbeklub": "Kær's Running Club",
         "Book bord": "Book a Table",

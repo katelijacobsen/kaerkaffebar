@@ -1,4 +1,6 @@
 ---
+import { t } from "astro-i18n";
+
 import Button from "./Button.astro";
 
 const { id, textStyle, show } = Astro.props;
@@ -15,7 +17,7 @@ const { id, textStyle, show } = Astro.props;
     <slot />
   </div>
   <div class="flex justify-center mt-auto p-medium">
-    <Button showArrow={false} type="button" closePopUp={id}>Luk</Button>
+    <Button showArrow={false} type="button" closePopUp={id}>{t("Luk")}</Button>
   </div>
 </div>
 

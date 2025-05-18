@@ -5,6 +5,7 @@ export const prerender = false;
 import Layout from "../layouts/Layout.astro";
 import Form from "../components/arrangement/Form.astro";
 import Card from "../components/arrangement/Card.astro";
+import ReadlineLink from "../components/menu/ReadlineLink.astro";
 import { Image } from "astro:assets";
 
 //Billeder
@@ -14,8 +15,7 @@ import Citroner from "../assets/illustrations/brown/citroner.avif";
 import Croissant from "../assets/illustrations/brown/croissant.avif";
 import Vase from "../assets/illustrations/blue/vase.svg";
 import smallCakes from "../assets/img/smallCakes.avif";
-import Button from "../components/Button.astro";
-import AnchorLink from "../components/AnchorLink.astro";
+
 ---
 
 <Layout>
@@ -65,7 +65,7 @@ import AnchorLink from "../components/AnchorLink.astro";
           </p>
         </div>
         <div class="lg:hidden md:hidden">
-          <!--Button komponent -->
+          <ReadlineLink href="#Form">{t("Kontakt os")}</ReadlineLink>
         </div>
       </section>
       <div class="grid grid-cols-2 gap-default lg:grid-rows-[auto]">
