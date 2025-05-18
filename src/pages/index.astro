@@ -92,11 +92,14 @@ import AnchorLink from "../components/AnchorLink.astro";
     <section
       class="grid gap-large pl-default pr-default md:px-large lg:px-0 max-w-[1192px] mx-auto fade-section"
     >
-      <h1
-        class="text-neutral-1 text-header-1 text-center text-header leading-height-header-1"
-      >
-        {t("Menu")}
-      </h1>
+      <span>
+        <h1
+          class="text-neutral-1 text-header-1 text-center text-header leading-height-header-1"
+          id="text-anim"
+        >
+          {t("Menu")}
+        </h1>
+      </span>
       <div
         class="grid grid-cols-2 grid-rows-[auto, 1fr, 1fr, auto] gap-default justify-center md:hidden"
       >
@@ -325,7 +328,9 @@ import AnchorLink from "../components/AnchorLink.astro";
   </section>
 
   <!-- Runningclub section -->
-  <section class="px-default xl:px-0 max-w-[1192px] mx-auto grid gap-large my-section fade-section">
+  <section
+    class="px-default xl:px-0 max-w-[1192px] mx-auto grid gap-large my-section fade-section"
+  >
     <h1
       class="text-neutral-1 text-header-1 font-header leading-height-header-1"
     >
@@ -382,8 +387,12 @@ import AnchorLink from "../components/AnchorLink.astro";
     </div>
   </section>
   <!-- Stampcard section -->
-  <section class="relative flex items-center justify-center flex-col my-section overflow-hidden fade-section">
-    <h1 class="text-header-1 font-header text-center">{t("Kær Kaffebar stempelkort")}</h1>
+  <section
+    class="relative flex items-center justify-center flex-col my-section overflow-hidden fade-section"
+  >
+    <h1 class="text-header-1 font-header text-center">
+      {t("Kær Kaffebar stempelkort")}
+    </h1>
     <p class="text-header-3 font-body-text text-center">
       {t("Få din 9. kop på huset med et gratis kaffe stempelkort")}
     </p>
@@ -484,9 +493,9 @@ import AnchorLink from "../components/AnchorLink.astro";
   }
 </style>
 
-<script lang="javascript">
+<script>
   import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { ScrollTrigger } from "gsap/all";
   gsap.registerPlugin(ScrollTrigger);
 
   gsap.to(".blueberry", {
@@ -541,17 +550,17 @@ import AnchorLink from "../components/AnchorLink.astro";
     duration: 2,
   });
 
-gsap.utils.toArray('.fade-section').forEach((section) => {
-  gsap.from(section, {
-    opacity: 0,
-    y: 100,
-    duration: 1.5,
-    ease: 'power2.out',
-    scrollTrigger : {
-      trigger: section,
-      start: 'top 80%',
-    }
-  })
-})
 
+  gsap.utils.toArray(".fade-section").forEach((section) => {
+    gsap.from(section, {
+      opacity: 0,
+      y: 100,
+      duration: 1.5,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: section,
+        start: "top 80%",
+      },
+    });
+  });
 </script>
