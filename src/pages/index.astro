@@ -90,7 +90,7 @@ import AnchorLink from "../components/AnchorLink.astro";
 
     <!-- Menusection -->
     <section
-      class="grid gap-large pl-default pr-default md:px-large lg:px-0 max-w-[1192px] mx-auto"
+      class="grid gap-large pl-default pr-default md:px-large lg:px-0 max-w-[1192px] mx-auto fade-section"
     >
       <h1
         class="text-neutral-1 text-header-1 text-center text-header leading-height-header-1"
@@ -203,7 +203,7 @@ import AnchorLink from "../components/AnchorLink.astro";
     />
 
     <!-- Afternoon tea section -->
-    <section class="max-w-[1192px] md:mx-auto">
+    <section class="max-w-[1192px] md:mx-auto fade-section">
       <ImageTextSection
         headline={t("Afternoon Tea i Valby")}
         subheadline={t(
@@ -225,7 +225,7 @@ import AnchorLink from "../components/AnchorLink.astro";
     </section>
 
     <!-- Arrangement section -->
-    <section class="px-default lg:px-0 max-w-[1192px] mx-auto">
+    <section class="px-default lg:px-0 max-w-[1192px] mx-auto fade-section">
       <div class="grid gap-default md:gap-large md:grid-cols-2">
         <div
           class="flex items-end justify-center overflow-hidden h-[350px] md:h-full bg-neutral-3 rounded-default"
@@ -274,7 +274,7 @@ import AnchorLink from "../components/AnchorLink.astro";
 
   <!-- Heavy text with animation section -->
   <section
-    class="relative px-default lg:px-0 pt-[150px] pb-[150px] max-w-[1192px] mx-auto"
+    class="relative px-default lg:px-0 pt-[150px] pb-[150px] max-w-[1192px] mx-auto fade-section"
   >
     <img
       class="blueberry absolute top-0 left-[-50px] w-[150px] h-[150px]"
@@ -309,7 +309,7 @@ import AnchorLink from "../components/AnchorLink.astro";
   </section>
 
   <!-- Coffee section -->
-  <section class="max-w-[1192px] mx-auto">
+  <section class="max-w-[1192px] mx-auto fade-section">
     <ImageTextSection
       headline={t("Kær's kaffe")}
       subheadline={t("God kaffe. God stemning. Godt selskab.")}
@@ -325,7 +325,7 @@ import AnchorLink from "../components/AnchorLink.astro";
   </section>
 
   <!-- Runningclub section -->
-  <section class="px-default xl:px-0 max-w-[1192px] mx-auto grid gap-large my-section">
+  <section class="px-default xl:px-0 max-w-[1192px] mx-auto grid gap-large my-section fade-section">
     <h1
       class="text-neutral-1 text-header-1 font-header leading-height-header-1"
     >
@@ -382,7 +382,7 @@ import AnchorLink from "../components/AnchorLink.astro";
     </div>
   </section>
   <!-- Stampcard section -->
-  <section class="relative flex items-center justify-center flex-col my-section overflow-hidden">
+  <section class="relative flex items-center justify-center flex-col my-section overflow-hidden fade-section">
     <h1 class="text-header-1 font-header">{t("Kær Kaffebar stempelkort")}</h1>
     <p class="text-header-3 font-body-text">
       {t("Få din 9. kop på huset med et gratis kaffe stempelkort")}
@@ -476,6 +476,12 @@ import AnchorLink from "../components/AnchorLink.astro";
       opacity: 0;
     }
   }
+
+  .fade-section {
+    opacity: 1;
+    transform: translateY(50px);
+    will-change: opacity, transform;
+  }
 </style>
 
 <script>
@@ -534,4 +540,20 @@ import AnchorLink from "../components/AnchorLink.astro";
     rotation: 20,
     duration: 2,
   });
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray('.fade-section').forEach((section) => {
+  gsap.from(section, {
+    opacity: 0,
+    y: 100,
+    duration: 1.5,
+    ease: 'power2.out',
+    scrollTrigger : {
+      trigger: section,
+      start: 'top 80%',
+    }
+  })
+})
+
 </script>
