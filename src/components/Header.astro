@@ -23,25 +23,25 @@ import LangSwitcher from "./LangSwitcher.astro";
       >
 
       <!-- Desktop Navigation -->
-      <nav class="hidden lg:block" aria-label="navigation">
-        <ul class="flex items-center gap-large" role="menu">
+      <nav class="hidden lg:block">
+        <ul class="flex items-center gap-large">
           <li role="none">
-            <AnchorLink role="menuitem" url="/menu" variant="underline"
+            <AnchorLink role="menuitem" url="/menu" variant="underline" aria-label="Menu"
               >Menu</AnchorLink
             >
           </li>
           <li role="none">
-            <AnchorLink role="menuitem" url="/afternoontea" variant="underline"
+            <AnchorLink role="menuitem" url="/afternoontea" variant="underline" aria-label="Afternoon tea"
               >Afternoon tea</AnchorLink
             >
           </li>
           <li role="none">
-            <AnchorLink role="menuitem" url="/arrangement" variant="underline"
+            <AnchorLink role="menuitem" url="/arrangement" variant="underline" aria-label="Arrangement & events"
               >{t("Arrangement & Event")}</AnchorLink
             >
           </li>
           <li role="none">
-            <AnchorLink role="menuitem" url="/runningclub" variant="underline"
+            <AnchorLink role="menuitem" url="/runningclub" variant="underline" aria-label={t("Kærs Løbeklub")}
               >{t("Kærs løbeklub")}</AnchorLink
             >
           </li>
@@ -89,22 +89,22 @@ import LangSwitcher from "./LangSwitcher.astro";
     >
       <ul class="flex flex-col items-center gap-default font-bold">
         <li class="menu-item opacity-0" role="none">
-          <AnchorLink role="menuitem" url="/menu" variant="underline"
+          <AnchorLink role="menuitem" url="/menu" variant="underline" aria-label="Menu"
             >Menu</AnchorLink
           >
         </li>
         <li class="menu-item opacity-0" role="none">
-          <AnchorLink role="menuitem" url="/afternoontea" variant="underline"
+          <AnchorLink role="menuitem" url="/afternoontea" variant="underline" aria-label="Afternoon tea"
             >Afternoon Tea</AnchorLink
           >
         </li>
         <li class="menu-item opacity-0" role="none">
-          <AnchorLink role="menuitem" url="/arrangement" variant="underline"
+          <AnchorLink role="menuitem" url="/arrangement" variant="underline" aria-label="Arrangement & events"
             >{t("Arrangement & Event")}</AnchorLink
           >
         </li>
         <li class="menu-item opacity-0" role="none">
-          <AnchorLink role="menuitem" url="/runningclub" variant="underline"
+          <AnchorLink role="menuitem" url="/runningclub" variant="underline" aria-label={t("Kærs Løbeklub")}
             >{t("Kærs løbeklub")}</AnchorLink
           >
         </li>
