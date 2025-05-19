@@ -48,7 +48,7 @@ import AnchorLink from "../components/AnchorLink.astro";
 <Layout title={t("Forside")}>
   <main class="grid gap-section">
     <!-- Herosection -->
-    <section class="relative h-screen w-screen overflow-hidden rounded-b-xl">
+    <section class="relative h-screen w-screen overflow-hidden rounded-b-xl" aria-labelledby="hero-section">
       <Image
         src={HerosectionBrunchplate}
         alt={t("brunch")}
@@ -96,7 +96,7 @@ import AnchorLink from "../components/AnchorLink.astro";
     <!-- Menusection -->
     <section
       class="grid gap-large pl-default pr-default md:px-large lg:px-0 max-w-[1192px] mx-auto fade-section"
-    >
+    aria-labelledby="menu">
       <span>
         <h1
           class="text-neutral-1 text-header-1 text-center text-header leading-height-header-1"
@@ -222,7 +222,7 @@ import AnchorLink from "../components/AnchorLink.astro";
     />
 
     <!-- Afternoon tea section -->
-    <section class="max-w-[1192px] md:mx-auto fade-section">
+    <section class="max-w-[1192px] md:mx-auto fade-section" aria-labelledby="afternoon-tea">
       <ImageTextSection
         headline={t("Afternoon Tea i Valby")}
         subheadline={t(
@@ -244,7 +244,7 @@ import AnchorLink from "../components/AnchorLink.astro";
     </section>
 
     <!-- Arrangement section -->
-    <section class="px-default lg:px-0 max-w-[1192px] mx-auto fade-section">
+    <section class="px-default lg:px-0 max-w-[1192px] mx-auto fade-section" aria-labelledby="arrangement-and-events">
       <div class="grid gap-default md:gap-large md:grid-cols-2">
         <div
           class="flex items-end justify-center overflow-hidden h-[350px] md:h-full bg-neutral-3 rounded-default"
@@ -333,7 +333,7 @@ import AnchorLink from "../components/AnchorLink.astro";
   </section>
 
   <!-- Coffee section -->
-  <section class="max-w-[1192px] mx-auto fade-section">
+  <section class="max-w-[1192px] mx-auto fade-section" aria-labelledby="coffee">
     <ImageTextSection
       headline={t("Kær's kaffe")}
       subheadline={t("God kaffe. God stemning. Godt selskab.")}
@@ -351,7 +351,7 @@ import AnchorLink from "../components/AnchorLink.astro";
   <!-- Runningclub section -->
   <section
     class="px-default xl:px-0 max-w-[1192px] mx-auto grid gap-large my-section fade-section"
-  >
+  aria-labelledby="runningclub">
     <h1
       class="text-neutral-1 text-header-1 font-header leading-height-header-1"
     >
@@ -412,7 +412,7 @@ import AnchorLink from "../components/AnchorLink.astro";
   <!-- Stampcard section -->
   <section
     class="relative flex items-center justify-center flex-col overflow-hidden fade-section"
-  >
+  aria-labelledby="stampcard-section">
     <h1 class="text-header-2 font-header">
       {t("Kær Kaffebar stempelkort")}
     </h1>
@@ -433,7 +433,7 @@ import AnchorLink from "../components/AnchorLink.astro";
   </section>
 
   <!-- Gallery section -->
-  <section class="px-default xl:px-0 max-w-[1192px] mx-auto my-section">
+  <section class="px-default xl:px-0 max-w-[1192px] mx-auto my-section" aria-labelledby="food-gallary">
     <GallerySliderSection />
   </section>
 </Layout>
