@@ -92,6 +92,7 @@ h3 {
 p,
 label,
 li {
+  font-size: var(--text-paragraph);
   font-family: var(--font-body-text), sans-serif;
   line-height: var(--leading-height-paragraph);
 }

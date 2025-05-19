@@ -35,7 +35,7 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
     action="/api/request"
     class="bg-primary-2 rounded-default p-large flex flex-col gap-large pin-skadow"
   >
-    <h3>
+    <h3 class="leading-height-header-3">
       {t("Udfyld formular og send forespørgelse til enten arrangement, event eller catering")}
     </h3>
     <div class="flex flex-col gap-small">
@@ -131,7 +131,7 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
       <Checkbox Diet={t("Vegansk")} Icon={Vegan} aria-Label={t("Vegansk")} />
     </fieldset>
     <fieldset class="flex flex-col mb-smal font-bold gap-default">
-      <legend>{t("Kommentar")}</legend>
+      <legend class="text-paragraph">{t("Kommentar")}</legend>
       <textarea
         name="comment"
         rows="4"
@@ -142,8 +142,8 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
     <p>
       {t("Obs: Hvis du har nogen spørgsmål eller bekymringer")} <br /> {t("så kontakt os på 81 61 09 00")}
     </p>
-    <Button type="submit" showArrow={false} variant="primary">
-      {t("Send forespørgsel")}</Button
+    <Button type="submit" showArrow={true} variant="primary">
+      {t("Send forespørgelse")}</Button
     >
   </form>
 </article>

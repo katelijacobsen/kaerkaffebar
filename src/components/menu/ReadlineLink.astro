@@ -1,7 +1,27 @@
 ---
-const { href } = Astro.props;
+const { href, ariaLabel, variant = "primaryOutline" } = Astro.props;
+
+// Variant-based classes
+function getVariantClasses(
+  variant: "primaryOutline" | "primary"
+): string {
+  const baseClasses = "group flex-wrap p-button w-full sm:w-fit justify-center rounded-full flex items-center gap-medium transition-colors duration-400 ease-in-out";
+
+  const variantClasses = {
+    primary: "bg-accent text-button text-primary p-button font-button-text hover:bg-accent-hover text-center",
+    primaryOutline: "group flex-wrap w-full sm:w-fit justify-center rounded-full flex items-center gap-medium transition-colors duration-400 ease-in-out bg-transparent text-accent text-label p-button border border-accent hover:border-accent-hover whitespace-nowrap hover:bg-accent-hover hover:text-primary cursor-pointer",
+  };
+
+  return `${baseClasses} ${variantClasses[variant] || variantClasses.primary}`;
+}
 ---
 
-<a class="group flex-wrap w-full sm:w-fit justify-center rounded-full flex items-center gap-medium transition-colors duration-400 ease-in-out bg-transparent text-accent text-label p-button border border-accent hover:border-accent-hover whitespace-nowrap hover:bg-accent-hover hover:text-primary cursor-pointer" href={href}>
+<a href={href} class={getVariantClasses(variant)} aria-label={ariaLabel}>
   <slot />
 </a>
+
+<!--
+  <slot />
+</a>
+<a class="group flex-wrap w-full sm:w-fit justify-center rounded-full flex items-center gap-medium transition-colors duration-400 ease-in-out bg-transparent text-accent text-label p-button border border-accent hover:border-accent-hover whitespace-nowrap hover:bg-accent-hover hover:text-primary cursor-pointer" href={href}>
+-->
