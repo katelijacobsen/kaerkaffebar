@@ -3,17 +3,19 @@ import Button from "./Button.astro";
 
 const { id, textStyle, show } = Astro.props;
 ---
-
-<div
-  {...Astro.props}
+<div 
   id={id}
-  class=`${show ? '' : "hidden"} w-[90%] lg:w-[60%] fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-60 bg-highlight p-large flex-col gap-large pin-skadow rounded-default overflow-y-auto`
+  class={`${show ? '' : "hidden"} fixed inset-0 z-60 backdrop-blur-sm bg-accent/10`}
 >
-  <div class=`${textStyle}`>
-    <!-- Skifte indhold ud for arrangement & runningclub -->
-    <slot />
-  </div>
-  <div class="flex justify-center mt-auto p-medium">
-    <Button showArrow={false} type="button" closePopUp={id}>Luk</Button>
+  <div
+    {...Astro.props}
+    class=`w-[90%] lg:w-[60%] fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-highlight p-large flex-col gap-large pin-skadow rounded-default overflow-y-auto`
+  >
+    <div class=`${textStyle}`>
+      <slot />
+    </div>
+    <div class="flex justify-center mt-auto p-medium">
+      <Button showArrow={false} type="button" closePopUp={id}>Luk</Button>
+    </div>
   </div>
 </div>
