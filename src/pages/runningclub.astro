@@ -72,6 +72,7 @@ console.log(requestSend);
             <label for="month-filter" class="sr-only">Vælg måned</label>
             <select 
               id="month-filter"
+              aria-label={t("Filtrer begivenheder efter måned")}
               class="border border-accent p-small rounded-md color-accent"
             >
             {
@@ -103,7 +104,7 @@ console.log(requestSend);
           </div>
         </div>
         <PopUp show={requestSend} id="popup-confirmation">
-          <h3 id="confirmation">{t("Tak for din Tilmelding")}</h3>
+          <h3 id="confirmation">{t("Tak for din tilmelding")}</h3>
         </PopUp>
         <!-- Mapping events fra API -->
         {
@@ -115,25 +116,27 @@ console.log(requestSend);
               <form method="POST" action="/api/clubevents" class="flex flex-col gap-default">
                 <h3>{t("Tilmelding")}</h3>
               <div class="flex flex-col gap-small">
-                <label for="name">{t("Fulde Navn")}</label>
+                <label for={`name-${event.id}`}>{t("Fulde Navn")}</label>
                 <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder={t("Navn")}
-                  required
-                  class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
+                    type="text"
+                    id={`name-${event.id}`}
+                    name="name"
+                    placeholder={t("Navn")}
+                    required
+                    class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
+                    autocomplete="name"
                   />
               </div>
               <div class="flex flex-col gap-small">
-                <label for="email">{t("E-mail")}</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder={t("E-mail")}
-                  required
-                  class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
+               <label for={`email-${event.id}`}>{t("E-mail")}</label>
+                  <input
+                    type="email"
+                    id={`email-${event.id}`}
+                    name="email"
+                    placeholder={t("E-mail")}
+                    required
+                    class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
+                    autocomplete="email"
                   />
               </div>
                 <Button type="submit" showArrow={false}> 
@@ -141,7 +144,7 @@ console.log(requestSend);
                 </Button>
               </form>
             </PopUp>
-              <RunningClubCard event={event} popupId={`popup-${event.id}`} />
+              <RunningClubCard server:defer event={event} popupId={`popup-${event.id}`} />
             ))
           )
         }
