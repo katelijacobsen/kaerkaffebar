@@ -17,7 +17,7 @@ import AnchorLink from "./AnchorLink.astro";
   <div class="flex flex-col gap-large items-center text-center md:flex-row md:justify-start w-full">
     <a class="md:grow-[0.4]" href="/"><img src={Logo.src} alt={t("kær kaffebar logo i hvid")} loading="lazy" /></a>
     <div class="flex flex-col gap-large md:gap-extra-large items-center text-center md:flex-row md:items-start">
-      <section aria-labelledby="opening-hours-information">
+      <section>
         <h3 class="text-primary text-header-3 font-body-text leading-height-header-3 md:text-left">{t("Åbningstider")}</h3>
         <dl class="md:flex md:gap-default">
           <dt class="text-primary text-paragraph font-body-text leading-height-paragraph">{t("Mandag - Fredag")}</dt>
@@ -28,7 +28,7 @@ import AnchorLink from "./AnchorLink.astro";
           <dd class="text-primary text-paragraph font-body-text leading-height-paragraph">{t("07:30 - 18:00")}</dd>
         </div>
       </section>
-      <section aria-labelledby="contact-information">
+      <section>
         <h3 class="text-primary text-header-3 font-body-text leading-height-header-3 md:text-left">{t("Kontakt")}</h3>
         <address class="not-italic">
           <p class="text-primary text-paragraph font-body-text leading-height-paragraph md:text-left">{t("Valby Langgade 86C St. Tv.")}</p>
@@ -38,7 +38,7 @@ import AnchorLink from "./AnchorLink.astro";
     </div>
   </div>
   <div class="flex flex-col items-center gap-default md:flex-row md:justify-end md:w-full">
-    <img src={Smiley.src} alt={t("glad smiley")} loading="lazy" aria-hidden="true"/>
+    <img src={Smiley.src} alt={t("glad smiley")} loading="lazy"/>
     <AnchorLink variant="primaryOutline" ariaLabel={t("se smileyrapport")} url="https://findsmiley.dk/1413587">{t("Smileyrapport")}</AnchorLink>
   </div>
   <p class="text-center text-paragraph leading-height-paragraph font-body-text font-bold">
