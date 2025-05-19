@@ -18,43 +18,50 @@ import LangSwitcher from "./LangSwitcher.astro";
           src={Logo.src}
           class="h-6 w-auto md:h-10"
           alt="Kær Kaffebar logo"
+          loading="eager"
         /></a
       >
 
       <!-- Desktop Navigation -->
-      <nav class="hidden lg:block">
-        <ul class="flex items-center gap-large">
-          <li><AnchorLink url="/menu" variant="underline">Menu</AnchorLink></li>
+      <nav class="hidden lg:block" aria-label="navigation">
+        <ul class="flex items-center gap-large" role="menu">
           <li>
-            <AnchorLink url="/afternoontea" variant="underline"
+            <AnchorLink role="menuitem" url="/menu" variant="underline"
+              >Menu</AnchorLink
+            >
+          </li>
+          <li>
+            <AnchorLink role="menuitem" url="/afternoontea" variant="underline"
               >Afternoon tea</AnchorLink
             >
           </li>
           <li>
-            <AnchorLink url="/arrangement" variant="underline"
+            <AnchorLink role="menuitem" url="/arrangement" variant="underline"
               >{t("Arrangement & Event")}</AnchorLink
             >
           </li>
           <li>
-            <AnchorLink url="/runningclub" variant="underline"
+            <AnchorLink role="menuitem" url="/runningclub" variant="underline"
               >{t("Kærs løbeklub")}</AnchorLink
             >
           </li>
           <li>
             <AnchorLink
+              role="menuitem"
               isAnchor={true}
               variant="primary"
               url="https://kaerkaffebar.superbexperience.com/"
-              ariaLabel="tilmeld dig løbeklub">{t("Book bord")}</AnchorLink
+              ariaLabel="Book bord (åbner nyt vindue)">{t("Book bord")}</AnchorLink
             >
           </li>
-          <li><LangSwitcher /></li>
+          <li><LangSwitcher aria-label="lanuage switcher"/></li>
         </ul>
       </nav>
 
       <!-- Mobile Navigation Controls -->
       <div class="flex gap-4 items-center lg:hidden mx-large">
         <AnchorLink
+          role="menuitem"
           variant="primary"
           url="https://kaerkaffebar.superbexperience.com/"
           ariaLabel="tilmeld dig løbeklub">Book bord</AnchorLink
@@ -63,6 +70,7 @@ import LangSwitcher from "./LangSwitcher.astro";
           id="mobile-menu-button"
           class="p-2 focus:outline-none relative"
           aria-label="Toggle menu"
+          aria-controls="mobile-menu"
         >
           <div class="burger-btn rounded-lg p-default">
             <span></span>
@@ -76,28 +84,31 @@ import LangSwitcher from "./LangSwitcher.astro";
     <!-- Mobile Menu Dropdown -->
     <nav
       id="mobile-menu"
+      aria-label="mobile navigation"
       class="hidden absolute right-[2%] left-[2%] translate-y-2 z-40 bg-primary-2 p-burger-menu rounded-large m-default pin-skadow mx-auto"
     >
       <ul class="flex flex-col items-center gap-default font-bold">
         <li class="menu-item opacity-0">
-          <AnchorLink url="/menu" variant="underline">Menu</AnchorLink>
+          <AnchorLink role="menuitem" url="/menu" variant="underline"
+            >Menu</AnchorLink
+          >
         </li>
         <li class="menu-item opacity-0">
-          <AnchorLink url="/afternoontea" variant="underline"
+          <AnchorLink role="menuitem" url="/afternoontea" variant="underline"
             >Afternoon Tea</AnchorLink
           >
         </li>
         <li class="menu-item opacity-0">
-          <AnchorLink url="/arrangement" variant="underline"
+          <AnchorLink role="menuitem" url="/arrangement" variant="underline"
             >{t("Arrangement & Event")}</AnchorLink
           >
         </li>
         <li class="menu-item opacity-0">
-          <AnchorLink url="/runningclub" variant="underline"
+          <AnchorLink role="menuitem" url="/runningclub" variant="underline"
             >{t("Kærs løbeklub")}</AnchorLink
           >
         </li>
-        <li class="menu-item opacity-0"><LangSwitcher /></li>
+        <li class="menu-item opacity-0"><LangSwitcher role="menuitem"/></li>
       </ul>
     </nav>
   </div>
