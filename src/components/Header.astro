@@ -76,28 +76,28 @@ import LangSwitcher from "./LangSwitcher.astro";
     <!-- Mobile Menu Dropdown -->
     <nav
       id="mobile-menu"
-      class="hidden absolute right-0 translate-x-[10%] translate-y-2 z-40 bg-primary-2 p-burger-menu rounded-large m-default pin-skadow"
+      class="hidden absolute right-[25%] left-[25%] translate-y-2 z-40 bg-primary-2 p-burger-menu rounded-large m-default pin-skadow mx-auto"
     >
       <ul class="flex flex-col items-center gap-default font-bold">
-        <li class="menu-item pb-default pt-default opacity-0">
+        <li class="menu-item opacity-0">
           <AnchorLink url="/menu" variant="underline">Menu</AnchorLink>
         </li>
-        <li class="menu-item pb-default pt-default opacity-0">
+        <li class="menu-item opacity-0">
           <AnchorLink url="/afternoontea" variant="underline"
             >Afternoon Tea</AnchorLink
           >
         </li>
-        <li class="menu-item pb-default opacity-0">
+        <li class="menu-item opacity-0">
           <AnchorLink url="/arrangement" variant="underline"
             >{t("Arrangement & Event")}</AnchorLink
           >
         </li>
-        <li class="menu-item pb-default opacity-0">
+        <li class="menu-item opacity-0">
           <AnchorLink url="/runningclub" variant="underline"
             >{t("Kærs løbeklub")}</AnchorLink
           >
         </li>
-        <li class="menu-item pb-default opacity-0"><LangSwitcher /></li>
+        <li class="menu-item opacity-0"><LangSwitcher /></li>
       </ul>
     </nav>
   </div>
@@ -115,26 +115,26 @@ import LangSwitcher from "./LangSwitcher.astro";
     height: 40px;
     cursor: pointer;
     span {
-      width: 80%;
+      width: 60%;
       transition: 0.5s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
       height: 4px;
       background: var(--color-accent);
       position: absolute;
       right: 0;
-      left: 0;
+      left: 10px;
       margin: 0 auto;
       transform: rotate(0);
       border-radius: 100px;
       &:nth-child(1) {
-        top: 4px;
+        top: 8px;
       }
       &:nth-child(2) {
         top: 45%;
-        width: 60%;
-        left: 15%;
+        width: 40%;
+        left: 38%;
       }
       &:nth-child(3) {
-        bottom: 4px;
+        bottom: 8px;
       }
     }
     &.active {

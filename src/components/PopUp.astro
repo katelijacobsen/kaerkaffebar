@@ -4,7 +4,6 @@ import Button from "./Button.astro";
 const { id, textStyle, show } = Astro.props;
 ---
 
-<!-- class="sticky top-[30vw] right-[5vw] left-[5vw] z-50 bg-highlight p-large flex flex-col gap-large pin-skadow rounded-default" --><!-- Spread operatør -->
 <div
   {...Astro.props}
   id={id}
@@ -18,4 +17,3 @@ const { id, textStyle, show } = Astro.props;
     <Button showArrow={false} type="button" closePopUp={id}>Luk</Button>
   </div>
 </div>
-
