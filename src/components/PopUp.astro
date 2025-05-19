@@ -6,6 +6,8 @@ const { id, textStyle, show } = Astro.props;
 <div 
   id={id}
   class={`${show ? '' : "hidden"} fixed inset-0 z-60 backdrop-blur-sm bg-accent/10`}
+  role="dialog"
+  aria-modal="true"
 >
   <div
     {...Astro.props}
@@ -15,7 +17,7 @@ const { id, textStyle, show } = Astro.props;
       <slot />
     </div>
     <div class="flex justify-center mt-auto p-medium">
-      <Button showArrow={false} type="button" closePopUp={id}>Luk</Button>
+      <Button showArrow={false} type="button" closePopUp={id} aria-label="close-tab">Luk</Button>
     </div>
   </div>
 </div>

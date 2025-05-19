@@ -5,7 +5,6 @@ export const prerender = false;
 import "../styles/global.css";
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-//import Accordion from "../components/runningclub/Accordion.astro";
 import RunningClubCard from "../components/runningclub/RunningClubCard.astro";
 import RunningImage from "../assets/img/running-img.webp";
 import RunningCoffeeCupIllustration from "../assets/illustrations/blue/running-coffee-cup.svg";
@@ -14,6 +13,7 @@ import PopUp from "../components/PopUp.astro";
 import Button from "../components/Button.astro";
 import { months } from "./api/clubevents";
 import Accordion from "../components/runningclub/Accordion.astro";
+import { lazy } from "astro:schema";
 
 
 const month = Astro.url.searchParams.get("month") || months[new Date().getMonth()];
@@ -51,7 +51,7 @@ console.log(requestSend);
 
 <Layout title={t("Kær løbeklub")}>
   <main class="grid gap-negative m-margin text-neutral-1">
-    <section class="grid md:grid-cols-2 relative">
+    <section class="grid md:grid-cols-2 relative" aria-labelledby="hero-heading">
       <div>
         <h1 class="text-header-1 font-header">{t("Kær løbeklub")}</h1>
         <p class="text-paragraph leading-paragraph">
@@ -64,11 +64,12 @@ console.log(requestSend);
       </div>
        <!-- <Picture class="absolute w-[130px] right-1 top-[15rem] md:top-[0rem] z-[-10] md:w-[300px]" src={RunningCoffeeCupIllustration} formats={["avif, webp"]} alt={t("løbende kaffekop illustration")} /> -->
     </section>
-    <section class="lg:flex lg:flex-row gap-negative space-y-section">
+    <section class="lg:flex lg:flex-row gap-negative space-y-section" aria-labelledby="running-club-dates">
       <div class="grid gap-default flex-shrink-0">
         <div class="flex  flex-col items-start gap-default">
           <h2 class="text-header-2">{t("Kommende ture")}</h2>
           <div>
+            <label for="month-filter" class="sr-only">Vælg måned</label>
             <select 
               id="month-filter"
               class="border border-accent p-small rounded-md color-accent"
@@ -164,6 +165,7 @@ console.log(requestSend);
           src={RunningImage}
           alt={t("billeder-af-to-piger-med-en-løbeklub-t-shirt")}
           class="object-cover w-full h-full object-bottom"
+          loading="lazy"
         />
       </div>
       <div class="relative h-[250px]">
@@ -174,6 +176,7 @@ console.log(requestSend);
           src={LemonPiecesIllustration}
           alt={t("illustration af citroner")}
           class="absolute bottom-0 right-0 z-[-10]"
+          loading="lazy"
         />
       </div>
     </section>

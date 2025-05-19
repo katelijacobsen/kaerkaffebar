@@ -3,4 +3,4 @@ import { Image } from "astro:assets";
 const { src, alt } = Astro.props;
 ---
 
-<Image class="rounded-default aspect-square object-cover" src={src} alt={alt} />
+<Image class="rounded-default aspect-square object-cover" src={src} alt={alt} loading="lazy"/>

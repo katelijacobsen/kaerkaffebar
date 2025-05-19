@@ -10,7 +10,7 @@ const { ariaLabel, buttonText, url } = Astro.props;
 <div class={`grid gap-default md:gap-large md:grid-cols-2 px-default xl:px-0`}>
   <div class={`relative ${reverse ? "md:order-2" : "md:order-1"} `}>
     <div class={`overflow-hidden ${aspectRatio} ${roundedBorder} ${imageContainerSize}`}>
-      <Image class=`object-cover w-full h-full ${objectPostion}` ` src={imageSrc} alt={imageAlt} />
+      <Image class=`object-cover w-full h-full ${objectPostion}` ` src={imageSrc} alt={imageAlt}  loading="lazy"/>
     </div>
   </div>
   <div class={`${reverse ? "md:order-1" : "md:order-2"} md:justify-center md:self-center bg-highlight shadow-pink p-default rounded-default h-full `}>
