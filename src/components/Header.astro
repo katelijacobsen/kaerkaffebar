@@ -25,27 +25,27 @@ import LangSwitcher from "./LangSwitcher.astro";
       <!-- Desktop Navigation -->
       <nav class="hidden lg:block">
         <ul class="flex items-center gap-large">
-          <li role="none">
-            <AnchorLink role="menuitem" url="/menu" variant="underline" aria-label="Menu"
+          <li>
+            <AnchorLink role="menuitem" url="/menu" variant="underline" ariaLabel="Menu"
               >Menu</AnchorLink
             >
           </li>
-          <li role="none">
-            <AnchorLink role="menuitem" url="/afternoontea" variant="underline" aria-label="Afternoon tea"
+          <li>
+            <AnchorLink role="menuitem" url="/afternoontea" variant="underline" ariaLabel="Afternoon tea"
               >Afternoon tea</AnchorLink
             >
           </li>
-          <li role="none">
-            <AnchorLink role="menuitem" url="/arrangement" variant="underline" aria-label="Arrangement & events"
+          <li>
+            <AnchorLink role="menuitem" url="/arrangement" variant="underline" ariaLabel="Arrangement & events"
               >{t("Arrangement & Event")}</AnchorLink
             >
           </li>
-          <li role="none">
-            <AnchorLink role="menuitem" url="/runningclub" variant="underline" aria-label={t("Kærs Løbeklub")}
+          <li>
+            <AnchorLink role="menuitem" url="/runningclub" variant="underline" ariaLabel={t("Kærs Løbeklub")}
               >{t("Kærs løbeklub")}</AnchorLink
             >
           </li>
-          <li role="none">
+          <li>
             <AnchorLink
               role="menuitem"
               isAnchor={true}
@@ -64,7 +64,7 @@ import LangSwitcher from "./LangSwitcher.astro";
           role="menuitem"
           variant="primary"
           url="https://kaerkaffebar.superbexperience.com/"
-          ariaLabel="tilmeld dig løbeklub">Book bord</AnchorLink
+          ariaLabel="Book bord">{t("Book bord")}</AnchorLink
         >
         <button
           id="mobile-menu-button"
@@ -88,27 +88,27 @@ import LangSwitcher from "./LangSwitcher.astro";
       class="hidden absolute right-[2%] left-[2%] translate-y-2 z-40 bg-primary-2 p-burger-menu rounded-large m-default pin-skadow mx-auto"
     >
       <ul class="flex flex-col items-center gap-default font-bold">
-        <li class="menu-item opacity-0" role="none">
-          <AnchorLink role="menuitem" url="/menu" variant="underline" aria-label="Menu"
+        <li class="menu-item opacity-0">
+          <AnchorLink role="menuitem" url="/menu" variant="underline" ariaLabel="Menu"
             >Menu</AnchorLink
           >
         </li>
-        <li class="menu-item opacity-0" role="none">
-          <AnchorLink role="menuitem" url="/afternoontea" variant="underline" aria-label="Afternoon tea"
+        <li class="menu-item opacity-0">
+          <AnchorLink role="menuitem" url="/afternoontea" variant="underline" ariaLabel="Afternoon tea"
             >Afternoon Tea</AnchorLink
           >
         </li>
-        <li class="menu-item opacity-0" role="none">
-          <AnchorLink role="menuitem" url="/arrangement" variant="underline" aria-label="Arrangement & events"
+        <li class="menu-item opacity-0">
+          <AnchorLink role="menuitem" url="/arrangement" variant="underline" ariaLabel="Arrangement & events"
             >{t("Arrangement & Event")}</AnchorLink
           >
         </li>
-        <li class="menu-item opacity-0" role="none">
-          <AnchorLink role="menuitem" url="/runningclub" variant="underline" aria-label={t("Kærs Løbeklub")}
+        <li class="menu-item opacity-0">
+          <AnchorLink role="menuitem" url="/runningclub" variant="underline" ariaLabel={t("Kærs Løbeklub")}
             >{t("Kærs løbeklub")}</AnchorLink
           >
         </li>
-        <li class="menu-item opacity-0" role="none"><LangSwitcher role="menuitem"/></li>
+        <li class="menu-item opacity-0"><LangSwitcher role="menuitem"/></li>
       </ul>
     </nav>
   </div>

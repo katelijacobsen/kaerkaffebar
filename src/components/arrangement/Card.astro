@@ -1,4 +1,6 @@
 ---
+import { t } from "astro-i18n";
+
 import { Image } from "astro:assets";
 import Button from "../Button.astro";
 import PopUp from "../PopUp.astro";
@@ -59,6 +61,7 @@ const popUpId = `popup-${popUpTitle}`;
     </div>
     <span class="relative z-10 flex justify-end">
       <Button
+        ariaLabel={t("Læs mere")}
         type="button"
         variant={title === "Event" ? "primaryOutline" : "primary"}
         data-open-popup={popUpId}

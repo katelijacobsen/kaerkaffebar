@@ -1,5 +1,5 @@
 ---
-import { astroI18n, t } from "astro-i18n"
+import { astroI18n, t } from "astro-i18n";
 
 import Milk from "../../assets/icons/milk.svg";
 import Gluten from "../../assets/icons/gluten-icon.svg";
@@ -26,7 +26,11 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
   >
     <h3>{t("Tak for din forespørgsel hos Kær Kaffebar")}</h3>
     <p>
-      {t("Vi glæder os til at byde dig velkommen. Du vil høre fra os tilbage hurtigst muligt.")}
+      {
+        t(
+          "Vi glæder os til at byde dig velkommen. Du vil høre fra os tilbage hurtigst muligt."
+        )
+      }
     </p>
   </PopUp>
 
@@ -36,7 +40,11 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
     class="bg-primary-2 rounded-default p-large flex flex-col gap-large pin-skadow"
   >
     <h3 class="leading-height-header-3">
-      {t("Udfyld formular og send forespørgelse til enten arrangement, event eller catering")}
+      {
+        t(
+          "Udfyld formular og send forespørgelse til enten arrangement, event eller catering"
+        )
+      }
     </h3>
     <div class="flex flex-col gap-small">
       <label for="fullName" class="flex flex-row mb-smal font-bold gap-small">
@@ -127,11 +135,21 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
       class="flex flex-wrap items-end gap-default self-stretch content-end"
     >
       <legend class="text-header-3 my-default">{t("Ønsker til menuen")}</legend>
-      <Checkbox Diet={t("Vegetarisk")} Icon={Vegetarian} aria-Label={t("Vegetarisk")} />
+      <Checkbox
+        Diet={t("Vegetarisk")}
+        Icon={Vegetarian}
+        aria-Label={t("Vegetarisk")}
+      />
       <Checkbox Diet={t("Vegansk")} Icon={Vegan} aria-Label={t("Vegansk")} />
     </fieldset>
     <fieldset class="flex flex-col mb-smal font-bold gap-default">
       <legend class="text-paragraph">{t("Kommentar")}</legend>
+      <label
+        for="comment"
+        class="sr-only"
+      >
+        {t("Kommentar")}
+      </label>
       <textarea
         name="comment"
         rows="4"
@@ -140,9 +158,11 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
         placeholder={t("Skriv dine kommentarer her...")}></textarea>
     </fieldset>
     <p>
-      {t("Obs: Hvis du har nogen spørgsmål eller bekymringer")} <br /> {t("så kontakt os på 81 61 09 00")}
+      {t("Obs: Hvis du har nogen spørgsmål eller bekymringer")}
+      <br />
+      {t("så kontakt os på 81 61 09 00")}
     </p>
-    <Button type="submit" showArrow={true} variant="primary">
+    <Button type="submit" showArrow={true} variant="primary" ariaLabel={t("Send forespørgelse")}>
       {t("Send forespørgelse")}</Button
     >
   </form>
