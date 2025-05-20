@@ -49,243 +49,88 @@ import AnchorLink from "../components/AnchorLink.astro";
   <main class="grid gap-section">
     <!-- Herosection -->
     <section class="relative h-screen w-screen overflow-hidden rounded-b-xl">
-      <Image
-        src={HerosectionBrunchplate}
-        alt={t("brunch")}
-        class="absolute inset-0 w-full h-full object-cover fade-image fade-1"
-        loading="lazy"
-      />
-      <Image
-        src={SourdoughBuns}
-        alt={t("tærter")}
-        class="absolute inset-0 w-full h-full object-cover fade-image fade-2"
-        loading="lazy"
-      />
-      <Image
-        src={MiniTarts}
-        alt={t("smørrebrød")}
-        class="absolute inset-0 w-full h-full object-cover fade-image fade-3"
-        loading="lazy"
-      />
-      <Image
-        src={CinnamonRolls}
-        alt={t("boller")}
-        class="absolute inset-0 w-full h-full object-cover fade-image fade-4"
-        loading="lazy"
-      />
+      <Image src={HerosectionBrunchplate} alt={t("brunch")} class="absolute inset-0 w-full h-full object-cover fade-image fade-1" loading="lazy" />
+      <Image src={SourdoughBuns} alt={t("tærter")} class="absolute inset-0 w-full h-full object-cover fade-image fade-2" loading="lazy" />
+      <Image src={MiniTarts} alt={t("smørrebrød")} class="absolute inset-0 w-full h-full object-cover fade-image fade-3" loading="lazy" />
+      <Image src={CinnamonRolls} alt={t("boller")} class="absolute inset-0 w-full h-full object-cover fade-image fade-4" loading="lazy" />
 
       <div class="absolute inset-0 bg-black/40 z-10"></div>
 
-      <div
-        class="absolute inset-0 z-20 flex flex-col items-center justify-center text-primary text-center pl-default pr-default"
-      >
-        <img
-          src={Logo.src}
-          class="w-[300px] md:w-[500px] mb-6"
-          alt={t("Kær Kaffebar logo")}
-          loading="lazy"
-        />
-        <h1
-          class="text-4xl md:text-6xl font-bold text-header leading-height-header-1 text-primary"
-        >
+      <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-primary text-center pl-default pr-default">
+        <img src={Logo.src} class="w-[300px] md:w-[500px] mb-6" alt={t("Kær Kaffebar logo")} loading="lazy" />
+        <h1 class="text-4xl md:text-6xl font-bold text-header leading-height-header-1 text-primary">
           {t("...den hyggeligste kaffebar i Valby")}
         </h1>
       </div>
     </section>
 
     <!-- Menusection -->
-    <section
-      class="grid gap-large pl-default pr-default md:px-large lg:px-0 max-w-[1192px] mx-auto fade-section"
-    >
+    <section class="grid gap-large pl-default pr-default md:px-large lg:px-0 max-w-[1192px] mx-auto fade-section">
       <span>
-        <h1
-          class="text-neutral-1 text-header-1 text-center text-header leading-height-header-1"
-          id="text-anim"
-        >
+        <h1 class="text-neutral-1 text-header-1 text-center text-header leading-height-header-1" id="text-anim">
           {t("Menu")}
         </h1>
       </span>
-      <div
-        class="grid grid-cols-2 grid-rows-[auto, 1fr, 1fr, auto] gap-default justify-center md:hidden"
-      >
-        <img
-          class="justify-self-center w-[120px] h-[120px]"
-          src={CroissantIllustration.src}
-          alt={t("croissant illustration")}
-        />
+      <div class="grid grid-cols-2 grid-rows-[auto, 1fr, 1fr, auto] gap-default justify-center md:hidden">
+        <img class="justify-self-center w-[120px] h-[120px]" src={CroissantIllustration.src} alt={t("croissant illustration")} />
         <div class="h-[140px] overflow-hidden rounded-full">
-          <Image
-            src={IceCoffeeWaffle}
-            alt={t("iskaffe og vaffel")}
-            class="object-cover w-full h-full object-left"
-            loading="lazy"
-          />
+          <Image src={IceCoffeeWaffle} alt={t("iskaffe og vaffel")} class="object-cover w-full h-full object-left" loading="lazy" />
         </div>
-        <Image
-          src={BrunchplateHerosection}
-          alt={t("brunch tallerken")}
-          class="col-span-2 rounded-default"
-          loading="lazy"
-        />
-        <Image
-          src={LatteartCloseup}
-          alt={t("latte art closeup")}
-          class="rounded-default"
-          loading="lazy"
-        />
-        <img
-          src={OrganicLogo.src}
-          alt={t("økologi logo")}
-          class="justify-self-center self-center"
-          loading="lazy"
-        />
+        <Image src={BrunchplateHerosection} alt={t("brunch tallerken")} class="col-span-2 rounded-default" loading="lazy" />
+        <Image src={LatteartCloseup} alt={t("latte art closeup")} class="rounded-default" loading="lazy" />
+        <img src={OrganicLogo.src} alt={t("økologi logo")} class="justify-self-center self-center" loading="lazy" />
       </div>
       <div>
-        <div
-          class="hidden md:grid md:grid-cols-5 md:grid-rows-[0.1fr_0.5fr_0.5fr_0.5fr] md:gap-default md:justify-center"
-        >
-          <img
-            class="justify-self-center self-center col-start-1 col-end-2 row-start-1 row-end-3"
-            src={CroissantIllustration.src}
-            alt={t("croissant illustration")}
-          />
-          <div
-            class="overflow-hidden rounded-full col-start-2 col-end-4 row-start-1 row-end-3"
-          >
-            <Image
-              src={IceCoffeeWaffle}
-              alt={t("iskaffe og vaffel")}
-              class="object-cover w-full h-full"
-              loading="lazy"
-            />
+        <div class="hidden md:grid md:grid-cols-5 md:grid-rows-[0.1fr_0.5fr_0.5fr_0.5fr] md:gap-default md:justify-center">
+          <img class="justify-self-center self-center col-start-1 col-end-2 row-start-1 row-end-3" src={CroissantIllustration.src} alt={t("croissant illustration")} />
+          <div class="overflow-hidden rounded-full col-start-2 col-end-4 row-start-1 row-end-3">
+            <Image src={IceCoffeeWaffle} alt={t("iskaffe og vaffel")} class="object-cover w-full h-full" loading="lazy" />
           </div>
-          <div
-            class="col-start-4 col-end-5 row-start-1 row-end-3 overflow-hidden rounded-default"
-          >
-            <Image
-              src={LatteartCloseup}
-              alt={t("latte art closeup")}
-              class="object-cover w-full h-full"
-              loading="lazy"
-            />
+          <div class="col-start-4 col-end-5 row-start-1 row-end-3 overflow-hidden rounded-default">
+            <Image src={LatteartCloseup} alt={t("latte art closeup")} class="object-cover w-full h-full" loading="lazy" />
           </div>
-          <img
-            class="justify-self-center self-center col-start-5 col-end-5 row-start-1 row-end-2 w-[80px] h-[80px]"
-            src={Blueberry.src}
-            alt={t("blåbær")}
-            loading="lazy"
-          />
-          <Image
-            src={BrunchplateHerosection}
-            alt={t("brunch tallerken")}
-            class="col-start-1 col-end-3 row-start-3 row-end-5 rounded-default"
-            loading="lazy"
-          />
-          <img
-            src={OrganicLogo.src}
-            alt={t("økologi logo")}
-            class="justify-self-center self-center col-start-3 col-end-4 row-start-3 row-end-5"
-            loading="lazy"
-          />
-          <img
-            class="col-start-4 col-end-5 row-start-3 row-end-5"
-            src={CoffeePot.src}
-            alt={t("kaffekande illustration")}
-            loading="lazy"
-          />
-          <div
-            class="overflow-hidden rounded-full col-start-[5] col-end-[6] row-start-[2] row-end-[5]"
-          >
-            <Image
-              src={CinnamonRolls}
-              alt={t("kanelsnurre")}
-              class="object-cover w-full h-full"
-              loading="lazy"
-            />
+          <img class="justify-self-center self-center col-start-5 col-end-5 row-start-1 row-end-2 w-[80px] h-[80px]" src={Blueberry.src} alt={t("blåbær")} loading="lazy" />
+          <Image src={BrunchplateHerosection} alt={t("brunch tallerken")} class="col-start-1 col-end-3 row-start-3 row-end-5 rounded-default" loading="lazy" />
+          <img src={OrganicLogo.src} alt={t("økologi logo")} class="justify-self-center self-center col-start-3 col-end-4 row-start-3 row-end-5" loading="lazy" />
+          <img class="col-start-4 col-end-5 row-start-3 row-end-5" src={CoffeePot.src} alt={t("kaffekande illustration")} loading="lazy" />
+          <div class="overflow-hidden rounded-full col-start-[5] col-end-[6] row-start-[2] row-end-[5]">
+            <Image src={CinnamonRolls} alt={t("kanelsnurre")} class="object-cover w-full h-full" loading="lazy" />
           </div>
         </div>
       </div>
       <div class="grid sm:justify-items-center">
-        <AnchorLink url="/menu" variant="primary" ariaLabel={t("Se menu")}
-          >{t("Se menu")}</AnchorLink
-        >
+        <AnchorLink url="/menu" variant="primary" ariaLabel={t("Se menu")}>{t("Se menu")}</AnchorLink>
       </div>
     </section>
 
     <!-- Quote section -->
-    <QuoteSection
-      label={t("Indehaver af Kær Kaffebar")}
-      content={t(
-        "“Kær Kaffebar er skabt ud fra en drøm om nærvær, god kaffe – og lysten til at gøre en forskel i lokalsamfundet.”"
-      )}
-      bgColor="bg-neutral-2"
-    />
+    <QuoteSection label={t("Indehaver af Kær Kaffebar")} content={t("“Kær Kaffebar er skabt ud fra en drøm om nærvær, god kaffe – og lysten til at gøre en forskel i lokalsamfundet.”")} bgColor="bg-neutral-2" />
 
     <!-- Afternoon tea section -->
     <section class="max-w-[1192px] md:mx-auto fade-section">
-      <ImageTextSection
-        headline={t("Afternoon Tea i Valby")}
-        subheadline={t(
-          "Perfekt til venindetid, fejring eller bare lidt ekstra selvforkælelse."
-        )}
-        content={t(
-          "Hos Kær Kaffebar inviterer vi dig til en klassisk Afternoon Tea – fyldt med hjemmelavede kager, friskbagte scones, sandwiches og økologisk te ad libitum. Alt serveret med [kær]lighed, i ægte vintagekopper, hvor detaljerne gør hele forskellen."
-        )}
-        reverse={true}
-        imageSrc={AfternoonTeaImage}
-        aspectRatio="aspect-[1/1.2]"
-        imageAlt={t("afternoon tea billede")}
-        imageContainerSize="max-h-[600px]"
-        buttonText={t("Book bord")}
-        url="https://kaerkaffebar.superbexperience.com/"
-        roundedBorder="rounded-full"
-        objectPostion="object-left"
-      />
+      <ImageTextSection headline={t("Afternoon Tea i Valby")} subheadline={t("Perfekt til venindetid, fejring eller bare lidt ekstra selvforkælelse.")} content={t("Hos Kær Kaffebar inviterer vi dig til en klassisk Afternoon Tea – fyldt med hjemmelavede kager, friskbagte scones, sandwiches og økologisk te ad libitum. Alt serveret med [kær]lighed, i ægte vintagekopper, hvor detaljerne gør hele forskellen.")} reverse={true} imageSrc={AfternoonTeaImage} aspectRatio="aspect-[1/1.2]" imageAlt={t("afternoon tea billede")} imageContainerSize="max-h-[600px]" buttonText={t("Book bord")} url="https://kaerkaffebar.superbexperience.com/" roundedBorder="rounded-full" objectPostion="object-left" />
     </section>
 
     <!-- Arrangement section -->
     <section class="px-default lg:px-0 max-w-[1192px] mx-auto fade-section">
       <div class="grid gap-default md:gap-large md:grid-cols-2">
-        <div
-          class="flex items-end justify-center overflow-hidden h-[350px] md:h-full bg-neutral-3 rounded-default"
-        >
-          <img
-            class="h-[200px] sm:h-[330px] md:h-[350px] w-auto"
-            src={ArrangementIllustration.src}
-            alt={t("arrangemnt illustration")}
-            loading="lazy"
-          />
+        <div class="flex items-end justify-center overflow-hidden h-[350px] md:h-full bg-neutral-3 rounded-default">
+          <img class="h-[200px] sm:h-[330px] md:h-[350px] w-auto" src={ArrangementIllustration.src} alt={t("arrangemnt illustration")} loading="lazy" />
         </div>
-        <div
-          class="p-default bg-highlight grid gap-default rounded-default shadow-pink"
-        >
-          <h1
-            class="text-neutral-1 font-header text-header-1 leading-height-header-1"
-          >
+        <div class="p-default bg-highlight grid gap-default rounded-default shadow-pink">
+          <h1 class="text-neutral-1 font-header text-header-1 leading-height-header-1">
             {t("Book vores lokale til dit næste arrangement")}
           </h1>
           <div class="grid gap-default">
-            <p
-              class="text-neutral-1 text-paragraph font-bold font-body-text leading-height-paragraph"
-            >
+            <p class="text-neutral-1 text-paragraph font-bold font-body-text leading-height-paragraph">
               {t("Skab mindeværdige øjeblikke i hjertet af Valby.")}
             </p>
-            <h3
-              class="text-neutral-1 font-body-text text-header-3 leading-height-header-3"
-            >
-              {
-                t(
-                  "Drømmer du om en hyggelig, personlig ramme til dit næste arrangement? Hos Kær Kaffebar åbner vi dørene for alt fra fødselsdage og firmaevents til PR-events og små, private fester. Vores café byder på en varm atmosfære, smuk indretning og økologiske specialiteter, der sætter prikken over i'et på din dag."
-                )
-              }
+            <h3 class="text-neutral-1 font-body-text text-header-3 leading-height-header-3">
+              {t("Drømmer du om en hyggelig, personlig ramme til dit næste arrangement? Hos Kær Kaffebar åbner vi dørene for alt fra fødselsdage og firmaevents til PR-events og små, private fester. Vores café byder på en varm atmosfære, smuk indretning og økologiske specialiteter, der sætter prikken over i'et på din dag.")}
             </h3>
           </div>
           <div class="grid">
-            <AnchorLink
-              variant="primary"
-              url="/arrangement"
-              ariaLabel={t("Læs mere")}>{t("Læs mere")}</AnchorLink
-            >
+            <AnchorLink variant="primary" url="/arrangement" ariaLabel={t("Læs mere")}>{t("Læs mere")}</AnchorLink>
           </div>
         </div>
       </div>
@@ -293,75 +138,31 @@ import AnchorLink from "../components/AnchorLink.astro";
   </main>
 
   <!-- Heavy text with animation section -->
-  <section
-    class="relative px-default lg:px-0 pt-[150px] pb-[150px] max-w-[1192px] mx-auto fade-section"
-  >
-    <img
-      class="blueberry absolute top-0 left-[-50px] w-[150px] h-[150px]"
-      src={BlueberryAndPears.src}
-      alt={t("blåbær og pære illustration")}
-      loading="lazy"
-    />
-    <img
-      class="coffeemug absolute top-4 right-0 w-[90px] h-[90px]"
-      src={CoffeeMug.src}
-      alt={t("kaffekop illustration")}
-      loading="lazy"
-    />
-    <h2
-      class="text-center text-accent text-header-2 font-body-text leading-height-header-2"
-    >
-      {
-        t(
-          "Fra friskbagte boller til brunchtallerkener – vi gør os umage hver dag for at servere mad, der smager af [kær]lighed."
-        )
-      }
+  <section class="relative px-default lg:px-0 pt-[150px] pb-[150px] max-w-[1192px] mx-auto fade-section my-section">
+    <img class="blueberry absolute top-0 left-[-50px] w-[150px] h-[150px]" src={BlueberryAndPears.src} alt={t("blåbær og pære illustration")} loading="lazy" />
+    <img class="coffeemug absolute top-4 right-0 w-[90px] h-[90px]" src={CoffeeMug.src} alt={t("kaffekop illustration")} loading="lazy" />
+    <h2 class="text-center text-accent text-header-2 font-body-text leading-height-header-2">
+      {t("Fra friskbagte boller til brunchtallerkener – vi gør os umage hver dag for at servere mad, der smager af [kær]lighed.")}
     </h2>
 
-    <img
-      class="lemon absolute bottom-4 right-0 w-[90px] h-[90px]"
-      src={TwoWholeLemons.src}
-      alt={t("to citroner illustration")}
-      loading="lazy"
-    />
-    <img
-      class="croissant absolute bottom-0 left-0 w-[90px] h-[90px]"
-      src={CroissantIllustration.src}
-      alt={t("croissant illustration")}
-      loading="lazy"
-    />
+    <img class="lemon absolute bottom-4 right-0 w-[90px] h-[90px]" src={TwoWholeLemons.src} alt={t("to citroner illustration")} loading="lazy" />
+    <img class="croissant absolute bottom-0 left-0 w-[90px] h-[90px]" src={CroissantIllustration.src} alt={t("croissant illustration")} loading="lazy" />
   </section>
 
   <!-- Coffee section -->
   <section class="max-w-[1192px] mx-auto fade-section">
-    <ImageTextSection
-      headline={t("Kær's kaffe")}
-      subheadline={t("God kaffe. God stemning. Godt selskab.")}
-      content={t(
-        "Hos Kær Kaffebar brygger vi ikke bare kaffe – vi skaber oplevelser. Vi samarbejder med Just Coffee, der leverer økologiske, bæredygtige bønner af højeste kvalitet, så hver eneste kop hos os er fuld af smag, kærlighed og omtanke."
-      )}
-      imageSrc={CoffeeBacksImage}
-      imageAlt={t("just coffee kaffe bønner poser")}
-      buttonText={t("Læs mere")}
-      url="/menu/#coffeesection"
-      roundedBorder="rounded-default"
-    />
+    <ImageTextSection headline={t("Kær's kaffe")} subheadline={t("God kaffe. God stemning. Godt selskab.")} content={t("Hos Kær Kaffebar brygger vi ikke bare kaffe – vi skaber oplevelser. Vi samarbejder med Just Coffee, der leverer økologiske, bæredygtige bønner af højeste kvalitet, så hver eneste kop hos os er fuld af smag, kærlighed og omtanke.")} imageSrc={CoffeeBacksImage} imageAlt={t("just coffee kaffe bønner poser")} buttonText={t("Læs mere")} url="/menu/#coffeesection" roundedBorder="rounded-default" />
   </section>
 
   <!-- Runningclub section -->
-  <section
-    class="px-default xl:px-0 max-w-[1192px] mx-auto grid gap-large my-section fade-section">
-    <h1
-      class="text-neutral-1 text-header-1 font-header leading-height-header-1"
-    >
+  <section class="px-default xl:px-0 max-w-[1192px] mx-auto grid gap-large my-section fade-section">
+    <h1 class="text-neutral-1 text-header-1 font-header leading-height-header-1">
       {t("Kær løbeklub")}
     </h1>
     <div class="grid gap-large">
       <div class="grid gap-large md:grid-cols-2">
         <div class="bg-neutral-2 p-large rounded-default md:order-1">
-          <h3
-            class="text-neutral-1 text-header-3 font-body-text leading-height-header-3"
-          >
+          <h3 class="text-neutral-1 text-header-3 font-body-text leading-height-header-3">
             {t("Vidste du, at vi også løber sammen?")}
             <strong>{t("Kær Kaffebar's løbeklub")}</strong>
             {t("handler om")}
@@ -369,69 +170,38 @@ import AnchorLink from "../components/AnchorLink.astro";
           </h3>
         </div>
         <div class="h-[180px] overflow-hidden rounded-full md:h-[200px]">
-          <Image
-            src={RunningImage}
-            alt={t("løbe billede")}
-            class="object-cover w-full h-full object-bottom"
-            loading="lazy"
-          />
+          <Image src={RunningImage} alt={t("løbe billede")} class="object-cover w-full h-full object-bottom" loading="lazy" />
         </div>
       </div>
       <div class="grid gap-large md:grid-cols-[1.5fr_0.7fr]">
-        <h2
-          class="text-neutral-1 text-header-3 font-body-text leading-height-header-2"
-        >
-          {
-            t(
-              "Alle er velkomne – uanset form eller erfaring. Kom med næste gang og få motion, smil og måske en ny ven på vejen!"
-            )
-          }
+        <h2 class="text-neutral-1 text-header-3 font-body-text leading-height-header-2">
+          {t("Alle er velkomne – uanset form eller erfaring. Kom med næste gang og få motion, smil og måske en ny ven på vejen!")}
         </h2>
         <div class="h-[140px] bg-secondary relative rounded-full md:h-[200px]">
-          <Image
-            src={RunningCoffeeCupIllustration}
-            width={120}
-            height={120}
-            alt={t("løbende kaffekop illustration")}
-            class="absolute top-2.5 right-1 md:top-8"
-            loading="lazy"
-          />
+          <Image src={RunningCoffeeCupIllustration} width={120} height={120} alt={t("løbende kaffekop illustration")} class="absolute top-2.5 right-1 md:top-8" loading="lazy" />
         </div>
       </div>
     </div>
     <div class="grid sm:justify-items-center">
-      <AnchorLink
-        variant="primary"
-        url="/runningclub"
-        ariaLabel={t("tilmeld dig løbeklub")}
-        >{t("Tilmeld dig løbeklub")}</AnchorLink
-      >
+      <AnchorLink variant="primary" url="/runningclub" ariaLabel={t("tilmeld dig løbeklub")}>{t("Tilmeld dig løbeklub")}</AnchorLink>
     </div>
   </section>
   <!-- Stampcard section -->
-  <section
-    class="relative flex items-center justify-center flex-col overflow-hidden fade-section">
+  <section class="relative flex items-center justify-center flex-col overflow-hidden fade-section px-default mt-[5rem] md:my-section">
     <h1 class="text-header-2 font-header">
       {t("Kær Kaffebar stempelkort")}
     </h1>
     <p class="text-header-3 font-body-text">
       {t("Få din 9. kop på huset med et gratis kaffe stempelkort")}
     </p>
-    <Image
-      src={Stampcard}
-      width={700}
-      height={700}
-      alt={t("rødt hvidt stempelkort af kær kaffebar")}
-      class="relative z-50"
-      loading="lazy"
-    />
+    <Image src={Stampcard} width={700} height={700} alt={t("rødt hvidt stempelkort af kær kaffebar")} class="relative z-50" loading="lazy" />
     <div class="absolute top-1/2 left-0 w-full h-full">
       <Marquee />
     </div>
   </section>
 
   <!-- Gallery section -->
-  <section class="px-default xl:px-0 max-w-[1192px] mx-auto my-section">
+  <section class="px-default xl:px-0 max-w-[1192px] mx-auto mb-[5rem] mt-[8rem] md:mt-[15rem] fade-section">
     <GallerySliderSection />
   </section>
 </Layout>

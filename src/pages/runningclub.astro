@@ -51,18 +51,23 @@ console.log(requestSend);
 
 <Layout title={t("Kær løbeklub")}>
   <main class="grid gap-negative m-margin text-neutral-1">
-    <section class="grid md:grid-cols-2 relative">
+    <section class="grid md:grid-cols-2 relative mb-negative md:mb-section">
       <div>
         <h1 class="text-header-1 font-header">{t("Kær løbeklub")}</h1>
-        <p class="text-paragraph leading-paragraph">
+        <h3 class="text-header-3 font-body-text leading-height-header-3">
           {t("Kær Klubben's løbeklub i Valby har")} <strong
             >{t("fokus på det sociale og på at samle lokalsamfundet")}</strong
           >, {t("samtidig med at vi bevæger os.")} <strong
             >{t("Ruten i søndermarken er 2,5 km, så alle kan være med.")}</strong
           >  {t("Er man hurtig, kan man nå den 2 gange!")}
-        </p>
+        </h3>
       </div>
-       <!-- <Picture class="absolute w-[130px] right-1 top-[15rem] md:top-[0rem] z-[-10] md:w-[300px]" src={RunningCoffeeCupIllustration} formats={["avif, webp"]} alt={t("løbende kaffekop illustration")} /> -->
+      <img
+            class="absolute w-[130px] right-1 top-[14rem] md:top-[0rem] z-[-10] md:w-[400px]"
+            src={RunningCoffeeCupIllustration.src}
+            alt={t("løbende kaffekop illustration")}
+            loading="lazy"
+          />
     </section>
     <section class="lg:flex lg:flex-row gap-negative space-y-section">
       <div class="grid gap-default flex-shrink-0">

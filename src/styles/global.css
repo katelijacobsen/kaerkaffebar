@@ -53,9 +53,9 @@
   --spacing-extra-large: 2.5rem;
   --spacing-negative: 4rem;
   --spacing-margin: clamp(7.75rem, -3.75rem + 15vw, 7.75rem) clamp(1rem, -3.75rem + 15vw, 12.75rem);
-  --spacing-section: clamp(1rem, -3.75rem + 15vw, 12.75rem);
+  --spacing-section: clamp(3rem, -3.75rem + 15vw, 10rem);
   --spacing-card: clamp(150px, 148px + 0.1vw, 148px);
-  --spacing-section: clamp(64px, 64px + 10vw, 224px);
+  /* --spacing-section: clamp(64px, 64px + 10vw, 224px); */
   --spacing-burger-menu: var(--spacing-default) var(--spacing-large);
 
   /*Border Radius*/

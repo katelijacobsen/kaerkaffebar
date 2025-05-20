@@ -8,70 +8,37 @@ import LangSwitcher from "./LangSwitcher.astro";
 ---
 
 <header class="fixed top-0 z-100 w-full">
-  <div
-    class="bg-primary-2 text-bright-bg p-default m-default shadow-pink rounded-large"
-  >
+  <div class="bg-primary-2 text-bright-bg p-default m-default shadow-pink rounded-large">
     <div class="flex flex-wrap justify-between items-center">
       <!-- Logo -->
-      <a href="/"
-        ><img
-          src={Logo.src}
-          class="h-6 w-auto md:h-10"
-          alt="Kær Kaffebar logo"
-          loading="eager"
-        /></a
-      >
+      <a href="/"><img src={Logo.src} class="h-6 w-auto md:h-10" alt="Kær Kaffebar logo" loading="eager" /></a>
 
       <!-- Desktop Navigation -->
       <nav class="hidden lg:block">
         <ul class="flex items-center gap-large">
           <li>
-            <AnchorLink role="menuitem" url="/menu" variant="underline" ariaLabel="Menu"
-              >Menu</AnchorLink
-            >
+            <AnchorLink role="menuitem" url="/menu" variant="underline" ariaLabel="Menu">Menu</AnchorLink>
           </li>
           <li>
-            <AnchorLink role="menuitem" url="/afternoontea" variant="underline" ariaLabel="Afternoon tea"
-              >Afternoon tea</AnchorLink
-            >
+            <AnchorLink role="menuitem" url="/afternoontea" variant="underline" ariaLabel="Afternoon tea">Afternoon tea</AnchorLink>
           </li>
           <li>
-            <AnchorLink role="menuitem" url="/arrangement" variant="underline" ariaLabel="Arrangement & events"
-              >{t("Arrangement & Event")}</AnchorLink
-            >
+            <AnchorLink role="menuitem" url="/arrangement" variant="underline" ariaLabel="Arrangement & event">{t("Arrangement & event")}</AnchorLink>
           </li>
           <li>
-            <AnchorLink role="menuitem" url="/runningclub" variant="underline" ariaLabel={t("Kærs Løbeklub")}
-              >{t("Kærs løbeklub")}</AnchorLink
-            >
+            <AnchorLink role="menuitem" url="/runningclub" variant="underline" ariaLabel={t("Kærs Løbeklub")}>{t("Kærs løbeklub")}</AnchorLink>
           </li>
           <li>
-            <AnchorLink
-              role="menuitem"
-              isAnchor={true}
-              variant="primary"
-              url="https://kaerkaffebar.superbexperience.com/"
-              ariaLabel="Book bord (åbner nyt vindue)">{t("Book bord")}</AnchorLink
-            >
+            <AnchorLink role="menuitem" isAnchor={true} variant="primary" url="https://kaerkaffebar.superbexperience.com/" ariaLabel="Book bord (åbner nyt vindue)">{t("Book bord")}</AnchorLink>
           </li>
-          <li><LangSwitcher aria-label="lanuage switcher"/></li>
+          <li><LangSwitcher aria-label="lanuage switcher" /></li>
         </ul>
       </nav>
 
       <!-- Mobile Navigation Controls -->
       <div class="flex gap-4 items-center lg:hidden mx-large">
-        <AnchorLink
-          role="menuitem"
-          variant="primary"
-          url="https://kaerkaffebar.superbexperience.com/"
-          ariaLabel="Book bord">{t("Book bord")}</AnchorLink
-        >
-        <button
-          id="mobile-menu-button"
-          class="p-2 focus:outline-none relative"
-          aria-label="Toggle menu"
-          aria-controls="mobile-menu"
-        >
+        <AnchorLink role="menuitem" variant="primary" url="https://kaerkaffebar.superbexperience.com/" ariaLabel="Book bord">{t("Book bord")}</AnchorLink>
+        <button id="mobile-menu-button" class="p-2 focus:outline-none relative" aria-label="Toggle menu" aria-controls="mobile-menu">
           <div class="burger-btn rounded-lg p-default">
             <span></span>
             <span></span>
@@ -82,33 +49,21 @@ import LangSwitcher from "./LangSwitcher.astro";
     </div>
 
     <!-- Mobile Menu Dropdown -->
-    <nav
-      id="mobile-menu"
-      aria-label="mobile navigation"
-      class="hidden absolute right-[2%] left-[2%] translate-y-2 z-40 bg-primary-2 p-burger-menu rounded-large m-default pin-skadow mx-auto"
-    >
+    <nav id="mobile-menu" aria-label="mobile navigation" class="hidden absolute right-[2%] left-[2%] translate-y-2 z-40 bg-primary-2 p-burger-menu rounded-large m-default pin-skadow mx-auto">
       <ul class="flex flex-col items-center gap-default font-bold">
         <li class="menu-item opacity-0">
-          <AnchorLink role="menuitem" url="/menu" variant="underline" ariaLabel="Menu"
-            >Menu</AnchorLink
-          >
+          <AnchorLink role="menuitem" url="/menu" variant="underline" ariaLabel="Menu">Menu</AnchorLink>
         </li>
         <li class="menu-item opacity-0">
-          <AnchorLink role="menuitem" url="/afternoontea" variant="underline" ariaLabel="Afternoon tea"
-            >Afternoon Tea</AnchorLink
-          >
+          <AnchorLink role="menuitem" url="/afternoontea" variant="underline" ariaLabel="Afternoon tea">Afternoon tea</AnchorLink>
         </li>
         <li class="menu-item opacity-0">
-          <AnchorLink role="menuitem" url="/arrangement" variant="underline" ariaLabel="Arrangement & events"
-            >{t("Arrangement & Event")}</AnchorLink
-          >
+          <AnchorLink role="menuitem" url="/arrangement" variant="underline" ariaLabel="Arrangement & events">{t("Arrangement & event")}</AnchorLink>
         </li>
         <li class="menu-item opacity-0">
-          <AnchorLink role="menuitem" url="/runningclub" variant="underline" ariaLabel={t("Kærs Løbeklub")}
-            >{t("Kærs løbeklub")}</AnchorLink
-          >
+          <AnchorLink role="menuitem" url="/runningclub" variant="underline" ariaLabel={t("Kærs Løbeklub")}>{t("Kærs løbeklub")}</AnchorLink>
         </li>
-        <li class="menu-item opacity-0"><LangSwitcher role="menuitem"/></li>
+        <li class="menu-item opacity-0"><LangSwitcher role="menuitem" /></li>
       </ul>
     </nav>
   </div>
@@ -169,14 +124,9 @@ import LangSwitcher from "./LangSwitcher.astro";
 <script is:inline type="module">
   //Toggle Burger Button Animation
   document.addEventListener("click", function (e) {
-    if (
-      e.target.classList.contains("burger-btn") ||
-      e.target.closest(".burger-btn")
-    ) {
+    if (e.target.classList.contains("burger-btn") || e.target.closest(".burger-btn")) {
       e.preventDefault();
-      const button = e.target.classList.contains("burger-btn")
-        ? e.target
-        : e.target.closest(".burger-btn");
+      const button = e.target.classList.contains("burger-btn") ? e.target : e.target.closest(".burger-btn");
       button.classList.toggle("active");
     }
   });
@@ -208,11 +158,7 @@ import LangSwitcher from "./LangSwitcher.astro";
   // Definere en funktionen hvordan elementerne inden i skal animeres
   function animateItems() {
     const items = mobileMenu.querySelectorAll(".menu-item");
-    gsap.fromTo(
-      items,
-      { x: 20, opacity: 0 },
-      { x: 0, opacity: 1, duration: 0.3, stagger: 0.1, ease: "power2.out" }
-    );
+    gsap.fromTo(items, { x: 20, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, stagger: 0.1, ease: "power2.out" });
   }
   // Definere hvordan vi gerne vil lukke menuen
   function closeMenu() {
@@ -239,17 +185,11 @@ import LangSwitcher from "./LangSwitcher.astro";
     isOpen = false;
   }
   // Eventlistener
-  menuButton.addEventListener("click", () =>
-    isOpen ? closeMenu() : openMenu()
-  );
+  menuButton.addEventListener("click", () => (isOpen ? closeMenu() : openMenu()));
 
   // Eventlistener ekstra til at brugeren også kan lukke den udenfra
   document.addEventListener("click", (e) => {
-    if (
-      isOpen &&
-      !menuButton.contains(e.target) &&
-      !mobileMenu.contains(e.target)
-    ) {
+    if (isOpen && !menuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
       closeMenu();
     }
   });
