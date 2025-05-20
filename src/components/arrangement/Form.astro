@@ -17,32 +17,82 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
 
 <article>
   <!--On Success Message -->
-  <PopUp show={requestSuccess} id="success-popup" textStyle="text-center" aria-live="polite" role="status">
+  <PopUp
+    show={requestSuccess}
+    id="success-popup"
+    textStyle="text-center"
+    aria-live="polite"
+    role="status"
+  >
     <h3>{t("Tak for din forespørgsel hos Kær Kaffebar")}</h3>
     <p>
-      {t("Vi glæder os til at byde dig velkommen. Du vil høre fra os tilbage hurtigst muligt.")}
+      {
+        t(
+          "Vi glæder os til at byde dig velkommen. Du vil høre fra os tilbage hurtigst muligt."
+        )
+      }
     </p>
   </PopUp>
 
-  <form method="POST" action="/api/request" class="bg-primary-2 rounded-default px-medium py-large md:p-large flex flex-col gap-large pin-skadow">
-    <h3 class="text-neutral-1 font-body-text text-header-3 leading-height-header-3">
-      {t("Udfyld formular og send forespørgelse til enten arrangement, event eller catering")}
+  <form
+    method="POST"
+    action="/api/request"
+    class="bg-primary-2 rounded-default px-medium py-large md:p-large flex flex-col gap-large pin-skadow"
+  >
+    <h3
+      class="text-neutral-1 font-body-text text-header-3 leading-height-header-3"
+    >
+      {
+        t(
+          "Udfyld formular og send forespørgelse til enten arrangement, event eller catering"
+        )
+      }
     </h3>
-    <div class="flex flex-col gap-small">
+    <fieldset class="flex flex-col gap-small">
+      <legend class="sr-only">{t("Personlig information")}</legend>
       <label for="fullName" class="flex flex-row mb-smal font-bold gap-small">
         {t("Fulde Navn")}
       </label>
-      <input aria-describedby="fullNameError" id="fullName" required type="text" name="fullName" required class="border-2 border-faded-highlight rounded-sm p-2 bg-white" />
-      <span id="fullNameError" class="error-message hidden" aria-live="polite"> {t("Venligst udfylde dit fulde navn")}</span>
+      <input
+        aria-describedby="fullNameError"
+        id="fullName"
+        required
+        type="text"
+        name="fullName"
+        required
+        class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
+      />
+      <span id="fullNameError" class="error-message hidden" aria-live="polite">
+        {t("Venligst udfylde dit fulde navn")}</span
+      >
       <label for="email" class="flex flex-col mb-smal font-bold gap-small">
         {t("Email")}
       </label>
-      <input id="email" required type="email" name="email" required class="border-2 border-faded-highlight rounded-sm p-2 bg-white" />
-      <label for="phoneNumber" class="flex flex-col mb-smal font-bold gap-small">
+      <input
+        id="email"
+        required
+        type="email"
+        name="email"
+        required
+        class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
+      />
+      <label
+        for="phoneNumber"
+        class="flex flex-col mb-smal font-bold gap-small"
+      >
         {t("Telefonnummer")}
       </label>
-      <input id="phoneNumber" required type="tel" pattern="[0-9+]{8.}" name="phoneNumber" inputmode="numeric" required class="[appearance:textfield] border-2 border-faded-highlight rounded-sm p-2 bg-white" />
-    </div>
+      <input
+        id="phoneNumber"
+        required
+        type="tel"
+        pattern="[0-9+]{8.}"
+        name="phoneNumber"
+        inputmode="numeric"
+        required
+        class="[appearance:textfield] border-2 border-faded-highlight rounded-sm p-2 bg-white"
+      />
+    </fieldset>
     <fieldset class="flex flex-wrap flex-col gap-default">
       <legend class="text-header-3">{t("Anledning")}</legend>
       <RadioButton Occasion={t("Arrangement")} />
@@ -50,26 +100,50 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
       <RadioButton Occasion={t("Event")} />
       <RadioButton Occasion={t("Kage og bestilling")} />
     </fieldset>
-    <div class="flex flex-col gap-default">
+    <fieldset class="flex flex-col gap-default">
+      <legend class="sr-only">{t("Tid og Dato")}</legend>
       <label class="inline-flex flex-col mb-smal font-bold">
         {t("Tid")}
-        <input type="time" id="time" name="time" min="10:00" max="16:00" class="border-2 border-faded-highlight rounded-sm p-2 bg-white" required />
+        <input
+          type="time"
+          id="time"
+          name="time"
+          min="10:00"
+          max="16:00"
+          class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
+          required
+        />
       </label>
       <label class="inline-flex flex-col mb-smal font-bold">
         {t("Dato")}
-        <input type="date" id="date" name="date" min={new Date().toISOString()} class="border-2 border-faded-highlight rounded-sm p-2 bg-white" required />
+        <input
+          type="date"
+          id="date"
+          name="date"
+          min={new Date().toISOString()}
+          class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
+          required
+        />
       </label>
-    </div>
-    <fieldset class="flex flex-wrap items-end gap-default self-stretch content-end">
+    </fieldset>
+    <fieldset
+      class="flex flex-wrap items-end gap-default self-stretch content-end"
+    >
       <legend class="text-header-3 my-default">{t("Allergier")}</legend>
       <Checkbox Diet={t("Laktose")} Icon={Milk} aria-Label={t("Laktosefri")} />
       <Checkbox Diet={t("Gluten")} Icon={Gluten} aria-Label={t("Glutenfri")} />
       <Checkbox Diet={t("Nødder")} Icon={Nuts} aria-Label={t("Nøddefri")} />
       <Checkbox Diet={t("Fisk")} Icon={Fish} aria-Label={t("Fiskfri")} />
     </fieldset>
-    <fieldset class="flex flex-wrap items-end gap-default self-stretch content-end">
+    <fieldset
+      class="flex flex-wrap items-end gap-default self-stretch content-end"
+    >
       <legend class="text-header-3 my-default">{t("Ønsker til menuen")}</legend>
-      <Checkbox Diet={t("Vegetarisk")} Icon={Vegetarian} aria-Label={t("Vegetarisk")} />
+      <Checkbox
+        Diet={t("Vegetarisk")}
+        Icon={Vegetarian}
+        aria-Label={t("Vegetarisk")}
+      />
       <Checkbox Diet={t("Vegansk")} Icon={Vegan} aria-Label={t("Vegansk")} />
     </fieldset>
     <fieldset class="flex flex-col mb-smal font-bold gap-default">
@@ -77,11 +151,27 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
       <label for="comment" class="sr-only">
         {t("Kommentar")}
       </label>
-      <textarea name="comment" rows="4" cols="20" class="border-2 border-faded-highlight rounded-sm p-2 bg-white" placeholder={t("Skriv dine kommentarer her...")}></textarea>
+      <textarea
+        name="comment"
+        rows="4"
+        cols="20"
+        class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
+        placeholder={t("Skriv dine kommentarer her...")}></textarea>
     </fieldset>
     <p class="font-body-text text-neutral-1 text-paragraph font-bold">
-      {t("Obs: Hvis du har nogen spørgsmål eller bekymringer så kontakt os på 81 61 09 00")}
+      {
+        t(
+          "Obs: Hvis du har nogen spørgsmål eller bekymringer så kontakt os på 81 61 09 00"
+        )
+      }
     </p>
-    <Button type="submit" showArrow={true} variant="primary" ariaLabel={t("Send forespørgelse")}> {t("Send forespørgelse")}</Button>
+    <Button
+      type="submit"
+      showArrow={true}
+      variant="primary"
+      ariaLabel={t("Send forespørgelse")}
+    >
+      {t("Send forespørgelse")}</Button
+    >
   </form>
 </article>

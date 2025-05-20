@@ -81,9 +81,9 @@ h1 {
   font-family: var(--font-header), sans-serif;
 }
 
-h2 {
+/*h2 {
   font-size: var(--text-header-2);
-}
+}*/
 
 h3 {
   font-size: var(--text-header-3);
