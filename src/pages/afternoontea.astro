@@ -46,25 +46,25 @@ import AnchorLink from "../components/AnchorLink.astro";
 
       <div class="grid grid-cols-2 grid-rows-[0.5fr_1fr_1fr] gap-default mt-negative md:hidden">
         <div class="rounded-default col-start-1 col-end-2 row-span-3 overflow-hidden">
-          <Image class="object-cover w-full h-full object-left" src={AfternoonTea} alt={t("Afternoon tea")} />
+          <Image loading="eager" class="object-cover w-full h-full object-left" src={AfternoonTea} alt={t("Afternoon tea")} />
         </div>
-        <img class="col-start-2 col-end-3 row-span-1 justify-self-center self-center" src={LemonsIllustration.src} alt={t("citroner illustration")} />
+        <Image loading="eager" class="col-start-2 col-end-3 row-span-1 justify-self-center self-center" src={LemonsIllustration} alt={t("citroner illustration")} />
         <div class="rounded-full col-start-2 col-end-3 row-span-2 overflow-hidden">
-          <Image class="object-cover w-full h-full object-right" src={Macarons} alt={t("macarons")} />
+          <Image loading="eager" class="object-cover w-full h-full object-right" src={Macarons} alt={t("macarons")} />
         </div>
       </div>
 
       <div class="hidden md:grid md:grid-cols-2 md:grid-rows-[0.1fr_0.2fr_0.2fr_0.5fr] md:gap-default md:mt-negative">
         <div class="rounded-default col-start-1 col-end-2 row-span-3 overflow-hidden">
-          <Image class="object-cover w-full h-full object-left" src={AfternoonTea} alt={t("afternoon tea")} />
+          <Image loading="eager" class="object-cover w-full h-full object-left" src={AfternoonTea} alt={t("afternoon tea")} />
         </div>
-        <img class="col-start-2 col-end-3 row-span-1 justify-self-center self-center" src={LemonsIllustration.src} alt={t("citroner illustration")} />
+        <Image loading="eager" class="col-start-2 col-end-3 row-span-1 justify-self-center self-center" src={LemonsIllustration} alt={t("citroner illustration")} />
         <div class="rounded-full col-start-2 col-end-3 row-span-2 overflow-hidden">
-          <Image class="object-cover w-full h-full object-right" src={Macarons} alt={t("macarons")} />
+          <Image loading="eager" class="object-cover w-full h-full object-right" src={Macarons} alt={t("macarons")} />
         </div>
-        <img class="col-start-1 col-end-2 row-span-1 justify-self-center self-center h-[200px] w-[200px]" src={BlueberryAndPears.src} alt={t("blåbær og pære illustration")} />
+        <Image loading="eager" class="col-start-1 col-end-2 row-span-1 justify-self-center self-center h-[200px] w-[200px]" src={BlueberryAndPears} alt={t("blåbær og pære illustration")} />
         <div class="rounded-default col-start-2 col-end-3 row-span-1 overflow-hidden">
-          <Image class="object-cover w-full h-full object-left" src={AfternoonTeaTwo} alt={t("afternoon tea")} />
+          <Image loading="eager" class="object-cover w-full h-full object-left" src={AfternoonTeaTwo} alt={t("afternoon tea")} />
         </div>
       </div>
     </div>

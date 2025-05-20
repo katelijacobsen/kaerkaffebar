@@ -7,12 +7,13 @@ import Smiley from "../assets/icons/smiley-icon.svg";
 import Logo from "../assets/icons/logo.svg";
 import Button from "../components/Button.astro";
 import AnchorLink from "./AnchorLink.astro";
+import Image from "astro/components/Image.astro";
 ---
 
 <footer class="bg-secondary rounded-tl-large rounded-tr-large text-primary p-large grid items-center gap-large text-center">
   <nav aria-label="Social media" class="flex m-auto gap-large items-center md:justify-end md:items-end md:w-full">
-    <a href="https://www.facebook.com/kaerkaffebar"> <img src={Facebook.src} alt={t("facebook ikon")} loading="lazy" /></a>
-    <a href="https://www.instagram.com/kaerkaffebar/"> <img src={Instagram.src} alt={t("instagram ikon")} loading="lazy" /></a>
+    <a href="https://www.facebook.com/kaerkaffebar"> <Image src={Facebook} alt={t("facebook ikon")} loading="eager" /></a>
+    <a href="https://www.instagram.com/kaerkaffebar/"> <Image src={Instagram} alt={t("instagram ikon")} loading="eager" /></a>
   </nav>
   <div class="flex flex-col gap-large items-center text-center md:flex-row md:justify-start w-full">
     <a class="md:grow-[0.4]" href="/"><img src={Logo.src} alt={t("kær kaffebar logo i hvid")} loading="lazy" /></a>

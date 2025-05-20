@@ -62,12 +62,12 @@ console.log(requestSend);
           >  {t("Er man hurtig, kan man nå den 2 gange!")}
         </h3>
       </div>
-      <img
-            class="absolute w-[130px] right-1 top-[14rem] md:top-[0rem] z-[-10] md:w-[400px]"
-            src={RunningCoffeeCupIllustration.src}
-            alt={t("løbende kaffekop illustration")}
-            loading="lazy"
-          />
+          <Image
+          src={RunningCoffeeCupIllustration}
+          alt={t("løbende kaffekop illustration")}
+          class="absolute w-[130px] right-1 top-[14rem] md:top-[0rem] z-[-10] md:w-[400px]"
+          loading="eager"
+        />
     </section>
     <section class="lg:flex lg:flex-row gap-negative space-y-section">
       <div class="grid gap-default flex-shrink-0">
@@ -173,7 +173,7 @@ console.log(requestSend);
           src={RunningImage}
           alt={t("billeder-af-to-piger-med-en-løbeklub-t-shirt")}
           class="object-cover w-full h-full object-bottom"
-          loading="lazy"
+          loading="eager"
         />
       </div>
       <div class="relative h-[250px]">
