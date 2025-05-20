@@ -1,6 +1,5 @@
 ---
 import { astroI18n, t } from "astro-i18n";
-
 import Milk from "../../assets/icons/milk.svg";
 import Gluten from "../../assets/icons/gluten-icon.svg";
 import Nuts from "../../assets/icons/nuts-icon.svg";
@@ -16,7 +15,6 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
 ---
 
 <article>
-  <!--On Success Message -->
   <PopUp
     show={requestSuccess}
     id="success-popup"
@@ -33,11 +31,13 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
       }
     </p>
   </PopUp>
-
+  <!-- novalidate: fortæller browseren at vi selv gerne vil styre validering -->
   <form
+    id="requestForm"
     method="POST"
     action="/api/request"
     class="bg-primary-2 rounded-default px-medium py-large md:p-large flex flex-col gap-large pin-skadow"
+    novalidate
   >
     <h3
       class="text-neutral-1 font-body-text text-header-3 leading-height-header-3"
@@ -48,51 +48,59 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
         )
       }
     </h3>
-    <fieldset class="flex flex-col gap-small">
+
+    <fieldset class="flex flex-col gap-default">
       <legend class="sr-only">{t("Personlig information")}</legend>
-      <label for="fullName" class="flex flex-row mb-smal font-bold gap-small">
-        {t("Fulde Navn")}
-      </label>
-      <input
-        aria-describedby="fullNameError"
+
+      <!-- Fulde Navn -->
+      <label for="fullName" class="mb-smal flex flex-col gap-small"><p class="font-bold">{t("Fulde Navn")}</p>
+        
+        <input
         id="fullName"
-        required
-        type="text"
         name="fullName"
+        type="text"
         required
+        aria-errormessage="fullNameError"
+        aria-invalid="false"
         class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
-      />
-      <span id="fullNameError" class="error-message hidden" aria-live="polite">
-        {t("Venligst udfylde dit fulde navn")}</span
-      >
-      <label for="email" class="flex flex-col mb-smal font-bold gap-small">
-        {t("Email")}
+        />
       </label>
-      <input
+      <span id="fullNameError" class="error-message hidden" role="alert"></span>
+
+      <!-- Email -->
+      <label for="email" class="mb-smal flex flex-col gap-small"><p class="font-bold">{t("Email")}</p>
+        <input
         id="email"
-        required
-        type="email"
         name="email"
+        type="email"
         required
+        aria-errormessage="emailError"
+        aria-invalid="false"
         class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
-      />
-      <label
-        for="phoneNumber"
-        class="flex flex-col mb-smal font-bold gap-small"
-      >
-        {t("Telefonnummer")}
+        />
       </label>
-      <input
+      <span id="emailError" class="error-message hidden" role="alert"></span>
+
+      <!-- Telefonnummer -->
+      <label for="phoneNumber" class="mb-smal flex flex-col gap-small"
+        ><p class="font-bold">{t("Telefonnummer")}</p>
+        <input
         id="phoneNumber"
-        required
-        type="tel"
-        pattern="[0-9+]{8.}"
         name="phoneNumber"
-        inputmode="numeric"
+        type="tel"
         required
-        class="[appearance:textfield] border-2 border-faded-highlight rounded-sm p-2 bg-white"
-      />
+        pattern="[0-9+]{8,}"
+        aria-errormessage="phoneNumberError"
+        aria-invalid="false"
+        class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
+        inputmode="numeric"
+        />
+      </label>
+      <span id="phoneNumberError" class="error-message hidden" role="alert"
+      ></span>
     </fieldset>
+
+    <!-- Andledning  -->
     <fieldset class="flex flex-wrap flex-col gap-default">
       <legend class="text-header-3">{t("Anledning")}</legend>
       <RadioButton Occasion={t("Arrangement")} />
@@ -100,45 +108,54 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
       <RadioButton Occasion={t("Event")} />
       <RadioButton Occasion={t("Kage og bestilling")} />
     </fieldset>
+
+    <!-- Tid og dato  -->
     <fieldset class="flex flex-col gap-default">
       <legend class="sr-only">{t("Tid og Dato")}</legend>
-      <label class="inline-flex flex-col mb-smal font-bold">
-        {t("Tid")}
+
+      <label class="mb-smal flex flex-col lg:w-1/2 gap-small">
+        <p class="font-bold">{t("Tid")}</p>
         <input
-          type="time"
           id="time"
           name="time"
+          type="time"
+          required
+          aria-errormessage="timeError"
+          aria-invalid="false"
+          class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
           min="10:00"
           max="16:00"
-          class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
-          required
         />
       </label>
-      <label class="inline-flex flex-col mb-smal font-bold">
-        {t("Dato")}
+      <span id="timeError" class="error-message hidden" role="alert"></span>
+
+      <label class="mb-smal flex flex-col lg:w-1/2 gap-small"><p class="font-bold">{t("Dato")}</p>
         <input
-          type="date"
           id="date"
           name="date"
-          min={new Date().toISOString()}
-          class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
+          type="date"
           required
+          aria-errormessage="dateError"
+          aria-invalid="false"
+          class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
+          min={new Date().toISOString().split("T")[0]}
         />
       </label>
+      <span id="dateError" class="error-message hidden" role="alert"></span>
     </fieldset>
-    <fieldset
-      class="flex flex-wrap items-end gap-default self-stretch content-end"
-    >
-      <legend class="text-header-3 my-default">{t("Allergier")}</legend>
+
+    <!-- Allergier  -->
+    <fieldset class="flex flex-wrap items-end gap-default">
+      <legend class="text-header-3">{t("Allergier")}</legend>
       <Checkbox Diet={t("Laktose")} Icon={Milk} aria-Label={t("Laktosefri")} />
       <Checkbox Diet={t("Gluten")} Icon={Gluten} aria-Label={t("Glutenfri")} />
       <Checkbox Diet={t("Nødder")} Icon={Nuts} aria-Label={t("Nøddefri")} />
       <Checkbox Diet={t("Fisk")} Icon={Fish} aria-Label={t("Fiskfri")} />
     </fieldset>
-    <fieldset
-      class="flex flex-wrap items-end gap-default self-stretch content-end"
-    >
-      <legend class="text-header-3 my-default">{t("Ønsker til menuen")}</legend>
+
+    <!-- Menu ønsker  -->
+    <fieldset class="flex flex-wrap items-end gap-default">
+      <legend class="text-header-3">{t("Ønsker til menuen")}</legend>
       <Checkbox
         Diet={t("Vegetarisk")}
         Icon={Vegetarian}
@@ -146,18 +163,19 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
       />
       <Checkbox Diet={t("Vegansk")} Icon={Vegan} aria-Label={t("Vegansk")} />
     </fieldset>
+
+    <!-- diverse kommentar fra brugerens input -->
     <fieldset class="flex flex-col mb-smal font-bold gap-default">
       <legend class="text-paragraph">{t("Kommentar")}</legend>
-      <label for="comment" class="sr-only">
-        {t("Kommentar")}
-      </label>
+      <label id="comment" for="comment" class="sr-only">{t("Kommentar")}</label>
       <textarea
+        id="comment"
         name="comment"
         rows="4"
-        cols="20"
         class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
         placeholder={t("Skriv dine kommentarer her...")}></textarea>
     </fieldset>
+
     <p class="font-body-text text-neutral-1 text-paragraph font-bold">
       {
         t(
@@ -165,6 +183,8 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
         )
       }
     </p>
+
+    <!-- Submit / Send Forespørgelse / check validering -->
     <Button
       type="submit"
       showArrow={true}
@@ -175,3 +195,96 @@ const requestSuccess = Astro.url.searchParams.get("requestSend") || false;
     >
   </form>
 </article>
+
+<style>
+  /* Error farve*/
+  .error-message {
+    color: var(--color-secondary);
+  }
+  .error-message.hidden {
+    display: none;
+  }
+  /*Invalide felter */
+  input.invalid,
+  textarea.invalid {
+    border: 2px solid var(--color-secondary) !important;
+  }
+
+  /*Valide felter. Anvender pseudo valid og sætter invalid til false (kigger i vores script).
+   !important bruger vi til at vise stilen tydeligt */
+  input:valid[aria-invalid="false"],
+  textarea:valid[aria-invalid="false"] {
+    border: 2px solid var(--color-accent) !important;
+  }
+</style>
+
+<script is:inline>
+  // laver fores form til en konstant. DOM skal være helt færdig loaded før vi henter vores elementer.
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("requestForm");
+    // Boolean variabel der kigger om brugeren har sendt formularen
+    let submitted = false;
+
+    // Array af inputfelter som vi skal se på der skal valideres (vores id'er)
+    const fields = ["fullName", "email", "phoneNumber", "time", "date"];
+    // Eventlistener med prevent default så vi lige kan selv tjekke vores form.
+    form.addEventListener("submit", (e) => {
+      // Håndtere prevent default dvs. vi forhindre at den sendes automatisk.
+      e.preventDefault();
+      submitted = true;
+      // Variabel for at fortælle at alle inputfelter er valide
+      let allValid = true;
+      // kontrollere hvert inputfelt med checkValidity()
+      // vi laver så også konstanter til at visualisere vores errors
+      fields.forEach((id) => {
+        const field = document.getElementById(id);
+        const span = document.getElementById(id + "Error");
+        // Vi bruger checkValidity() til at kontrollere om vores felter er valide. Den kigger på vores HTML og kigger på vores type, pattern og required.
+        // Hvis field ikke er validerede så sæt boolean til false og tilføje invalid style
+        if (!field.checkValidity()) {
+          allValid = false;
+          field.classList.add("invalid");
+          // vi bruger aria-invalid for at gøre det mere a11y venlig
+          field.setAttribute("aria-invalid", "true");
+          span.classList.remove("hidden");
+          // error besked: hvad brugeren skal gøre/mangler
+          span.textContent = field.validationMessage;
+          //ellers valider
+        } else {
+          field.classList.remove("invalid");
+          field.setAttribute("aria-invalid", "false");
+          span.classList.add("hidden");
+        }
+      });
+
+      // Hvis alle vores felter er valide så send formen ud
+      if (allValid) form.submit();
+    });
+
+    // For hver gang brugeren så klikker på submit sker valideringen i øjeblikket
+    // for hver field med id parameter
+    fields.forEach((id) => {
+      // konstanter til at tag fat i vores elementer med id
+      const field = document.getElementById(id);
+      const span = document.getElementById(id + "Error");
+      // Eventlistener med input. 'lytter' til hvad vores inputfelter.
+      field.addEventListener("input", () => {
+        // Fejlen kommer først frem efter førsøg på at brugeren klikker submit
+        if (!submitted) return;
+        // Gyldig input felt får så valid CSS styling & aria-invalid er false.
+        if (field.checkValidity()) {
+          field.classList.remove("invalid");
+          field.setAttribute("aria-invalid", "false");
+          span.classList.add("hidden");
+          // Ugyldig input felt får så 'valid' CSS styling & aria-invalid er true.
+        } else {
+          field.classList.add("invalid");
+          field.setAttribute("aria-invalid", "true");
+          span.classList.remove("hidden");
+          // error besked: hvad brugeren skal gøre/mangler
+          span.textContent = field.validationMessage;
+        }
+      });
+    });
+  });
+</script>

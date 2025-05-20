@@ -21,78 +21,192 @@ import ReadlineLink from "../components/menu/ReadlineLink.astro";
 
 <Layout title={t("Arrangement & events")}>
   <main class="m-margin space-y-large">
-    <article class="grid grid-cols-1 lg:grid-cols-2 gap-large md-large md:mb-negative">
+    <article
+      class="grid grid-cols-1 lg:grid-cols-2 gap-large md-large md:mb-negative"
+    >
       <section class="flex flex-col gap-large">
         <h1 class="text-header-1 leading-height-header-1">
           {t("Arrangementer & events hos Kær Kaffebar")}
         </h1>
         <div>
-          <p class="text-neutral-1 text-paragraph font-body-text leading-height-paragraph">
+          <p
+            class="text-neutral-1 text-paragraph font-body-text leading-height-paragraph"
+          >
             {t("Skab uforglemmelige øjeblikke ved at")}
             <strong>
-              {t("afholde dit næste arrangement i de stemningsfulde lokaler hos Kær Kaffebar!")}
+              {
+                t(
+                  "afholde dit næste arrangement i de stemningsfulde lokaler hos Kær Kaffebar!"
+                )
+              }
             </strong>
           </p>
           <br />
           <strong class="text-paragraph font-body-text">
-            {t("Vi stiller gerne vores hyggelige og indbydende rammer til rådighed")}
+            {
+              t(
+                "Vi stiller gerne vores hyggelige og indbydende rammer til rådighed"
+              )
+            }
           </strong>
 
           <p class="text-neutral-1 text-paragraph">
-            {t("for alt fra fødselsdagsfester og firmaarrangementer til PR-events og meget mere –")}
+            {
+              t(
+                "for alt fra fødselsdagsfester og firmaarrangementer til PR-events og meget mere –"
+              )
+            }
             <strong>
-              {t("du skal blot sende os en forespørgelse, så tager vi den derfra.")}
+              {
+                t(
+                  "du skal blot sende os en forespørgelse, så tager vi den derfra."
+                )
+              }
             </strong>
           </p>
         </div>
         <div class="lg:hidden md:hidden">
-          <ReadlineLink href="#Form" variant="primary">Send forespørgelse</ReadlineLink>
+          <ReadlineLink href="#Form" variant="primary"
+            >Send forespørgelse</ReadlineLink
+          >
         </div>
       </section>
       <div class="grid grid-cols-2 gap-default lg:grid-rows-[auto]">
         <div class="col-span-2">
-          <video muted loop autoplay aria-hidden="true" class="rounded-full w-full h-auto object-cover">
+          <video
+            muted
+            loop
+            autoplay
+            aria-hidden="true"
+            class="rounded-full w-full h-auto object-cover"
+          >
             <source src="/video/arrangement-og-event.webm" type="video/webm" />
           </video>
         </div>
-        <Image src={Vase} alt={t("Illustration of teapot")} width={120} height={120} class="place-self-center" />
-        <Image src={smallCakes} alt={t("Picture of small cakes")} width={270} height={270} class="w-full object-contain" />
+        <Image
+          src={Vase}
+          alt={t("Blue illustration of a vase with flowers")}
+          width={120}
+          height={120}
+          class="place-self-center"
+          loading="eager"
+        />
+        <Image
+          src={smallCakes}
+          alt={t("small cakes with burned cream and eatable flowers on top")}
+          width={270}
+          height={270}
+          class="w-full object-contain"
+          loading="eager"
+        />
       </div>
     </article>
-    <div class="lg:grid lg:grid-cols-[1fr_minmax(300px,40%)_minmax(300px,40%)_1fr] gap-large">
+    <div
+      class="lg:grid lg:grid-cols-[1fr_minmax(300px,40%)_minmax(300px,40%)_1fr] gap-large"
+    >
       <section class="col-start-2 col-end-3 flex flex-col gap-large mb-section">
-        <Card image={Teapot} imageSize="w-full h-auto" imagePosition="my-[-10%] mx-[50%]" bgColor="bg-neutral-3" fontColor="text-neutral-1" title={t("Arrangement")} subtitle={t("Hold dit næste arrangement hos os")} description={t("Små selskaber i hyggelige rammer – perfekt til fødselsdage, babyshowers og bogklubber.")} popUpTitle={t("Arrangement")} subPopUpTitle={t("Hvis du leder efter det ideelle sted til dit næste arrangement, behøver du ikke lede længere end Kær Kaffebar.")} detailsOne={t("Send en forespørgelse om arrangement og så vil vi kontakte dig angående flere detaljer.")} detailsTwo={t("Lad os sammen skabe et mindeværdigt arrangement, som dine gæster vil tale om i lang tid fremover!")} />
+        <Card
+          image={Teapot}
+          alt="white colored illustration with outlined flowing teapot with three teacups"
+          loading="loading"
+          imageSize="w-full h-auto"
+          imagePosition="my-[-10%] mx-[50%]"
+          bgColor="bg-neutral-3"
+          fontColor="text-neutral-1"
+          title={t("Arrangement")}
+          subtitle={t("Hold dit næste arrangement hos os")}
+          description={t(
+            "Små selskaber i hyggelige rammer – perfekt til fødselsdage, babyshowers og bogklubber."
+          )}
+          popUpTitle={t("Arrangement")}
+          subPopUpTitle={t(
+            "Hvis du leder efter det ideelle sted til dit næste arrangement, behøver du ikke lede længere end Kær Kaffebar."
+          )}
+          detailsOne={t(
+            "Send en forespørgelse om arrangement og så vil vi kontakte dig angående flere detaljer."
+          )}
+          detailsTwo={t(
+            "Lad os sammen skabe et mindeværdigt arrangement, som dine gæster vil tale om i lang tid fremover!"
+          )}
+        />
         <Card
           image={Cutlery}
+          alt="white colored illustration with outlined fork knife and spoon"
+          loading="loading"
           imageSize="w-[50%] h-auto"
           imagePosition="my-[-10%] mx-[75%] rotate-[-30deg]"
           bgColor="bg-accent"
           fontColor="text-primary"
           title={t("Event")}
           subtitle={t("Planlæg et unikt event på Kær Kaffebar")}
-          description={t("Workshops, pop-ups eller private aftenarrangementer? Vi hjælper dig med at skabe stemningen")}
+          description={t(
+            "Workshops, pop-ups eller private aftenarrangementer? Vi hjælper dig med at skabe stemningen"
+          )}
           popUpTitle={t("Event")}
-          subPopUpTitle={t("Hos Kær Kaffebar tilbyder vi den perfekte ramme for dit næste PR-event.")}
-          detailsOne={t("Vores hyggelige og stemningsfulde café i hjertet af Valby er ideel til at skabe en intim og imødekommende atmosfære, hvor din virksomheds budskab kan komme til sin ret.")}
-          detailsTwo={t("Med vores flotte indretning, udendørs siddepladser i solen og lækre udvalg af økologisk kaffe, friskpresset juice, og hjemmelavede specialiteter, kan du give dine gæster en uforglemmelig oplevelse.")}
-          detailsThree={t("Uanset om det drejer sig om en produktlancering, en netværksbegivenhed eller andet, kan vi skræddersy arrangementet til dine behov. Vi tilbyder muligheden for at reservere hele caféen og vores dedikerede personale sørger for, at alt forløber glat. Vi kan desuden arrangere specialmenuer, der passer til dit event, med tanke for dit brands identitet.")}
+          subPopUpTitle={t(
+            "Hos Kær Kaffebar tilbyder vi den perfekte ramme for dit næste PR-event."
+          )}
+          detailsOne={t(
+            "Vores hyggelige og stemningsfulde café i hjertet af Valby er ideel til at skabe en intim og imødekommende atmosfære, hvor din virksomheds budskab kan komme til sin ret."
+          )}
+          detailsTwo={t(
+            "Med vores flotte indretning, udendørs siddepladser i solen og lækre udvalg af økologisk kaffe, friskpresset juice, og hjemmelavede specialiteter, kan du give dine gæster en uforglemmelig oplevelse."
+          )}
+          detailsThree={t(
+            "Uanset om det drejer sig om en produktlancering, en netværksbegivenhed eller andet, kan vi skræddersy arrangementet til dine behov. Vi tilbyder muligheden for at reservere hele caféen og vores dedikerede personale sørger for, at alt forløber glat. Vi kan desuden arrangere specialmenuer, der passer til dit event, med tanke for dit brands identitet."
+          )}
         />
         <Card
           image={Citroner}
+          alt="brown colored illustration with whole and sliced lemons"
+          loading="lazy"
           imageSize="w-[70%] h-auto"
           imagePosition="my-[2%] mx-[40%] rotate-[140deg]"
           bgColor="bg-neutral-2"
           fontColor="text-neutral-1"
           title={t("Catering")}
           subtitle={t("Catering med kærlighed og kvalitet")}
-          description={t("Bestil morgenmad, frokost eller kagebord til din næste sammenkomst – lavet med omtanke.")}
+          description={t(
+            "Bestil morgenmad, frokost eller kagebord til din næste sammenkomst – lavet med omtanke."
+          )}
           popUpTitle={t("Catering")}
-          subPopUpTitle={t("Lad os tage os af maden – så du kan tage dig af gæsterne.")}
-          detailsOne={t("Hos Kær Kaffebar tilbyder vi catering til både private og professionelle arrangementer, store som små. Uanset om du planlægger en fødselsdag, et firmaevent, en reception eller et møde, står vi klar med smagfulde løsninger, der passer perfekt til anledningen.")}
-          detailsTwo={t("Vi laver alt fra friskbagte kager og brød til lette anretninger, brunch, frokost og specialkaffe. Vores retter er lavet med kærlighed og omtanke – og vi bruger friske, økologiske råvarer, hvor det er muligt.")}
-          detailsThree={t("Har du særlige ønsker eller behov? Vi skræddersyr gerne en menu, der matcher dine præferencer og dit arrangement – både i smag og stil.")}
+          subPopUpTitle={t(
+            "Lad os tage os af maden – så du kan tage dig af gæsterne."
+          )}
+          detailsOne={t(
+            "Hos Kær Kaffebar tilbyder vi catering til både private og professionelle arrangementer, store som små. Uanset om du planlægger en fødselsdag, et firmaevent, en reception eller et møde, står vi klar med smagfulde løsninger, der passer perfekt til anledningen."
+          )}
+          detailsTwo={t(
+            "Vi laver alt fra friskbagte kager og brød til lette anretninger, brunch, frokost og specialkaffe. Vores retter er lavet med kærlighed og omtanke – og vi bruger friske, økologiske råvarer, hvor det er muligt."
+          )}
+          detailsThree={t(
+            "Har du særlige ønsker eller behov? Vi skræddersyr gerne en menu, der matcher dine præferencer og dit arrangement – både i smag og stil."
+          )}
         />
-        <Card image={Croissant} imageSize="w-[50%] h-auto" imagePosition="my-[-4%] mx-[70%] rotate-[-10deg]" bgColor="bg-primary" fontColor="text-neutral-1" border="border-2" borderColor="border-faded-highlight" title={t("Kage og bestilling")} subtitle={t("Bestil hjemmelavede kager til enhver lejlighed")} description={t("Bryllup, fødselsdage eller bare fordi - vi bager med smag og stil")} popUpTitle={t("Kage og bestilling")} subPopUpTitle={t("Skal der lidt ekstra sødt på bordet?")} detailsOne={t("Bestil en eller flere af vores populære hjemmebagte kager til din fest eller fejring.")} detailsTwo={t("Vi bager efter sæson og tilbyder alt fra klassiske favoritter til unikke specialiteter.")} />
+        <Card
+          alt="brown colored illustration with a croissant"
+          image={Croissant}
+          loading="lazy"
+          imageSize="w-[50%] h-auto"
+          imagePosition="my-[-4%] mx-[70%] rotate-[-10deg]"
+          bgColor="bg-primary"
+          fontColor="text-neutral-1"
+          border="border-2"
+          borderColor="border-faded-highlight"
+          title={t("Kage og bestilling")}
+          subtitle={t("Bestil hjemmelavede kager til enhver lejlighed")}
+          description={t(
+            "Bryllup, fødselsdage eller bare fordi - vi bager med smag og stil"
+          )}
+          popUpTitle={t("Kage og bestilling")}
+          subPopUpTitle={t("Skal der lidt ekstra sødt på bordet?")}
+          detailsOne={t(
+            "Bestil en eller flere af vores populære hjemmebagte kager til din fest eller fejring."
+          )}
+          detailsTwo={t(
+            "Vi bager efter sæson og tilbyder alt fra klassiske favoritter til unikke specialiteter."
+          )}
+        />
       </section>
       <section class="col-start-3 col-end-4" id="Form">
         <Form />

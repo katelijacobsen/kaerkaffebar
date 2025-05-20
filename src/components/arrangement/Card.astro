@@ -5,7 +5,7 @@ import { Image } from "astro:assets";
 import Button from "../Button.astro";
 import PopUp from "../PopUp.astro";
 
-const { title, subtitle, description, image, bgColor, border, borderColor, fontColor, imagePosition, imageOpacity, imageSize, popUpTitle, subPopUpTitle, detailsOne, detailsTwo, detailsThree } = Astro.props;
+const { title, subtitle, description, image, alt="", loading="", bgColor, border, borderColor, fontColor, imagePosition, imageOpacity, imageSize, popUpTitle, subPopUpTitle, detailsOne, detailsTwo, detailsThree } = Astro.props;
 
 const popUpId = `popup-${popUpTitle}`;
 ---
@@ -29,7 +29,7 @@ const popUpId = `popup-${popUpTitle}`;
 
   <article class={`relative ${bgColor} ${border} ${borderColor} ${fontColor} p-card rounded-default gap-default inline-flex flexwrap flex-col overflow-hidden w-full`}>
     <div class={`absolute z-0 opacity-[40%] ${imagePosition} ${imageOpacity} ${imageSize}`}>
-      <Image src={image} alt="white colored illustration with outlined flowing teapot with three teacups" class="w-[50%] h-[50%] object-fit" width={512} height={200} loading="lazy" />
+      <Image src={image} alt={alt} class="w-[50%] h-[50%] object-fit" width={512} height={200} loading={loading} />
     </div>
 
     <div class="relative z-10 text-left flex flex-col gap-medium me-16">
