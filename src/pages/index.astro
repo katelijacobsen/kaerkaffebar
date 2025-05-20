@@ -53,25 +53,25 @@ import AnchorLink from "../components/AnchorLink.astro";
         src={HerosectionBrunchplate}
         alt={t("brunch")}
         class="absolute inset-0 w-full h-full object-cover fade-image fade-1"
-        loading="lazy"
+        loading="eager"
       />
       <Image
         src={SourdoughBuns}
         alt={t("tærter")}
         class="absolute inset-0 w-full h-full object-cover fade-image fade-2"
-        loading="lazy"
+        loading="eager"
       />
       <Image
         src={MiniTarts}
         alt={t("smørrebrød")}
         class="absolute inset-0 w-full h-full object-cover fade-image fade-3"
-        loading="lazy"
+        loading="eager"
       />
       <Image
         src={CinnamonRolls}
         alt={t("boller")}
         class="absolute inset-0 w-full h-full object-cover fade-image fade-4"
-        loading="lazy"
+        loading="eager"
       />
 
       <div class="absolute inset-0 bg-black/40 z-10"></div>
@@ -79,11 +79,11 @@ import AnchorLink from "../components/AnchorLink.astro";
       <div
         class="absolute inset-0 z-20 flex flex-col items-center justify-center text-primary text-center pl-default pr-default"
       >
-        <img
-          src={Logo.src}
+        <Image
+          src={Logo}
           class="w-[300px] md:w-[500px] mb-6"
           alt={t("Kær Kaffebar logo")}
-          loading="lazy"
+          loading="eager"
         />
         <h1
           class="text-4xl md:text-6xl font-bold text-header leading-height-header-1 text-primary"
@@ -131,8 +131,8 @@ import AnchorLink from "../components/AnchorLink.astro";
           class="rounded-default"
           loading="lazy"
         />
-        <img
-          src={OrganicLogo.src}
+        <Image
+          src={OrganicLogo}
           alt={t("økologi logo")}
           class="justify-self-center self-center"
           loading="lazy"
@@ -142,9 +142,9 @@ import AnchorLink from "../components/AnchorLink.astro";
         <div
           class="hidden md:grid md:grid-cols-5 md:grid-rows-[0.1fr_0.5fr_0.5fr_0.5fr] md:gap-default md:justify-center"
         >
-          <img
+          <Image
             class="justify-self-center self-center col-start-1 col-end-2 row-start-1 row-end-3"
-            src={CroissantIllustration.src}
+            src={CroissantIllustration}
             alt={t("croissant illustration")}
           />
           <div
@@ -167,9 +167,9 @@ import AnchorLink from "../components/AnchorLink.astro";
               loading="lazy"
             />
           </div>
-          <img
+          <Image
             class="justify-self-center self-center col-start-5 col-end-5 row-start-1 row-end-2 w-[80px] h-[80px]"
-            src={Blueberry.src}
+            src={Blueberry}
             alt={t("blåbær")}
             loading="lazy"
           />
@@ -179,15 +179,15 @@ import AnchorLink from "../components/AnchorLink.astro";
             class="col-start-1 col-end-3 row-start-3 row-end-5 rounded-default"
             loading="lazy"
           />
-          <img
-            src={OrganicLogo.src}
+          <Image
+            src={OrganicLogo}
             alt={t("økologi logo")}
             class="justify-self-center self-center col-start-3 col-end-4 row-start-3 row-end-5"
             loading="lazy"
           />
-          <img
+          <Image
             class="col-start-4 col-end-5 row-start-3 row-end-5"
-            src={CoffeePot.src}
+            src={CoffeePot}
             alt={t("kaffekande illustration")}
             loading="lazy"
           />
@@ -294,15 +294,15 @@ import AnchorLink from "../components/AnchorLink.astro";
   <section
     class="relative px-default lg:px-0 pt-[150px] pb-[150px] max-w-[1192px] mx-auto fade-section my-section"
   >
-    <img
+    <Image
       class="blueberry absolute top-0 left-[-50px] w-[150px] h-[150px]"
-      src={BlueberryAndPears.src}
+      src={BlueberryAndPears}
       alt={t("blåbær og pære illustration")}
       loading="lazy"
     />
-    <img
+    <Image
       class="coffeemug absolute top-4 right-0 w-[90px] h-[90px]"
-      src={CoffeeMug.src}
+      src={CoffeeMug}
       alt={t("kaffekop illustration")}
       loading="lazy"
     />
@@ -316,15 +316,15 @@ import AnchorLink from "../components/AnchorLink.astro";
       }
     </cite>
 
-    <img
+    <Image
       class="lemon absolute bottom-4 right-0 w-[90px] h-[90px]"
-      src={TwoWholeLemons.src}
+      src={TwoWholeLemons}
       alt={t("to citroner illustration")}
       loading="lazy"
     />
-    <img
+    <Image
       class="croissant absolute bottom-0 left-0 w-[90px] h-[90px]"
-      src={CroissantIllustration.src}
+      src={CroissantIllustration}
       alt={t("croissant illustration")}
       loading="lazy"
     />
