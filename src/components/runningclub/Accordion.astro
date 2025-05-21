@@ -3,34 +3,44 @@ const { items = [] } = Astro.props;
 import PlusIcon from "../../assets/icons/plus-icon.svg";
 ---
 
-<ul class="list-none w-full" id="accordion">
+<dl class="w-full" id="accordion">
   {
     items.map((item, index) => (
-      <li class="w-full my-3" data-index={index}>
-        <button
-          type="button"
-          class="accordion-toggle flex items-center text-left justify-between w-full border-b-1 border-text py-2"
+      <>
+        <dt class="w-full my-3" data-index={index}>
+          <button
+            type="button"
+            class="accordion-toggle flex items-center text-left justify-between w-full border-b-1 border-text py-2"
+            aria-expanded="false"
+            aria-controls={`accordion-content-${index}`}
+            id={`accordion-header-${index}`}
+          >
+            <span class="text-neutral-1 text-header-3 leading-height-header-3 font-body-text">
+              {item.question}
+            </span>
+            <span class="icon text-white text-2xl pr-2">
+              <PlusIcon />
+            </span>
+          </button>
+        </dt>
+        <dd
+          id={`accordion-content-${index}`}
+          class="accordion-content max-h-0 overflow-hidden pt-1 transition-all duration-500 ease-in-out"
+          role="region"
+          aria-labelledby={`accordion-header-${index}`}
         >
-          <h3 class="text-neutral-1 text-header-3 leading-height-header-3 font-body-text">
-            {item.question}
-          </h3>
-          <span class="icon text-white text-2xl pr-2">
-            <PlusIcon />
-          </span>
-        </button>
-        <div role="region" class="accordion-content max-h-0 overflow-hidden pt-1 transition-all duration-500 ease-in-out">
           <p class="text-paragraph font-body-text leading-height-paragraph md:text-lg text-neutral-1">
             {item.answer}
           </p>
-        </div>
-      </li>
+        </dd>
+      </>
     ))
   }
-</ul>
+</dl>
 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
-    const items = document.querySelectorAll("#accordion li");
+    const items = document.querySelectorAll("#accordion dt");
 
     const plusIcon = ` 
        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,19 +55,18 @@ import PlusIcon from "../../assets/icons/plus-icon.svg";
 
     items.forEach((item) => {
       const button = item.querySelector(".accordion-toggle");
-      const content = item.querySelector(".accordion-content");
+      const content = item.nextElementSibling;
       const icon = item.querySelector(".icon");
 
       button.addEventListener("click", () => {
         const isOpen = content.classList.contains("open");
 
         // Luk alle andre
-        items.forEach((otherItem) => {
-          const otherContent = otherItem.querySelector(".accordion-content");
-          const otherIcon = otherItem.querySelector(".icon");
-
+        document.querySelectorAll("#accordion dd").forEach((otherContent) => {
           otherContent.style.maxHeight = null;
           otherContent.classList.remove("open");
+        });
+        document.querySelectorAll("#accordion .icon").forEach((otherIcon) => {
           otherIcon.innerHTML = plusIcon;
         });
 

@@ -10,39 +10,104 @@ import AnchorLink from "./AnchorLink.astro";
 import Image from "astro/components/Image.astro";
 ---
 
-<footer class="bg-secondary rounded-tl-large rounded-tr-large text-primary p-large grid items-center gap-large text-center">
-  <nav aria-label="Social media" class="flex m-auto gap-large items-center md:justify-end md:items-end md:w-full">
-    <a href="https://www.facebook.com/kaerkaffebar"> <Image src={Facebook} alt={t("facebook ikon")} loading="eager" /></a>
-    <a href="https://www.instagram.com/kaerkaffebar/"> <Image src={Instagram} alt={t("instagram ikon")} loading="eager" /></a>
+<footer
+  class="bg-secondary rounded-tl-large rounded-tr-large text-primary p-large grid items-center gap-large text-center"
+>
+  <nav
+    aria-label="Social media"
+    class="flex m-auto gap-large items-center md:justify-end md:items-end md:w-full"
+  >
+    <a href="https://www.facebook.com/kaerkaffebar">
+      <Image src={Facebook} alt={t("facebook ikon")} loading="eager" /></a
+    >
+    <a href="https://www.instagram.com/kaerkaffebar/">
+      <Image src={Instagram} alt={t("instagram ikon")} loading="eager" /></a
+    >
   </nav>
-  <div class="flex flex-col gap-large items-center text-center md:flex-row md:justify-start w-full">
-    <a class="md:grow-[0.4]" href="/"><img src={Logo.src} alt={t("kær kaffebar logo i hvid")} loading="lazy" /></a>
-    <div class="flex flex-col gap-large md:gap-extra-large items-center text-center md:flex-row md:items-start">
+  <div
+    class="flex flex-col gap-large items-center text-center md:flex-row md:justify-start w-full"
+  >
+    <a class="md:grow-[0.4]" href="/"
+      ><img
+        src={Logo.src}
+        alt={t("kær kaffebar logo i hvid")}
+        loading="lazy"
+      /></a
+    >
+    <div
+      class="flex flex-col gap-large md:gap-extra-large items-center text-center md:flex-row md:items-start"
+    >
       <section>
-        <h3 class="text-primary text-header-3 font-body-text leading-height-header-3 md:text-left">{t("Åbningstider")}</h3>
-        <dl class="md:flex md:gap-default">
-          <dt class="text-primary text-paragraph font-body-text leading-height-paragraph">{t("Mandag - Fredag")}</dt>
-          <dd class="text-primary text-paragraph font-body-text leading-height-paragraph">{t("07:30 - 18:00")}</dd>
+        <h3
+          class="text-primary text-header-3 font-body-text leading-height-header-3 md:text-left"
+        >
+          {t("Åbningstider")}
+        </h3>
+        <dl class="md:flex md:gap-default flex flex-col gap-0">
+          <div>
+            <dt
+              class="text-primary text-paragraph font-body-text leading-height-paragraph"
+            >
+              {t("Mandag - Fredag")}
+            </dt>
+            <dd
+              class="text-primary text-paragraph font-body-text leading-height-paragraph"
+            >
+              {t("07:30 - 18:00")}
+            </dd>
+          </div>
+          <div>
+            <dt
+              class="text-primary text-paragraph font-body-text leading-height-paragraph"
+            >
+              {t("Lørdag - Søndag")}
+            </dt>
+            <dd
+              class="text-primary text-paragraph font-body-text leading-height-paragraph"
+            >
+              {t("07:30 - 18:00")}
+            </dd>
+          </div>
         </dl>
-        <div class="md:flex md:gap-default">
-          <dt class="text-primary text-paragraph font-body-text leading-height-paragraph">{t("Lørdag - Søndag")}</dt>
-          <dd class="text-primary text-paragraph font-body-text leading-height-paragraph">{t("07:30 - 18:00")}</dd>
-        </div>
       </section>
       <section>
-        <h3 class="text-primary text-header-3 font-body-text leading-height-header-3 md:text-left">{t("Kontakt")}</h3>
+        <h3
+          class="text-primary text-header-3 font-body-text leading-height-header-3 md:text-left"
+        >
+          {t("Kontakt")}
+        </h3>
         <address class="not-italic">
-          <p class="text-primary text-paragraph font-body-text leading-height-paragraph md:text-left">{t("Valby Langgade 86C St. Tv.")}</p>
-          <p class="text-primary text-paragraph font-body-text leading-height-paragraph md:text-left"><a href="tel:+4581610900">{t("Tlf: 81 61 09 00")}</a></p>
+          <p
+            class="text-primary text-paragraph font-body-text leading-height-paragraph md:text-left"
+          >
+            {t("Valby Langgade 86C St. Tv.")}
+          </p>
+          <p
+            class="text-primary text-paragraph font-body-text leading-height-paragraph md:text-left"
+          >
+            <a href="tel:+4581610900">{t("Tlf: 81 61 09 00")}</a>
+          </p>
         </address>
       </section>
     </div>
   </div>
-  <div class="flex flex-col items-center gap-default md:flex-row md:justify-end md:w-full">
-    <img src={Smiley.src} alt={t("glad smiley")} loading="lazy"/>
-    <AnchorLink variant="primaryOutline" ariaLabel={t("se smileyrapport")} url="https://findsmiley.dk/1413587">{t("Smileyrapport")}</AnchorLink>
+  <div
+    class="flex flex-col items-center gap-default md:flex-row md:justify-end md:w-full"
+  >
+    <img src={Smiley.src} alt={t("glad smiley")} loading="lazy" />
+    <AnchorLink
+      variant="primaryOutline"
+      ariaLabel={t("se smileyrapport")}
+      url="https://findsmiley.dk/1413587">{t("Smileyrapport")}</AnchorLink
+    >
   </div>
-  <p class="text-center text-paragraph leading-height-paragraph font-body-text font-bold">
-    {t("Du kan til enhver tid ændre eller aflyse din booking via telefonnummer 81 61 09 00")}
+  <p
+    class="text-center text-paragraph leading-height-paragraph font-body-text font-bold"
+  >
+    {
+      t(
+        "Du kan til enhver tid ændre eller aflyse din booking via telefonnummer 81 61 09 00"
+      )
+    }
   </p>
 </footer>
