@@ -2,19 +2,24 @@
 import VegetarianIcon from "../../assets/icons/vegetarian-icon.svg";
 import VeganIcon from "../../assets/icons/vegan-icon.svg";
 import SeasonIcon from "../../assets/icons/season-leaf.svg";
+import OrganicIcon from "../../assets/icons/organic.svg"
 ---
 
-<div class="flex items-center justify-center gap-large py-large">
-  <div class="flex gap-medium items-center">
+<ul class="flex items-center justify-center gap-large py-large">
+  <li class="flex gap-medium items-center">
     <VegetarianIcon width={16} height={16} />
     <p class="text-accent text-button"><strong>Vegetarisk</strong></p>
-  </div>
-  <div class="flex gap-medium items-center">
+  </li>
+  <li class="flex gap-medium items-center">
     <VeganIcon width={16} height={16} />
     <p class="text-accent text-button"><strong>Vegansk</strong></p>
-  </div>
-  <div class="flex gap-medium items-center">
+  </li>
+  <li class="flex gap-medium items-center">
     <SeasonIcon width={20} height={20} />
     <p class="text-accent text-button"><strong>Sæson</strong></p>
-  </div>
-</div>
+  </li>
+  <li class="flex gap-medium items-center">
+    <OrganicIcon width={20} height={20} />
+    <p class="text-accent text-button"><strong>Økologisk</strong></p>
+  </li>
+</ul>

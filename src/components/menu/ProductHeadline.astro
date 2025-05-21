@@ -1,13 +1,15 @@
 ---
 import SeasonLeaf from "../../assets/icons/season-leaf.svg";
+import Organic from "../../assets/icons/organic.svg";
 
-const { headline, price, showLeaf = true, variant = "primary" } = Astro.props;
+const { headline, price, showLeaf = true, variant = "primary", showOrganic = true } = Astro.props;
 
 // Variant-baserede klasser
-function getVariants(variant: "primary" | "secondary"): string {
+function getVariants(variant: "primary" | "secondary" | "organic" ): string {
   const variants = {
     primary: "text-neutral-1 text-header-3 font-body-text",
     secondary: "text-neutral-1 text-header-3 font-body-text",
+    organic: "text-neutral-1 text header-3 font-body-text"
   };
 
   return variants[variant] || variants.primary;
@@ -15,11 +17,18 @@ function getVariants(variant: "primary" | "secondary"): string {
 ---
 
 <h3 class=`${getVariants(variant)} flex items-center text-header-3 leading-height-header-3 text-neutral-1 font-body-text`>
+  {
+    variant === "organic" && showOrganic && (
+      <span class="inline-block -ms-2 align-middle">
+        <Organic width="20" height="20" class="m-small"/>
+      </span>
+    )
+  }
   <strong>{headline}</strong>
   <strong class="ml-2">{price}</strong>
   {
     variant === "secondary" && showLeaf && (
-      <span class="inline-block ml-2 align-middle">
+      <span class="inline-block ms-2 align-middle">
         <SeasonLeaf width="20" height="20" />
       </span>
     )

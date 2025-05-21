@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const select = document.getElementById("month-filter");
+  if (!select) return;
 
   select.addEventListener("change", () => {
     const month = select.value; 
