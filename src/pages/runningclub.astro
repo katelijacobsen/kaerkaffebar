@@ -18,35 +18,27 @@ import { lazy } from "astro:schema";
 
 const month = Astro.url.searchParams.get("month") || months[new Date().getMonth()];
 
-
-// Fetch events fra vores API
+// Fetch events from our API
 const events = await fetch(new URL(`/api/clubevents?month=${month}`, Astro.url))
   .then((res) => res.json())
   .catch(() => []);
 
 const faqItems = [
   {
-    question: "Hvor mødes vi?",
-    answer: "Vi mødes ved Kær Kaffebar, Valby Lannggade 86C, 2500 Valby.",
+    question: t("Hvor mødes vi?"),
+    answer: t("Vi mødes ved Kær Kaffebar, Valby Lannggade 86C, 2500 Valby."),
   },
   {
-    question: "Hvad gør jeg, hvis jeg ikke kan komme alligevel?",
-    answer:
-      "Hvis du efter tilmelding finder ud af, at du ikke kan komme alligevel, så skriv til nummeret: 81610900 mindst 24 timer inden, så vi ved, hvor mange vi skal regne med.",
+    question: t("Hvad gør jeg, hvis jeg ikke kan komme alligevel?"),
+    answer: t("Hvis du efter tilmelding finder ud af, at du ikke kan komme alligevel, så skriv til nummeret: 81610900 mindst 24 timer inden, så vi ved, hvor mange vi skal regne med."),
   },
   {
-    question: "Får man gratis kaffe?",
-    answer:
-      "Nej vi giver desværre ikke gratis kaffe, men vi giver et ingefærshot og super hyggelig stemning. Kaffebaren er selvfølgelig åben, så man er mere end velkommen til at nyde mad eller drikkevarer udenfor ved vores café borde eller inden i vores hyggelig lokale.",
+    question: t("Får man gratis kaffe?"),
+    answer: t("Nej vi giver desværre ikke gratis kaffe, men vi giver et ingefærshot og super hyggelig stemning. Kaffebaren er selvfølgelig åben, så man er mere end velkommen til at nyde mad eller drikkevarer udenfor ved vores café borde eller inden i vores hyggelig lokale."),
   },
 ];
 
-
-
 const requestSend = Astro.url.searchParams.get("requestSend") ? true : false;
-
-
-console.log(requestSend);
 ---
 
 <Layout title={t("Kær løbeklub")}>
@@ -62,19 +54,19 @@ console.log(requestSend);
           >  {t("Er man hurtig, kan man nå den 2 gange!")}
         </h3>
       </header>
-          <Image
-          src={RunningCoffeeCupIllustration}
-          alt={t("løbende kaffekop illustration")}
-          class="absolute w-[130px] right-1 top-[14rem] md:top-[0rem] z-[-10] md:w-[400px]"
-          loading="eager"
-        />
+      <Image
+        src={RunningCoffeeCupIllustration}
+        alt={t("løbende kaffekop illustration")}
+        class="absolute w-[130px] right-1 top-[14rem] md:top-[0rem] z-[-10] md:w-[400px]"
+        loading="eager"
+      />
     </section>
     <section class="lg:flex lg:flex-row gap-negative space-y-section">
       <div class="grid gap-default flex-shrink-0">
-        <div class="flex  flex-col items-start gap-default">
+        <div class="flex flex-col items-start gap-default">
           <h2 class="text-header-2">{t("Kommende ture")}</h2>
           <div>
-            <label for="month-filter" class="sr-only">Vælg måned</label>
+            <label for="month-filter" class="sr-only">{t("Vælg måned")}</label>
             <select 
               id="month-filter"
               aria-label={t("Filtrer begivenheder efter måned")}
@@ -111,7 +103,7 @@ console.log(requestSend);
         <PopUp show={requestSend} id="popup-confirmation">
           <h3 id="confirmation">{t("Tak for din tilmelding")}</h3>
         </PopUp>
-        <!-- Mapping events fra API -->
+        <!-- Mapping events from API -->
         {
           events.length === 0 ? (
             <p class="text-label">{t("Ingen kommende ture")}</p>
