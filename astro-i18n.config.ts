@@ -71,7 +71,7 @@ export default defineAstroI18nConfig({
     "/": {
       en: {
         "“Kær Kaffebar er skabt ud fra en drøm om nærvær, god kaffe – og lysten til at gøre en forskel i lokalsamfundet.”":
-          "“Kær Kaffebar was born from a dream of connection, great coffee – and the desire to make a difference in the local community.”",
+          "“Kær Kaffebar was created from a dream of connection, great coffee – and the desire to make a difference in the local community.”",
         Forside: "Home",
         brunch: "brunch",
         tærter: "tarts",
@@ -256,19 +256,19 @@ export default defineAstroI18nConfig({
         Banankage: "Banana bread",
         Mousse: "Mousse",
         "smørrebrød illustration": "open-faced sandwich illustration",
-        Smørrebrød: "Open-faced sandwiches",
+        Smørrebrød: "Smørrebrød",
         "Fra kl. 10": "From 10 AM",
-        Avocadomad: "Avocado sandwich",
+        Avocadomad: "Avocado smørrebrød",
         "Avocado, hvidløgsspire, råsyltede rødløg, persillepesto":
           "Avocado, garlic sprouts, quick-pickled red onions, parsley pesto",
         "Vælg brød": "Choose bread",
         Rugbrød: "Rye bread",
         Focaccia: "Focaccia",
         "Smilende æg 20 kr": "Smiling egg 20 DKK",
-        Kartoffelmad: "Potato sandwich",
+        Kartoffelmad: "Potato smørrebrød",
         "Kartoffel, urtemayonnaise, gammel knas, feld salat, frisk timian og brøndkarse på rugbrød":
           "Potato, herb mayonnaise, aged cheese, lamb's lettuce, fresh thyme and cress on rye bread",
-        Æggemad: "Egg sandwich",
+        Æggemad: "Egg smørrebrød",
         "Smilende æg, urtemayonnaise, brøndkarse, dild og feldsalat på rugbrød":
           "Smiling egg, herb mayonnaise, cress, dill and lamb's lettuce on rye bread",
         "Rejer 20 kr": "Shrimp 20 DKK",
