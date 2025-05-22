@@ -103,9 +103,9 @@ import { Image } from "astro:assets";
     position: relative;
     overflow: hidden;
     mask-image: linear-gradient(
-      to right,
+      -80deg,
       rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 1) 20%,
+      rgba(0, 0, 0, 1) 10%,
       rgba(0, 0, 0, 1) 80%,
       rgba(0, 0, 0, 0)
     );
@@ -175,5 +175,24 @@ import { Image } from "astro:assets";
 
   .item8 {
     animation-delay: calc(30s / 8 * (8 - 8) * -1);
+  }
+
+    @media (max-width: 712px) {
+    .wrapper {
+      height: 60px;
+      margin-top: 1rem;
+    }
+    span {
+      font-size: 1.5rem;
+      line-height: 60px;
+    }
+    .itemLeft,
+    .itemRight {
+      width: 60px;
+      height: 60px;
+    }
+    img,
+    .astro-asset-image {
+    }
   }
 </style>

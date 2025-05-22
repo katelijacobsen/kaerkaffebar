@@ -4,7 +4,7 @@ const { label, content, bgColor } = Astro.props;
 
 <section class="mt-[3rem]">
   <div class={`${bgColor} max-w-[98vw] pl-default py-large rounded-r-full sm:pl-large sm:pr-large md:max-w-[1316px] md:px-[124px] md:py-[64px]`}>
-    <blockquote class="text-neutral-1 text-paragraph font-bold font-body-text leading-height-paragraph">{label}</blockquote>
-    <cite class="text-neutral-1 text-header-2 font-body-text max-w-[74vw] leading-height-header-2 not-italic">{content}</cite>
+    <h2 class="text-neutral-1 text-paragraph font-bold font-body-text leading-height-paragraph">{label}</h2>
+    <blockquote class="text-neutral-1 text-header-2 font-body-text max-w-[74vw] leading-height-header-2 not-italic">{content}</blockquote>
   </div>
 </section>
