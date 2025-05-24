@@ -69,8 +69,34 @@ import AnchorLink from "../components/AnchorLink.astro";
       </div>
     </div>
 
-    <div class="mb-negative">
+    <div class="mb-negative fade-section">
       <QuoteSection content={t("Skab nye minder over fine porcelænskopper, varme scones og liflig te – en lille stund af ro og forkælelse midt i Valby.")} bgColor="bg-neutral-3" />
     </div>
   </main>
 </Layout>
+
+<style>
+  .fade-section {
+    opacity: 1;
+    transform: translateY(50px);
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/all";
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray(".fade-section").forEach((section) => {
+    gsap.from(section, {
+      opacity: 0,
+      y: 100,
+      duration: 1.5,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: section,
+        start: "top 80%",
+      },
+    });
+  });
+</script>
