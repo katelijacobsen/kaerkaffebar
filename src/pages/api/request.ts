@@ -34,3 +34,4 @@ export const POST: APIRoute = async ({ request, redirect }) => {
   // Bruger query string til at sende success tilbage til arrangement siden. Hvis brugeren trykker på send uden errors ville url'en vise true
   return redirect("/arrangement?requestSend=true");
 };
+

@@ -20,7 +20,7 @@ export const months = [
   "dec",
 ];
 
-export const GET : APIRoute = async ({ request, redirect }) => {
+export const GET : APIRoute = async ({ request }) => {
   const url = new URL(request.url);
   const searchParams = url.searchParams;
 
@@ -55,21 +55,22 @@ export const GET : APIRoute = async ({ request, redirect }) => {
   });
 }
 
-// API route for at håndtere forespørgsel fra form
+// API-endpoint for tilmelding
 export const POST : APIRoute = async ({ request, redirect }) =>{
-  console.log(request);
-
+  
   const formData = await request.formData();
-
+  
   // Data
   const data = {
-    fullName: formData.get("name"),
-    phoneNumber: formData.get("number"),
+    name: formData.get("name"),
+    number: formData.get("number"),
+    eventId: formData.get("eventId")
   };
-
+  
+  console.log(data);
 
   //error håndtering - hvis der skulle være fejl i dataen
-  const { error } = await supabase.from("request").insert([data]);
+  const { error } = await supabase.from("signups").insert([data]);
   
   if (error) {
     return new Response(JSON.stringify({ error: error.message }), {

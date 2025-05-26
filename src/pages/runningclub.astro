@@ -13,7 +13,6 @@ import PopUp from "../components/PopUp.astro";
 import Button from "../components/Button.astro";
 import { months } from "./api/clubevents";
 import Accordion from "../components/runningclub/Accordion.astro";
-import { lazy } from "astro:schema";
 
 
 const month = Astro.url.searchParams.get("month") || months[new Date().getMonth()];
@@ -125,16 +124,18 @@ const requestSend = Astro.url.searchParams.get("requestSend") ? true : false;
                   />
               </div>
               <div class="flex flex-col gap-small">
-               <label for={`phoneNumber-${event.id}`}>{t("Telefonnummer")}</label>
+               <label for={`number-${event.id}`}>{t("Telefonnummer")}</label>
                   <input
                     type="tel"
-                    id={`phoneNumber-${event.id}`}
-                    name="phoneNumber"
+                    id={`number-${event.id}`}
+                    name="number"
                     placeholder={t("Telefonnummer")}
                     required
                     class="border-2 border-faded-highlight rounded-sm p-2 bg-white"
                     autocomplete="tel"
                   />
+                  <!-- Hidden input to pass event ID -->
+                  <input type="hidden" name="eventId" value={event.id} />
               </div>
                 <Button type="submit" showArrow={false}> 
                   {t("Tilmeld")}
