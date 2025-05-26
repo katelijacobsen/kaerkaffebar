@@ -1,9 +1,14 @@
 ---
+// i18n
+import { t } from "astro-i18n";
+
+// SVG'er
 import LocationIcon from "../../assets/icons/location-icon.svg";
 import ClockIcon from "../../assets/icons/clock-icon.svg";
 import PeopleIcon from "../../assets/icons/people-icon.svg";
+
+// Komponenter
 import Button from "../Button.astro";
-import PopUp from "../PopUp.astro";
 
 // Props der bliver sendt vider til komponenten
 const { event, popupId } = Astro.props;
@@ -26,7 +31,7 @@ console.log("Cardevent:", event);
     </div>
     <div class="flex items-center gap-small">
       <PeopleIcon />
-      <p class="text-neutral-1">{event.participants}</p>
+      <p class="text-neutral-1">{event.participants} {t("deltager")}</p>
     </div>
   </div>
   <div class="self-end">

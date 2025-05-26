@@ -20,6 +20,7 @@ export const months = [
   "dec",
 ];
 
+// API-endpoint for at hente data fra vores supabase
 export const GET : APIRoute = async ({ request }) => {
   const url = new URL(request.url);
   const searchParams = url.searchParams;

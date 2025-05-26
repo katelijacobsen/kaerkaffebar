@@ -1,20 +1,29 @@
 ---
+// i18n
 import { t } from "astro-i18n";
 
+// undgå at siden bliver præ-renderet
 export const prerender = false;
+
 import "../styles/global.css";
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import RunningClubCard from "../components/runningclub/RunningClubCard.astro";
+
+// Billeder og Illustrationer
 import RunningImage from "../assets/img/running-img.webp";
 import RunningCoffeeCupIllustration from "../assets/illustrations/blue/running-coffee-cup.svg";
 import LemonPiecesIllustration from "../assets/illustrations/blue/lemon-pieces.svg";
+
+// Komponenter
 import PopUp from "../components/PopUp.astro";
 import Button from "../components/Button.astro";
-import { months } from "./api/clubevents";
+import RunningClubCard from "../components/runningclub/RunningClubCard.astro";
 import Accordion from "../components/runningclub/Accordion.astro";
 
+// API
+import { months } from "./api/clubevents";
 
+// Konstant for at hente den måned fra URL-parameteren eller bruge den nuværende måned som standard
 const month = Astro.url.searchParams.get("month") || months[new Date().getMonth()];
 
 // Fetch events from our API
