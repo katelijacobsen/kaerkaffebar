@@ -167,7 +167,7 @@ const requestSend = Astro.url.searchParams.get("requestSend") ? true : false;
         <Accordion items={faqItems}/>
       </div>
     </section>
-    <section class="flex flex-col lg:flex-row gap-large fade-section mb-large">
+    <section class="flex flex-col lg:flex-row gap-large mb-large">
       <div
         class="h-[140px] lg:h-[60%] overflow-hidden rounded-full lg:w-[100%]"
       >
@@ -193,28 +193,3 @@ const requestSend = Astro.url.searchParams.get("requestSend") ? true : false;
   </main>
 </Layout>
 
-<style>
-  .fade-section {
-    opacity: 1;
-    transform: translateY(50px);
-  }
-</style>
-
-<script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/all";
-  gsap.registerPlugin(ScrollTrigger);
-
-  gsap.utils.toArray(".fade-section").forEach((section) => {
-    gsap.from(section, {
-      opacity: 0,
-      y: 100,
-      duration: 1.5,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: section,
-        start: "top 80%",
-      },
-    });
-  });
-</script>
