@@ -139,7 +139,12 @@ export default defineAstroI18nConfig({
     },
     "/arrangement": {
       en: {
+        
       "Arrangement & events": "Events & gatherings",
+      "Hold dit næste arrangement" : "Host your next event",
+      "i de stemingsfulde lokale" : "in the atmospheric setting by",
+      "– perfekt til alt fra fester til events." : "– perfect for everything from parties to gatherings.",
+      "Send os en forespørgsel, så klarer vi resten!" : "Send us an inquiry and we'll take care of the rest!",
       "Arrangementer & events hos Kær Kaffebar": "Events & gatherings at Kær Kaffebar",
       "Skab uforglemmelige øjeblikke ved at": "Create unforgettable moments by",
       "afholde dit næste arrangement i de stemningsfulde lokaler hos Kær Kaffebar!": "hosting your next event in the cozy atmosphere of Kær Kaffebar!",

@@ -20,46 +20,32 @@ import ReadlineLink from "../components/menu/ReadlineLink.astro";
 <Layout title={t("Arrangement & events")}>
   <main class="m-margin space-y-large">
     <article
-      class="grid grid-cols-1 lg:grid-cols-2 gap-large md-large md:mb-negative"
+      class="grid grid-cols-1 lg:grid-cols-[auto_auto] gap-large md-large md:mb-negative"
     >
       <header class="flex flex-col gap-large">
         <h1 class="text-header-1 leading-height-header-1">
           {t("Arrangementer & events hos Kær Kaffebar")}
         </h1>
         <div>
-          <p
-            class="text-neutral-1 text-paragraph font-body-text leading-height-paragraph"
+          <h3
+            class="text-neutral-1 text-header-3 font-body-text leading-height-header-3"
           >
-            {t("Skab uforglemmelige øjeblikke ved at")}
-            <strong>
-              {
-                t(
-                  "afholde dit næste arrangement i de stemningsfulde lokaler hos Kær Kaffebar!"
-                )
-              }
-            </strong>
-          </p>
-          <p>
-            <strong class="text-paragraph font-body-text">
-              {
-                t(
-                  "Vi stiller gerne vores hyggelige og indbydende rammer til rådighed"
-                )
-              }
-            </strong>
+          <strong>
+            {t("Hold dit næste arrangement ")}
+          </strong>
             {
-              t(
-                "for alt fra fødselsdagsfester og firmaarrangementer til PR-events og meget mere –"
-              )
-            }
-            <strong>
-              {
                 t(
-                  "du skal blot sende os en forespørgelse, så tager vi den derfra."
+                  "i de stemningsfulde lokaler hos"
                 )
               }
-            </strong>
-          </p>
+              <strong>
+                {t(" Kær Kaffebar")}
+              </strong>
+              {t("– perfekt til alt fra fester til firmaevents.")} 
+              <strong>
+                 {t("Send os en forespørgsel, så klarer vi resten!")}
+              </strong>
+          </h3>
         </div>
         <div class="lg:hidden md:hidden">
           <ReadlineLink href="#Form" variant="primary"
